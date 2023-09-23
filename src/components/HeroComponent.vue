@@ -1,0 +1,95 @@
+<template>
+	<section id="home" class="pt-24">
+		<div class="container">
+			<div class="flex flex-wrap lg:flex-row-reverse">
+				<!-- Right / Top side -->
+				<div class="self-center w-full px-4 lg:w-1/2 lg:text-right">
+					<h1 class="text-base font-semibold text-secondary md:text-xl">
+						Hello, I'am
+						<span class="block mt-1 text-4xl font-bold lg:5xl text-secondary">
+							<a href="/" class="text-primary">{{ text }}</a
+							>_Kurnia_
+						</span>
+					</h1>
+					<h class="mb-5 text-lg font-semibold text-dark lg:text-2xl">Unity Developer</h>
+					<p class="mb-10 font-medium leading-relaxed text-secondary">
+						To <span class="font-bold text-dark">entertain</span> a group, you don't have
+						<span class="font-bold text-dark">to join</span> that group!
+					</p>
+					<RouterLink
+						to="/contact"
+						class="px-6 py-2 text-base font-semibold text-white border-2 rounded-full bg-primary hover:border-primary hover:bg-bgPrimary hover:text-primary"
+						>Contact</RouterLink
+					>
+				</div>
+				<!-- Right / Top side -->
+
+				<!-- Left / Bottom side -->
+				<div class="self-end w-full px-4 lg:w-1/2">
+					<div class="relative mt-10 lg:mt-9 lg:right-0">
+						<img src="/img/ek-no-bg.png" alt="Erlan Kurnia" class="w-full mx-auto" />
+						<span
+							id="splash-liquid"
+							class="absolute top-0 bottom-0 w-full transition scale-0 -translate-x-1/2 opacity-0 -z-10 left-1/2"
+							:class="{
+								'scale-0': !isPageLoaded,
+								'opacity-0': !isPageLoaded,
+								'scale-100': isPageLoaded,
+								'opacity-100': isPageLoaded,
+							}"
+						>
+							<svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+								<path
+									fill="#79678F"
+									d="M21.5,-46.7C24.7,-35.3,22.1,-23.3,23.2,-15.4C24.2,-7.5,29,-3.7,37.6,4.9C46.1,13.6,58.5,27.3,60.9,41.2C63.3,55.1,55.7,69.2,43.9,71.3C32.1,73.3,16.1,63.2,0,63.3C-16.1,63.3,-32.2,73.5,-46.4,72.9C-60.6,72.2,-72.9,60.7,-74.6,46.7C-76.4,32.8,-67.5,16.4,-55.2,7.1C-42.9,-2.1,-27,-4.3,-25.4,-18.4C-23.7,-32.5,-36.2,-58.5,-34.4,-70.6C-32.5,-82.8,-16.3,-81.2,-3.6,-75C9.1,-68.8,18.2,-58.1,21.5,-46.7Z"
+									transform="translate(100 100) scale(1.1)"
+								/>
+							</svg>
+						</span>
+					</div>
+				</div>
+				<!-- Left / Bottom side -->
+			</div>
+		</div>
+	</section>
+</template>
+
+<script>
+import { ref, onMounted } from "vue";
+
+export default {
+	name: "HeroComponent",
+	setup() {
+		// Splash liquid as user image
+		const isPageLoaded = ref(false);
+		onMounted(() => {
+			setTimeout(() => {
+				isPageLoaded.value = true;
+			}, 500);
+		});
+		// Splash liquid as user image
+
+		// Swapping animation
+		const texts = ["nal.re", "_Erlan"];
+		const text = ref(texts[0]);
+		let index = 0,
+			textIndex = 0;
+
+		const animate = () => {
+			text.value = texts[textIndex].slice(0, index + 1) + texts[1 - textIndex].slice(index + 1);
+			index = (index + 1) % texts[0].length;
+			if (index === 0) {
+				textIndex = 1 - textIndex;
+				setTimeout(animate, 2000);
+			} else {
+				setTimeout(animate, 750);
+			}
+		};
+
+		onMounted(animate);
+		// Swapping animation
+
+		return { text, isPageLoaded };
+	},
+};
+</script>
