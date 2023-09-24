@@ -3,8 +3,9 @@
 		<div class="container">
 			<div class="relative flex items-center justify-between">
 				<div class="px-4">
-					<a href="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary"
-						><span class="opacity-10">nal</span>LAN</a
+					<a href="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary">
+						<!-- <span class="opacity-20 text-dark">nal</span> -->
+						LAN</a
 					>
 				</div>
 				<div class="flex items-center p-4">

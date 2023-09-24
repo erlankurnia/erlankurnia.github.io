@@ -14,7 +14,7 @@
 			</div>
 			<div class="w-full px-4">
 				<div class="flex flex-wrap items-center justify-center">
-					<div class="max-w-[64px] mx-4 py-4 opacity-50 text-black transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8">
+					<div class="max-w-[64px] mx-4 py-4 text-black lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Unity</title>
 							<path
@@ -22,9 +22,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#512BD4] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#512BD4] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>C Sharp</title>
 							<path
@@ -32,9 +30,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#00878F] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#00878F] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Arduino</title>
 							<path
@@ -42,9 +38,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#339933] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#339933] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Node.js</title>
 							<path
@@ -52,9 +46,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#FF2D20] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#FF2D20] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Laravel</title>
 							<path
@@ -62,9 +54,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#4169E1] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#4169E1] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>PostgreSQL</title>
 							<path
@@ -72,9 +62,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#4479A1] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#4479A1] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>MySQL</title>
 							<path
@@ -82,9 +70,7 @@
 							/>
 						</svg>
 					</div>
-					<div
-						class="max-w-[64px] mx-4 py-4 opacity-50 text-[#FFCA28] transition duration-500 hover:opacity-100 lg:mx6 xl:mx-8"
-					>
+					<div class="max-w-[64px] mx-4 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Firebase</title>
 							<path

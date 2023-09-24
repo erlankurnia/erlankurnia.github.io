@@ -8,7 +8,7 @@
 						Hello, I'am
 						<span class="block mt-1 text-4xl font-bold lg:5xl text-secondary">
 							<a href="/" class="text-primary">{{ text }}</a
-							>_Kurnia_
+							><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">_</span>Kurnia_
 						</span>
 					</h1>
 					<h class="mb-5 text-lg font-semibold text-dark lg:text-2xl">Unity Developer</h>
@@ -16,11 +16,7 @@
 						To <span class="font-bold text-dark">entertain</span> a group, you don't have
 						<span class="font-bold text-dark">to join</span> that group!
 					</p>
-					<RouterLink
-						to="/contact"
-						class="px-6 py-2 text-base font-semibold text-white border-2 rounded-full bg-primary hover:border-primary hover:bg-bgPrimary hover:text-primary"
-						>Contact</RouterLink
-					>
+					<RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink>
 				</div>
 				<!-- Right / Top side -->
 

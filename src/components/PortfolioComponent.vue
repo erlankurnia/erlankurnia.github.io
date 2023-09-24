@@ -14,40 +14,13 @@
 				</div>
 			</div>
 			<div class="flex flex-wrap justify-center w-full px-4 xl:w-10/12 xl:mx-auto">
-				<div class="p-4 mb-12 md:w-1/2">
+				<div class="p-4 mb-12 md:w-1/2" v-for="port in portfolio" :key="port.id">
 					<div class="overflow-hidden rounded-md shadow-md">
-						<img src="/img/portfolio/1.png" alt="Portfolio 1" width="w-full" />
+						<img :src="port.imgPath" :alt="port.title" :class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
 					</div>
-					<h3 class="mt-5 mb-3 text-xl font-semibold text-dark">Portfolio 1</h3>
+					<h3 class="mt-5 mb-3 text-xl font-semibold text-dark">{{ port.title }}</h3>
 					<p class="text-base font-medium text-secondary">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?
-					</p>
-				</div>
-				<div class="p-4 mb-12 md:w-1/2">
-					<div class="overflow-hidden rounded-md shadow-md">
-						<img src="/img/portfolio/2.png" alt="Portfolio 2" width="w-full" />
-					</div>
-					<h3 class="mt-5 mb-3 text-xl font-semibold text-dark">Portfolio 2</h3>
-					<p class="text-base font-medium text-secondary">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?
-					</p>
-				</div>
-				<div class="p-4 mb-12 md:w-1/2">
-					<div class="overflow-hidden rounded-md shadow-md">
-						<img src="/img/portfolio/3.png" alt="Portfolio 3" width="w-full" />
-					</div>
-					<h3 class="mt-5 mb-3 text-xl font-semibold text-dark">Portfolio 3</h3>
-					<p class="text-base font-medium text-secondary">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?
-					</p>
-				</div>
-				<div class="p-4 mb-12 md:w-1/2">
-					<div class="overflow-hidden rounded-md shadow-md">
-						<img src="/img/portfolio/4.png" alt="Portfolio 4" width="w-full" />
-					</div>
-					<h3 class="mt-5 mb-3 text-xl font-semibold text-dark">Portfolio 4</h3>
-					<p class="text-base font-medium text-secondary">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?
+						{{ port.desc }}
 					</p>
 				</div>
 			</div>
@@ -56,7 +29,38 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
 	name: "PortfolioComponent",
+	setup() {
+		const portfolio = ref([
+			{
+				id: 0,
+				title: "Portfolio 1",
+				imgPath: "/img/portfolio/1.png",
+				desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
+			},
+			{
+				id: 1,
+				title: "Portfolio 2",
+				imgPath: "/img/portfolio/2.png",
+				desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
+			},
+			{
+				id: 2,
+				title: "Portfolio 3",
+				imgPath: "/img/portfolio/3.png",
+				desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
+			},
+			{
+				id: 3,
+				title: "Portfolio 4",
+				imgPath: "/img/portfolio/4.png",
+				desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
+			},
+		]);
+		return { portfolio };
+	},
 };
 </script>

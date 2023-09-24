@@ -45,4 +45,20 @@ body {
 	.hamburger-active > span:nth-child(3) {
 		@apply rotate-45;
 	}
+
+	.lan-text-primary {
+		@apply text-primary border-primary transition duration-1000 hover:duration-300 hover:border-bgPrimary hover:bg-primary hover:text-bgPrimary;
+	}
+
+	.lan-50-to-100 {
+		@apply opacity-50 transition duration-1000 hover:duration-300 hover:opacity-100;
+	}
+
+	.lan-button-primary {
+		@apply px-6 py-2 text-base font-semibold border-2 rounded-full text-bgPrimary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
+	}
+
+	.lan-textfield-primary {
+		@apply p-2 mt-1 rounded-lg bg-bgSecondary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2;
+	}
 }
