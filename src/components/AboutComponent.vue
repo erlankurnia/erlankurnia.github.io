@@ -2,8 +2,10 @@
 	<section id="about" class="pt-24 pb-16 bg-bgSecondary">
 		<div class="container">
 			<div class="flex flex-wrap">
-				<div class="w-full p-4 mb-10 lg:w-1/2">
+				<div class="w-full px-4 pt-4 pb-0 mb-0 text-center">
 					<h4 class="mb-3 text-lg font-bold uppercase text-primary">About_Me</h4>
+				</div>
+				<div class="w-full p-4 pt-0 mb-10 lg:w-1/2">
 					<h2 class="max-w-xl mb-5 text-3xl font-bold text-dark lg:text-4xl">
 						Every<span class="text-primary">thing</span> Start from No<span class="text-primary">thing</span>
 					</h2>
@@ -14,7 +16,7 @@
 					</p>
 				</div>
 				<div class="w-full px-4 lg:w-1/2">
-					<h3 class="mb-4 text-2xl font-semibold text-dark lg:text-3xl lg:pt-10">Make a Connection</h3>
+					<h3 class="mb-4 text-2xl font-semibold text-dark lg:text-3xl">Make a Connection</h3>
 					<p class="mb-6 text-base font-medium text-secondary lg:text-lg">
 						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique maxime autem voluptas laboriosam perspiciatis
 						nobis libero iste rerum consectetur eum tempore vitae dolorum magni et facere ipsam, tenetur veniam minima quidem
