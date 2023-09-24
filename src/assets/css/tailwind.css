@@ -55,7 +55,7 @@ body {
 	}
 
 	.lan-button-primary {
-		@apply px-6 py-2 text-base font-semibold border-2 rounded-full text-bgPrimary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
+		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-bgPrimary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
 	}
 
 	.lan-textfield-primary {

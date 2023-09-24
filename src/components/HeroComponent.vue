@@ -26,12 +26,12 @@
 						<img src="/img/ek-no-bg.png" alt="Erlan Kurnia" class="w-full mx-auto" />
 						<span
 							id="splash-liquid"
-							class="absolute top-0 bottom-0 w-full transition scale-0 -translate-x-1/2 opacity-0 -z-10 left-1/2"
+							class="absolute top-0 bottom-0 w-full transition duration-700 ease-in-out -translate-x-1/2 -z-10 left-1/2"
 							:class="{
-								'scale-0': !isPageLoaded,
-								'opacity-0': !isPageLoaded,
+								'scale-[10]': !isPageLoaded,
+								// 'opacity-0': !isPageLoaded,
 								'scale-100': isPageLoaded,
-								'opacity-100': isPageLoaded,
+								// 'opacity-100': isPageLoaded,
 							}"
 						>
 							<svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
