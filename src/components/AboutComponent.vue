@@ -4,7 +4,9 @@
 			<div class="flex flex-wrap">
 				<div class="w-full px-4 mb-10 lg:w-1/2">
 					<h4 class="mb-3 text-lg font-bold uppercase text-primary">About_Me</h4>
-					<h2 class="max-w-xl mb-5 text-3xl font-bold text-dark lg:text-4xl">Create Something that Programmers Usually Do</h2>
+					<h2 class="max-w-xl mb-5 text-3xl font-bold text-dark lg:text-4xl">
+						Every<span class="text-primary">thing</span> Start from No<span class="text-primary">thing</span>
+					</h2>
 					<p class="mb-5 text-base font-medium text-secondary lg:text-lg">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, exercitationem ea quasi earum culpa aut tenetur
 						aliquam corrupti minima numquam ut quaerat repellendus tempore maxime hic delectus perferendis dolores autem nisi

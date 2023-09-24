@@ -3,8 +3,10 @@
 		<div class="container">
 			<div class="w-full px-4">
 				<div class="mx-auto mb-16 text-center">
-					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">My_Skills</h4>
-					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">What is My Ability</h2>
+					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">Skills</h4>
+					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
+						What is My <span class="text-primary">Ability</span>
+					</h2>
 					<p class="font-medium text-md text-secondary md:text-lg">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, enim officia! Consequatur.
 					</p>

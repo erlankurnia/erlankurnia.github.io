@@ -3,8 +3,10 @@
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="max-w-xl mx-auto mb-16 text-center">
-					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">My_Portfolio</h4>
-					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">Latest Projects</h2>
+					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">Portfolio</h4>
+					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
+						Latest <span class="text-primary">Project</span>s
+					</h2>
 					<p class="font-medium text-md text-secondary md:text-lg">
 						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid similique quam aspernatur soluta quod magni
 						fugit id iste. Ratione odio ipsam aliquam laboriosam?
