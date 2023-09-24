@@ -1,7 +1,7 @@
 <template>
 	<section id="skills" class="pt-24 pb-16 bg-bgSecondary">
 		<div class="container">
-			<div class="w-full px-4">
+			<div class="w-full p-4">
 				<div class="mx-auto mb-16 text-center">
 					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">Skills</h4>
 					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">

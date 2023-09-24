@@ -3,14 +3,16 @@
 		<div class="container">
 			<div class="relative flex items-center justify-between">
 				<div class="px-4">
-					<a href="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary">LAN</a>
+					<a href="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary"
+						><span class="opacity-10">nal</span>LAN</a
+					>
 				</div>
 				<div class="flex items-center p-4">
 					<button
 						id="hamburger"
 						name="hamburger"
 						type="button"
-						class="absolute block transition duration-300 ease-in-out right-4 lg:hidden"
+						class="absolute block transition duration-300 ease-in-out right-4 xl:hidden"
 						:class="{ 'hamburger-active': isHamburgerOpen }"
 						@click="onHamburgerClick"
 					>
@@ -21,27 +23,27 @@
 
 					<nav
 						id="nav-menu"
-						class="absolute origin-top scale-y-0 py-5 bg-bgPrimary shadow-lg rounded-lg max-w-[200px] w-full top-full right-4 transition duration-300 lg:origin-center lg:scale-y-100 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+						class="absolute origin-top scale-y-0 py-5 bg-bgPrimary shadow-lg rounded-lg max-w-[200px] w-full top-full right-4 transition duration-300 xl:origin-center xl:scale-y-100 xl:block xl:static xl:bg-transparent xl:max-w-full xl:shadow-none xl:rounded-none"
 						:class="{
 							// 'hidden': !isHamburgerOpen,
 							'scale-y-100': isHamburgerOpen,
 						}"
 					>
-						<ul class="block lg:flex">
+						<ul class="block xl:flex">
 							<li class="group">
-								<RouterLink to="/#home" class="nav-link">Home</RouterLink>
+								<a href="#home" class="nav-link">Home</a>
 							</li>
 							<li class="group">
-								<RouterLink to="/#about" class="nav-link">About</RouterLink>
+								<a href="#about" class="nav-link">About</a>
 							</li>
 							<li class="group">
-								<RouterLink to="/#portfolio" class="nav-link">Portfolio</RouterLink>
+								<a href="#portfolio" class="nav-link">Portfolio</a>
 							</li>
 							<li class="group">
-								<RouterLink to="/#skills" class="nav-link">Skills</RouterLink>
+								<a href="#skills" class="nav-link">Skills</a>
 							</li>
 							<li class="group">
-								<RouterLink to="/#contact" class="nav-link">Contact</RouterLink>
+								<a href="#contact" class="nav-link">Contact</a>
 							</li>
 						</ul>
 					</nav>
@@ -52,7 +54,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 export default {
 	name: "HeaderComponent",
@@ -62,7 +64,8 @@ export default {
 		};
 	},
 	setup() {
-		function onScroll() {
+		// On scrolling event to create sticky navbar
+		const onScroll = () => {
 			const header = document.querySelector("header");
 			const fixedNav = header.offsetTop;
 
@@ -71,8 +74,31 @@ export default {
 			} else {
 				header.classList.remove("navbar-fixed");
 			}
-		}
+		};
 		window.onscroll = onScroll;
+		// On scrolling event to create sticky navbar
+
+		// // Swapping animation
+		// const texts = ["nal", "LAN"];
+		// const title = ref(texts[0]);
+		// let index = 0,
+		// 	textIndex = 0;
+
+		// const animate = () => {
+		// 	title.value = texts[textIndex].slice(0, index + 1) + texts[1 - textIndex].slice(index + 1);
+		// 	index = (index + 1) % texts[0].length;
+		// 	if (index === 0) {
+		// 		textIndex = 1 - textIndex;
+		// 		setTimeout(animate, 4000);
+		// 	} else {
+		// 		setTimeout(animate, 500);
+		// 	}
+		// };
+
+		// onMounted(animate);
+		// // Swapping animation
+
+		// return { title };
 	},
 	methods: {
 		onHamburgerClick() {

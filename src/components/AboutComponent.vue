@@ -2,7 +2,7 @@
 	<section id="about" class="pt-24 pb-16 bg-bgSecondary">
 		<div class="container">
 			<div class="flex flex-wrap">
-				<div class="w-full px-4 mb-10 lg:w-1/2">
+				<div class="w-full p-4 mb-10 lg:w-1/2">
 					<h4 class="mb-3 text-lg font-bold uppercase text-primary">About_Me</h4>
 					<h2 class="max-w-xl mb-5 text-3xl font-bold text-dark lg:text-4xl">
 						Every<span class="text-primary">thing</span> Start from No<span class="text-primary">thing</span>
