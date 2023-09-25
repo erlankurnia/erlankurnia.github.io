@@ -1,5 +1,5 @@
 <template>
-	<section id="about" class="pt-24 pb-16 bg-bgPrimary">
+	<section id="story" class="pt-24 pb-16 bg-bgPrimary">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">

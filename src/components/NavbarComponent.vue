@@ -38,7 +38,7 @@
 								<a href="#about" class="lan-nav-link">About</a>
 							</li>
 							<li class="group">
-								<a href="#portfolio" class="lan-nav-link">Portfolio</a>
+								<a href="#story" class="lan-nav-link">My_History</a>
 							</li>
 							<li class="group">
 								<a href="#skills" class="lan-nav-link">Skills</a>
