@@ -1,11 +1,12 @@
 <template>
 	<NavbarComponent></NavbarComponent>
-	<div class="lan-container-body">
+	<div class="select-none lan-container-body">
 		<!-- <PaperComponent></PaperComponent> -->
 		<!-- <SwappingComponent></SwappingComponent> -->
 		<HeroComponent></HeroComponent>
 		<AboutComponent></AboutComponent>
-		<PortfolioComponent></PortfolioComponent>
+		<StoryComponent></StoryComponent>
+		<!-- <PortfolioComponent></PortfolioComponent> -->
 		<SkillsComponent></SkillsComponent>
 		<!-- <RouterView /> -->
 	</div>
@@ -16,7 +17,8 @@ import { RouterView } from "vue-router";
 import NavbarComponent from "./components/NavbarComponent.vue";
 import HeroComponent from "./components/HeroComponent.vue";
 import AboutComponent from "./components/AboutComponent.vue";
-import PortfolioComponent from "./components/PortfolioComponent.vue";
+// import PortfolioComponent from "./components/PortfolioComponent.vue";
+import StoryComponent from "./components/StoryComponent.vue";
 import SkillsComponent from "./components/SkillsComponent.vue";
 import ContactComponent from "./components/ContactComponent.vue";
 // import PaperComponent from "./components/PaperComponent.vue";

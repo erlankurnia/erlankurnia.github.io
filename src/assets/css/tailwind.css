@@ -58,6 +58,10 @@ body {
 		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-bgPrimary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
 	}
 
+	.lan-button-secondary {
+		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-primary bg-bgPrimary transition duration-1000 hover:duration-300 hover:bg-primary hover:text-bgPrimary;
+	}
+
 	.lan-textfield-primary {
 		@apply p-2 mt-1 rounded-lg bg-bgSecondary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2 min-h-[40px];
 	}
