@@ -7,42 +7,42 @@ body {
 	font-family: "Roboto Mono", monospace;
 }
 
-.navbar-fixed {
+.lan-navbar-fixed {
 	@apply fixed z-[9999] bg-bgSecondary bg-opacity-60;
 	backdrop-filter: blur(10px);
 	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 @layer components {
-	.container-body {
+	.lan-container-body {
 		@apply w-full h-auto;
 	}
 
-	.router-link {
+	.lan-router-link {
 		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary uppercase hover:opacity-75;
 	}
 
-	.nav-link {
+	.lan-nav-link {
 		@apply flex py-2 mx-8 text-base text-dark group-hover:text-primary group-hover:font-extrabold;
 	}
 
-	.hamburger-line {
+	.lan-hamburger-line {
 		@apply w-[30px] h-[3px] my-[7px] block bg-primary transition duration-300 ease-in-out;
 	}
 
-	.hamburger-active {
+	.lan-hamburger-active {
 		@apply rotate-180;
 	}
 
-	.hamburger-active > span:nth-child(1) {
+	.lan-hamburger-active > span:nth-child(1) {
 		@apply -rotate-45;
 	}
 
-	.hamburger-active > span:nth-child(2) {
+	.lan-hamburger-active > span:nth-child(2) {
 		@apply scale-0;
 	}
 
-	.hamburger-active > span:nth-child(3) {
+	.lan-hamburger-active > span:nth-child(3) {
 		@apply rotate-45;
 	}
 
@@ -59,6 +59,6 @@ body {
 	}
 
 	.lan-textfield-primary {
-		@apply p-2 mt-1 rounded-lg bg-bgSecondary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2;
+		@apply p-2 mt-1 rounded-lg bg-bgSecondary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2 min-h-[40px];
 	}
 }

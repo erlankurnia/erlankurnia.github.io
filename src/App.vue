@@ -1,6 +1,6 @@
 <template>
 	<NavbarComponent></NavbarComponent>
-	<div class="container-body">
+	<div class="lan-container-body">
 		<!-- <SwappingComponent></SwappingComponent> -->
 		<HeroComponent></HeroComponent>
 		<AboutComponent></AboutComponent>
@@ -20,4 +20,6 @@ import PortfolioComponent from "./components/PortfolioComponent.vue";
 import SkillsComponent from "./components/SkillsComponent.vue";
 import ContactComponent from "./components/ContactComponent.vue";
 // import SwappingComponent from "./components/SwappingComponent.vue";
+
+// setInterval(() => location.reload(), 10000);
 </script>
