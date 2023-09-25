@@ -15,7 +15,7 @@
 			</div>
 
 			<!-- Timeline -->
-			<div class="w-full px-4">
+			<div class="w-auto px-4 mx-auto">
 				<ol>
 					<li class="border-l-2 border-primary">
 						<div class="md:flex flex-start">
