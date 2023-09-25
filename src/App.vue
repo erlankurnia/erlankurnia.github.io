@@ -6,8 +6,8 @@
 		<HeroComponent></HeroComponent>
 		<AboutComponent></AboutComponent>
 		<StoryComponent></StoryComponent>
-		<!-- <PortfolioComponent></PortfolioComponent> -->
 		<SkillsComponent></SkillsComponent>
+		<ContactComponent></ContactComponent>
 		<!-- <RouterView /> -->
 	</div>
 </template>
@@ -17,7 +17,6 @@ import { RouterView } from "vue-router";
 import NavbarComponent from "./components/NavbarComponent.vue";
 import HeroComponent from "./components/HeroComponent.vue";
 import AboutComponent from "./components/AboutComponent.vue";
-// import PortfolioComponent from "./components/PortfolioComponent.vue";
 import StoryComponent from "./components/StoryComponent.vue";
 import SkillsComponent from "./components/SkillsComponent.vue";
 import ContactComponent from "./components/ContactComponent.vue";
