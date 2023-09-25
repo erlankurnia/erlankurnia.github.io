@@ -16,9 +16,9 @@
 
 			<!-- Timeline -->
 			<div class="w-auto px-4 mx-auto">
-				<ol>
-					<li class="border-l-2 border-primary">
-						<div class="md:flex flex-start">
+				<ol class="w-auto max-w-md mx-auto">
+					<li class="max-w-md border-l-2 border-primary">
+						<div class="w-auto">
 							<div class="flex items-center justify-center w-6 h-6 -ml-[13px] translate-y-6 rounded-full bg-primary">
 								<svg
 									aria-hidden="true"
@@ -63,8 +63,8 @@
 							</div>
 						</div>
 					</li>
-					<li class="border-l-2 border-bgSecondary">
-						<div class="md:flex flex-start">
+					<li class="max-w-md border-l-2 border-bgSecondary">
+						<div class="w-auto">
 							<div class="flex items-center justify-center w-6 h-6 -ml-[13px] translate-y-6 rounded-full bg-bgSecondary">
 								<svg
 									aria-hidden="true"
