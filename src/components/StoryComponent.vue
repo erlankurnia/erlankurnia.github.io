@@ -4,7 +4,7 @@
 			<div class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">My_History</h4>
-					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
+					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl xl:5xl">
 						How Did I <span class="text-primary">Reach</span> This Moment
 					</h2>
 					<p class="font-medium text-md text-secondary lg:text-lg">
@@ -16,10 +16,10 @@
 
 			<!-- Timeline -->
 			<div class="w-auto px-4 mx-auto">
-				<ol class="w-auto max-w-md mx-auto lg:max-w-2xl">
+				<ol class="w-auto max-w-md mx-auto xl:max-w-2xl">
 					<li class="flex flex-row mt-6">
-						<div class="hidden h-1 w-[480px] lg:block"></div>
-						<div class="w-6 h-[290px]">
+						<div class="hidden h-1 w-[480px] xl:block"></div>
+						<div class="w-6 h-[284px] xl:h-[304px]">
 							<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
 								<svg
 									aria-hidden="true"
@@ -38,7 +38,7 @@
 							</div>
 							<div class="w-[3px] h-full mx-auto bg-primary"></div>
 						</div>
-						<div class="max-w-md lg:max-w-2xl">
+						<div class="max-w-md xl:max-w-2xl">
 							<div class="w-auto">
 								<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
 									<div class="flex justify-between mb-4">
@@ -70,8 +70,8 @@
 						</div>
 					</li>
 					<li class="flex flex-row mt-6">
-						<div class="hidden h-1 w-[480px] max-w-md lg:block"></div>
-						<div class="w-6 h-[290px]">
+						<div class="hidden h-1 w-[480px] max-w-md xl:block"></div>
+						<div class="w-6 h-[284px] xl:h-[304px]">
 							<div class="flex items-center justify-center w-6 h-6 rounded-full bg-bgSecondary">
 								<svg
 									aria-hidden="true"
@@ -90,7 +90,7 @@
 							</div>
 							<div class="w-[3px] h-full mx-auto bg-bgSecondary"></div>
 						</div>
-						<div class="max-w-md lg:max-w-2xl">
+						<div class="max-w-md xl:max-w-2xl">
 							<div class="w-auto">
 								<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
 									<div class="flex justify-between mb-4">
