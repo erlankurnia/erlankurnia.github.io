@@ -18,7 +18,7 @@
 			<div class="w-auto px-4 mx-auto">
 				<ol class="w-auto max-w-md mx-auto lg:max-w-2xl">
 					<li class="flex flex-row mt-6">
-						<div class="hidden h-1 w-[448px] lg:block"></div>
+						<div class="hidden h-1 w-[480px] lg:block"></div>
 						<div class="w-6 h-[290px]">
 							<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
 								<svg
@@ -70,7 +70,7 @@
 						</div>
 					</li>
 					<li class="flex flex-row mt-6">
-						<div class="hidden h-1 w-[448px] max-w-md lg:block"></div>
+						<div class="hidden h-1 w-[480px] max-w-md lg:block"></div>
 						<div class="w-6 h-[290px]">
 							<div class="flex items-center justify-center w-6 h-6 rounded-full bg-bgSecondary">
 								<svg
