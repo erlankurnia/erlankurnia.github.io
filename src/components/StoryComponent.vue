@@ -20,7 +20,7 @@
 					<!-- Item list timeline -->
 					<li v-for="(tl, index) in histories" class="flex flex-row mt-6" :key="index">
 						<div class="hidden h-1 w-[480px] xl:block"></div>
-						<div class="w-6 h-[284px] xl:h-[304px]">
+						<div class="w-6 h-[300px] xl:h-[340px]">
 							<div
 								class="flex items-center justify-center w-6 h-6 rounded-full"
 								:class="{
@@ -55,7 +55,7 @@
 								}"
 							></div>
 						</div>
-						<div class="max-w-md xl:max-w-2xl">
+						<div class="min-w-[280px] max-w-md xl:max-w-2xl">
 							<div class="w-auto">
 								<div class="block max-w-md p-6 ml-6 rounded-xl bg-bgSecondary">
 									<div class="flex justify-between mb-4">
@@ -213,19 +213,19 @@ export default {
 				{
 					title: "Unity Developer",
 					date: "Now",
-					desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolorum at dolor, veritatis eos cum quaerat vitae aut sit atque.",
+					desc: "Anak Pintar Studio, Bogor, Indonesia",
 					url: "",
 				},
 				{
 					title: "Kitchen Staff",
 					date: "2021-02-07",
-					desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates temporibus tempore cumque delectus dolore itaque pariatur recusandae, reprehenderit iusto voluptatem.",
+					desc: "Rokupang Surabaya, Surabaya, Indonesia",
 					url: "",
 				},
 				{
 					title: "Tax Admin",
 					date: "2019-10-26",
-					desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad veritatis quod quia dolorum quisquam impedit quae asperiores in voluptas. Id nostrum eaque voluptatum quis doloremque.",
+					desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
 					url: "",
 				},
 			]),
