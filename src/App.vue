@@ -7,7 +7,7 @@
 		<AboutComponent></AboutComponent>
 		<PortfolioComponent></PortfolioComponent>
 		<SkillsComponent></SkillsComponent>
-		<RouterView />
+		<!-- <RouterView /> -->
 	</div>
 </template>
 
