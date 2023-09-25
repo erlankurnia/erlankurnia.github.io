@@ -57,7 +57,7 @@
 						</div>
 						<div class="max-w-md xl:max-w-2xl">
 							<div class="w-auto">
-								<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
+								<div class="block max-w-md p-6 ml-6 rounded-xl bg-bgSecondary">
 									<div class="flex justify-between mb-4">
 										<a href="#!" class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary">{{
 											tl.title
@@ -70,6 +70,7 @@
 										{{ tl.desc }}
 									</p>
 									<button
+										v-if="tl.url.length > 10"
 										type="button"
 										class="inline-block px-4 mr-1 py-1.5 font-medium text-xs leading-tight uppercase lan-button-primary"
 										data-mdb-ripple="true"
@@ -77,6 +78,7 @@
 										Preview
 									</button>
 									<button
+										v-if="false"
 										type="button"
 										class="inline-block px-4 py-1.5 font-medium text-xs leading-tight uppercase lan-button-secondary"
 										data-mdb-ripple="true"
@@ -212,16 +214,19 @@ export default {
 					title: "Unity Developer",
 					date: "Now",
 					desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolorum at dolor, veritatis eos cum quaerat vitae aut sit atque.",
+					url: "",
 				},
 				{
 					title: "Kitchen Staff",
 					date: "2021-02-07",
 					desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates temporibus tempore cumque delectus dolore itaque pariatur recusandae, reprehenderit iusto voluptatem.",
+					url: "",
 				},
 				{
 					title: "Tax Admin",
 					date: "2019-10-26",
-					desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates temporibus tempore cumque delectus dolore itaque pariatur recusandae, reprehenderit iusto voluptatem.",
+					desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad veritatis quod quia dolorum quisquam impedit quae asperiores in voluptas. Id nostrum eaque voluptatum quis doloremque.",
+					url: "",
 				},
 			]),
 		};
