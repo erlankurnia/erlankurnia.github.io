@@ -55,7 +55,7 @@
 								}"
 							></div>
 						</div>
-						<div class="min-w-[280px] max-w-md xl:max-w-2xl">
+						<div class="min-w-[280px] max-w-md xl:min-w-[320px] xl:max-w-2xl">
 							<div class="w-auto">
 								<div class="block max-w-md p-6 ml-6 rounded-xl bg-bgSecondary">
 									<div class="flex justify-between mb-4">
