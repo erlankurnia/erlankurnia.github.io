@@ -1,13 +1,13 @@
 <template>
 	<NavbarComponent></NavbarComponent>
 	<div class="lan-container-body">
+		<!-- <PaperComponent></PaperComponent> -->
 		<!-- <SwappingComponent></SwappingComponent> -->
 		<HeroComponent></HeroComponent>
 		<AboutComponent></AboutComponent>
 		<PortfolioComponent></PortfolioComponent>
 		<SkillsComponent></SkillsComponent>
-		<ContactComponent></ContactComponent>
-		<!-- <RouterView /> -->
+		<RouterView />
 	</div>
 </template>
 
@@ -19,6 +19,7 @@ import AboutComponent from "./components/AboutComponent.vue";
 import PortfolioComponent from "./components/PortfolioComponent.vue";
 import SkillsComponent from "./components/SkillsComponent.vue";
 import ContactComponent from "./components/ContactComponent.vue";
+// import PaperComponent from "./components/PaperComponent.vue";
 // import SwappingComponent from "./components/SwappingComponent.vue";
 
 // setInterval(() => location.reload(), 10000);
