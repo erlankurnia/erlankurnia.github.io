@@ -7,7 +7,7 @@
 					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
 						How Did I <span class="text-primary">Reach</span> This Moment
 					</h2>
-					<p class="font-medium text-md text-secondary md:text-lg">
+					<p class="font-medium text-md text-secondary lg:text-lg">
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus consectetur minus iure? Sint in doloribus
 						accusamus aspernatur quidem sequi ut!
 					</p>
@@ -16,10 +16,11 @@
 
 			<!-- Timeline -->
 			<div class="w-auto px-4 mx-auto">
-				<ol class="w-auto max-w-md mx-auto">
-					<li class="max-w-md border-l-2 border-primary">
-						<div class="w-auto">
-							<div class="flex items-center justify-center w-6 h-6 -ml-[13px] translate-y-6 rounded-full bg-primary">
+				<ol class="w-auto max-w-md mx-auto lg:max-w-2xl">
+					<li class="flex flex-row mt-6">
+						<div class="hidden h-1 w-[448px] lg:block"></div>
+						<div class="w-6 h-[290px]">
+							<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary">
 								<svg
 									aria-hidden="true"
 									focusable="false"
@@ -35,37 +36,43 @@
 									></path>
 								</svg>
 							</div>
-							<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
-								<div class="flex justify-between mb-4">
-									<a href="#!" class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary"
-										>Unity Developer</a
+							<div class="w-[3px] h-full mx-auto bg-primary"></div>
+						</div>
+						<div class="max-w-md lg:max-w-2xl">
+							<div class="w-auto">
+								<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
+									<div class="flex justify-between mb-4">
+										<a href="#!" class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary"
+											>Unity Developer</a
+										>
+										<p class="px-2 text-sm font-medium translate-x-2 text-primary">Now</p>
+									</div>
+									<p class="mb-6 text-sm text-secondary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
+										elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula.
+									</p>
+									<button
+										type="button"
+										class="inline-block px-4 mr-1 py-1.5 font-medium text-xs leading-tight uppercase lan-button-primary"
+										data-mdb-ripple="true"
 									>
-									<p class="px-2 text-sm font-medium translate-x-2 text-primary">Now</p>
+										Preview
+									</button>
+									<button
+										type="button"
+										class="inline-block px-4 py-1.5 font-medium text-xs leading-tight uppercase lan-button-secondary"
+										data-mdb-ripple="true"
+									>
+										See demo
+									</button>
 								</div>
-								<p class="mb-6 text-sm text-secondary">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et
-									elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula.
-								</p>
-								<button
-									type="button"
-									class="inline-block px-4 mr-1 py-1.5 font-medium text-xs leading-tight uppercase lan-button-primary"
-									data-mdb-ripple="true"
-								>
-									Preview
-								</button>
-								<button
-									type="button"
-									class="inline-block px-4 py-1.5 font-medium text-xs leading-tight uppercase lan-button-secondary"
-									data-mdb-ripple="true"
-								>
-									See demo
-								</button>
 							</div>
 						</div>
 					</li>
-					<li class="max-w-md border-l-2 border-bgSecondary">
-						<div class="w-auto">
-							<div class="flex items-center justify-center w-6 h-6 -ml-[13px] translate-y-6 rounded-full bg-bgSecondary">
+					<li class="flex flex-row mt-6">
+						<div class="hidden h-1 w-[448px] max-w-md lg:block"></div>
+						<div class="w-6 h-[290px]">
+							<div class="flex items-center justify-center w-6 h-6 rounded-full bg-bgSecondary">
 								<svg
 									aria-hidden="true"
 									focusable="false"
@@ -81,29 +88,36 @@
 									></path>
 								</svg>
 							</div>
-							<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
-								<div class="flex justify-between mb-4">
-									<a href="#!" class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary">Kitchen Staff</a>
-									<p class="px-2 text-sm font-medium translate-x-2 text-primary">2021-02-07</p>
+							<div class="w-[3px] h-full mx-auto bg-bgSecondary"></div>
+						</div>
+						<div class="max-w-md lg:max-w-2xl">
+							<div class="w-auto">
+								<div class="block max-w-md p-6 ml-6 rounded-lg shadow-lg bg-bgSecondary">
+									<div class="flex justify-between mb-4">
+										<a href="#!" class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary"
+											>Kitchen Staff</a
+										>
+										<p class="px-2 text-sm font-medium translate-x-2 text-primary">2021-02-07</p>
+									</div>
+									<p class="mb-6 text-sm text-secondary">
+										Libero expedita explicabo eius fugiat quia aspernatur autem laudantium error architecto recusandae natus
+										sapiente sit nam eaque, consectetur porro molestiae ipsam an deleniti.
+									</p>
+									<button
+										type="button"
+										class="inline-block px-4 mr-1 py-1.5 font-medium text-xs leading-tight uppercase lan-button-primary"
+										data-mdb-ripple="true"
+									>
+										Preview
+									</button>
+									<button
+										type="button"
+										class="inline-block px-4 py-1.5 font-medium text-xs leading-tight uppercase lan-button-secondary"
+										data-mdb-ripple="true"
+									>
+										See demo
+									</button>
 								</div>
-								<p class="mb-6 text-sm text-secondary">
-									Libero expedita explicabo eius fugiat quia aspernatur autem laudantium error architecto recusandae natus
-									sapiente sit nam eaque, consectetur porro molestiae ipsam an deleniti.
-								</p>
-								<button
-									type="button"
-									class="inline-block px-4 mr-1 py-1.5 font-medium text-xs leading-tight uppercase lan-button-primary"
-									data-mdb-ripple="true"
-								>
-									Preview
-								</button>
-								<button
-									type="button"
-									class="inline-block px-4 py-1.5 font-medium text-xs leading-tight uppercase lan-button-secondary"
-									data-mdb-ripple="true"
-								>
-									See demo
-								</button>
 							</div>
 						</div>
 					</li>
