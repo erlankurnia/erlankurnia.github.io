@@ -18,7 +18,7 @@
 					<a
 						href="https://wa.me/6282245319478"
 						target="_blank"
-						class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary"
+						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"
 					>
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>WhatsApp</title>
@@ -33,7 +33,7 @@
 					<a
 						href="https://t.me/kurnia_erlan"
 						target="_blank"
-						class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary"
+						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"
 						><svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Telegram</title>
 							<path
@@ -47,7 +47,7 @@
 					<a
 						href="mailto://erlank2789@gmail.com"
 						target="_blank"
-						class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary"
+						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"
 					>
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<title>Gmail</title>
