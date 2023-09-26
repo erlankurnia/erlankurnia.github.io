@@ -1,7 +1,7 @@
 <template>
-	<section id="story" class="pt-24 pb-16 bg-bgPrimary">
+	<section id="story" class="pt-24 pb-0 bg-bgPrimary">
 		<div class="container">
-			<div class="w-full p-4">
+			<div class="w-full p-4 pb-0">
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">My_History</h4>
 					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl xl:5xl">
