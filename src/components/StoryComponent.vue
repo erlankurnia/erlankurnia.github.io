@@ -20,7 +20,7 @@
 					<!-- Item list timeline -->
 					<li v-for="(tl, index) in histories" class="flex flex-row mt-6" :key="index">
 						<div class="hidden h-1 w-[480px] xl:block"></div>
-						<div class="w-6 h-[300px] xl:h-[340px]">
+						<div class="w-6 h-[260px] xl:h-[300px]">
 							<div
 								class="flex items-center justify-center w-6 h-6 rounded-full"
 								:class="{

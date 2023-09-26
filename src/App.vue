@@ -8,6 +8,8 @@
 		<StoryComponent></StoryComponent>
 		<SkillsComponent></SkillsComponent>
 		<ContactComponent></ContactComponent>
+		<BackToTopComponent></BackToTopComponent>
+		<FooterComponent></FooterComponent>
 		<!-- <RouterView /> -->
 	</div>
 </template>
@@ -20,6 +22,8 @@ import AboutComponent from "./components/AboutComponent.vue";
 import StoryComponent from "./components/StoryComponent.vue";
 import SkillsComponent from "./components/SkillsComponent.vue";
 import ContactComponent from "./components/ContactComponent.vue";
+import BackToTopComponent from "./components/BackToTopComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 // import PaperComponent from "./components/PaperComponent.vue";
 // import SwappingComponent from "./components/SwappingComponent.vue";
 

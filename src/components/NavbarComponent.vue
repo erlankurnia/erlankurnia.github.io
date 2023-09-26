@@ -55,29 +55,48 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 
 export default {
 	name: "HeaderComponent",
-	data() {
-		return {
-			isHamburgerOpen: ref(false),
-		};
-	},
 	setup() {
+		const isHamburgerOpen = ref(false);
+
 		// On scrolling event to create sticky navbar
 		const onScroll = () => {
 			const header = document.querySelector("header");
 			const fixedNav = header.offsetTop;
+			const backToTop = document.querySelector("#back-to-top");
 
 			if (window.scrollY > fixedNav) {
 				header.classList.add("lan-navbar-fixed");
+				if (backToTop) {
+					backToTop.classList.remove("hidden");
+					backToTop.classList.add("flex");
+				}
 			} else {
 				header.classList.remove("lan-navbar-fixed");
+				if (backToTop) {
+					backToTop.classList.remove("flex");
+					backToTop.classList.add("hidden");
+				}
 			}
 		};
 		window.onscroll = onScroll;
 		// On scrolling event to create sticky navbar
+
+		// On click outside nav menu
+		const onOutsideMenu = (e) => {
+			console.log(e.target.id);
+
+			if (e.target.id != "hamburger" && e.target.id != "nav-menu") {
+				isHamburgerOpen.value = false;
+			}
+		};
+		window.addEventListener("click", onOutsideMenu);
+		// On click outside nav menu
+
+		return { isHamburgerOpen };
 	},
 	methods: {
 		onHamburgerClick() {

@@ -16,7 +16,9 @@
 					</p>
 				</div>
 				<div class="w-full px-4 lg:w-1/2">
-					<h3 class="mb-4 text-2xl font-semibold text-dark lg:text-3xl">Make Connections on Social Media</h3>
+					<h3 class="max-w-xl mb-5 text-3xl font-bold text-dark lg:text-4xl">
+						Make <span class="text-primary">Connection</span>s on Social Media
+					</h3>
 					<p class="mb-6 text-base font-medium text-secondary lg:text-lg">
 						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique maxime autem voluptas laboriosam perspiciatis
 						nobis libero iste rerum consectetur eum tempore vitae dolorum magni et facere ipsam, tenetur veniam minima quidem
