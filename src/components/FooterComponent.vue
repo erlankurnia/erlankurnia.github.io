@@ -1,7 +1,7 @@
 <template>
 	<footer class="py-16 bg-bgSecondary">
 		<div class="container">
-			<div class="flex flex-wrap md:flex-wrap-reverse">
+			<div class="flex flex-wrap md:flex-row-reverse">
 				<div class="w-full px-4 mb-8 md:w-1/2">
 					<ul class="flex-col">
 						<li class="group">
