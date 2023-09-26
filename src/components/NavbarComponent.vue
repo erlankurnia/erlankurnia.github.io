@@ -94,6 +94,7 @@ export default {
 			}
 		};
 		window.addEventListener("click", onOutsideMenu);
+		window.addEventListener("touchend", onOutsideMenu);
 		// On click outside nav menu
 
 		return { isHamburgerOpen };
