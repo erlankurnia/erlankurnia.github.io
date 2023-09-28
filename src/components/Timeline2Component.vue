@@ -12,7 +12,9 @@
 								'mb-20': index == histories.length - 1,
 							}"
 						>
-							<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary">{{ history.title }}</h3>
+							<h3 class="px-2 mb-1 -mx-2 text-base font-semibold rounded-full lan-text-primary">
+								{{ history.title }}
+							</h3>
 							<p class="mb-2 text-sm leading-tight text-justify">
 								{{ history.desc }}
 							</p>
@@ -43,6 +45,7 @@
 						</div>
 					</div>
 					<!-- left -->
+
 					<!-- right -->
 					<div v-else class="flex md:contents">
 						<div class="relative col-start-5 col-end-6 mr-10 md:mx-auto">
@@ -64,7 +67,9 @@
 								'mb-20': index == histories.length - 1,
 							}"
 						>
-							<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary">{{ history.title }}</h3>
+							<h3 class="px-2 mb-1 -mx-2 text-base font-semibold rounded-full lan-text-primary">
+								{{ history.title }}
+							</h3>
 							<p class="mb-2 text-sm leading-tight text-justify">
 								{{ history.desc }}
 							</p>
