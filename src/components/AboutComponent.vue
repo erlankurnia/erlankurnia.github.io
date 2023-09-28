@@ -1,9 +1,9 @@
 <template>
-	<section id="about" class="pt-24 pb-16 bg-bgSecondary">
+	<section id="about" class="pt-24 pb-16">
 		<div class="container">
 			<div class="flex flex-wrap">
 				<div class="w-full px-4 pt-4 pb-0 mb-0 text-center">
-					<h4 class="mb-3 text-lg font-bold uppercase text-primary">About_Me</h4>
+					<h4 class="mb-3 lan-section-title">About_Me</h4>
 				</div>
 				<div class="w-full p-4 pt-0 mb-10 lg:w-1/2">
 					<h2 class="max-w-xl mb-5 text-3xl font-bold text-dark lg:text-4xl">

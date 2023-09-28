@@ -1,9 +1,9 @@
 <template>
-	<section id="contact" class="pt-24 pb-16 bg-bgPrimary">
+	<section id="contact" class="pt-24 pb-16 select-none bg-bgPrimary">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
-					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">Contact_Me</h4>
+					<h4 class="mb-2 lan-section-title">Contact_Me</h4>
 					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
 						Contact Me for <span class="text-primary">Business</span> Purposes
 					</h2>

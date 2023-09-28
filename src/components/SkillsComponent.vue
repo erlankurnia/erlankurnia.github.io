@@ -1,9 +1,9 @@
 <template>
-	<section id="skills" class="pt-24 pb-16 bg-bgSecondary">
+	<section id="skills" class="pt-24 pb-16">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="mx-auto mb-16 text-center">
-					<h4 class="mb-2 text-lg font-semibold uppercase text-primary">Skills</h4>
+					<h4 class="mb-2 lan-section-title">Skills</h4>
 					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
 						What is My <span class="text-primary">Ability</span>
 					</h2>

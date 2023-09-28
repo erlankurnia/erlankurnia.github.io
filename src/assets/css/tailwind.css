@@ -23,7 +23,7 @@ body {
 	}
 
 	.lan-nav-link {
-		@apply flex py-2 mx-8 text-base text-dark group-hover:text-primary group-hover:font-extrabold;
+		@apply flex py-2 mx-8 text-base text-dark transition duration-1000 group-hover:duration-300 group-hover:text-primary group-hover:font-extrabold;
 	}
 
 	.lan-hamburger-line {
@@ -46,8 +46,16 @@ body {
 		@apply rotate-45;
 	}
 
+	.lan-section-title {
+		@apply text-xl font-bold uppercase text-primary;
+	}
+
 	.lan-text-primary {
 		@apply text-primary border-primary transition duration-1000 hover:duration-300 hover:border-bgPrimary hover:bg-primary hover:text-bgPrimary;
+	}
+
+	.lan-text-secondary {
+		@apply text-bgPrimary border-bgPrimary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
 	}
 
 	.lan-50-to-100 {

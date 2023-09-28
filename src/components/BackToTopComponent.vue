@@ -2,7 +2,7 @@
 	<a
 		id="back-to-top"
 		href="#home"
-		class="fixed h-14 w-14 z-[9999] right-4 bottom-4 rounded-full hidden bg-primary p-4 hover:animate-pulse justify-center items-center"
+		class="fixed h-12 w-12 z-[9999] right-4 bottom-4 rounded-full hidden bg-primary p-2 hover:animate-pulse justify-center items-center"
 	>
 		<span class="w-full h-full text-bgSecondary">
 			<svg viewBox="0 0 24 24" id="up-arrow" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="fill-current">
