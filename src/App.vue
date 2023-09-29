@@ -3,9 +3,6 @@ import { RouterView } from "vue-router";
 import NavbarComponent from "./components/NavbarComponent.vue";
 import BackToTopComponent from "./components/BackToTopComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
-// import PaperComponent from "./components/PaperComponent.vue";
-// import SwappingComponent from "./components/SwappingComponent.vue";
-
 // setInterval(() => location.reload(), 10000);
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-	<header class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent select-none">
+	<header id="navbar-menu" class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent select-none">
 		<div class="container">
 			<div class="relative flex items-center justify-between">
 				<div class="px-4">
@@ -53,45 +53,42 @@
 
 <script>
 import { ref } from "vue";
-
 export default {
 	name: "HeaderComponent",
 	setup() {
-		const isHamburgerOpen = ref(false);
-
 		// On scrolling event to create sticky navbar
 		const onScroll = () => {
-			const header = document.querySelector("header");
+			const header = document.querySelector("#navbar-menu");
 			const fixedNav = header.offsetTop;
 			const backToTop = document.querySelector("#back-to-top");
-
 			if (window.scrollY > fixedNav) {
 				header.classList.add("lan-navbar-fixed");
+				header.classList.remove("absolute");
 				if (backToTop) {
 					backToTop.classList.remove("hidden");
 					backToTop.classList.add("flex");
 				}
 			} else {
 				header.classList.remove("lan-navbar-fixed");
+				header.classList.add("absolute");
 				if (backToTop) {
 					backToTop.classList.remove("flex");
 					backToTop.classList.add("hidden");
 				}
 			}
 		};
-		window.onscroll = onScroll;
+		window.addEventListener("scroll", onScroll);
 		// On scrolling event to create sticky navbar
 
 		// On click outside nav menu
+		const isHamburgerOpen = ref(false);
 		const onOutsideMenu = (e) => {
-			console.log(e.target.id);
-
 			if (e.target.id != "hamburger" && e.target.id != "nav-menu") {
 				isHamburgerOpen.value = false;
 			}
 		};
 		window.addEventListener("click", onOutsideMenu);
-		window.addEventListener("touchend", onOutsideMenu);
+		window.addEventListener("touchstart", onOutsideMenu);
 		// On click outside nav menu
 
 		return { isHamburgerOpen };

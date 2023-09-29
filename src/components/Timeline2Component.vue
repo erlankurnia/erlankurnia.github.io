@@ -4,7 +4,12 @@
 			<div class="flex flex-col grid-cols-9 px-2 mx-auto md:grid">
 				<template v-for="(history, index) in histories">
 					<!-- left -->
-					<div v-if="index % 2 == 0" class="flex flex-row-reverse md:contents" :key="index">
+					<div
+						v-if="index % 2 == 0"
+						class="flex flex-row-reverse md:contents"
+						:key="index"
+						:class="'timeline-item-id-' + index"
+					>
 						<div
 							class="col-start-1 col-end-5 p-4 my-8 ml-auto shadow-md bg-bgSecondary rounded-xl"
 							:class="{
@@ -88,30 +93,49 @@ import { ref } from "vue";
 
 export default {
 	name: "Timeline2Component",
-	data() {
-		return {
-			histories: ref([
-				{
-					title: "Unity Developer",
-					date: "Now",
-					desc: "Anak Pintar Studio, Bogor, Indonesia",
-					url: "",
-				},
-				{
-					title: "Kitchen Staff",
-					date: "2021-02-07",
-					desc: "Rokupang Surabaya, Surabaya, Indonesia",
-					url: "",
-				},
-				{
-					title: "Tax Admin",
-					date: "2019-10-26",
-					desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
-					url: "",
-				},
-			]),
+	setup() {
+		const histories = ref([
+			{
+				title: "Unity Developer",
+				date: "Now",
+				desc: "Anak Pintar Studio, Bogor, Indonesia",
+				url: "",
+			},
+			{
+				title: "Kitchen Staff",
+				date: "2021-02-07",
+				desc: "Rokupang Surabaya, Surabaya, Indonesia",
+				url: "",
+			},
+			{
+				title: "Tax Admin",
+				date: "2019-10-26",
+				desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
+				url: "",
+			},
+		]);
+
+		// On scrolling
+		const onScroll = () => {
+			let index = 0;
+			while (index < histories.length) {
+				const item = document.querySelector(".timeline-item-id-" + index);
+
+				if (item != null) {
+					console.log(`.timeline-item-id-${index}: ${item.offsetTop}`);
+					// if (window.scrollY > item.offsetTop) {
+					// 	item.classList.add("lan-navbar-fixed");
+					// } else {
+					// 	item.classList.remove("lan-navbar-fixed");
+					// }
+				}
+				index++;
+			}
 		};
+		window.addEventListener("scroll", onScroll);
+		// On scrolling
+
+		return { histories };
 	},
-	setup() {},
 };
 </script>
