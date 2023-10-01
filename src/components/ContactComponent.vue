@@ -94,7 +94,7 @@
 			<!-- Message form -->
 		</div>
 
-		<AccordionComponent :collections="collections"></AccordionComponent>
+		<!-- <AccordionComponent :collections="collections"></AccordionComponent> -->
 	</section>
 </template>
 
