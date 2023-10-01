@@ -22,7 +22,9 @@
 <script>
 export default {
 	name: "AccordionComponent",
-	props: ["collections"],
+	props: {
+		collections: [{}],
+	},
 	// data() {
 	// 	return {
 	// 		collection: [
