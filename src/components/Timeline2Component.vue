@@ -109,7 +109,7 @@ export default {
 			{
 				title: "Associate TVS",
 				date: "2016-05-15 (6 months)",
-				desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
+				desc: "PT. Alfa Retail Indonesia, Surabaya, Indonesia",
 				url: "",
 			},
 			{
