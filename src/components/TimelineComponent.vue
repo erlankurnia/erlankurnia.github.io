@@ -8,7 +8,7 @@
 					<div
 						class="flex items-center justify-center w-6 h-6 rounded-full"
 						:class="{
-							'bg-bgSecondary': index != 0,
+							'bg-quaternary': index != 0,
 							'bg-primary': index == 0,
 						}"
 					>
@@ -18,7 +18,7 @@
 							data-prefix="fas"
 							class="w-3 h-3"
 							:class="{
-								'text-bgSecondary': index == 0,
+								'text-quaternary': index == 0,
 								'text-primary': index != 0,
 							}"
 							role="img"
@@ -34,14 +34,14 @@
 					<div
 						class="w-[3px] h-full mx-auto"
 						:class="{
-							'bg-bgSecondary': index != 0,
+							'bg-quaternary': index != 0,
 							'bg-primary': index == 0,
 						}"
 					></div>
 				</div>
 				<div class="min-w-[280px] max-w-md xl:min-w-[320px] xl:max-w-2xl">
 					<div class="w-auto">
-						<div class="block max-w-md p-6 ml-6 rounded-xl bg-bgSecondary">
+						<div class="block max-w-md p-6 ml-6 rounded-xl bg-quaternary">
 							<div class="flex justify-between mb-4">
 								<a href="#!" class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary">{{ tl.title }}</a>
 								<p class="px-2 text-sm font-medium translate-x-2 text-primary">

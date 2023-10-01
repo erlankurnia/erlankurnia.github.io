@@ -72,9 +72,7 @@
 		</GlitchedElement>
 	</div>
 
-	<button @click="startGlitch" class="w-full max-w-sm px-6 py-2 my-8 rounded-full text-bgPrimary bg-primary">
-		Play Glitch
-	</button>
+	<button @click="startGlitch" class="w-full max-w-sm px-6 py-2 my-8 rounded-full text-tertiary bg-primary">Play Glitch</button>
 </template>
 
 <script>

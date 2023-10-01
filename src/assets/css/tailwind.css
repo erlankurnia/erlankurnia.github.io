@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 body {
-	@apply bg-bgPrimary;
+	@apply bg-tertiary;
 	font-family: "Roboto Mono", monospace;
 }
 
 .lan-navbar-fixed {
-	@apply fixed z-[9999] bg-bgSecondary bg-opacity-60 backdrop-blur-sm;
+	@apply fixed z-[9999] bg-quaternary bg-opacity-60 backdrop-blur-sm;
 	/* backdrop-filter: blur(10px); */
 	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
@@ -51,11 +51,11 @@ body {
 	}
 
 	.lan-text-primary {
-		@apply text-primary border-primary transition duration-1000 hover:duration-300 hover:border-bgPrimary hover:bg-primary hover:text-bgPrimary;
+		@apply text-primary border-primary transition duration-1000 hover:duration-300 hover:border-tertiary hover:bg-primary hover:text-tertiary;
 	}
 
 	.lan-text-secondary {
-		@apply text-bgPrimary border-bgPrimary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
+		@apply text-tertiary border-tertiary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-tertiary hover:text-primary;
 	}
 
 	.lan-50-to-100 {
@@ -63,14 +63,14 @@ body {
 	}
 
 	.lan-button-primary {
-		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-bgPrimary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-bgPrimary hover:text-primary;
+		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-tertiary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-tertiary hover:text-primary;
 	}
 
 	.lan-button-secondary {
-		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-primary bg-bgPrimary transition duration-1000 hover:duration-300 hover:bg-primary hover:text-bgPrimary;
+		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-primary bg-tertiary transition duration-1000 hover:duration-300 hover:bg-primary hover:text-tertiary;
 	}
 
 	.lan-textfield-primary {
-		@apply p-2 mt-1 rounded-lg bg-bgSecondary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2 min-h-[40px];
+		@apply p-2 mt-1 rounded-lg bg-quaternary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2 min-h-[40px];
 	}
 }

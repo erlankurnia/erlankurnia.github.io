@@ -1,9 +1,9 @@
 <template>
 	<HeroComponent></HeroComponent>
-	<AboutComponent class="bg-bgSecondary"></AboutComponent>
-	<StoryComponent class="bg-bgPrimary"></StoryComponent>
-	<SkillsComponent class="bg-bgSecondary"></SkillsComponent>
-	<ContactComponent class="bg-bgPrimary"></ContactComponent>
+	<AboutComponent class="bg-quaternary"></AboutComponent>
+	<StoryComponent class="bg-tertiary"></StoryComponent>
+	<SkillsComponent class="bg-quaternary"></SkillsComponent>
+	<ContactComponent class="bg-tertiary"></ContactComponent>
 </template>
 
 <script setup>

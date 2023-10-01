@@ -21,7 +21,7 @@
 
 					<nav
 						id="nav-menu"
-						class="absolute origin-top scale-y-0 py-5 bg-bgPrimary shadow-lg rounded-lg max-w-[200px] w-full top-full right-4 transition duration-300 xl:origin-center xl:scale-y-100 xl:block xl:static xl:bg-transparent xl:max-w-full xl:shadow-none xl:rounded-none"
+						class="absolute origin-top scale-y-0 py-5 bg-tertiary shadow-lg rounded-lg max-w-[200px] w-full top-full right-4 transition duration-300 xl:origin-center xl:scale-y-100 xl:block xl:static xl:bg-transparent xl:max-w-full xl:shadow-none xl:rounded-none"
 						:class="{
 							// 'hidden': !isHamburgerOpen,
 							'scale-y-100': isHamburgerOpen,

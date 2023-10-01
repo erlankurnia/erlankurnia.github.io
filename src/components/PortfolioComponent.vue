@@ -1,5 +1,5 @@
 <template>
-	<section id="portfolio" class="pt-24 pb-16 bg-bgPrimary">
+	<section id="portfolio" class="pt-24 pb-16 bg-tertiary">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="max-w-xl mx-auto mb-16 text-center">

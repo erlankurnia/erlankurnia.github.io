@@ -8,14 +8,11 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				primary: "#79678F",
-				secondary: "#334155",
-				tertiary: "#F0F3FF",
-				quaternary: "#6C5B81",
+				primary: "#79678F", // French Lilac
+				secondary: "#334155", // Charcoal
+				tertiary: "#FFFFFF",
+				quaternary: "#F0F3FF",
 				dark: "#020617",
-				bgPrimary: "#FFFFFF",
-				bgSecondary: "#F0F3FF",
-				// bgPrimary: "#1D232F",
 			},
 			screens: {
 				"2xs": "360px",

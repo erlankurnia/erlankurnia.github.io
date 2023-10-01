@@ -13,6 +13,6 @@ import FooterComponent from "./components/FooterComponent.vue";
 		<!-- <SwappingComponent></SwappingComponent> -->
 		<RouterView />
 	</div>
-	<FooterComponent class="bg-bgPrimary"></FooterComponent>
+	<FooterComponent class="bg-tertiary"></FooterComponent>
 	<BackToTopComponent></BackToTopComponent>
 </template>
