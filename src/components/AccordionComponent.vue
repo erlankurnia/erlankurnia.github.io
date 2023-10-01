@@ -22,24 +22,7 @@
 <script>
 export default {
 	name: "AccordionComponent",
-	props: {
-		collections: [
-			{
-				title: {
-					type: String,
-					required: true,
-				},
-				desc: {
-					type: String,
-					required: true,
-				},
-				date: {
-					type: String,
-					required: false,
-				},
-			},
-		],
-	},
+	props: ["collections"],
 	// data() {
 	// 	return {
 	// 		collection: [
@@ -60,15 +43,6 @@ export default {
 	// },
 	setup(props) {
 		console.log(props.collections);
-	},
-	created() {
-		console.log("created:", this.collections);
-	},
-	mounted() {
-		console.log("mounted:", this.collections);
-	},
-	beforeUpdate() {
-		console.log("beforeUpdate:", this.collections);
 	},
 };
 </script>

@@ -94,12 +94,12 @@
 			<!-- Message form -->
 		</div>
 
-		<AccordionComponent v-if="collections?.length > 0" :collections="collections"></AccordionComponent>
+		<AccordionComponent :collections="collections"></AccordionComponent>
 	</section>
 </template>
 
 <script setup>
-import AccordionComponent from "../components/AccordionComponent.vue";
+import AccordionComponent from "./AccordionComponent.vue";
 </script>
 
 <script>
