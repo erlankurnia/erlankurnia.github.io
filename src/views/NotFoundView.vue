@@ -299,7 +299,7 @@
 
 		<!-- Right Layout (Both Mobile and Desktop) -->
 		<div class="w-full p-4 md:w-1/2 md:p-8">
-			<h1 class="mb-4 text-4xl font-bold text-dark md:text-6xl">404 Not Found</h1>
+			<h1 class="mb-4 text-2xl font-bold text-secondary md:text-4xl">404_Not_Found</h1>
 			<p class="mb-8 text-lg text-secondary md:text-xl">Oops! The page you are looking for could not be found.</p>
 			<a href="/" class="inline-block px-3 py-1 lan-button-primary">Go to Home</a>
 		</div>
