@@ -10,16 +10,19 @@ const router = createRouter({
 			path: "/",
 			name: "home",
 			component: HomeView,
+			meta: { hideNavbar: false },
 		},
 		{
 			path: "/about",
 			name: "about",
 			component: AboutView,
+			meta: { hideNavbar: false },
 		},
 		{
 			path: "/:pathMatch(.*)*",
 			name: "not-found",
 			component: NotFoundView,
+			meta: { hideNavbar: true },
 		},
 	],
 });

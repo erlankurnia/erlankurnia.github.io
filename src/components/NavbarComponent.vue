@@ -10,8 +10,12 @@
 						id="hamburger"
 						name="hamburger"
 						type="button"
-						class="absolute block transition duration-300 ease-in-out right-4 xl:hidden"
-						:class="{ 'lan-hamburger-active': isHamburgerOpen }"
+						class="absolute transition duration-300 ease-in-out right-4 xl:hidden"
+						:class="{
+							'lan-hamburger-active': isHamburgerOpen,
+							'hidden': $route.meta.hideNavbar,
+							'block': !$route.meta.hideNavbar,
+						}"
 						@click="onHamburgerClick"
 					>
 						<span class="origin-top-right lan-hamburger-line"></span>
@@ -27,7 +31,13 @@
 							'scale-y-100': isHamburgerOpen,
 						}"
 					>
-						<ul class="block xl:flex">
+						<ul
+							:class="{
+								'hidden': $route.meta.hideNavbar,
+								'block': !$route.meta.hideNavbar,
+								'xl:flex': !$route.meta.hideNavbar,
+							}"
+						>
 							<li class="group">
 								<a href="#home" class="lan-nav-link">Home</a>
 							</li>

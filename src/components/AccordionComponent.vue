@@ -1,7 +1,12 @@
 <template>
-	<div id="accordion" class="p-8 space-y-2 xl:max-w-4xl xl:mx-auto">
+	<div id="accordion" class="p-4 space-y-2 xl:max-w-2xl xl:mx-auto">
 		<!-- Collection items -->
-		<div v-for="coll in collections" class="flex flex-col p-5 text-white rounded-lg bg-primary group" tabindex="1">
+		<div
+			v-for="coll in collection"
+			class="flex flex-col p-5 text-white rounded-lg bg-primary group"
+			tabindex="1"
+			:key="coll.id"
+		>
 			<div class="flex items-center justify-between cursor-pointer">
 				<span class="text-base font-semibold">{{ coll.title }}</span>
 				<img
@@ -20,28 +25,9 @@
 </template>
 
 <script>
+// import { computed } from "vue";
 export default {
 	name: "AccordionComponent",
-	props: {
-		collections: [{}],
-	},
-	// data() {
-	// 	return {
-	// 		collection: [
-	// 			{
-	// 				title: "HTML",
-	// 				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
-	// 			},
-	// 			{
-	// 				title: "Vue.js",
-	// 				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
-	// 			},
-	// 			{
-	// 				title: "Tailwind CSS",
-	// 				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
-	// 			},
-	// 		],
-	// 	};
-	// },
+	props: ["collection"],
 };
 </script>

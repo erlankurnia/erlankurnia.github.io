@@ -2,7 +2,12 @@
 	<footer class="pb-16 select-none">
 		<div class="container">
 			<div class="flex flex-wrap md:flex-row-reverse">
-				<div class="w-full px-4 mb-8 md:w-1/2">
+				<div
+					class="w-full px-4 mb-8 md:w-1/2"
+					:class="{
+						hidden: $route.meta.hideNavbar,
+					}"
+				>
 					<ul class="flex-col">
 						<li class="group">
 							<a href="#home" class="lan-nav-link">Home</a>
@@ -21,7 +26,12 @@
 						</li>
 					</ul>
 				</div>
-				<div class="w-full px-4 md:w-1/2">
+				<div
+					class="w-full px-4"
+					:class="{
+						'md:w-1/2': !$route.meta.hideNavbar,
+					}"
+				>
 					<div class="flex flex-wrap items-center justify-center h-full text-sm lg:text-base text-secondary">
 						<span class="flex flex-row items-center justify-center gap-1 px-2 mr-1 text-primary">
 							<span class="w-4 h-auto aspect-square">

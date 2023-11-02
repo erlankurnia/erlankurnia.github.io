@@ -13,6 +13,10 @@
 				</div>
 			</div>
 
+			<div class="mb-6" v-if="collection != null && collection.length > 0">
+				<AccordionComponent :collection="collection"> </AccordionComponent>
+			</div>
+
 			<!-- Contact button -->
 			<div class="w-full px-4">
 				<div class="flex flex-wrap items-center justify-center">
@@ -93,36 +97,34 @@
 			</div>
 			<!-- Message form -->
 		</div>
-
-		<!-- <AccordionComponent :collections="collections"></AccordionComponent> -->
 	</section>
 </template>
 
-<script setup>
-import AccordionComponent from "./AccordionComponent.vue";
-</script>
-
 <script>
 import { ref } from "vue";
+import AccordionComponent from "./AccordionComponent.vue";
 export default {
 	name: "ContactComponent",
 	components: { AccordionComponent },
 	setup() {
-		const collections = ref([
+		const collection = ref([
 			{
+				id: 0,
 				title: "HTML",
 				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
 			},
 			{
+				id: 1,
 				title: "Vue.js",
 				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
 			},
 			{
+				id: 2,
 				title: "Tailwind CSS",
 				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
 			},
 		]);
-		return { collections };
+		return { collection };
 	},
 };
 </script>
