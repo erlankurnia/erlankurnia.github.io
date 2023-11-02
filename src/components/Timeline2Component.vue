@@ -17,7 +17,9 @@
 						<p class="mb-2 text-sm leading-tight text-justify">
 							{{ history.desc }}
 						</p>
-						<p class="text-sm font-semibold text-right opacity-75 text-secondary">{{ history.date }}</p>
+						<p class="text-xs font-semibold text-right opacity-75 lg:text-sm text-secondary">
+							{{ `${history.dateFrom} - ${history.dateTo} (${monthsToYears(monthDiff(history.dateFrom, history.dateTo))})` }}
+						</p>
 					</div>
 					<div class="relative col-start-5 col-end-6 mr-10 md:mx-auto">
 						<div
@@ -72,7 +74,9 @@
 						<p class="mb-2 text-sm leading-tight text-justify">
 							{{ history.desc }}
 						</p>
-						<p class="text-sm font-semibold text-right opacity-75 text-secondary">{{ history.date }}</p>
+						<p class="text-xs font-semibold text-right opacity-75 lg:text-sm text-secondary">
+							{{ `${history.dateFrom} - ${history.dateTo} (${monthsToYears(monthDiff(history.dateFrom, history.dateTo))})` }}
+						</p>
 					</div>
 				</div>
 				<!-- right -->
@@ -86,61 +90,96 @@ import { ref } from "vue";
 
 export default {
 	name: "Timeline2Component",
-	setup() {
-		const histories = ref([
-			{
-				title: "Unity Developer",
-				date: "Now",
-				desc: "Anak Pintar Studio, Bogor, Indonesia",
-				url: "",
-			},
-			{
-				title: "Kitchen Staff",
-				date: "2021-02-07 (24 months)",
-				desc: "Rokupang Surabaya, Surabaya, Indonesia",
-				url: "",
-			},
-			{
-				title: "Tax Admin",
-				date: "2019-10-26 (21 months)",
-				desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
-				url: "",
-			},
-			{
-				title: "Associate TVS",
-				date: "2016-05-15 (6 months)",
-				desc: "PT. Alfa Retail Indonesia, Surabaya, Indonesia",
-				url: "",
-			},
-			{
-				title: "Flash Animator (Internship)",
-				date: "2015-07-30 (3 months)",
-				desc: "Maulidan Games, Surabaya, Indonesia",
-				url: "",
-			},
-		]);
+	props: ["histories"],
+	// setup(props) {
+	// 	const histories = ref([
+	// 		{
+	// 			title: "Unity Developer",
+	// 			dateFrom: "2021-02-08",
+	// 			dateTo: "Now",
+	// 			desc: "Anak Pintar Studio, Bogor, Indonesia",
+	// 			url: "",
+	// 		},
+	// 		{
+	// 			title: "Kitchen Staff",
+	// 			dateFrom: "2019-03-01",
+	// 			dateTo: "2021-02-07",
+	// 			desc: "Rokupang Surabaya, Surabaya, Indonesia",
+	// 			url: "",
+	// 		},
+	// 		{
+	// 			title: "Tax Admin",
+	// 			dateFrom: "2017-02-20",
+	// 			dateTo: "2018-10-26",
+	// 			desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
+	// 			url: "",
+	// 		},
+	// 		{
+	// 			title: "Associate TVS",
+	// 			dateFrom: "2015-11-16",
+	// 			dateTo: "2016-05-15",
+	// 			desc: "PT. Alfa Retail Indonesia, Surabaya, Indonesia",
+	// 			url: "",
+	// 		},
+	// 		{
+	// 			title: "Flash Animator (Internship)",
+	// 			dateFrom: "2015-04-20",
+	// 			dateTo: "2015-07-30",
+	// 			desc: "Maulidan Games, Surabaya, Indonesia",
+	// 			url: "",
+	// 		},
+	// 	]);
 
-		// On scrolling
-		const onScroll = () => {
-			let index = 0;
-			while (index < histories.length) {
-				const item = document.querySelector(".timeline-item-id-" + index);
+	// 	// On scrolling
+	// 	// const onScroll = () => {
+	// 	// 	let index = 0;
+	// 	// 	while (index < histories.length) {
+	// 	// 		const item = document.querySelector(".timeline-item-id-" + index);
 
-				if (item != null) {
-					console.log(`.timeline-item-id-${index}: ${item.offsetTop}`);
-					// if (window.scrollY > item.offsetTop) {
-					// 	item.classList.add("lan-navbar-fixed");
-					// } else {
-					// 	item.classList.remove("lan-navbar-fixed");
-					// }
-				}
-				index++;
-			}
-		};
-		window.addEventListener("scroll", onScroll);
-		// On scrolling
+	// 	// 		if (item != null) {
+	// 	// 			console.log(`.timeline-item-id-${index}: ${item.offsetTop}`);
+	// 	// 			// if (window.scrollY > item.offsetTop) {
+	// 	// 			// 	item.classList.add("lan-navbar-fixed");
+	// 	// 			// } else {
+	// 	// 			// 	item.classList.remove("lan-navbar-fixed");
+	// 	// 			// }
+	// 	// 		}
+	// 	// 		index++;
+	// 	// 	}
+	// 	// };
+	// 	// window.addEventListener("scroll", onScroll);
+	// 	// On scrolling
 
-		return { histories };
+	// 	return { histories };
+	// },
+	methods: {
+		monthDiff(dateFrom, dateTo) {
+			dateFrom = ("" + dateFrom).toUpperCase();
+			dateTo = ("" + dateTo).toUpperCase();
+
+			if (dateFrom == "NOW" || dateFrom == "" || dateFrom == null) dateFrom = new Date();
+			if (dateTo == "NOW" || dateTo == "" || dateTo == null) dateTo = new Date();
+
+			if (typeof dateFrom === "string") dateFrom = new Date(dateFrom);
+			if (typeof dateTo === "string") dateTo = new Date(dateTo);
+
+			return dateTo.getMonth() - dateFrom.getMonth() + 12 * (dateTo.getFullYear() - dateFrom.getFullYear());
+		},
+		monthsToYears(months) {
+			let years = Math.floor(months / 12);
+			months = months % 12;
+			// console.log(`${years} ${months}`);
+
+			if (years > 1) years = years + " yrs";
+			else if (years == 1) years = years + " yr";
+			else years = "";
+
+			if (months > 1) months = months + " mos";
+			else if (months == 1) months = months + " mo";
+			else months = "";
+
+			return `${years} ${months}`.trim();
+		},
 	},
 };
 </script>
