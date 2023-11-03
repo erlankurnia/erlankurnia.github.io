@@ -39,19 +39,16 @@
 							}"
 						>
 							<li class="group">
-								<a href="#home" class="lan-nav-link">Home</a>
+								<RouterLink to="/" class="lan-nav-link">Home</RouterLink>
 							</li>
 							<li class="group">
-								<a href="#about" class="lan-nav-link">About</a>
+								<RouterLink to="/about" class="lan-nav-link">About</RouterLink>
 							</li>
 							<li class="group">
-								<a href="#story" class="lan-nav-link">My_History</a>
+								<RouterLink to="/skills" class="lan-nav-link">Skills</RouterLink>
 							</li>
 							<li class="group">
-								<a href="#skills" class="lan-nav-link">Skills</a>
-							</li>
-							<li class="group">
-								<a href="#contact" class="lan-nav-link">Contact</a>
+								<RouterLink to="/blog" class="lan-nav-link">Blog</RouterLink>
 							</li>
 						</ul>
 					</nav>

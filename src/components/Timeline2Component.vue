@@ -90,68 +90,8 @@ import { ref } from "vue";
 
 export default {
 	name: "Timeline2Component",
+	components: {},
 	props: ["histories"],
-	// setup(props) {
-	// 	const histories = ref([
-	// 		{
-	// 			title: "Unity Developer",
-	// 			dateFrom: "2021-02-08",
-	// 			dateTo: "Now",
-	// 			desc: "Anak Pintar Studio, Bogor, Indonesia",
-	// 			url: "",
-	// 		},
-	// 		{
-	// 			title: "Kitchen Staff",
-	// 			dateFrom: "2019-03-01",
-	// 			dateTo: "2021-02-07",
-	// 			desc: "Rokupang Surabaya, Surabaya, Indonesia",
-	// 			url: "",
-	// 		},
-	// 		{
-	// 			title: "Tax Admin",
-	// 			dateFrom: "2017-02-20",
-	// 			dateTo: "2018-10-26",
-	// 			desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
-	// 			url: "",
-	// 		},
-	// 		{
-	// 			title: "Associate TVS",
-	// 			dateFrom: "2015-11-16",
-	// 			dateTo: "2016-05-15",
-	// 			desc: "PT. Alfa Retail Indonesia, Surabaya, Indonesia",
-	// 			url: "",
-	// 		},
-	// 		{
-	// 			title: "Flash Animator (Internship)",
-	// 			dateFrom: "2015-04-20",
-	// 			dateTo: "2015-07-30",
-	// 			desc: "Maulidan Games, Surabaya, Indonesia",
-	// 			url: "",
-	// 		},
-	// 	]);
-
-	// 	// On scrolling
-	// 	// const onScroll = () => {
-	// 	// 	let index = 0;
-	// 	// 	while (index < histories.length) {
-	// 	// 		const item = document.querySelector(".timeline-item-id-" + index);
-
-	// 	// 		if (item != null) {
-	// 	// 			console.log(`.timeline-item-id-${index}: ${item.offsetTop}`);
-	// 	// 			// if (window.scrollY > item.offsetTop) {
-	// 	// 			// 	item.classList.add("lan-navbar-fixed");
-	// 	// 			// } else {
-	// 	// 			// 	item.classList.remove("lan-navbar-fixed");
-	// 	// 			// }
-	// 	// 		}
-	// 	// 		index++;
-	// 	// 	}
-	// 	// };
-	// 	// window.addEventListener("scroll", onScroll);
-	// 	// On scrolling
-
-	// 	return { histories };
-	// },
 	methods: {
 		monthDiff(dateFrom, dateTo) {
 			dateFrom = ("" + dateFrom).toUpperCase();

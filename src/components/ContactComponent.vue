@@ -13,9 +13,9 @@
 				</div>
 			</div>
 
-			<div class="mb-6" v-if="collection != null && collection.length > 0">
+			<!-- <div class="mb-6" v-if="collection != null && collection.length > 0">
 				<AccordionComponent :collection="collection"> </AccordionComponent>
-			</div>
+			</div> -->
 
 			<!-- Contact button -->
 			<div class="w-full px-4">

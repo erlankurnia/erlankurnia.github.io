@@ -8,7 +8,8 @@
 						What is My <span class="text-primary">Ability</span>
 					</h2>
 					<p class="font-medium text-md text-secondary md:text-lg">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, enim officia! Consequatur.
+						Some of the skills that I can do and how long I have used them.<br />I also use it quite often in work and personal
+						projects.
 					</p>
 				</div>
 			</div>
@@ -64,7 +65,7 @@ export default {
 			},
 			{
 				name: "arduino",
-				year: 2019,
+				year: 2021,
 			},
 			{
 				name: "nodejs",
@@ -80,11 +81,11 @@ export default {
 			},
 			{
 				name: "postgresql",
-				year: 2020,
+				year: 2021,
 			},
 			{
 				name: "firebase",
-				year: 2020,
+				year: 2021,
 			},
 		]);
 		return { skills };

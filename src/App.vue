@@ -8,7 +8,7 @@ import FooterComponent from "./components/FooterComponent.vue";
 
 <template>
 	<NavbarComponent></NavbarComponent>
-	<div class="select-none lan-container-body">
+	<div class="lan-container-body">
 		<!-- <PaperComponent></PaperComponent> -->
 		<!-- <SwappingComponent></SwappingComponent> -->
 		<RouterView />

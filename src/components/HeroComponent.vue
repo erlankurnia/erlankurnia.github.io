@@ -1,5 +1,5 @@
 <template>
-	<section id="home" class="pt-24">
+	<section class="pt-24">
 		<div class="container">
 			<div class="flex flex-wrap lg:flex-row-reverse">
 				<!-- Right / Top side -->
