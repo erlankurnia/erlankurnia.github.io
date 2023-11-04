@@ -16,7 +16,7 @@
 			<div class="w-full px-4">
 				<div class="flex flex-wrap items-center justify-center">
 					<!-- Skill Icon -->
-					<div v-for="skill in skills" class="max-w-[64px] mx-4 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8 flex flex-col">
+					<div v-for="skill in skills" class="max-w-[56px] mx-6 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8 flex flex-col">
 						<!-- Icon -->
 						<UnityIcon class="text-black" v-if="skill.name == 'unity'"></UnityIcon>
 						<CSharpIcon class="text-[#512BD4]" v-if="skill.name == 'csharp'"></CSharpIcon>
@@ -27,7 +27,9 @@
 						<PostgresqlIcon class="text-[#4169E1]" v-if="skill.name == 'postgresql'"></PostgresqlIcon>
 						<FirebaseIcon class="text-[#FFCA28]" v-if="skill.name == 'firebase'"></FirebaseIcon>
 						<!-- Icon -->
-						<h4 class="mt-3 text-sm font-bold min-w-max text-secondary">{{ new Date().getFullYear() - skill.year }} year(s)</h4>
+						<h4 class="mt-3 text-xs font-bold text-center min-w-max text-secondary">
+							{{ getYearDiff(skill.year) }} {{ getYearDiff(skill.year) > 1 ? "years" : "year" }}
+						</h4>
 					</div>
 					<!-- Skill Icon -->
 				</div>
@@ -38,10 +40,12 @@
 
 <script>
 import { ref, defineAsyncComponent } from "vue";
+import dateTimeMixins from "../helper/mixins/dateTime";
 
 const importSVGIcon = (iconName) => import(`./icons/${iconName}.svg.vue`);
 
 export default {
+	mixins: [dateTimeMixins],
 	name: "SkillsComponent",
 	components: {
 		UnityIcon: defineAsyncComponent(() => importSVGIcon("Unity")),
@@ -90,5 +94,6 @@ export default {
 		]);
 		return { skills };
 	},
+	methods: {},
 };
 </script>

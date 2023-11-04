@@ -1,0 +1,107 @@
+{
+	"navbarBrand": "LAN",
+	"socialMedia": {
+		"instagram": "https://www.instagram.com/kurnia_erlan/",
+		"twitter": "https://twitter.com/krlan2789",
+		"linkedin": "https://www.linkedin.com/in/krlan2789/",
+		"github": "https://github.com/krlan2789",
+		"facebook": "",
+		"telegram": "https://t.me/kurnia_erlan",
+		"email": "erlank2789@gmail.com",
+		"whatsapp": "https://wa.me/6282245319478"
+	},
+	"profile": {
+		"profession": {
+			"label": "Profession",
+			"value": "Unity Developer",
+			"type": "string"
+		},
+		"birthday": {
+			"label": "Age",
+			"value": "1996-02-25",
+			"type": "date"
+		},
+		"address": {
+			"label": "Address",
+			"value": "Cipenjo, Bogor, West Java",
+			"type": "string"
+		},
+		"nationality": {
+			"label": "Nationality",
+			"value": "Indonesian",
+			"type": "string"
+		}
+	},
+	"history": {
+		"description": "Having work experience in various fields. Because as long as the final goal can be achieved the process can adapt to the current situation.",
+		"timeline": [
+			{
+				"title": "Unity Developer",
+				"dateFrom": "2021-02-08",
+				"dateTo": "Now",
+				"desc": "Anak Pintar Studio, Bogor, Indonesia"
+			},
+			{
+				"title": "Kitchen Staff",
+				"dateFrom": "2019-03-01",
+				"dateTo": "2021-02-07",
+				"desc": "Rokupang Surabaya, Surabaya, Indonesia"
+			},
+			{
+				"title": "Tax Admin",
+				"dateFrom": "2017-02-20",
+				"dateTo": "2018-10-26",
+				"desc": "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia"
+			},
+			{
+				"title": "Associate TVS",
+				"dateFrom": "2015-11-16",
+				"dateTo": "2016-05-15",
+				"desc": "PT. Alfa Retail Indonesia, Surabaya, Indonesia"
+			},
+			{
+				"title": "Flash Animator (Internship)",
+				"dateFrom": "2015-04-20",
+				"dateTo": "2015-07-30",
+				"desc": "Maulidan Games, Surabaya, Indonesia"
+			}
+		]
+	},
+	"skill": {
+		"description": "",
+		"skills": [
+			{
+				"name": "unity",
+				"year": 2017
+			},
+			{
+				"name": "csharp",
+				"year": 2017
+			},
+			{
+				"name": "arduino",
+				"year": 2021
+			},
+			{
+				"name": "nodejs",
+				"year": 2020
+			},
+			{
+				"name": "php",
+				"year": 2018
+			},
+			{
+				"name": "laravel",
+				"year": 2022
+			},
+			{
+				"name": "postgresql",
+				"year": 2021
+			},
+			{
+				"name": "firebase",
+				"year": 2021
+			}
+		]
+	}
+}

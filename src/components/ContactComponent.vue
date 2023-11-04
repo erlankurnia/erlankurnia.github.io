@@ -69,9 +69,9 @@
 
 			<!-- Sparator -->
 			<div class="flex items-center justify-center w-full gap-4 p-4 mx-auto my-4 xl:max-w-2xl">
-				<span class="w-full border-t-2"></span>
+				<span class="w-full border-t-2 border-quaternary"></span>
 				<span class="text-sm font-bold text-primary md:text-base">OR</span>
-				<span class="w-full border-t-2"></span>
+				<span class="w-full border-t-2 border-quaternary"></span>
 			</div>
 			<!-- Sparator -->
 

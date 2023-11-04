@@ -18,14 +18,18 @@
 							{{ history.desc }}
 						</p>
 						<p class="text-xs font-semibold text-right opacity-75 lg:text-sm text-secondary">
-							{{ `${history.dateFrom} - ${history.dateTo} (${monthsToYears(monthDiff(history.dateFrom, history.dateTo))})` }}
+							{{
+								`${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")} (${monthsToYears(
+									monthDiff(history.dateFrom, history.dateTo),
+								)})`
+							}}
 						</p>
 					</div>
 					<div class="relative col-start-5 col-end-6 mr-10 md:mx-auto">
 						<div
 							class="flex items-center justify-center w-6 h-full"
 							:class="{
-								'pt-32': index == 0,
+								'pt-36': index == 0,
 							}"
 						>
 							<div class="w-1 h-full pointer-events-none bg-quaternary"></div>
@@ -75,7 +79,11 @@
 							{{ history.desc }}
 						</p>
 						<p class="text-xs font-semibold text-right opacity-75 lg:text-sm text-secondary">
-							{{ `${history.dateFrom} - ${history.dateTo} (${monthsToYears(monthDiff(history.dateFrom, history.dateTo))})` }}
+							{{
+								`${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")} (${monthsToYears(
+									monthDiff(history.dateFrom, history.dateTo),
+								)})`
+							}}
 						</p>
 					</div>
 				</div>
@@ -86,40 +94,13 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import dateTimeMixins from "../helper/mixins/dateTime";
 
 export default {
+	mixins: [dateTimeMixins],
 	name: "Timeline2Component",
 	components: {},
 	props: ["histories"],
-	methods: {
-		monthDiff(dateFrom, dateTo) {
-			dateFrom = ("" + dateFrom).toUpperCase();
-			dateTo = ("" + dateTo).toUpperCase();
-
-			if (dateFrom == "NOW" || dateFrom == "" || dateFrom == null) dateFrom = new Date();
-			if (dateTo == "NOW" || dateTo == "" || dateTo == null) dateTo = new Date();
-
-			if (typeof dateFrom === "string") dateFrom = new Date(dateFrom);
-			if (typeof dateTo === "string") dateTo = new Date(dateTo);
-
-			return dateTo.getMonth() - dateFrom.getMonth() + 12 * (dateTo.getFullYear() - dateFrom.getFullYear());
-		},
-		monthsToYears(months) {
-			let years = Math.floor(months / 12);
-			months = months % 12;
-			// console.log(`${years} ${months}`);
-
-			if (years > 1) years = years + " yrs";
-			else if (years == 1) years = years + " yr";
-			else years = "";
-
-			if (months > 1) months = months + " mos";
-			else if (months == 1) months = months + " mo";
-			else months = "";
-
-			return `${years} ${months}`.trim();
-		},
-	},
+	methods: {},
 };
 </script>

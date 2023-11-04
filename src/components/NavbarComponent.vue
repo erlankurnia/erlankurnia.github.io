@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, inject, watchEffect } from "vue";
 export default {
 	name: "HeaderComponent",
 	setup() {
@@ -91,14 +91,22 @@ export default {
 		const isHamburgerOpen = ref(false);
 		const onOutsideMenu = (e) => {
 			if (e.target.id != "hamburger" && e.target.id != "nav-menu") {
-				isHamburgerOpen.value = false;
+				setTimeout(() => {
+					isHamburgerOpen.value = false;
+				}, 100);
 			}
 		};
 		window.addEventListener("click", onOutsideMenu);
 		window.addEventListener("touchstart", onOutsideMenu);
 		// On click outside nav menu
 
-		return { isHamburgerOpen };
+		let dataUser = ref(inject("dataUser"));
+		// watchEffect(() => {
+		// 	dataUser.value = inject("dataUser");
+		// 	console.log(dataUser);
+		// });
+
+		return { isHamburgerOpen, dataUser };
 	},
 	methods: {
 		onHamburgerClick() {

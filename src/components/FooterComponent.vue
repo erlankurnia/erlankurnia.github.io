@@ -1,36 +1,37 @@
 <template>
-	<footer class="pb-16 select-none">
+	<div class="w-10/12 h-[2px] mx-auto bg-quaternary"></div>
+	<footer class="pt-16 pb-16 select-none">
 		<div class="container">
 			<div class="flex flex-wrap md:flex-row-reverse">
 				<div
-					class="w-full px-4 mb-8 md:w-1/2"
+					class="flex justify-center w-full px-4 align-middle md:w-1/2"
 					:class="{
 						hidden: $route.meta.hideNavbar,
 					}"
 				>
-					<ul class="flex-col">
-						<li class="group">
-							<RouterLink to="/" class="lan-nav-link">Home</RouterLink>
+					<ul class="flex flex-row justify-center">
+						<li class="flex items-center group">
+							<RouterLink to="/" class="mx-2 lan-nav-link">Home</RouterLink>
 						</li>
-						<li class="group">
-							<RouterLink to="/about" class="lan-nav-link">About</RouterLink>
+						<li class="flex items-center group">
+							<RouterLink to="/about" class="mx-2 lan-nav-link">About</RouterLink>
 						</li>
-						<li class="group">
-							<RouterLink to="/skills" class="lan-nav-link">Skills</RouterLink>
+						<li class="flex items-center group">
+							<RouterLink to="/skills" class="mx-2 lan-nav-link">Skills</RouterLink>
 						</li>
-						<li class="group">
-							<RouterLink to="/blog" class="lan-nav-link">Blog</RouterLink>
+						<li class="flex items-center group">
+							<RouterLink to="/blog" class="mx-2 lan-nav-link">Blog</RouterLink>
 						</li>
 					</ul>
 				</div>
 				<div
-					class="w-full px-4"
+					class="w-full"
 					:class="{
 						'md:w-1/2': !$route.meta.hideNavbar,
 					}"
 				>
-					<div class="flex flex-wrap items-center justify-center h-full text-sm lg:text-base text-secondary">
-						<span class="flex flex-row items-center justify-center gap-1 px-2 mr-1 text-primary">
+					<div class="flex flex-wrap items-center justify-center h-full py-8 text-xs lg:text-sm text-secondary">
+						<span class="flex flex-row items-center justify-center gap-1 px-1 text-primary">
 							<span class="w-4 h-auto aspect-square">
 								<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -49,8 +50,8 @@
 							</span>
 							2023
 						</span>
-						<span class="w-[1px] h-full max-h-8 bg-primary"></span>
-						<span class="px-2 ml-1 rounded-full lan-text-primary">Erlan Kurnia</span>
+						<span class="w-[1px] mx-1 h-full max-h-8 bg-primary"></span>
+						<span class="px-1 rounded-full text-primary">Designed by Erlan Kurnia</span>
 					</div>
 				</div>
 			</div>
