@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { ref, inject, watchEffect } from "vue";
+import { ref } from "vue";
 export default {
 	name: "HeaderComponent",
 	setup() {
@@ -100,13 +100,7 @@ export default {
 		window.addEventListener("touchstart", onOutsideMenu);
 		// On click outside nav menu
 
-		let dataUser = ref(inject("dataUser"));
-		// watchEffect(() => {
-		// 	dataUser.value = inject("dataUser");
-		// 	console.log(dataUser);
-		// });
-
-		return { isHamburgerOpen, dataUser };
+		return { isHamburgerOpen };
 	},
 	methods: {
 		onHamburgerClick() {

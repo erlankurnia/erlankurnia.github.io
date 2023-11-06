@@ -1,5 +1,6 @@
 <template>
 	<ProfileComponent class="bg-quaternary"></ProfileComponent>
+	<!-- <ProfileComponent class="bg-quaternary" :dataUser="dataUser" :nameParts="nameParts"></ProfileComponent> -->
 	<StoryComponent class="bg-tertiary"></StoryComponent>
 	<SkillsComponent class="bg-quaternary"></SkillsComponent>
 </template>

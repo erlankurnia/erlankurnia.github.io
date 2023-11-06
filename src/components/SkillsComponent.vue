@@ -1,22 +1,20 @@
 <template>
-	<section id="skills" class="pt-24 pb-16">
+	<section v-if="dataUser != null && dataUser.skill?.skills" id="skills" class="pt-24 pb-16">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="mx-auto mb-16 text-center">
 					<h4 class="mb-2 lan-section-title">Skills</h4>
-					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
-						What is My <span class="text-primary">Ability</span>
-					</h2>
-					<p class="font-medium text-md text-secondary md:text-lg">
-						Some of the skills that I can do and how long I have used them.<br />I also use it quite often in work and personal
-						projects.
-					</p>
+					<h2 class="lan-section-subtitle">What is My <span class="text-primary">Ability</span></h2>
+					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.skill.description"></p>
 				</div>
 			</div>
 			<div class="w-full px-4">
 				<div class="flex flex-wrap items-center justify-center">
 					<!-- Skill Icon -->
-					<div v-for="skill in skills" class="max-w-[56px] mx-6 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8 flex flex-col">
+					<div
+						v-for="skill in dataUser.skill.skills"
+						class="max-w-[56px] mx-6 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8 flex flex-col"
+					>
 						<!-- Icon -->
 						<UnityIcon class="text-black" v-if="skill.name == 'unity'"></UnityIcon>
 						<CSharpIcon class="text-[#512BD4]" v-if="skill.name == 'csharp'"></CSharpIcon>
@@ -39,7 +37,7 @@
 </template>
 
 <script>
-import { ref, defineAsyncComponent } from "vue";
+import { ref, defineAsyncComponent, inject } from "vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
 
 const importSVGIcon = (iconName) => import(`./icons/${iconName}.svg.vue`);
@@ -58,42 +56,46 @@ export default {
 		FirebaseIcon: defineAsyncComponent(() => importSVGIcon("Firebase")),
 	},
 	setup() {
-		const skills = ref([
-			{
-				name: "unity",
-				year: 2017,
-			},
-			{
-				name: "csharp",
-				year: 2017,
-			},
-			{
-				name: "arduino",
-				year: 2021,
-			},
-			{
-				name: "nodejs",
-				year: 2020,
-			},
-			{
-				name: "php",
-				year: 2018,
-			},
-			{
-				name: "laravel",
-				year: 2022,
-			},
-			{
-				name: "postgresql",
-				year: 2021,
-			},
-			{
-				name: "firebase",
-				year: 2021,
-			},
-		]);
-		return { skills };
+		// const skills = ref([
+		// 	{
+		// 		name: "unity",
+		// 		year: 2017,
+		// 	},
+		// 	{
+		// 		name: "csharp",
+		// 		year: 2017,
+		// 	},
+		// 	{
+		// 		name: "arduino",
+		// 		year: 2021,
+		// 	},
+		// 	{
+		// 		name: "nodejs",
+		// 		year: 2020,
+		// 	},
+		// 	{
+		// 		name: "php",
+		// 		year: 2018,
+		// 	},
+		// 	{
+		// 		name: "laravel",
+		// 		year: 2022,
+		// 	},
+		// 	{
+		// 		name: "postgresql",
+		// 		year: 2021,
+		// 	},
+		// 	{
+		// 		name: "firebase",
+		// 		year: 2021,
+		// 	},
+		// ]);
+		// return { skills };
+
+		const { dataUser } = inject("dataUser");
+		return {
+			dataUser,
+		};
 	},
-	methods: {},
 };
 </script>

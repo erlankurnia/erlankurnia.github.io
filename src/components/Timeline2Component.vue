@@ -99,7 +99,6 @@ import dateTimeMixins from "../helper/mixins/dateTime";
 export default {
 	mixins: [dateTimeMixins],
 	name: "Timeline2Component",
-	components: {},
 	props: ["histories"],
 	methods: {},
 };

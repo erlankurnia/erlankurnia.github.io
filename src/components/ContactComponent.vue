@@ -4,9 +4,7 @@
 			<div class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 lan-section-title">Contact_Me</h4>
-					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
-						Contact Me for <span class="text-primary">Business</span> Purposes
-					</h2>
+					<h2 class="lan-section-subtitle">Contact Me for <span class="text-primary">Business</span> Purposes</h2>
 					<p class="font-medium text-md text-secondary md:text-lg">
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, veniam deserunt? Minima?
 					</p>
@@ -37,7 +35,8 @@
 
 					<!-- Telegram -->
 					<a
-						href="https://t.me/kurnia_erlan"
+						v-if="dataUser.socialMedia?.telegram"
+						:href="dataUser.socialMedia.telegram"
 						target="_blank"
 						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"
 						><svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +50,8 @@
 
 					<!-- Email -->
 					<a
-						href="mailto://erlank2789@gmail.com"
+						v-if="dataUser.socialMedia?.email"
+						:href="'mailto://' + dataUser.socialMedia.email"
 						target="_blank"
 						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"
 					>
@@ -101,30 +101,36 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import AccordionComponent from "./AccordionComponent.vue";
+import { inject, ref } from "vue";
+// import AccordionComponent from "./AccordionComponent.vue";
 export default {
 	name: "ContactComponent",
-	components: { AccordionComponent },
+	// components: { AccordionComponent },
+	// setup() {
+	// 	const collection = ref([
+	// 		{
+	// 			id: 0,
+	// 			title: "HTML",
+	// 			desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
+	// 		},
+	// 		{
+	// 			id: 1,
+	// 			title: "Vue.js",
+	// 			desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
+	// 		},
+	// 		{
+	// 			id: 2,
+	// 			title: "Tailwind CSS",
+	// 			desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
+	// 		},
+	// 	]);
+	// 	return { collection };
+	// },
 	setup() {
-		const collection = ref([
-			{
-				id: 0,
-				title: "HTML",
-				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
-			},
-			{
-				id: 1,
-				title: "Vue.js",
-				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
-			},
-			{
-				id: 2,
-				title: "Tailwind CSS",
-				desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad atque est amet deleniti, ipsam tempora voluptatibus quisquam qui rem sequi omnis dicta eveniet maxime ratione sint minima incidunt culpa repudiandae, fugiat quos!",
-			},
-		]);
-		return { collection };
+		const { dataUser } = inject("dataUser");
+		return {
+			dataUser,
+		};
 	},
 };
 </script>

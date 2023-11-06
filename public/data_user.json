@@ -11,29 +11,35 @@
 		"whatsapp": "https://wa.me/6282245319478"
 	},
 	"profile": {
+		"name": {
+			"label": "Fullname",
+			"value": "Erlan Kurnia",
+			"type": "text"
+		},
 		"profession": {
 			"label": "Profession",
 			"value": "Unity Developer",
-			"type": "string"
+			"type": "text"
 		},
 		"birthday": {
 			"label": "Age",
 			"value": "1996-02-25",
-			"type": "date"
+			"type": "age"
 		},
 		"address": {
 			"label": "Address",
 			"value": "Cipenjo, Bogor, West Java",
-			"type": "string"
+			"type": "text"
 		},
 		"nationality": {
 			"label": "Nationality",
 			"value": "Indonesian",
-			"type": "string"
+			"type": "text"
 		}
 	},
+	"image": "/img/fotor.comimagescreate_3.png",
 	"history": {
-		"description": "Having work experience in various fields. Because as long as the final goal can be achieved the process can adapt to the current situation.",
+		"description": "Having work experience in various fields.<br>Because as long as the final goal can be achieved the process can adapt to the current situation.",
 		"timeline": [
 			{
 				"title": "Unity Developer",
@@ -68,7 +74,7 @@
 		]
 	},
 	"skill": {
-		"description": "",
+		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
 		"skills": [
 			{
 				"name": "unity",

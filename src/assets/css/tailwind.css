@@ -50,6 +50,10 @@ body {
 		@apply text-xl font-bold uppercase text-primary;
 	}
 
+	.lan-section-subtitle {
+		@apply max-w-xl mb-5 leading-8 text-[1.75rem] font-bold text-dark lg:text-3xl;
+	}
+
 	.lan-text-primary {
 		@apply text-primary border-primary transition duration-1000 hover:duration-300 hover:border-tertiary hover:bg-primary hover:text-tertiary;
 	}
