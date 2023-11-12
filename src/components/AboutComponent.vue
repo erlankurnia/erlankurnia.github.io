@@ -6,7 +6,7 @@
 					<h4 class="mb-3 lan-section-title">About_Me</h4>
 				</div>
 				<div class="w-full p-4 pt-0 mb-10 lg:w-1/2">
-					<h2 class="lan-section-subtitle">
+					<h2 class="lan-section-subtitle text-left">
 						Every<span class="text-primary">thing</span> Start from No<span class="text-primary">thing</span>
 					</h2>
 					<p class="mb-5 text-base font-medium text-secondary lg:text-lg">
@@ -16,7 +16,7 @@
 					</p>
 				</div>
 				<div class="w-full px-4 lg:w-1/2">
-					<h3 class="lan-section-subtitle">Make <span class="text-primary">Connection</span>s on Social Media</h3>
+					<h3 class="lan-section-subtitle text-left">Make <span class="text-primary">Connection</span>s on Social Media</h3>
 					<p class="mb-6 text-base font-medium text-secondary lg:text-lg">
 						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique maxime autem voluptas laboriosam perspiciatis
 						nobis libero iste rerum consectetur eum tempore vitae dolorum magni et facere ipsam, tenetur veniam minima quidem

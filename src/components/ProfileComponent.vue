@@ -11,7 +11,7 @@
 					</div>
 				</div>
 				<div class="w-full px-4 mt-12 lg:w-1/2">
-					<h3 v-if="nameParts != null && nameParts.length > 0" class="lan-section-subtitle">
+					<h3 v-if="nameParts != null && nameParts.length > 0" class="lan-section-subtitle text-left">
 						<span v-for="(name, index) in nameParts" :key="index">
 							{{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
 						</span>

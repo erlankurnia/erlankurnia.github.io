@@ -51,7 +51,7 @@ body {
 	}
 
 	.lan-section-subtitle {
-		@apply max-w-xl mb-5 leading-8 text-[1.75rem] font-bold text-dark lg:text-3xl;
+		@apply max-w-xl mb-5 leading-8 text-[1.75rem] mx-auto text-center font-bold text-dark lg:text-3xl;
 	}
 
 	.lan-text-primary {
