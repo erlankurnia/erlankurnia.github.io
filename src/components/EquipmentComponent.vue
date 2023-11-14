@@ -16,7 +16,7 @@
 						<img :src="dataUser.equipment.image" class="w-full mx-auto max-md:rounded-xl lg:rounded-tr-xl lg:rounded-bl-xl" />
 					</div>
 				</div>
-				<div class="w-full px-4 mt-12 lg:w-2/3">
+				<div class="w-full px-4 mt-6 lg:w-2/3">
 					<table
 						class="w-full mb-6 lg:ml-4 2xl:ml-8 4xl:ml-12 text-sm font-medium border-separate table-auto text-secondary sm:text-base"
 					>
