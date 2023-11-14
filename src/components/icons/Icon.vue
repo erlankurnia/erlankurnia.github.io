@@ -89,6 +89,9 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xamppKeys)">
 		<XamppIcon class="text-[#FB7A24]"></XamppIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xcodeKeys)">
+		<XcodeIcon class="text-[#147EFB]"></XcodeIcon>
+	</template>
 </template>
 
 <script>
@@ -128,6 +131,7 @@ export default {
 		PostmanIcon: defineAsyncComponent(() => importSVGIcon("Postman")),
 		XamppIcon: defineAsyncComponent(() => importSVGIcon("Xampp")),
 		ZohoIcon: defineAsyncComponent(() => importSVGIcon("Zoho")),
+		XcodeIcon: defineAsyncComponent(() => importSVGIcon("Xcode")),
 	},
 	props: ["techName"],
 	data() {
@@ -162,6 +166,7 @@ export default {
 			postmanKeys: ["postman"],
 			xamppKeys: ["xampp"],
 			zohoKeys: ["zoho"],
+			xcodeKeys: ["xcode"],
 		};
 	},
 	methods: {

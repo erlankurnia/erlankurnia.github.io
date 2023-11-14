@@ -215,6 +215,10 @@
 				{
 					"name": "Arduino IDE",
 					"icon": "arduino"
+				},
+				{
+					"name": "Xcode 14.3.1",
+					"icon": "xcode"
 				}
 			],
 			"Browser": [
