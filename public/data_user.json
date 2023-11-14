@@ -136,6 +136,7 @@
 	},
 	"equipment": {
 		"image": "/img/workspace_setup.jpg",
+		"hardware_description": "My workspace setup for work from home.",
 		"hardware": {
 			"PC": [
 				{
@@ -182,6 +183,7 @@
 				}
 			]
 		},
+		"software_description": "Software that I often use in doing my work.",
 		"software": {
 			"OS": [
 				{

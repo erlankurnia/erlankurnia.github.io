@@ -9,7 +9,7 @@
 			<div class="flex flex-wrap" v-if="dataUser.equipment.hardware">
 				<div class="w-full text-center">
 					<h2 class="lan-section-subtitle">Hard<span class="text-primary">ware</span></h2>
-					<!-- <p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.skill.description"></p> -->
+					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.equipment.hardware_description"></p>
 				</div>
 				<div class="w-full px-4 lg:w-1/3">
 					<div class="relative my-10 lg:my-9 lg:right-0">
@@ -48,7 +48,7 @@
 			<div class="flex flex-wrap" v-if="dataUser.equipment.software">
 				<div class="w-full text-center">
 					<h2 class="lan-section-subtitle">Soft<span class="text-primary">ware</span></h2>
-					<!-- <p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.skill.description"></p> -->
+					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.equipment.software_description"></p>
 				</div>
 				<div class="w-full px-4">
 					<table
