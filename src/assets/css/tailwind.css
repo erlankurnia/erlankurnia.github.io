@@ -19,7 +19,7 @@ body {
 	}
 
 	.lan-router-link {
-		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary uppercase hover:opacity-75 uppercase;
+		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary hover:opacity-75 uppercase;
 	}
 
 	.lan-nav-link {
