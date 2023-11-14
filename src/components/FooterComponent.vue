@@ -51,7 +51,7 @@
 							2023
 						</span>
 						<span class="w-[1px] mx-1 h-full max-h-8 bg-primary"></span>
-						<span class="px-1 rounded-full text-primary">Designed by Erlan Kurnia</span>
+						<span class="px-1 rounded-full text-primary">Created by Erlan Kurnia</span>
 					</div>
 				</div>
 			</div>

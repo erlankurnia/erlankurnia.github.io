@@ -11,18 +11,16 @@
 							'mb-20': index == histories.length - 1,
 						}"
 					>
-						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary">
+						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-left md:text-right text-primary">
 							{{ history.title }}
 						</h3>
-						<p class="mb-2 text-sm leading-tight text-justify">
+						<p class="mb-2 text-sm leading-tight text-left md:text-right">
 							{{ history.desc }}
 						</p>
-						<p class="text-xs font-semibold text-right opacity-75 lg:text-sm text-secondary">
-							{{
-								`${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")} (${monthsToYears(
-									monthDiff(history.dateFrom, history.dateTo),
-								)})`
-							}}
+						<p class="text-xs font-semibold opacity-75 text-left md:text-right lg:text-sm text-secondary">
+							{{ `${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")}` }}
+							<br />
+							{{ `(${monthsToYears(monthDiff(history.dateFrom, history.dateTo))})` }}
 						</p>
 					</div>
 					<div class="relative col-start-5 col-end-6 mr-10 md:mx-auto">
@@ -52,7 +50,7 @@
 				<!-- left -->
 
 				<!-- right -->
-				<div v-else class="flex md:contents">
+				<div v-else class="flex md:contents" :class="'timeline-item-id-' + index">
 					<div class="relative col-start-5 col-end-6 mr-10 md:mx-auto">
 						<div class="flex items-center justify-center w-6 h-full">
 							<div class="w-1 h-full pointer-events-none bg-quaternary"></div>
@@ -75,15 +73,13 @@
 						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary">
 							{{ history.title }}
 						</h3>
-						<p class="mb-2 text-sm leading-tight text-justify">
+						<p class="mb-2 text-sm leading-tight">
 							{{ history.desc }}
 						</p>
-						<p class="text-xs font-semibold text-right opacity-75 lg:text-sm text-secondary">
-							{{
-								`${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")} (${monthsToYears(
-									monthDiff(history.dateFrom, history.dateTo),
-								)})`
-							}}
+						<p class="text-xs font-semibold opacity-75 lg:text-sm text-secondary">
+							{{ `${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")}` }}
+							<br />
+							{{ `(${monthsToYears(monthDiff(history.dateFrom, history.dateTo))})` }}
 						</p>
 					</div>
 				</div>

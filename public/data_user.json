@@ -107,6 +107,14 @@
 			{
 				"name": "firebase",
 				"year": 2021
+			},
+			{
+				"name": "tailwind",
+				"year": 2023
+			},
+			{
+				"name": "vue",
+				"year": 2023
 			}
 		]
 	}

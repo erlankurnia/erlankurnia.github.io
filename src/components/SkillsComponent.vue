@@ -16,17 +16,11 @@
 						class="max-w-[56px] mx-6 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8 flex flex-col"
 					>
 						<!-- Icon -->
-						<UnityIcon class="text-black" v-if="skill.name == 'unity'"></UnityIcon>
-						<CSharpIcon class="text-[#512BD4]" v-if="skill.name == 'csharp'"></CSharpIcon>
-						<ArduinoIcon class="text-[#00878F]" v-if="skill.name == 'arduino'"></ArduinoIcon>
-						<NodejsIcon class="text-[#339933]" v-if="skill.name == 'nodejs'"></NodejsIcon>
-						<PhpIcon class="text-[#777BB4]" v-if="skill.name == 'php'"></PhpIcon>
-						<LaravelIcon class="text-[#FF2D20]" v-if="skill.name == 'laravel'"></LaravelIcon>
-						<PostgresqlIcon class="text-[#4169E1]" v-if="skill.name == 'postgresql'"></PostgresqlIcon>
-						<FirebaseIcon class="text-[#FFCA28]" v-if="skill.name == 'firebase'"></FirebaseIcon>
+						<TechnologyIcon :skillName="skill.name"></TechnologyIcon>
 						<!-- Icon -->
 						<h4 class="mt-3 text-xs font-bold text-center min-w-max text-secondary">
-							{{ getYearDiff(skill.year) }} {{ getYearDiff(skill.year) > 1 ? "years" : "year" }}
+							{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ? getYearDiff(skill.year) : 1 }}
+							{{ getYearDiff(skill.year) > 1 ? "years" : "year" }}
 						</h4>
 					</div>
 					<!-- Skill Icon -->
@@ -37,24 +31,14 @@
 </template>
 
 <script>
-import { ref, defineAsyncComponent, inject } from "vue";
+import { inject } from "vue";
+import TechnologyIcon from "./icons/TechnologyIcon.vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
-
-const importSVGIcon = (iconName) => import(`./icons/${iconName}.svg.vue`);
 
 export default {
 	mixins: [dateTimeMixins],
 	name: "SkillsComponent",
-	components: {
-		UnityIcon: defineAsyncComponent(() => importSVGIcon("Unity")),
-		CSharpIcon: defineAsyncComponent(() => importSVGIcon("Csharp")),
-		ArduinoIcon: defineAsyncComponent(() => importSVGIcon("Arduino")),
-		NodejsIcon: defineAsyncComponent(() => importSVGIcon("Nodejs")),
-		LaravelIcon: defineAsyncComponent(() => importSVGIcon("Laravel")),
-		PostgresqlIcon: defineAsyncComponent(() => importSVGIcon("Postgresql")),
-		PhpIcon: defineAsyncComponent(() => importSVGIcon("Php")),
-		FirebaseIcon: defineAsyncComponent(() => importSVGIcon("Firebase")),
-	},
+	components: { TechnologyIcon },
 	setup() {
 		// const skills = ref([
 		// 	{
