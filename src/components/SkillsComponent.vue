@@ -40,42 +40,6 @@ export default {
 	name: "SkillsComponent",
 	components: { TechnologyIcon },
 	setup() {
-		// const skills = ref([
-		// 	{
-		// 		name: "unity",
-		// 		year: 2017,
-		// 	},
-		// 	{
-		// 		name: "csharp",
-		// 		year: 2017,
-		// 	},
-		// 	{
-		// 		name: "arduino",
-		// 		year: 2021,
-		// 	},
-		// 	{
-		// 		name: "nodejs",
-		// 		year: 2020,
-		// 	},
-		// 	{
-		// 		name: "php",
-		// 		year: 2018,
-		// 	},
-		// 	{
-		// 		name: "laravel",
-		// 		year: 2022,
-		// 	},
-		// 	{
-		// 		name: "postgresql",
-		// 		year: 2021,
-		// 	},
-		// 	{
-		// 		name: "firebase",
-		// 		year: 2021,
-		// 	},
-		// ]);
-		// return { skills };
-
 		const { dataUser } = inject("dataUser");
 		return {
 			dataUser,
