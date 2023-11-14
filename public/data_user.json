@@ -85,12 +85,16 @@
 				"year": 2017
 			},
 			{
-				"name": "arduino",
+				"name": "maxst",
+				"year": 2022
+			},
+			{
+				"name": "vuforia",
 				"year": 2021
 			},
 			{
-				"name": "nodejs",
-				"year": 2020
+				"name": "arduino",
+				"year": 2021
 			},
 			{
 				"name": "php",
@@ -109,13 +113,134 @@
 				"year": 2021
 			},
 			{
+				"name": "onesignal",
+				"year": 2023
+			},
+			{
 				"name": "tailwind",
 				"year": 2023
+			},
+			{
+				"name": "nodejs",
+				"year": 2020
+			},
+			{
+				"name": "javascript",
+				"year": 2020
 			},
 			{
 				"name": "vue",
 				"year": 2023
 			}
 		]
+	},
+	"equipment": {
+		"image": "/img/workspace_setup.jpg",
+		"hardware": {
+			"PC": [
+				{
+					"name": "Lenovo Slim 7 ProX - Ryzen 9-6900HS|RTX3050|32GB|1TB",
+					"icon": "lenovo"
+				},
+				{
+					"name": "Macbook Pro 2019 - Core i7|16GB|512GB",
+					"icon": "apple"
+				}
+			],
+			"Monitor": [
+				{
+					"name": "Lenovo L24i-40 - 24\"|FullHD",
+					"icon": "lenovo"
+				}
+			],
+			"Mouse": [
+				{
+					"name": "Logitech Pebble M350",
+					"icon": "logitech"
+				}
+			],
+			"Keyboard": [
+				{
+					"name": "Logitech K375s",
+					"icon": "logitech"
+				}
+			],
+			"Phone": [
+				{
+					"name": "Sony Xperia XZ3 - 4GB|64GB",
+					"icon": "sony"
+				},
+				{
+					"name": "Apple iPhone XR - 3GB|256GB",
+					"icon": "apple"
+				}
+			],
+			"MicroController": [
+				{
+					"name": "Espressif Esp32 DevKit",
+					"icon": "espressif"
+				}
+			]
+		},
+		"software": {
+			"OS": [
+				{
+					"name": "Windows 11 23H2",
+					"icon": "windows11"
+				},
+				{
+					"name": "MacOS Ventura 13.1",
+					"icon": "apple"
+				}
+			],
+			"Engine": [
+				{
+					"name": "Unity3D 2022.3.9f1",
+					"icon": "unity"
+				}
+			],
+			"Editor": [
+				{
+					"name": "Ms Visual Studio Community 2019",
+					"icon": "visualstudio"
+				},
+				{
+					"name": "Ms Visual Studio Code",
+					"icon": "vscode"
+				},
+				{
+					"name": "Android Studio Flamingo 2022.2.1",
+					"icon": "androidstudio"
+				},
+				{
+					"name": "Arduino IDE",
+					"icon": "arduino"
+				}
+			],
+			"Browser": [
+				{
+					"name": "Microsoft Edge",
+					"icon": "msedge"
+				}
+			],
+			"Others": [
+				{
+					"name": "Postman",
+					"icon": "postman"
+				},
+				{
+					"name": "XAMPP",
+					"icon": "xampp"
+				},
+				{
+					"name": "GitHub Desktop",
+					"icon": "github"
+				},
+				{
+					"name": "Zoho Notebook",
+					"icon": "zoho"
+				}
+			]
+		}
 	}
 }

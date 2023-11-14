@@ -13,10 +13,10 @@
 					<!-- Skill Icon -->
 					<div
 						v-for="skill in dataUser.skill.skills"
-						class="max-w-[56px] mx-6 py-4 text-[#FFCA28] lan-50-to-100 lg:mx6 xl:mx-8 flex flex-col"
+						class="max-w-[52px] mx-6 py-4 text-[#FFCA28] lan-50-to-100 lg:mx-6 xl:mx-8 flex flex-col"
 					>
 						<!-- Icon -->
-						<TechnologyIcon :skillName="skill.name"></TechnologyIcon>
+						<TechnologyIcon :techName="skill.name"></TechnologyIcon>
 						<!-- Icon -->
 						<h4 class="mt-3 text-xs font-bold text-center min-w-max text-secondary">
 							{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ? getYearDiff(skill.year) : 1 }}
@@ -32,7 +32,7 @@
 
 <script>
 import { inject } from "vue";
-import TechnologyIcon from "./icons/TechnologyIcon.vue";
+import TechnologyIcon from "./icons/Icon.vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
 
 export default {

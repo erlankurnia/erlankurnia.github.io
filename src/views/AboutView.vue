@@ -3,10 +3,12 @@
 	<!-- <ProfileComponent class="bg-quaternary" :dataUser="dataUser" :nameParts="nameParts"></ProfileComponent> -->
 	<StoryComponent class="bg-tertiary"></StoryComponent>
 	<SkillsComponent class="bg-quaternary"></SkillsComponent>
+	<EquipmentComponent class="bg-tertiary"></EquipmentComponent>
 </template>
 
 <script setup>
 import ProfileComponent from "../components/ProfileComponent.vue";
 import StoryComponent from "../components/StoryComponent.vue";
 import SkillsComponent from "../components/SkillsComponent.vue";
+import EquipmentComponent from "../components/EquipmentComponent.vue";
 </script>

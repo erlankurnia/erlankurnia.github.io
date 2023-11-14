@@ -19,11 +19,11 @@ body {
 	}
 
 	.lan-router-link {
-		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary uppercase hover:opacity-75;
+		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary uppercase hover:opacity-75 uppercase;
 	}
 
 	.lan-nav-link {
-		@apply flex py-2 mx-8 text-base text-dark transition duration-1000 group-hover:duration-300 group-hover:text-primary group-hover:font-extrabold;
+		@apply flex py-2 mx-8 text-base text-dark transition duration-1000 group-hover:duration-300 group-hover:text-primary group-hover:font-extrabold uppercase;
 	}
 
 	.lan-hamburger-line {

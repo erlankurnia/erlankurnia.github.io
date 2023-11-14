@@ -1,5 +1,5 @@
 <template>
-	<section v-if="dataUser != null && dataUser.navbarBrand" id="about" class="pt-24 pb-16 lg:pb-0 max-xs:min-h-screen">
+	<section v-if="dataUser != null && dataUser.navbarBrand" id="profile" class="pt-24 pb-16 lg:pb-0 max-xs:min-h-screen">
 		<div class="container">
 			<div class="flex flex-wrap">
 				<div class="w-full px-4 pt-4 pb-0 text-center">
