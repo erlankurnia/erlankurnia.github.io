@@ -52,7 +52,7 @@
 						</span>
 						<span class="w-[1px] mx-1 h-full max-h-8 bg-dark"></span>
 						<span class="px-1 rounded-full text-dark"
-							>Created by <a class="text-primary" target="_blank" href="https://kuryana.id">Kuryana.id</a></span
+							>Created by <a class="text-primary font-bold" target="_blank" href="https://kuryana.id">Kuryana.id</a></span
 						>
 					</div>
 				</div>
