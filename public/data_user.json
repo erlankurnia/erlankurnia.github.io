@@ -1,13 +1,26 @@
 {
 	"navbarBrand": "LAN",
+	"intro": [
+		{
+			"title": "Every<span class=\"text-primary\">thing</span> Start from No<span class=\"text-primary\">thing</span>",
+			"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, exercitationem ea quasi earum culpa aut tenetur aliquam corrupti minima numquam ut quaerat repellendus tempore maxime hic delectus perferendis dolores autem nisi vero cum architecto! Error suscipit autem vel quas molestias!"
+		},
+		{
+			"title": "Make <span class=\"text-primary\">Connection</span>s on Social Media",
+			"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique maxime autem voluptas laboriosam perspiciatis nobis libero iste rerum consectetur eum tempore vitae dolorum magni et facere ipsam, tenetur veniam minima quidem reiciendis."
+		}
+	],
+	"contact": {
+		"title": "Contact Me for <span class=\"text-primary\">Business</span> Purposes",
+		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, veniam deserunt? Minima?"
+	},
 	"socialMedia": {
-		"instagram": "https://www.instagram.com/kurnia_erlan/",
-		"twitter": "https://twitter.com/krlan2789",
-		"linkedin": "https://www.linkedin.com/in/krlan2789/",
-		"github": "https://github.com/krlan2789",
-		"facebook": "",
-		"telegram": "https://t.me/kurnia_erlan",
 		"email": "erlank2789@gmail.com",
+		"github": "https://github.com/krlan2789",
+		"instagram": "https://www.instagram.com/kurnia_erlan/",
+		"linkedin": "https://www.linkedin.com/in/krlan2789/",
+		"telegram": "https://t.me/kurnia_erlan",
+		"twitter": "https://twitter.com/krlan2789",
 		"whatsapp": "https://wa.me/6282245319478"
 	},
 	"profile": {

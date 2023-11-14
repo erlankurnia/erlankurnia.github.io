@@ -1,11 +1,11 @@
 <template>
 	<HeroComponent id="home"></HeroComponent>
-	<AboutComponent class="bg-quaternary"></AboutComponent>
+	<IntroComponent class="bg-quaternary"></IntroComponent>
 	<ContactComponent class="bg-tertiary"></ContactComponent>
 </template>
 
 <script setup>
 import HeroComponent from "../components/HeroComponent.vue";
-import AboutComponent from "../components/AboutComponent.vue";
+import IntroComponent from "../components/IntroComponent.vue";
 import ContactComponent from "../components/ContactComponent.vue";
 </script>
