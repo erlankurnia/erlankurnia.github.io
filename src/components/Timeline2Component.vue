@@ -11,12 +11,11 @@
 							'mb-20': index == histories.length - 1,
 						}"
 					>
-						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-left md:text-right text-primary">
-							{{ history.title }}
-						</h3>
-						<p class="mb-2 text-sm leading-tight text-left md:text-right">
-							{{ history.desc }}
-						</p>
+						<h3
+							class="px-2 mb-1 -mx-2 text-base font-semibold text-left md:text-right text-primary"
+							v-html="history.title"
+						></h3>
+						<p class="mb-2 text-sm leading-tight text-left md:text-right" v-html="history.desc"></p>
 						<p class="text-xs font-semibold opacity-75 text-left md:text-right lg:text-sm text-secondary">
 							{{ `${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")}` }}
 							<br />
@@ -70,12 +69,8 @@
 							'mb-20': index == histories.length - 1,
 						}"
 					>
-						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary">
-							{{ history.title }}
-						</h3>
-						<p class="mb-2 text-sm leading-tight">
-							{{ history.desc }}
-						</p>
+						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary" v-html="history.title"></h3>
+						<p class="mb-2 text-sm leading-tight" v-html="history.desc"></p>
 						<p class="text-xs font-semibold opacity-75 lg:text-sm text-secondary">
 							{{ `${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")}` }}
 							<br />

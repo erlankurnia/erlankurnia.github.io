@@ -26,45 +26,6 @@ export default {
 	name: "StoryComponent",
 	components: { Timeline2Component },
 	setup() {
-		// const histories = ref([
-		// 	{
-		// 		title: "Unity Developer",
-		// 		dateFrom: "2021-02-08",
-		// 		dateTo: "Now",
-		// 		desc: "Anak Pintar Studio, Bogor, Indonesia",
-		// 		url: "",
-		// 	},
-		// 	{
-		// 		title: "Kitchen Staff",
-		// 		dateFrom: "2019-03-01",
-		// 		dateTo: "2021-02-07",
-		// 		desc: "Rokupang Surabaya, Surabaya, Indonesia",
-		// 		url: "",
-		// 	},
-		// 	{
-		// 		title: "Tax Admin",
-		// 		dateFrom: "2017-02-20",
-		// 		dateTo: "2018-10-26",
-		// 		desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
-		// 		url: "",
-		// 	},
-		// 	{
-		// 		title: "Associate TVS",
-		// 		dateFrom: "2015-11-16",
-		// 		dateTo: "2016-05-15",
-		// 		desc: "PT. Alfa Retail Indonesia, Surabaya, Indonesia",
-		// 		url: "",
-		// 	},
-		// 	{
-		// 		title: "Flash Animator (Internship)",
-		// 		dateFrom: "2015-04-20",
-		// 		dateTo: "2015-07-30",
-		// 		desc: "Maulidan Games, Surabaya, Indonesia",
-		// 		url: "",
-		// 	},
-		// ]);
-		// return { histories };
-
 		const { dataUser } = inject("dataUser");
 		return {
 			dataUser,

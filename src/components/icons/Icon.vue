@@ -92,6 +92,9 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xcodeKeys)">
 		<XcodeIcon class="text-[#147EFB]"></XcodeIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), lenovoKeys)">
+		<LenovoIcon class="text-[#E2231A]"></LenovoIcon>
+	</template>
 </template>
 
 <script>
@@ -132,6 +135,7 @@ export default {
 		XamppIcon: defineAsyncComponent(() => importSVGIcon("Xampp")),
 		ZohoIcon: defineAsyncComponent(() => importSVGIcon("Zoho")),
 		XcodeIcon: defineAsyncComponent(() => importSVGIcon("Xcode")),
+		LenovoIcon: defineAsyncComponent(() => importSVGIcon("Lenovo")),
 	},
 	props: ["techName"],
 	data() {
@@ -167,6 +171,7 @@ export default {
 			xamppKeys: ["xampp"],
 			zohoKeys: ["zoho"],
 			xcodeKeys: ["xcode"],
+			lenovoKeys: ["lenovo"],
 		};
 	},
 	methods: {

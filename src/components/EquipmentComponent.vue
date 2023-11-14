@@ -30,9 +30,9 @@
 							<template v-for="(item, key) in dataUser.equipment.hardware" :key="key">
 								<template v-for="(data, index) in item" :key="index">
 									<tr class="">
-										<td class="pb-2 text-primary align-text-top">{{ index == 0 ? key : "" }}</td>
+										<td class="pb-2 text-primary align-text-top" v-html="index == 0 ? key : ''"></td>
 										<td class="pb-2 w-4"></td>
-										<td class="pb-2 align-text-top">{{ data.name }}</td>
+										<td class="pb-2 align-text-top" v-html="data.name"></td>
 									</tr>
 								</template>
 							</template>
@@ -64,7 +64,7 @@
 							<template v-for="(item, key) in dataUser.equipment.software" :key="key">
 								<tr class="">
 									<td class="py-6 lg:py-7 text-primary align-top">
-										<h3 class="">{{ key }}</h3>
+										<h3 class="" v-html="key"></h3>
 									</td>
 									<td class="w-4 md:w-10 xl:w-16 2xl:w-24"></td>
 									<td class="py-4 align-text-top flex flex-wrap">
@@ -73,9 +73,7 @@
 												<div class="h-full aspect-square mr-2 lg:mr-4">
 													<TechnologyIcon :techName="data.icon"></TechnologyIcon>
 												</div>
-												<h4 class="h-auto text-xs font-bold my-auto min-w-min text-secondary">
-													{{ data.name }}
-												</h4>
+												<h4 class="h-auto text-xs font-bold my-auto min-w-min text-secondary" v-html="data.name"></h4>
 											</div>
 										</template>
 									</td>

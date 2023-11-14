@@ -11,7 +11,7 @@
 					</div>
 				</div>
 				<div class="w-full px-4 mt-12 lg:w-1/2">
-					<h3 v-if="nameParts != null && nameParts.length > 0" class="lan-section-subtitle text-left">
+					<h3 v-if="nameParts != null && nameParts.length > 0" class="lan-section-subtitle text-left ml-0">
 						<span v-for="(name, index) in nameParts" :key="index">
 							{{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
 						</span>
@@ -26,38 +26,18 @@
 						<tbody>
 							<template v-for="(data, index) in dataUser.profile">
 								<tr v-if="index != 'name'" :key="index">
-									<td class="text-primary">{{ data.label }}</td>
+									<td class="text-primary" v-html="data.label"></td>
 									<td class="w-4"></td>
-									<td v-if="data.type == 'text'">{{ data.value }}</td>
-									<td v-else-if="data.type == 'age'">{{ monthsToYears(monthDiff(data.value, new Date())) }}</td>
+									<td v-if="data.type == 'text'" v-html="data.value"></td>
+									<td v-else-if="data.type == 'age'" v-html="monthsToYears(monthDiff(data.value, new Date()))"></td>
 								</tr>
 							</template>
 
-							<!-- <tr>
-								<td class="text-primary">Profession</td>
-								<td class="w-4"></td>
-								<td>Unity Developer</td>
-							</tr>
-							<tr>
-								<td class="text-primary">Ages</td>
-								<td class="w-4"></td>
-								<td>{{ monthsToYears(monthDiff("1996-02-25", new Date())) }}</td>
-							</tr>
-							<tr>
-								<td class="text-primary">Address</td>
-								<td class="w-4"></td>
-								<td>Cipenjo, Bogor, West Java</td>
-							</tr>
-							<tr>
-								<td class="text-primary">Nationality</td>
-								<td class="w-4"></td>
-								<td>Indonesian</td>
-							</tr> -->
 							<tr v-if="dataUser.socialMedia?.email">
 								<td class="text-primary">Email</td>
 								<td class="w-4"></td>
 								<td>
-									<a :href="'mailto://' + dataUser.socialMedia.email">{{ dataUser.socialMedia.email }}</a>
+									<a :href="'mailto://' + dataUser.socialMedia.email" v-html="dataUser.socialMedia.email"></a>
 								</td>
 							</tr>
 						</tbody>
