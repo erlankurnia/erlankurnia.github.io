@@ -64,7 +64,7 @@
 				"title": "Kitchen Staff",
 				"dateFrom": "2019-03-01",
 				"dateTo": "2021-02-07",
-				"desc": "Rokupang Surabaya, Surabaya, Indonesia"
+				"desc": "Rokupang Surabaya, Indonesia"
 			},
 			{
 				"title": "Tax Admin",
@@ -165,13 +165,13 @@
 		"image": "/img/workspace_setup_512x512.jpg",
 		"hardware_description": "My workspace setup for work from home.",
 		"hardware": {
-			"PC": [
+			"Computer": [
 				{
 					"name": "Lenovo Slim 7 ProX - Ryzen 9|RTX3050|32GB|1TB",
 					"icon": "lenovo"
 				},
 				{
-					"name": "Macbook Pro 2019 - Core i7|16GB|512GB",
+					"name": "Apple Macbook Pro 2019 - Core i7|16GB|512GB",
 					"icon": "apple"
 				}
 			],

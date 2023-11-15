@@ -69,7 +69,7 @@
 									<td class="w-4 md:w-10 xl:w-16 2xl:w-24"></td>
 									<td class="py-4 align-text-top flex flex-wrap">
 										<template v-for="data in item">
-											<div class="max-h-[40px] lg:max-h-[52px] w-fit max-w-xs py-2 lan-50-to-100 flex flex-row">
+											<div class="max-h-[36px] lg:max-h-[44px] w-fit max-w-xs py-2 lan-50-to-100 flex flex-row">
 												<div class="h-full aspect-square mr-2 lg:mr-4">
 													<TechnologyIcon :techName="data.icon"></TechnologyIcon>
 												</div>
