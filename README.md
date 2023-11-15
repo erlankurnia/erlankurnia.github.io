@@ -1,4 +1,4 @@
-# LAN Personal Project
+# LAN
 
 > This project|repository is my personal website and the results of studying the technology used.
 
