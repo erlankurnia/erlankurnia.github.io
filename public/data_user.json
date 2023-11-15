@@ -1,9 +1,10 @@
 {
 	"navbarBrand": "LAN",
+	"image": "/img/fotor.comimagescreate_3.png",
 	"intro": [
 		{
-			"title": "Every<span class=\"text-primary\">thing</span> Start from No<span class=\"text-primary\">thing</span>",
-			"description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, exercitationem ea quasi earum culpa aut tenetur aliquam corrupti minima numquam ut quaerat repellendus tempore maxime hic delectus perferendis dolores autem nisi vero cum architecto! Error suscipit autem vel quas molestias!"
+			"title": "Started by <span class=\"text-primary\">Eliminat</span>ing What I Didn't Like",
+			"description": "It started by choosing a department during high school, not because I liked or was interested in computers. But because other departments have the impression of playing around in a place that I think is not clean."
 		},
 		{
 			"title": "Make <span class=\"text-primary\">Connection</span>s on Social Media",
@@ -50,7 +51,6 @@
 			"type": "text"
 		}
 	},
-	"image": "/img/fotor.comimagescreate_3.png",
 	"history": {
 		"description": "Having work experience in various fields.<br>Because as long as the final goal can be achieved the process can adapt to the current situation.",
 		"timeline": [
@@ -83,18 +83,26 @@
 				"dateFrom": "2015-04-20",
 				"dateTo": "2015-07-30",
 				"desc": "Maulidan Games, Surabaya, Indonesia"
+			},
+			{
+				"title": "Computer and Network Engineering",
+				"status": "Graduate from Highschool",
+				"dateFrom": "2012-08-06",
+				"dateTo": "2015-05-15",
+				"desc": "SMK PGRI 6 Surabaya, Indonesia"
 			}
 		]
 	},
 	"skill": {
+		"title": "What is My <span class=\"text-primary\">Ability</span>",
 		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
 		"skills": [
 			{
-				"name": "unity",
+				"name": "csharp",
 				"year": 2017
 			},
 			{
-				"name": "csharp",
+				"name": "unity",
 				"year": 2017
 			},
 			{
@@ -114,10 +122,6 @@
 				"year": 2018
 			},
 			{
-				"name": "laravel",
-				"year": 2022
-			},
-			{
 				"name": "postgresql",
 				"year": 2021
 			},
@@ -130,25 +134,35 @@
 				"year": 2023
 			},
 			{
+				"name": "nodejs",
+				"year": 2020
+			}
+		]
+	},
+	"learn": {
+		"title": "Trying to Obtain New <span class=\"text-primary\">Abiliti</span>es",
+		"description": "New technology is always available, so learning has no end.<br>Some of the technologies I'm studying.",
+		"topics": [
+			{
+				"name": "laravel",
+				"year": 2022
+			},
+			{
 				"name": "tailwind",
 				"year": 2023
 			},
 			{
-				"name": "nodejs",
-				"year": 2020
-			},
-			{
-				"name": "javascript",
-				"year": 2020
-			},
-			{
 				"name": "vue",
+				"year": 2023
+			},
+			{
+				"name": "kotlin",
 				"year": 2023
 			}
 		]
 	},
 	"equipment": {
-		"image": "/img/workspace_setup.jpg",
+		"image": "/img/workspace_setup_512x512.jpg",
 		"hardware_description": "My workspace setup for work from home.",
 		"hardware": {
 			"PC": [
@@ -189,7 +203,7 @@
 					"icon": "apple"
 				}
 			],
-			"MicroController": [
+			"Microcontroller": [
 				{
 					"name": "Espressif Esp32 DevKit",
 					"icon": "espressif"
@@ -261,5 +275,17 @@
 				}
 			]
 		}
-	}
+	},
+	"credit": [
+		{
+			"name": "Web Programming UNPAS",
+			"statement": "By watching tutorials from <a href=\"https://www.youtube.com/watch?v=8Ea4oq8qFtM\" target=\"_blank>Web Programming UNPAS</> YouTube channel, I was interested in following it as the main source for creating this website.",
+			"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
+		},
+		{
+			"name": "Aditia Falacha Arvin",
+			"statement": "Thanks to my cousin <a href=\"https://aditiafa.dev\" target=\"_blank>Adit</>, as an inspiration in determining some of the existing content.",
+			"url": "https://aditiafa.dev"
+		}
+	]
 }

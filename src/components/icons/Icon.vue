@@ -57,7 +57,7 @@
 		<JsonIcon class="text-[#000000]"></JsonIcon>
 	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), kotlinKeys)">
-		<KotlinIcon class="text-[#000000]"></KotlinIcon>
+		<KotlinIcon class="text-[#7F52FF]"></KotlinIcon>
 	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), tailwindcssKeys)">
 		<TailwindcssIcon class="text-[#06B6D4]"></TailwindcssIcon>

@@ -5,8 +5,22 @@
 				<div class="w-full px-4 pt-4 text-center">
 					<h4 class="mb-3 lan-section-title">Intro</h4>
 				</div>
-				<div v-for="(data, index) of dataUser.intro" class="w-full px-2 mb-8 lg:w-1/2" :key="index">
-					<h2 class="lan-section-subtitle text-left lg:ml-0" v-html="data.title"></h2>
+				<div
+					v-for="(data, index) of dataUser.intro"
+					class="w-full px-2 mb-8"
+					:class="{
+						'lg:w-1/2': dataUser.intro.length >= 2,
+					}"
+					:key="index"
+				>
+					<h2
+						class="lan-section-subtitle"
+						:class="{
+							'lg:text-left lg:ml-0': dataUser.intro.length >= 2,
+							'lg:min-w-max': dataUser.intro.length == 1,
+						}"
+						v-html="data.title"
+					></h2>
 					<p class="mb-5 text-base font-medium text-secondary lg:text-lg" v-html="data.description"></p>
 				</div>
 			</div>

@@ -15,6 +15,11 @@
 							class="px-2 mb-1 -mx-2 text-base font-semibold text-left md:text-right text-primary"
 							v-html="history.title"
 						></h3>
+						<p
+							v-if="history.status"
+							class="text-xs font-semibold mb-2 opacity-75 text-left md:text-right lg:text-sm text-secondary"
+							v-html="history.status"
+						></p>
 						<p class="mb-2 text-sm leading-tight text-left md:text-right" v-html="history.desc"></p>
 						<p class="text-xs font-semibold opacity-75 text-left md:text-right lg:text-sm text-secondary">
 							{{ `${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")}` }}
@@ -41,7 +46,7 @@
 							}"
 						>
 							<div v-if="index == 0" class="flex items-center justify-center w-full h-full bg-transparent">
-								<div class="w-4 h-4 m-auto rounded-full bg-quaternary"></div>
+								<div class="w-4 h-4 m-auto rounded-full bg-quaternary animate-pulse"></div>
 							</div>
 						</div>
 					</div>
@@ -70,6 +75,11 @@
 						}"
 					>
 						<h3 class="px-2 mb-1 -mx-2 text-base font-semibold text-primary" v-html="history.title"></h3>
+						<p
+							v-if="history.status"
+							class="text-xs font-semibold mb-2 opacity-75 lg:text-sm text-secondary"
+							v-html="history.status"
+						></p>
 						<p class="mb-2 text-sm leading-tight" v-html="history.desc"></p>
 						<p class="text-xs font-semibold opacity-75 lg:text-sm text-secondary">
 							{{ `${dateFormat(history.dateFrom, "MMM YYYY")} - ${dateFormat(history.dateTo, "MMM YYYY")}` }}

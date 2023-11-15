@@ -11,16 +11,23 @@
 				>
 					<ul class="flex flex-row justify-center">
 						<li class="flex items-center group">
-							<RouterLink to="/" class="mx-2 lan-nav-link">Home</RouterLink>
+							<a href="/" class="mx-2 lan-nav-link text-sm">Home</a>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/about" class="mx-2 lan-nav-link">About</RouterLink>
+							<RouterLink to="/inspiration" class="mx-2 lan-nav-link text-sm">Inspiration</RouterLink>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/skills" class="mx-2 lan-nav-link">Skills</RouterLink>
+							<a
+								href="https://analytics.eu.umami.is/share/P9vSXDhPCyGTUoB2/LAN"
+								target="_blank"
+								class="mx-2 lan-nav-link text-sm"
+								>Analytics</a
+							>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/blog" class="mx-2 lan-nav-link">Blog</RouterLink>
+							<a href="https://github.com/erlankurnia/erlankurnia.github.io" target="_blank" class="mx-2 lan-nav-link text-sm"
+								>Repository</a
+							>
 						</li>
 					</ul>
 				</div>

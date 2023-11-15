@@ -3,7 +3,7 @@
 <template>
 	<div class="flex items-center justify-center w-10/12 min-h-[80vh] m-auto">
 		<!-- Left Layout (Desktop) -->
-		<div class="hidden p-8 md:flex md:w-1/2">
+		<!-- <div class="hidden p-8 md:flex md:w-1/2">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
 				<g id="freepik--background-complete--inject-63" class="w-full rounded-lg shadow-lg">
 					<path
@@ -294,12 +294,14 @@
 					<polygon points="170.28 370.3 134.08 334.1 153.36 329.93 174.45 351.02 170.28 370.3" style="fill: #79678f"></polygon>
 				</g>
 			</svg>
-		</div>
+		</div> -->
 		<!-- Left Layout (Desktop) -->
 
 		<!-- Right Layout (Both Mobile and Desktop) -->
 		<div class="w-full p-4 md:w-1/2 md:p-8">
-			<h1 class="mb-4 text-2xl font-bold text-secondary md:text-4xl">404_Not_Found</h1>
+			<h1 class="mb-4 text-2xl font-bold text-secondary md:text-4xl">
+				404<span class="text-primary">_</span>Not<span class="text-primary">_</span>Found
+			</h1>
 			<p class="mb-8 text-lg text-secondary md:text-xl">Oops! The page you are looking for could not be found.</p>
 			<a href="/" class="inline-block px-3 py-1 lan-button-primary">Go to Home</a>
 		</div>
