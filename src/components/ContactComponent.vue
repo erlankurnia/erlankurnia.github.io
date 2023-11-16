@@ -47,15 +47,15 @@
 			<!-- Contact button -->
 
 			<!-- Sparator -->
-			<div class="flex items-center justify-center w-full gap-4 p-4 mx-auto my-4 xl:max-w-2xl">
+			<!-- <div class="flex items-center justify-center w-full gap-4 p-4 mx-auto my-4 xl:max-w-2xl">
 				<span class="w-full border-t-2 border-quaternary"></span>
 				<span class="text-sm font-bold text-primary md:text-base">OR</span>
 				<span class="w-full border-t-2 border-quaternary"></span>
-			</div>
+			</div> -->
 			<!-- Sparator -->
 
 			<!-- Message form -->
-			<div class="xl:max-w-2xl xl:mx-auto">
+			<!-- <div class="xl:max-w-2xl xl:mx-auto">
 				<form action="">
 					<div class="w-full px-4 mb-8">
 						<label for="name" class="text-base font-bold text-primary">Name</label>
@@ -73,7 +73,7 @@
 						<button type="submit" class="w-full lan-button-primary">Send Message</button>
 					</div>
 				</form>
-			</div>
+			</div> -->
 			<!-- Message form -->
 		</div>
 	</section>

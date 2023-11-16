@@ -9,25 +9,26 @@
 						hidden: $route.meta.hideNavbar,
 					}"
 				>
-					<ul class="flex flex-row justify-center">
+					<ul class="flex flex-wrap justify-center">
 						<li class="flex items-center group">
 							<a href="/" class="mx-2 lan-nav-link text-sm">Home</a>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/inspiration" class="mx-2 lan-nav-link text-sm">Inspiration</RouterLink>
+							<RouterLink to="/references" class="mx-2 lan-nav-link text-sm">References</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<a
 								href="https://analytics.eu.umami.is/share/P9vSXDhPCyGTUoB2/LAN"
 								target="_blank"
 								class="mx-2 lan-nav-link text-sm"
-								>Analytics</a
 							>
+								Analytics <NewTabIcon class="h-4 ml-[2px] pt-1 w-auto"></NewTabIcon>
+							</a>
 						</li>
 						<li class="flex items-center group">
-							<a href="https://github.com/erlankurnia/erlankurnia.github.io" target="_blank" class="mx-2 lan-nav-link text-sm"
-								>Repository</a
-							>
+							<a href="https://github.com/erlankurnia/erlankurnia.github.io" target="_blank" class="mx-2 lan-nav-link text-sm">
+								Repository <NewTabIcon class="h-4 ml-[2px] pt-1 w-auto"></NewTabIcon>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -37,7 +38,7 @@
 						'md:w-1/2': !$route.meta.hideNavbar,
 					}"
 				>
-					<div class="flex flex-wrap items-center justify-center h-full py-8 text-xs lg:text-sm text-secondary">
+					<div class="flex flex-wrap items-center justify-center h-full pt-8 md:py-8 text-xs lg:text-sm text-secondary">
 						<span class="flex flex-row items-center justify-center gap-1 px-1 text-dark">
 							<span class="w-4 h-auto aspect-square">
 								<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +70,9 @@
 </template>
 
 <script>
+import NewTabIcon from "./icons/NewTabIcon.vue";
 export default {
 	name: "FooterComponent",
+	components: { NewTabIcon },
 };
 </script>

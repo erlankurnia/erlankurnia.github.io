@@ -27,7 +27,7 @@ body {
 	}
 
 	.lan-hamburger-line {
-		@apply w-[30px] h-[3px] my-[7px] block bg-primary transition duration-300 ease-in-out;
+		@apply w-[24px] h-[2px] my-[6px] block bg-primary transition duration-300 ease-in-out;
 	}
 
 	.lan-hamburger-active {

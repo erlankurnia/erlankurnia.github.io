@@ -4,16 +4,16 @@
 	"intro": [
 		{
 			"title": "Started by <span class=\"text-primary\">Eliminat</span>ing What I Didn't Like",
-			"description": "It started by choosing a department during high school, not because I liked or was interested in computers. But because other departments have the impression of playing around in a place that I think is not clean."
+			"description": "It started by choosing a department during high school, not because I liked or was interested in computers.<br>But because other departments have the impression of playing around in a place that I think is not clean."
 		},
 		{
-			"title": "Make <span class=\"text-primary\">Connection</span>s on Social Media",
-			"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique maxime autem voluptas laboriosam perspiciatis nobis libero iste rerum consectetur eum tempore vitae dolorum magni et facere ipsam, tenetur veniam minima quidem reiciendis."
+			"title": "My Current Daily <span class=\"text-primary\">Activiti</span>es",
+			"description": "Of course doing my job as Unity Developer. Learn about Laravel, Vue.js, Tailwind CSS, management and business. Weightlifting every day, and sometimes swimming and badminton. Playing my favorite PC games, eFootball PES 2021."
 		}
 	],
 	"contact": {
 		"title": "Contact Me for <span class=\"text-primary\">Business</span> Purposes",
-		"description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, veniam deserunt? Minima?"
+		"description": "To have business discussions, you can contact me via :"
 	},
 	"socialMedia": {
 		"email": "erlank2789@gmail.com",
@@ -52,6 +52,7 @@
 		}
 	},
 	"history": {
+		"title": "How Did I <span class=\"text-primary\">Reach</span> This Moment",
 		"description": "Having work experience in various fields.<br>Because as long as the final goal can be achieved the process can adapt to the current situation.",
 		"timeline": [
 			{
@@ -276,16 +277,45 @@
 			]
 		}
 	},
-	"credit": [
-		{
-			"name": "Web Programming UNPAS",
-			"statement": "By watching tutorials from <a href=\"https://www.youtube.com/watch?v=8Ea4oq8qFtM\" target=\"_blank>Web Programming UNPAS</> YouTube channel, I was interested in following it as the main source for creating this website.",
-			"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
-		},
-		{
-			"name": "Aditia Falacha Arvin",
-			"statement": "Thanks to my cousin <a href=\"https://aditiafa.dev\" target=\"_blank>Adit</>, as inspiration in determining some of the content shown.",
-			"url": "https://aditiafa.dev"
-		}
-	]
+	"reference": {
+		"title": "<span class=\"text-primary\">Attribution</span> for Who Inspired Me",
+		"description": "Thanks for your creation which helped me in creating this website.",
+		"credit": [
+			{
+				"title": "Web Programming UNPAS",
+				"description": "By watching tutorials from <span class=\"text-primary font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
+				"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
+			},
+			{
+				"title": "DITLAB",
+				"description": "Thanks to my cousin <span class=\"text-primary font-bold\">Adit</span>, as inspiration in determining some of the content shown.",
+				"url": "https://aditiafa.dev"
+			},
+			{
+				"title": "Simple Icons",
+				"description": "Source for the majority of icons used.",
+				"url": "https://simpleicons.org"
+			},
+			{
+				"title": "Heroicons",
+				"description": "Source for some of the icons used.",
+				"url": "https://heroicons.com"
+			},
+			{
+				"title": "TailwindComponents",
+				"description": "As a reference for several components used.",
+				"url": "https://tailwindcomponents.com"
+			},
+			{
+				"title": "Fotor",
+				"description": "An AI that makes a photo look like an illustration.",
+				"url": "https://www.fotor.com"
+			},
+			{
+				"title": "Blobmaker",
+				"description": "An AI that generates random shape.",
+				"url": "https://www.blobmaker.app"
+			}
+		]
+	}
 }

@@ -20,7 +20,7 @@ const router = createRouter({
 			meta: { hideNavbar: false },
 		},
 		{
-			path: "/inspiration",
+			path: "/references",
 			name: "credit",
 			component: CreditView,
 			meta: { hideNavbar: false },

@@ -1,11 +1,65 @@
 <template>
 	<header id="navbar-menu" class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent select-none">
 		<div class="container">
-			<div class="relative flex items-center justify-between">
+			<div class="flex items-center justify-between">
+				<!-- <div class="relative flex items-center justify-between"> -->
 				<div class="px-4">
 					<RouterLink to="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary">LAN</RouterLink>
 				</div>
-				<div class="flex items-center p-4">
+				<div class="relative h-20 w-full z-[9999]">
+					<!-- Navbar Menu -->
+					<nav
+						id="nav-menu"
+						class="absolute w-auto h-auto origin-top-right right-0 top-4 pl-2 max-lg:pr-12 py-1 bg-tertiary rounded-3xl transition duration-300 ease-in-out scale-x-0"
+						:class="{
+							'-translate-x-4 xl:flex xl:scale-x-100 xl:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
+							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
+						}"
+					>
+						<ul class="flex flex-wrap justify-evenly w-full">
+							<li class="group">
+								<RouterLink to="/" class="lan-nav-link max-w-max max-lg:mx-2">Home</RouterLink>
+							</li>
+							<li class="group">
+								<RouterLink to="/about" class="lan-nav-link max-w-max max-lg:mx-2">WHO_I'M</RouterLink>
+							</li>
+							<li class="group">
+								<RouterLink to="/activity" class="lan-nav-link max-w-max max-lg:mx-2">Activity</RouterLink>
+							</li>
+							<li class="group">
+								<RouterLink to="/blog" class="lan-nav-link max-w-max max-lg:mx-2">Blog</RouterLink>
+							</li>
+						</ul>
+					</nav>
+					<!-- Navbar Menu -->
+
+					<!-- Toggle Menu Button -->
+					<div
+						class="absolute right-0 top-4 w-12 h-12 px-3 py-2 bg-tertiary rounded-3xl xl:hidden"
+						:class="{
+							hidden: $route.meta.hideNavbar,
+							fixed: !$route.meta.hideNavbar,
+						}"
+					>
+						<button
+							id="hamburger"
+							name="hamburger"
+							type="button"
+							class="transition duration-300 ease-in-ou"
+							:class="{
+								'lan-hamburger-active translate-x-1': isHamburgerOpen,
+							}"
+							@click="onHamburgerClick"
+						>
+							<span class="origin-top-right lan-hamburger-line"></span>
+							<span class="lan-hamburger-line"></span>
+							<span class="origin-bottom-right lan-hamburger-line"></span>
+						</button>
+					</div>
+					<!-- Toggle Menu Button -->
+				</div>
+
+				<!-- <div class="flex items-center p-4">
 					<button
 						id="hamburger"
 						name="hamburger"
@@ -27,7 +81,6 @@
 						id="nav-menu"
 						class="absolute origin-top scale-y-0 py-5 bg-tertiary shadow-lg rounded-lg max-w-[200px] w-full top-full right-4 transition duration-300 xl:origin-center xl:scale-y-100 xl:block xl:static xl:bg-transparent xl:max-w-full xl:shadow-none xl:rounded-none"
 						:class="{
-							// 'hidden': !isHamburgerOpen,
 							'scale-y-100': isHamburgerOpen,
 						}"
 					>
@@ -52,7 +105,7 @@
 							</li>
 						</ul>
 					</nav>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</header>
@@ -70,14 +123,14 @@ export default {
 			const backToTop = document.querySelector("#back-to-top");
 			if (window.scrollY > fixedNav) {
 				header.classList.add("lan-navbar-fixed");
-				header.classList.remove("absolute");
+				// header.classList.remove("absolute");
 				if (backToTop) {
 					backToTop.classList.remove("hidden");
 					backToTop.classList.add("flex");
 				}
 			} else {
 				header.classList.remove("lan-navbar-fixed");
-				header.classList.add("absolute");
+				// header.classList.add("absolute");
 				if (backToTop) {
 					backToTop.classList.remove("flex");
 					backToTop.classList.add("hidden");

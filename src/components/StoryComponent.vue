@@ -4,7 +4,7 @@
 			<div class="w-full p-4 pb-0">
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 lan-section-title">History</h4>
-					<h2 class="lan-section-subtitle">How Did I <span class="text-primary">Reach</span> This Moment</h2>
+					<h2 class="lan-section-subtitle" v-html="dataUser.history.title"></h2>
 					<p class="font-medium text-md text-secondary lg:text-lg" v-html="dataUser.history.description"></p>
 				</div>
 			</div>
