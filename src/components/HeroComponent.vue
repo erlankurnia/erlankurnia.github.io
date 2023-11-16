@@ -8,16 +8,12 @@
 						Hello,<span class="font-bold text-primary">_</span>I'am
 						<span class="block mt-1 text-4xl font-bold lg:5xl text-secondary">
 							<a href="/" class="text-primary">{{ text }}_</a>Kurnia
-							<!-- <span class="font-bold text-primary">_</span> -->
 						</span>
 					</h1>
 					<h class="mb-5 text-lg font-semibold text-dark lg:text-2xl"
 						>Unity<span class="font-bold text-primary">_</span>Developer</h
 					>
-					<p class="mb-10 font-medium leading-relaxed text-secondary">
-						To <span class="font-bold text-dark">entertain</span> a group, you don't have
-						<span class="font-bold text-dark">to join</span> that group!
-					</p>
+					<p class="mb-10 font-medium leading-relaxed text-secondary" v-html="dataUser.quote"></p>
 					<RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink>
 				</div>
 				<!-- Right / Top side -->
