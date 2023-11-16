@@ -21,7 +21,7 @@
 						}"
 						v-html="data.title"
 					></h2>
-					<p class="mb-5 text-base font-medium text-secondary lg:text-lg" v-html="data.description"></p>
+					<p class="mb-5 text-justify text-base font-medium text-secondary lg:text-lg" v-html="data.description"></p>
 				</div>
 			</div>
 		</div>
