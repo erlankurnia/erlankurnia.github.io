@@ -1,6 +1,6 @@
 <template>
 	<header id="navbar-menu" class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent select-none">
-		<div class="container">
+		<div class="container px-4">
 			<div class="flex items-center justify-between">
 				<!-- <div class="relative flex items-center justify-between"> -->
 				<div class="px-4">
