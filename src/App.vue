@@ -1,6 +1,6 @@
 <template>
 	<NavbarComponent></NavbarComponent>
-	<div class="lan-container-body select-none">
+	<div class="select-none lan-container-body">
 		<RouterView />
 	</div>
 	<FooterComponent class="bg-tertiary"></FooterComponent>

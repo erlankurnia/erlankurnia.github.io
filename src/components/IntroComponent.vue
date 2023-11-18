@@ -1,7 +1,7 @@
 <template>
 	<section v-if="dataUser && dataUser.intro && dataUser.intro.length > 0" id="intro" class="pt-24 pb-16">
 		<div class="container">
-			<div class="flex flex-wrap">
+			<div class="flex flex-wrap gap-x-[2%]">
 				<div class="w-full px-4 pt-4 text-center">
 					<h4 class="mb-3 lan-section-title">Intro</h4>
 				</div>
@@ -9,7 +9,7 @@
 					v-for="(data, index) of dataUser.intro"
 					class="w-full px-2 mb-8"
 					:class="{
-						'lg:w-1/2': dataUser.intro.length >= 2,
+						'lg:w-[49%]': dataUser.intro.length >= 2,
 					}"
 					:key="index"
 				>
@@ -21,7 +21,7 @@
 						}"
 						v-html="data.title"
 					></h2>
-					<p class="mb-5 text-justify text-base font-medium text-secondary lg:text-lg" v-html="data.description"></p>
+					<p class="mb-5 text-base font-medium text-justify text-secondary lg:text-lg" v-html="data.description"></p>
 				</div>
 			</div>
 		</div>

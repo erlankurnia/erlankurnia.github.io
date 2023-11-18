@@ -10,13 +10,13 @@
 					<!-- Navbar Menu -->
 					<nav
 						id="nav-menu"
-						class="absolute w-auto h-auto origin-top-right right-0 top-4 pl-2 max-lg:pr-12 py-1 bg-tertiary rounded-3xl transition duration-300 ease-in-out scale-x-0"
+						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out origin-top-right scale-x-0 top-4 max-lg:pr-12 bg-tertiary rounded-3xl"
 						:class="{
 							'-translate-x-4 xl:flex xl:scale-x-100 xl:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
 							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
 						}"
 					>
-						<ul class="flex flex-wrap justify-evenly w-full">
+						<ul class="flex flex-wrap w-full justify-evenly">
 							<li class="group">
 								<RouterLink to="/" class="lan-nav-link max-w-max max-lg:mx-2">Home</RouterLink>
 							</li>
@@ -35,17 +35,17 @@
 
 					<!-- Toggle Menu Button -->
 					<div
-						class="absolute right-0 top-4 w-12 h-12 px-3 py-2 bg-tertiary rounded-3xl xl:hidden"
+						class="absolute right-0 w-12 h-12 px-3 py-2 cursor-pointer top-4 bg-tertiary rounded-3xl xl:hidden"
 						:class="{
 							hidden: $route.meta.hideNavbar,
 							fixed: !$route.meta.hideNavbar,
 						}"
 					>
-						<button
+						<div
 							id="hamburger"
 							name="hamburger"
 							type="button"
-							class="transition duration-300 ease-in-ou"
+							class="transition-all duration-300 ease-in-out"
 							:class="{
 								'lan-hamburger-active translate-x-1': isHamburgerOpen,
 							}"
@@ -54,7 +54,7 @@
 							<span class="origin-top-right lan-hamburger-line"></span>
 							<span class="lan-hamburger-line"></span>
 							<span class="origin-bottom-right lan-hamburger-line"></span>
-						</button>
+						</div>
 					</div>
 					<!-- Toggle Menu Button -->
 				</div>

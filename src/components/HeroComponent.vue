@@ -14,7 +14,7 @@
 						>Unity<span class="font-bold text-primary">_</span>Developer</h
 					>
 					<p class="mb-10 font-medium leading-relaxed text-secondary" v-html="dataUser.quote"></p>
-					<RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink>
+					<!-- <RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink> -->
 				</div>
 				<!-- Right / Top side -->
 
