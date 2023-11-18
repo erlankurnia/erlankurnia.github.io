@@ -1,5 +1,7 @@
 <template>
-	<div class="w-10/12 h-[2px] mx-auto bg-quaternary"></div>
+	<div class="container w-full h-[2px] px-8">
+		<div class="w-full h-full bg-quaternary"></div>
+	</div>
 	<footer class="py-16 select-none">
 		<div class="container">
 			<div class="flex flex-wrap md:flex-row-reverse">
