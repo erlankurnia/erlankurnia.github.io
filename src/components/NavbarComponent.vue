@@ -10,24 +10,24 @@
 					<!-- Navbar Menu -->
 					<nav
 						id="nav-menu"
-						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out origin-top-right scale-x-0 top-4 max-lg:pr-12 bg-tertiary rounded-3xl"
+						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
 						:class="{
-							'-translate-x-4 xl:flex xl:scale-x-100 xl:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
+							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
 							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
 						}"
 					>
 						<ul class="flex flex-wrap w-full justify-evenly">
 							<li class="group">
-								<RouterLink to="/" class="lan-nav-link max-w-max max-lg:mx-2">Home</RouterLink>
+								<RouterLink to="/" class="lan-nav-link max-w-max max-sm:mx-2">Home</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink to="/about" class="lan-nav-link max-w-max max-lg:mx-2">WHO_I'M</RouterLink>
+								<RouterLink to="/about" class="lan-nav-link max-w-max max-sm:mx-2">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink to="/activity" class="lan-nav-link max-w-max max-lg:mx-2">Activity</RouterLink>
+								<RouterLink to="/activity" class="lan-nav-link max-w-max max-sm:mx-2">Activity</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink to="/blog" class="lan-nav-link max-w-max max-lg:mx-2">Blog</RouterLink>
+								<RouterLink to="/blog" class="lan-nav-link max-w-max max-sm:mx-2">Blog</RouterLink>
 							</li>
 						</ul>
 					</nav>
@@ -35,7 +35,7 @@
 
 					<!-- Toggle Menu Button -->
 					<div
-						class="absolute right-0 w-12 h-12 px-3 py-2 cursor-pointer top-4 bg-tertiary rounded-3xl xl:hidden"
+						class="absolute right-0 w-12 h-12 px-3 py-[9px] cursor-pointer top-4 bg-tertiary rounded-3xl md:hidden"
 						:class="{
 							hidden: $route.meta.hideNavbar,
 							fixed: !$route.meta.hideNavbar,
@@ -49,7 +49,7 @@
 							:class="{
 								'lan-hamburger-active translate-x-1': isHamburgerOpen,
 							}"
-							@click="onHamburgerClick"
+							@click.capture="onHamburgerClick"
 						>
 							<span class="origin-top-right lan-hamburger-line"></span>
 							<span class="lan-hamburger-line"></span>
@@ -142,6 +142,7 @@ export default {
 
 		// On click outside nav menu
 		const isHamburgerOpen = ref(false);
+		const preventHamburger = ref(false);
 		const onOutsideMenu = (e) => {
 			if (e.target.id != "hamburger" && e.target.id != "nav-menu") {
 				setTimeout(() => {
@@ -153,11 +154,18 @@ export default {
 		window.addEventListener("touchstart", onOutsideMenu);
 		// On click outside nav menu
 
-		return { isHamburgerOpen };
+		return { isHamburgerOpen, preventHamburger };
 	},
 	methods: {
 		onHamburgerClick() {
-			this.isHamburgerOpen = !this.isHamburgerOpen;
+			if (!this.preventHamburger) {
+				this.preventHamburger = true;
+				this.isHamburgerOpen = !this.isHamburgerOpen;
+
+				setTimeout(() => {
+					this.preventHamburger = false;
+				}, 300);
+			}
 		},
 	},
 };
