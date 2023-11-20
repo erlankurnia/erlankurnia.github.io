@@ -159,13 +159,13 @@ export default {
 	methods: {
 		onHamburgerClick() {
 			if (!this.preventHamburger) {
-				this.preventHamburger = true;
 				this.isHamburgerOpen = !this.isHamburgerOpen;
 
 				setTimeout(() => {
 					this.preventHamburger = false;
-				}, 300);
+				}, 500);
 			}
+			this.preventHamburger = true;
 		},
 	},
 };
