@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import CreditView from "../views/CreditView.vue";
+import ActivityView from "../views/ActivityView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 
 const router = createRouter({
@@ -23,6 +24,12 @@ const router = createRouter({
 			path: "/references",
 			name: "credit",
 			component: CreditView,
+			meta: { hideNavbar: false },
+		},
+		{
+			path: "/activity",
+			name: "activity",
+			component: ActivityView,
 			meta: { hideNavbar: false },
 		},
 		{

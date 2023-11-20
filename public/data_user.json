@@ -8,19 +8,19 @@
 			"description": "It started by choosing a department during high school, not because I liked or was interested in computers.<br>But because other departments have the impression of playing around in a place that I think is not clean."
 		},
 		{
-			"title": "My Current <span class=\"text-primary\">Daily</span> Activities",
-			"description": "Of course doing my job as Unity Developer. Learn about Laravel, Vue.js, Tailwind CSS, management and business. Weightlifting every day, and sometimes swimming and badminton. Playing my favorite PC games, eFootball PES 2021."
+			"title": "There is Always <span class=\"text-primary\">Free Time</span> in a Busy Life",
+			"description": "A lot of time is used doing work as Unity Developer, learn about Laravel, Vue.js, Tailwind CSS, and business.<br>Also weightlifting, swimming, and badminton. Playing my favorite PC games, eFootball PES 2021."
 		}
 	],
 	"contact": {
-		"title": "Contact Me for <span class=\"text-primary\">Business</span> Purposes",
+		"title": "Have Something <span class=\"text-primary\">to Discuss</span> With Me",
 		"description": "To have business discussions, you can contact me via :"
 	},
 	"socialMedia": {
 		"email": "erlank2789@gmail.com",
 		"github": "https://github.com/krlan2789",
-		"instagram": "https://www.instagram.com/kurnia_erlan/",
-		"linkedin": "https://www.linkedin.com/in/krlan2789/",
+		"instagram": "https://www.instagram.com/kurnia_erlan",
+		"linkedin": "https://www.linkedin.com/in/krlan2789",
 		"telegram": "https://t.me/kurnia_erlan",
 		"twitter": "https://twitter.com/krlan2789",
 		"whatsapp": "https://wa.me/6282245319478"
@@ -96,7 +96,7 @@
 		]
 	},
 	"skill": {
-		"title": "What is My <span class=\"text-primary\">Ability</span>",
+		"title": "There Are Many Things That Aren't My <span class=\"text-primary\">Ability</span>",
 		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
 		"skills": [
 			{

@@ -1,5 +1,5 @@
 <template>
-	<HeroComponent id="home" class="bg-tertiary"></HeroComponent>
+	<HeroComponent id="home"></HeroComponent>
 	<IntroComponent class="bg-quaternary"></IntroComponent>
 	<ContactComponent class="bg-tertiary"></ContactComponent>
 </template>

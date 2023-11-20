@@ -77,32 +77,35 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import dateTimeMixins from "../helper/mixins/dateTime";
+
 export default {
+	mixins: [dateTimeMixins],
 	name: "TimelineComponent",
-	data() {
-		return {
-			histories: ref([
-				{
-					title: "Unity Developer",
-					date: "Now",
-					desc: "Anak Pintar Studio, Bogor, Indonesia",
-					url: "",
-				},
-				{
-					title: "Kitchen Staff",
-					date: "2021-02-07",
-					desc: "Rokupang Surabaya, Surabaya, Indonesia",
-					url: "",
-				},
-				{
-					title: "Tax Admin",
-					date: "2019-10-26",
-					desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
-					url: "",
-				},
-			]),
-		};
-	},
+	props: ["histories"],
+	// data() {
+	// 	return {
+	// 		histories: ref([
+	// 			{
+	// 				title: "Unity Developer",
+	// 				date: "Now",
+	// 				desc: "Anak Pintar Studio, Bogor, Indonesia",
+	// 				url: "",
+	// 			},
+	// 			{
+	// 				title: "Kitchen Staff",
+	// 				date: "2021-02-07",
+	// 				desc: "Rokupang Surabaya, Surabaya, Indonesia",
+	// 				url: "",
+	// 			},
+	// 			{
+	// 				title: "Tax Admin",
+	// 				date: "2019-10-26",
+	// 				desc: "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
+	// 				url: "",
+	// 			},
+	// 		]),
+	// 	};
+	// },
 };
 </script>
