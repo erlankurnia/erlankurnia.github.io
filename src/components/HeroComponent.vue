@@ -12,7 +12,7 @@
 					</h1>
 					<h class="py-6 text-lg font-extrabold max-w-max lg:ml-auto text-dark lg:text-2xl"
 						>Unity<span class="font-bold text-primary">_</span>Developer
-						<div class="border-b-[2px] mt-1"></div
+						<div class="border-b-[2px] mt-1 border-b-quaternary"></div
 					></h>
 					<p class="mb-10 font-medium leading-relaxed text-secondary" v-html="dataUser.quote"></p>
 					<!-- <RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink> -->
