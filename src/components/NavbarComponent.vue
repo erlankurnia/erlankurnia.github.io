@@ -49,7 +49,7 @@
 							:class="{
 								'lan-hamburger-active translate-x-1': isHamburgerOpen,
 							}"
-							@click.capture="onHamburgerClick"
+							@click="onHamburgerClick"
 						>
 							<span class="origin-top-right lan-hamburger-line"></span>
 							<span class="lan-hamburger-line"></span>
@@ -163,7 +163,7 @@ export default {
 
 				setTimeout(() => {
 					this.preventHamburger = false;
-				}, 500);
+				}, 750);
 			}
 			this.preventHamburger = true;
 		},
