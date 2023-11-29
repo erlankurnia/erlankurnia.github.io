@@ -26,12 +26,12 @@ const router = createRouter({
 			component: CreditView,
 			meta: { hideNavbar: false },
 		},
-		{
-			path: "/activity",
-			name: "activity",
-			component: ActivityView,
-			meta: { hideNavbar: false },
-		},
+		// {
+		// 	path: "/activity",
+		// 	name: "activity",
+		// 	component: ActivityView,
+		// 	meta: { hideNavbar: false },
+		// },
 		{
 			path: "/:pathMatch(.*)*",
 			name: "not-found",
