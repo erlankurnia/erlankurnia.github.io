@@ -51,16 +51,16 @@ import { ref, onMounted, inject } from "vue";
 export default {
 	name: "HeroComponent",
 	setup() {
-		// Splash liquid as user image
+		//#region Splash liquid as user image
 		const isPageLoaded = ref(false);
 		onMounted(() => {
 			setTimeout(() => {
 				isPageLoaded.value = true;
 			}, 500);
 		});
-		// Splash liquid as user image
+		//#endregion Splash liquid as user image
 
-		// Swapping animation
+		//#region Swapping animation
 		// const texts = ["kurniaer.land", "Erlan_Kurnia."];
 		// const texts = ["_erlanismy.name_", "My_name_is_Erlan"];
 		const texts = ["nal.re", "_Erlan"];
@@ -78,7 +78,7 @@ export default {
 			}
 		};
 		onMounted(animate);
-		// Swapping animation
+		//#endregion Swapping animation
 
 		const { dataUser } = inject("dataUser");
 

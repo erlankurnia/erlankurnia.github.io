@@ -10,7 +10,7 @@
 					<!-- Navbar Menu -->
 					<nav
 						id="nav-menu"
-						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
+						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
 						:class="{
 							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
 							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
@@ -116,7 +116,7 @@ import { ref } from "vue";
 export default {
 	name: "HeaderComponent",
 	setup() {
-		// On scrolling event to create sticky navbar
+		//#region On scrolling event to create sticky navbar
 		const onScroll = () => {
 			const header = document.querySelector("#navbar-menu");
 			const fixedNav = header.offsetTop;
@@ -138,9 +138,9 @@ export default {
 			}
 		};
 		window.addEventListener("scroll", onScroll);
-		// On scrolling event to create sticky navbar
+		//#endregion On scrolling event to create sticky navbar
 
-		// On click outside nav menu
+		//#region On click outside nav menu
 		const isHamburgerOpen = ref(false);
 		const preventHamburger = ref(false);
 		const onOutsideMenu = (e) => {
@@ -152,7 +152,7 @@ export default {
 		};
 		window.addEventListener("click", onOutsideMenu);
 		window.addEventListener("touchstart", onOutsideMenu);
-		// On click outside nav menu
+		//#endregion On click outside nav menu
 
 		return { isHamburgerOpen, preventHamburger };
 	},
