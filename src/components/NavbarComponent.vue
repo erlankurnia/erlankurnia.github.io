@@ -13,7 +13,10 @@
 						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
 						:class="{
 							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
-							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
+							'flex': isHamburgerOpen,
+							'flex-wrap': isHamburgerOpen,
+							'shadow-lg': isHamburgerOpen,
+							'scale-x-100': isHamburgerOpen,
 						}"
 					>
 						<ul class="flex flex-wrap w-full justify-evenly">
@@ -35,6 +38,7 @@
 
 					<!-- Toggle Menu Button -->
 					<div
+						id="hamburger-area"
 						class="absolute right-0 w-12 h-12 px-3 py-[9px] cursor-pointer top-4 bg-tertiary rounded-3xl md:hidden"
 						:class="{
 							hidden: $route.meta.hideNavbar,
@@ -143,7 +147,7 @@ export default {
 		const isHamburgerOpen = ref(false);
 		const preventHamburger = ref(false);
 		const onOutsideMenu = (e) => {
-			if (e.target.id != "hamburger" && e.target.id != "nav-menu") {
+			if (e.target.id != "hamburger" && e.target.id != "hamburger-area" && e.target.id != "nav-menu") {
 				setTimeout(() => {
 					preventHamburger.value = false;
 					isHamburgerOpen.value = false;
@@ -158,13 +162,29 @@ export default {
 	},
 	methods: {
 		onHamburgerClick() {
-			// console.log(`onHamburgerClick:${this.isHamburgerOpen}`);
+			// this.isHamburgerOpen = !this.isHamburgerOpen;
+
+			// setTimeout(() => {
+			// 	const hamburger = document.querySelector("#hamburger");
+			// 	if (this.isHamburgerOpen) {
+			// 		hamburger.classList.add("lan-hamburger-active translate-x-1");
+			// 	} else {
+			// 		hamburger.classList.remove("lan-hamburger-active translate-x-1");
+			// 	}
+
+			// 	const navMenu = document.querySelector("#nav-menu");
+			// 	if (this.isHamburgerOpen) {
+			// 		hamburger.classList.add("lan-hamburger-active translate-x-1");
+			// 	} else {
+			// 		hamburger.classList.remove("lan-hamburger-active translate-x-1");
+			// 	}
+			// }, 500);
+
 			if (!this.preventHamburger) {
 				this.isHamburgerOpen = !this.isHamburgerOpen;
 
 				setTimeout(() => {
 					this.preventHamburger = false;
-					// console.log(`preventHamburger:${this.preventHamburger}`);
 				}, 750);
 			}
 			this.preventHamburger = true;
