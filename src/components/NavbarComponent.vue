@@ -185,7 +185,7 @@ export default {
 
 				setTimeout(() => {
 					this.preventHamburger = false;
-				}, 750);
+				}, 500);
 			}
 			this.preventHamburger = true;
 		},
