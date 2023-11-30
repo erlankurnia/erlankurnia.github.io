@@ -43,11 +43,10 @@
 					>
 						<div
 							id="hamburger"
-							name="hamburger"
-							type="button"
 							class="transition-all duration-300 ease-in-out"
 							:class="{
-								'lan-hamburger-active translate-x-1': isHamburgerOpen,
+								'lan-hamburger-active': isHamburgerOpen,
+								'translate-x-1': isHamburgerOpen,
 							}"
 							@click="onHamburgerClick"
 						>
@@ -146,23 +145,26 @@ export default {
 		const onOutsideMenu = (e) => {
 			if (e.target.id != "hamburger" && e.target.id != "nav-menu") {
 				setTimeout(() => {
+					preventHamburger.value = false;
 					isHamburgerOpen.value = false;
 				}, 100);
 			}
 		};
 		window.addEventListener("click", onOutsideMenu);
-		window.addEventListener("touchstart", onOutsideMenu);
+		window.addEventListener("touchend", onOutsideMenu);
 		//#endregion On click outside nav menu
 
 		return { isHamburgerOpen, preventHamburger };
 	},
 	methods: {
 		onHamburgerClick() {
+			// console.log(`onHamburgerClick:${this.isHamburgerOpen}`);
 			if (!this.preventHamburger) {
 				this.isHamburgerOpen = !this.isHamburgerOpen;
 
 				setTimeout(() => {
 					this.preventHamburger = false;
+					// console.log(`preventHamburger:${this.preventHamburger}`);
 				}, 750);
 			}
 			this.preventHamburger = true;
