@@ -1,0 +1,1 @@
+import{_ as s,o as e,c as t,a as o}from"./index-30e38196.js";const c="/assets/baseus_icon-222c4be7.webp",a={name:"BaseusIcon"},n={class:"w-full aspect-square"},_=o("img",{src:c,class:"w-full mt-3 h-auto"},null,-1),r=[_];function l(u,i,p,d,f,m){return e(),t("div",n,r)}const B=s(a,[["render",l]]);export{B as default};
