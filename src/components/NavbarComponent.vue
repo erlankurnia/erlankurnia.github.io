@@ -6,19 +6,20 @@
 				<div class="px-4">
 					<RouterLink to="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary">LAN</RouterLink>
 				</div>
-				<div class="relative h-20 w-full z-[9999]">
+				<div id="nav-menu-area" class="relative h-20 w-full z-[9999]">
 					<!-- Navbar Menu -->
 					<nav
 						id="nav-menu"
 						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
 						:class="{
-							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': !$route.meta.hideNavbar,
+							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
+							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
 						}"
 					>
 						<ul class="flex flex-wrap w-full justify-evenly">
-							<li class="group">
+							<!-- <li class="group">
 								<RouterLink to="/" class="lan-nav-link max-w-max max-sm:mx-2">Home</RouterLink>
-							</li>
+							</li> -->
 							<li class="group">
 								<RouterLink to="/about" class="lan-nav-link max-w-max max-sm:mx-2">WHO_I'M</RouterLink>
 							</li>
@@ -33,21 +34,27 @@
 					<!-- Navbar Menu -->
 
 					<!-- Toggle Menu Button -->
-					<button
+					<div
 						id="hamburger-area"
-						type="button"
 						class="absolute right-0 w-12 h-12 px-3 py-[9px] cursor-pointer top-4 bg-tertiary rounded-3xl md:hidden"
 						:class="{
 							hidden: $route.meta.hideNavbar,
 							fixed: !$route.meta.hideNavbar,
 						}"
+						@click="toggleHamburger"
 					>
-						<div id="hamburger" class="transition-all duration-300 ease-in-out">
+						<div
+							id="hamburger"
+							class="transition-all duration-300 ease-in-out"
+							:class="{
+								'lan-hamburger-active translate-x-1': isHamburgerOpen,
+							}"
+						>
 							<span class="origin-top-right lan-hamburger-line"></span>
 							<span class="lan-hamburger-line"></span>
 							<span class="origin-bottom-right lan-hamburger-line"></span>
 						</div>
-					</button>
+					</div>
 					<!-- Toggle Menu Button -->
 				</div>
 
@@ -133,62 +140,32 @@ export default {
 		//#endregion On scrolling event to create sticky navbar
 
 		//#region On click outside nav menu
+		const isHamburgerOpen = ref(false);
+		const preventHamburger = ref(false);
 		const onOutsideMenu = (e) => {
-			if (e.target.id != "hamburger" && e.target.id != "hamburger-area" && e.target.id != "nav-menu") {
-				const hamburger = document.getElementById("hamburger");
-				const navMenu = document.getElementById("nav-menu");
-
-				navMenu.classList.remove("flex");
-				navMenu.classList.remove("flex-wrap");
-				navMenu.classList.remove("shadow-lg");
-				navMenu.classList.remove("scale-x-100");
-
-				hamburger.classList.remove("lan-hamburger-active");
-				hamburger.classList.remove("translate-x-1");
+			if (e.target.id != "hamburger" && e.target.id != "nav-menu-area" && e.target.id != "hamburger-area") {
+				setTimeout(() => {
+					preventHamburger.value = false;
+					isHamburgerOpen.value = false;
+				}, 100);
 			}
 		};
 		window.addEventListener("click", onOutsideMenu);
 		window.addEventListener("touchend", onOutsideMenu);
 		//#endregion On click outside nav menu
 
-		return {};
+		return { isHamburgerOpen };
 	},
-	mounted() {
-		//#region Hamburger menu
-		const hamburger = document.getElementById("hamburger");
-		const navMenu = document.getElementById("nav-menu");
-		hamburger.addEventListener("click", () => {
-			if (hamburger.classList.contains("lan-hamburger-active")) {
-				hamburger.classList.remove("lan-hamburger-active");
-				hamburger.classList.remove("translate-x-1");
-			} else {
-				hamburger.classList.add("lan-hamburger-active");
-				hamburger.classList.add("translate-x-1");
+	methods: {
+		toggleHamburger: function () {
+			if (!this.preventHamburger) {
+				this.isHamburgerOpen = !this.isHamburgerOpen;
+				setTimeout(() => {
+					this.preventHamburger = false;
+				}, 500);
 			}
-
-			if (navMenu.classList.contains("scale-x-100")) {
-				navMenu.classList.remove("flex");
-				navMenu.classList.remove("flex-wrap");
-				navMenu.classList.remove("shadow-lg");
-				navMenu.classList.remove("scale-x-100");
-
-				navMenu.classList.add("-translate-x-4");
-				navMenu.classList.add("sm:flex");
-				navMenu.classList.add("md:scale-x-100");
-				navMenu.classList.add("md:shadow-lg");
-			} else {
-				navMenu.classList.add("flex");
-				navMenu.classList.add("flex-wrap");
-				navMenu.classList.add("shadow-lg");
-				navMenu.classList.add("scale-x-100");
-
-				navMenu.classList.remove("-translate-x-4");
-				navMenu.classList.remove("sm:flex");
-				navMenu.classList.remove("md:scale-x-100");
-				navMenu.classList.remove("md:shadow-lg");
-			}
-		});
-		//#endregion Hamburger menu
+			this.preventHamburger = true;
+		},
 	},
 };
 </script>
