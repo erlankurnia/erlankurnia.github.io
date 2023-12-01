@@ -1,0 +1,1 @@
+import{_ as s,o as t,c as e,a as o}from"./index-30e38196.js";const a="/assets/maxst_icon-4beae917.png",c={name:"MaxstIcon"},n={class:"w-full aspect-square"},_=o("img",{src:a,class:"w-full h-auto my-auto"},null,-1),r=[_];function l(i,p,u,d,m,f){return t(),e("div",n,r)}const h=s(c,[["render",l]]);export{h as default};
