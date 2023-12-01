@@ -6,7 +6,7 @@
 				<div class="flex flex-col self-center w-full px-4 lg:justify-end lg:w-1/2 lg:text-right">
 					<h1 class="text-sm font-semibold sm:text-base text-secondary md:text-xl">
 						Hello,<span class="font-bold text-primary">_</span>I'am
-						<span class="block mt-1 text-2xl font-bold sm:text-4xl lg:5xl text-secondary">
+						<span class="block mt-1 text-3xl font-bold sm:text-4xl lg:5xl text-secondary">
 							<a href="/" class="text-primary">{{ text }}_</a>Kurnia
 						</span>
 					</h1>
