@@ -12,9 +12,9 @@
 					}"
 				>
 					<ul class="flex flex-wrap justify-center md:justify-end">
-						<!-- <li class="flex items-center group">
+						<li class="flex items-center group">
 							<a href="/" class="mx-2 text-sm lan-nav-link">Home</a>
-						</li> -->
+						</li>
 						<li class="flex items-center group">
 							<RouterLink to="/about" class="mx-2 text-sm lan-nav-link">WHO_I'M</RouterLink>
 						</li>

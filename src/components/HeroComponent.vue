@@ -4,23 +4,23 @@
 			<div class="flex flex-wrap lg:flex-row-reverse">
 				<!-- Right / Top side -->
 				<div class="flex flex-col self-center w-full px-4 lg:justify-end lg:w-1/2 lg:text-right">
-					<h1 class="text-base font-semibold text-secondary md:text-xl">
+					<h1 class="text-sm font-semibold sm:text-base text-secondary md:text-xl">
 						Hello,<span class="font-bold text-primary">_</span>I'am
-						<span class="block mt-1 text-4xl font-bold lg:5xl text-secondary">
+						<span class="block mt-1 text-2xl font-bold sm:text-4xl lg:5xl text-secondary">
 							<a href="/" class="text-primary">{{ text }}_</a>Kurnia
 						</span>
 					</h1>
-					<h class="py-6 text-lg font-extrabold max-w-max lg:ml-auto text-dark lg:text-2xl"
+					<h class="py-6 text-sm font-extrabold sm:text-lg max-w-max lg:ml-auto text-dark lg:text-2xl"
 						>Unity<span class="font-bold text-primary">_</span>Developer
 						<div class="border-b-[2px] mt-1 border-b-quaternary"></div
 					></h>
-					<p class="mb-10 font-medium leading-relaxed text-secondary" v-html="dataUser.quote"></p>
+					<p class="mb-10 text-sm font-medium leading-relaxed sm:text-base text-secondary" v-html="dataUser.quote"></p>
 					<!-- <RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink> -->
 				</div>
 				<!-- Right / Top side -->
 
 				<!-- Left / Bottom side -->
-				<div class="self-end w-full px-4 lg:w-1/2">
+				<div class="self-end w-full px-0 xs:px-4 lg:w-1/2">
 					<div class="relative mt-10 lg:mt-9 lg:right-0">
 						<span
 							id="splash-liquid"

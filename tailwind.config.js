@@ -15,6 +15,7 @@ module.exports = {
 				dark: "#020617",
 			},
 			screens: {
+				"3xs": "288px",
 				"2xs": "360px",
 				"xs": "448px",
 				"sm": "560px",

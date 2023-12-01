@@ -3,31 +3,31 @@
 		<div class="container px-4">
 			<div class="flex items-center justify-between">
 				<!-- <div class="relative flex items-center justify-between"> -->
-				<div class="px-4">
-					<RouterLink to="/" class="block py-6 text-2xl font-extrabold tracking-[.2em] text-primary">LAN</RouterLink>
+				<div class="px-2 sm:px-4">
+					<RouterLink to="/" class="block py-6 text-xl sm:text-2xl font-extrabold tracking-[.2em] text-primary">LAN</RouterLink>
 				</div>
 				<div id="nav-menu-area" class="relative h-20 w-full z-[9999]">
 					<!-- Navbar Menu -->
 					<nav
 						id="nav-menu"
-						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
+						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right scale-x-0 2xs:pr-2 top-4 max-2xs:pr-12 bg-tertiary rounded-3xl"
 						:class="{
-							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
+							'-translate-x-4 2xs:flex 2xs:scale-x-100 2xs:shadow-lg': $route.meta.hideNavbar || !isHamburgerOpen,
 							'flex flex-wrap shadow-lg scale-x-100': isHamburgerOpen,
 						}"
 					>
 						<ul class="flex flex-wrap w-full justify-evenly">
 							<!-- <li class="group">
-								<RouterLink to="/" class="lan-nav-link max-w-max max-sm:mx-2">Home</RouterLink>
+								<RouterLink to="/" class="lan-nav-link max-w-max max-sm:mx-1 sm:mx-3">Home</RouterLink>
 							</li> -->
 							<li class="group">
-								<RouterLink to="/about" class="lan-nav-link max-w-max max-sm:mx-2">WHO_I'M</RouterLink>
+								<RouterLink to="/about" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink to="/activity" class="lan-nav-link max-w-max max-sm:mx-2">Activity</RouterLink>
+								<RouterLink to="/activity" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3">Activity</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink to="/blog" class="lan-nav-link max-w-max max-sm:mx-2">Blog</RouterLink>
+								<RouterLink to="/blog" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3">Blog</RouterLink>
 							</li>
 						</ul>
 					</nav>
@@ -36,7 +36,7 @@
 					<!-- Toggle Menu Button -->
 					<div
 						id="hamburger-area"
-						class="absolute right-0 w-12 h-12 px-3 py-[9px] cursor-pointer top-4 bg-tertiary rounded-3xl md:hidden"
+						class="absolute right-0 w-12 h-12 px-3 py-[9px] cursor-pointer top-4 bg-tertiary rounded-3xl 2xs:hidden"
 						:class="{
 							hidden: $route.meta.hideNavbar,
 							fixed: !$route.meta.hideNavbar,

@@ -33,7 +33,7 @@
 	}
 
 	.lan-nav-link {
-		@apply flex py-2 mx-8 text-base text-dark transition duration-1000 group-hover:duration-300 group-hover:text-primary group-hover:font-extrabold uppercase;
+		@apply flex py-2 mx-4 text-base text-dark transition duration-1000 group-hover:duration-300 group-hover:text-primary group-hover:font-extrabold uppercase;
 	}
 
 	.lan-hamburger-line {
@@ -57,11 +57,11 @@
 	}
 
 	.lan-section-title {
-		@apply text-xl font-bold uppercase text-primary;
+		@apply text-base sm:text-xl font-bold uppercase text-primary;
 	}
 
 	.lan-section-subtitle {
-		@apply max-w-xl mb-5 leading-8 text-[1.75rem] mx-auto text-center font-bold text-dark lg:text-3xl;
+		@apply max-w-xl mb-5 leading-7 sm:leading-8 text-2xl sm:text-[1.75rem] mx-auto text-center font-bold text-dark lg:text-3xl;
 	}
 
 	.lan-text-primary {
