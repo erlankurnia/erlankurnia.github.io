@@ -1,1 +1,0 @@
-import{_ as s,o,c as e,a as t}from"./index-30e38196.js";const a="/assets/vuforia_icon-d15ee807.png",c={name:"VuforiaIcon"},n={class:"w-full aspect-square"},r=t("img",{src:a,class:"w-full mt-2 h-auto"},null,-1),_=[r];function i(l,u,f,p,d,m){return o(),e("div",n,_)}const $=s(c,[["render",i]]);export{$ as default};
