@@ -21,7 +21,7 @@
 								<RouterLink to="/" class="lan-nav-link max-w-max max-sm:mx-1 sm:mx-3">Home</RouterLink>
 							</li> -->
 							<li class="group">
-								<RouterLink to="/about" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3">WHO_I'M</RouterLink>
+								<RouterLink to="/who_iam" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
 								<RouterLink to="/activity" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3">Activity</RouterLink>

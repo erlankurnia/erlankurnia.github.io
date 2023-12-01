@@ -15,8 +15,8 @@ const router = createRouter({
 			meta: { hideNavbar: false },
 		},
 		{
-			path: "/about",
-			name: "about",
+			path: "/who_iam",
+			name: "who_iam",
 			component: AboutView,
 			meta: { hideNavbar: false },
 		},
