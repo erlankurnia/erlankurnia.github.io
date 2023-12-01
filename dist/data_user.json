@@ -1,0 +1,322 @@
+{
+	"navbarBrand": "LAN",
+	"quote": "To <span class=\"font-bold text-dark\">entertain</span> a group, you don't have <span class=\"font-bold text-dark\">to join</span> that group!",
+	"image": "/img/fotor.comimagescreate_3.png",
+	"intro": [
+		{
+			"title": "Started by <span class=\"text-primary\">Eliminat</span>ing What I Didn't Like",
+			"description": "It started by choosing a department during high school, not because I liked or was interested in computers.<br>But because other departments have the impression of playing around in a place that I think is not clean."
+		},
+		{
+			"title": "There is Always <span class=\"text-primary\">Free Time</span> in a Busy Life",
+			"description": "A lot of time is used doing work as Unity Developer, learn about Laravel, Vue.js, Tailwind CSS, and business.<br>Also weightlifting, badminton, and swimming. Playing my favorite PC games, eFootball PES 2021."
+		}
+	],
+	"contact": {
+		"title": "Have Something <span class=\"text-primary\">to Discuss</span> With Me",
+		"description": "To have business discussions, you can contact me via :"
+	},
+	"socialMedia": {
+		"email": "erlank2789@gmail.com",
+		"github": "https://github.com/krlan2789",
+		"instagram": "https://www.instagram.com/kurnia_erlan",
+		"linkedin": "https://www.linkedin.com/in/krlan2789",
+		"telegram": "https://t.me/kurnia_erlan",
+		"twitter": "https://twitter.com/krlan2789",
+		"whatsapp": "https://wa.me/6282245319478"
+	},
+	"profile": {
+		"name": {
+			"label": "Fullname",
+			"value": "Erlan Kurnia",
+			"type": "text"
+		},
+		"profession": {
+			"label": "Profession",
+			"value": "Unity Developer",
+			"type": "text"
+		},
+		"birthday": {
+			"label": "Age",
+			"value": "1996-02-25",
+			"type": "age"
+		},
+		"address": {
+			"label": "Address",
+			"value": "Cipenjo, Bogor, West Java",
+			"type": "text"
+		},
+		"nationality": {
+			"label": "Nationality",
+			"value": "Indonesian",
+			"type": "text"
+		}
+	},
+	"history": {
+		"title": "How Did I <span class=\"text-primary\">Reach</span> This Moment",
+		"description": "Having work experience in various fields.<br>Because as long as the final goal can be achieved the process can adapt to the current situation.",
+		"timeline": [
+			{
+				"title": "Unity Developer",
+				"dateFrom": "2021-02-08",
+				"dateTo": "Now",
+				"desc": "Anak Pintar Studio, Bogor, Indonesia"
+			},
+			{
+				"title": "Kitchen Staff",
+				"dateFrom": "2019-03-01",
+				"dateTo": "2021-02-07",
+				"desc": "Rokupang Surabaya, Indonesia"
+			},
+			{
+				"title": "Tax Admin",
+				"dateFrom": "2017-02-20",
+				"dateTo": "2018-10-26",
+				"desc": "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia"
+			},
+			{
+				"title": "Associate TVS",
+				"dateFrom": "2015-11-16",
+				"dateTo": "2016-05-15",
+				"desc": "PT. Alfa Retail Indonesia, Surabaya, Indonesia"
+			},
+			{
+				"title": "Flash Animator (Internship)",
+				"dateFrom": "2015-04-20",
+				"dateTo": "2015-07-30",
+				"desc": "Maulidan Games, Surabaya, Indonesia"
+			},
+			{
+				"title": "Computer and Network Engineering",
+				"status": "Graduate from Highschool",
+				"dateFrom": "2012-08-06",
+				"dateTo": "2015-05-15",
+				"desc": "SMK PGRI 6 Surabaya, Indonesia"
+			}
+		]
+	},
+	"skill": {
+		"title": "There Are Many Things That Aren't My <span class=\"text-primary\">Ability</span>",
+		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
+		"skills": [
+			{
+				"name": "csharp",
+				"year": 2017
+			},
+			{
+				"name": "unity",
+				"year": 2017
+			},
+			{
+				"name": "maxst",
+				"year": 2022
+			},
+			{
+				"name": "vuforia",
+				"year": 2021
+			},
+			{
+				"name": "arduino",
+				"year": 2021
+			},
+			{
+				"name": "php",
+				"year": 2018
+			},
+			{
+				"name": "postgresql",
+				"year": 2021
+			},
+			{
+				"name": "firebase",
+				"year": 2021
+			},
+			{
+				"name": "onesignal",
+				"year": 2023
+			},
+			{
+				"name": "nodejs",
+				"year": 2020
+			}
+		]
+	},
+	"learn": {
+		"title": "Trying to Obtain New <span class=\"text-primary\">Abiliti</span>es",
+		"description": "New technology is always available, so learning has no end.<br>Some of the technologies I'm studying.",
+		"topics": [
+			{
+				"name": "laravel",
+				"year": 2022
+			},
+			{
+				"name": "tailwind",
+				"year": 2023
+			},
+			{
+				"name": "vue",
+				"year": 2023
+			},
+			{
+				"name": "kotlin",
+				"year": 2023
+			}
+		]
+	},
+	"equipment": {
+		"image": "/img/workspace_setup_512x512.jpg",
+		"hardware_description": "My workspace setup for work from home.",
+		"hardware": {
+			"Computer": [
+				{
+					"name": "Lenovo Slim 7 ProX - Ryzen 9|RTX3050|32GB|1TB",
+					"icon": "lenovo"
+				},
+				{
+					"name": "Apple Macbook Pro 2019 - Core i7|16GB|512GB",
+					"icon": "apple"
+				}
+			],
+			"Monitor": [
+				{
+					"name": "Lenovo L24i-40 - 24\"|FullHD",
+					"icon": "lenovo"
+				}
+			],
+			"Mouse": [
+				{
+					"name": "Logitech Pebble M350",
+					"icon": "logitech"
+				}
+			],
+			"Keyboard": [
+				{
+					"name": "Logitech K375s",
+					"icon": "logitech"
+				}
+			],
+			"Phone": [
+				{
+					"name": "Sony Xperia XZ3 - 4GB|64GB",
+					"icon": "sony"
+				},
+				{
+					"name": "Apple iPhone XR - 3GB|256GB",
+					"icon": "apple"
+				}
+			],
+			"Microcontroller": [
+				{
+					"name": "Espressif Esp32 DevKit",
+					"icon": "espressif"
+				}
+			]
+		},
+		"software_description": "Programs that I often use in doing my work.",
+		"software": {
+			"OS": [
+				{
+					"name": "Windows 11 23H2",
+					"icon": "windows11"
+				},
+				{
+					"name": "MacOS Ventura 13.1",
+					"icon": "apple"
+				}
+			],
+			"Engine": [
+				{
+					"name": "Unity3D 2022.3.9f1",
+					"icon": "unity"
+				}
+			],
+			"Editor": [
+				{
+					"name": "Ms Visual Studio Community 2019",
+					"icon": "visualstudio"
+				},
+				{
+					"name": "Ms Visual Studio Code",
+					"icon": "vscode"
+				},
+				{
+					"name": "Android Studio Flamingo 2022.2.1",
+					"icon": "androidstudio"
+				},
+				{
+					"name": "Arduino IDE",
+					"icon": "arduino"
+				},
+				{
+					"name": "Xcode 14.3.1",
+					"icon": "xcode"
+				}
+			],
+			"Browser": [
+				{
+					"name": "Microsoft Edge",
+					"icon": "msedge"
+				}
+			],
+			"Others": [
+				{
+					"name": "Postman",
+					"icon": "postman"
+				},
+				{
+					"name": "XAMPP",
+					"icon": "xampp"
+				},
+				{
+					"name": "GitHub Desktop",
+					"icon": "github"
+				},
+				{
+					"name": "Zoho Notebook",
+					"icon": "zoho"
+				}
+			]
+		}
+	},
+	"reference": {
+		"title": "<span class=\"text-primary\">Attribution</span> for Who Inspired Me",
+		"description": "Thanks for your creation which helped me in creating this website.",
+		"credit": [
+			{
+				"title": "Web Programming UNPAS",
+				"description": "By watching tutorials from <span class=\"text-primary font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
+				"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
+			},
+			{
+				"title": "DITLAB",
+				"description": "Thanks to my cousin <span class=\"text-primary font-bold\">Adit</span>, as inspiration in determining some of the content shown.",
+				"url": "https://aditiafa.dev"
+			},
+			{
+				"title": "Simple Icons",
+				"description": "Source for the majority of icons used.",
+				"url": "https://simpleicons.org"
+			},
+			{
+				"title": "Heroicons",
+				"description": "Source for some of the icons used.",
+				"url": "https://heroicons.com"
+			},
+			{
+				"title": "TailwindComponents",
+				"description": "As a reference for several components used.",
+				"url": "https://tailwindcomponents.com"
+			},
+			{
+				"title": "Fotor",
+				"description": "An AI that makes a photo look like an illustration.",
+				"url": "https://www.fotor.com"
+			},
+			{
+				"title": "Blobmaker",
+				"description": "An AI that generates random shape.",
+				"url": "https://www.blobmaker.app"
+			}
+		]
+	}
+}
