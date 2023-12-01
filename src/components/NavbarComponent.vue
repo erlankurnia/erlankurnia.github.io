@@ -12,7 +12,7 @@
 						id="nav-menu"
 						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right scale-x-0 top-4 max-sm:pr-12 bg-tertiary rounded-3xl"
 						:class="{
-							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': $route.meta.hideNavbar,
+							'-translate-x-4 sm:flex md:scale-x-100 md:shadow-lg': !$route.meta.hideNavbar,
 						}"
 					>
 						<ul class="flex flex-wrap w-full justify-evenly">

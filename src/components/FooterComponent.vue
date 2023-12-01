@@ -16,6 +16,15 @@
 							<a href="/" class="mx-2 text-sm lan-nav-link">Home</a>
 						</li>
 						<li class="flex items-center group">
+							<RouterLink to="/about" class="mx-2 text-sm lan-nav-link">WHO_I'M</RouterLink>
+						</li>
+						<li class="flex items-center group">
+							<RouterLink to="/activity" class="mx-2 text-sm lan-nav-link">Activity</RouterLink>
+						</li>
+						<li class="flex items-center group">
+							<RouterLink to="/blog" class="mx-2 text-sm lan-nav-link">Blog</RouterLink>
+						</li>
+						<li class="flex items-center group">
 							<RouterLink to="/references" class="mx-2 text-sm lan-nav-link">References</RouterLink>
 						</li>
 						<li class="flex items-center group">
