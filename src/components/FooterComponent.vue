@@ -13,19 +13,54 @@
 				>
 					<ul class="flex flex-wrap justify-center md:justify-end">
 						<li class="flex items-center group">
-							<a href="/" class="mx-2 text-sm lan-nav-link">Home</a>
+							<a
+								href="/"
+								class="mx-2 text-sm lan-nav-link"
+								:class="{
+									'text-primary font-bold': $route.name == 'home',
+								}"
+								>Home</a
+							>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/who_iam" class="mx-2 text-sm lan-nav-link">WHO_I'M</RouterLink>
+							<RouterLink
+								to="/who_iam"
+								class="mx-2 text-sm lan-nav-link"
+								:class="{
+									'text-primary font-bold': $route.name == 'who_iam',
+								}"
+								>WHO_I'M</RouterLink
+							>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/activity" class="mx-2 text-sm lan-nav-link">Activity</RouterLink>
+							<RouterLink
+								to="/activity"
+								class="mx-2 text-sm lan-nav-link"
+								:class="{
+									'text-primary font-bold': $route.name == 'activity',
+								}"
+								>Activity</RouterLink
+							>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/blog" class="mx-2 text-sm lan-nav-link">Blog</RouterLink>
+							<RouterLink
+								to="/blog"
+								class="mx-2 text-sm lan-nav-link"
+								:class="{
+									'text-primary font-bold': $route.name == 'blog',
+								}"
+								>Blog</RouterLink
+							>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/references" class="mx-2 text-sm lan-nav-link">References</RouterLink>
+							<RouterLink
+								to="/references"
+								class="mx-2 text-sm lan-nav-link"
+								:class="{
+									'text-primary font-bold': $route.name == 'references',
+								}"
+								>References</RouterLink
+							>
 						</li>
 						<li class="flex items-center group">
 							<a
