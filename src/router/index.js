@@ -22,7 +22,7 @@ const router = createRouter({
 		},
 		{
 			path: "/references",
-			name: "credit",
+			name: "references",
 			component: CreditView,
 			meta: { hideNavbar: false },
 		},
