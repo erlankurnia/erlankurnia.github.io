@@ -45,7 +45,7 @@
 									to="/blog"
 									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3"
 									:class="{
-										'text-primary font-bold': $route.name == 'wblogho_iam',
+										'text-primary font-bold': $route.name == 'blog',
 									}"
 									>Blog</RouterLink
 								>
