@@ -86,6 +86,9 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), zohoKeys)">
 		<ZohoIcon class="text-[#E42527]"></ZohoIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), notionKeys)">
+		<NotionIcon class="text-[#000000]"></NotionIcon>
+	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xamppKeys)">
 		<XamppIcon class="text-[#FB7A24]"></XamppIcon>
 	</template>
@@ -134,6 +137,7 @@ export default {
 		PostmanIcon: defineAsyncComponent(() => importSVGIcon("Postman")),
 		XamppIcon: defineAsyncComponent(() => importSVGIcon("Xampp")),
 		ZohoIcon: defineAsyncComponent(() => importSVGIcon("Zoho")),
+		NotionIcon: defineAsyncComponent(() => importSVGIcon("Notion")),
 		XcodeIcon: defineAsyncComponent(() => importSVGIcon("Xcode")),
 		LenovoIcon: defineAsyncComponent(() => importSVGIcon("Lenovo")),
 	},
@@ -170,6 +174,7 @@ export default {
 			postmanKeys: ["postman"],
 			xamppKeys: ["xampp"],
 			zohoKeys: ["zoho"],
+			notionKeys: ["notion"],
 			xcodeKeys: ["xcode"],
 			lenovoKeys: ["lenovo"],
 		};
