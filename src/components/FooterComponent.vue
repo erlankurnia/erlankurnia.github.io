@@ -108,7 +108,7 @@
 						</span>
 						<span class="w-[1px] mx-1 h-full max-h-8 bg-dark"></span>
 						<span class="px-1 rounded-full text-dark"
-							>Created by <a class="font-bold text-primary" target="_blank" href="https://kuryana.id">Kuryana.id</a></span
+							>Created by <a class="font-bold text-primary" target="_blank" href="https://erlankurnia.github.io">Me</a></span
 						>
 					</div>
 				</div>
