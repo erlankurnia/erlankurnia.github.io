@@ -32,7 +32,7 @@
 								>WHO_I'M</RouterLink
 							>
 						</li>
-						<li class="flex items-center group">
+						<!-- <li class="flex items-center group">
 							<RouterLink
 								to="/activity"
 								class="mx-2 text-sm lan-nav-link"
@@ -41,7 +41,7 @@
 								}"
 								>Activity</RouterLink
 							>
-						</li>
+						</li> -->
 						<li class="flex items-center group">
 							<RouterLink
 								to="/blog"

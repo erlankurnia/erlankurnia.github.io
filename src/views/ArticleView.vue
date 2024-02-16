@@ -1,9 +1,9 @@
 <template>
-	<section v-if="dataArticle != null && dataArticle.title" id="profile" class="pt-24 pb-16 lg:pb-0 max-xs:min-h-screen">
-		<div class="container">
-			<div class="flex flex-wrap">
+	<section v-if="dataArticle != null && dataArticle.title" id="profile" class="pt-24 max-xs:min-h-screen">
+		<div class="container max-w-5xl">
+			<div class="flex flex-wrap mb-16">
 				<div class="w-full px-4 pt-4 pb-0 text-center">
-					<h4 class="mb-3 lan-section-title" v-html="dataArticle.title"></h4>
+					<h2 class="mb-3 text-2xl lan-section-title" v-html="dataArticle.title"></h2>
 				</div>
 
 				<div
@@ -15,7 +15,19 @@
 					</div>
 				</div>
 
+				<div class="w-full px-4 pt-6 mb-0" v-if="dataArticle.description">
+					<p class="text-sm text-secondary" v-html="dataArticle.description"></p>
+				</div>
+
 				<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme"></MarkdownComponent>
+
+				<div v-if="dataArticle.url && dataArticle.url.github" class="w-full px-4 text-right">
+					<a :href="dataArticle.url.github" target="_blank" class="text-sm lan-link-primary">
+						View on GitHub<span class="inline-block h-[11px] ml-1 aspect-square">
+							<TechnologyIcon techName="github"></TechnologyIcon>
+						</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -26,6 +38,7 @@ import { inject, ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import markdownit from "markdown-it";
 import MarkdownComponent from "../components/MarkdownComponent.vue";
+import TechnologyIcon from "../components/icons/Icon.vue";
 import tools from "../helper/tools";
 
 const { dataUser } = inject("dataUser");

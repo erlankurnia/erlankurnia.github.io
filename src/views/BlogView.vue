@@ -24,7 +24,7 @@
 							<p
 								class="text-sm text-secondary"
 								v-if="data.description"
-								v-html="('' + data.description).substring(0, data.description.length > 64 ? 64 : data.description.length)"
+								v-html="('' + data.description).substring(0, data.description.length > 128 ? 128 : data.description.length)"
 							></p>
 						</li>
 					</ul>

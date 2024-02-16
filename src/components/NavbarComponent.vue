@@ -30,7 +30,7 @@
 									>WHO_I'M</RouterLink
 								>
 							</li>
-							<li class="group">
+							<!-- <li class="group">
 								<RouterLink
 									to="/activity"
 									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3"
@@ -39,7 +39,7 @@
 									}"
 									>Activity</RouterLink
 								>
-							</li>
+							</li> -->
 							<li class="group">
 								<RouterLink
 									to="/blog"
