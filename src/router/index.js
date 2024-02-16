@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import CreditView from "../views/CreditView.vue";
-import ActivityView from "../views/ActivityView.vue";
+import BlogView from "../views/BlogView.vue";
+import ArticleView from "../views/ArticleView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 
 const router = createRouter({
@@ -26,12 +27,18 @@ const router = createRouter({
 			component: CreditView,
 			meta: { hideNavbar: false },
 		},
-		// {
-		// 	path: "/activity",
-		// 	name: "activity",
-		// 	component: ActivityView,
-		// 	meta: { hideNavbar: false },
-		// },
+		{
+			path: "/blog",
+			name: "blog",
+			component: BlogView,
+			meta: { hideNavbar: false },
+		},
+		{
+			path: "/article/:id",
+			name: "article",
+			component: ArticleView,
+			meta: { hideNavbar: false },
+		},
 		{
 			path: "/:pathMatch(.*)*",
 			name: "not-found",
