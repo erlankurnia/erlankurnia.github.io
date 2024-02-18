@@ -63,10 +63,10 @@ export default {
 		//#region Swapping animation
 		// const texts = ["kurniaer.land", "Erlan_Kurnia."];
 		// const texts = ["_erlanismy.name_", "My_name_is_Erlan"];
-		const texts = ["nal.re", "_Erlan"];
+		const texts = ["earl!", "Erlan"];
 		const text = ref(texts[0]);
-		let index = 0,
-			textIndex = 0;
+		let index = 0;
+		let textIndex = 0;
 		const animate = () => {
 			text.value = texts[textIndex].slice(0, index + 1) + texts[1 - textIndex].slice(index + 1);
 			index = (index + 1) % texts[0].length;

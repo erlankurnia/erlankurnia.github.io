@@ -108,14 +108,6 @@
 				"year": 2017
 			},
 			{
-				"name": "maxst",
-				"year": 2022
-			},
-			{
-				"name": "vuforia",
-				"year": 2021
-			},
-			{
 				"name": "arduino",
 				"year": 2021
 			},
@@ -145,6 +137,10 @@
 		"title": "Trying to Obtain New <span class=\"text-primary\">Abiliti</span>es",
 		"description": "New technology is always available, so learning has no end.<br>Some of the technologies I'm studying.",
 		"topics": [
+			{
+				"name": "maxst",
+				"year": 2022
+			},
 			{
 				"name": "laravel",
 				"year": 2022
