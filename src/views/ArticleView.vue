@@ -19,7 +19,12 @@
 					<p class="text-sm text-secondary" v-html="dataArticle.description"></p>
 				</div>
 
-				<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme"></MarkdownComponent>
+				<template v-if="dataReadme">
+					<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme"></MarkdownComponent>
+				</template>
+				<template v-else>
+					<LoadingComponent></LoadingComponent>
+				</template>
 
 				<div v-if="dataArticle.url && dataArticle.url.github" class="w-full px-4 text-right">
 					<a :href="dataArticle.url.github" target="_blank" class="text-sm lan-link-primary">
@@ -33,13 +38,14 @@
 	</section>
 </template>
 
-<script setup>
-import { inject, ref, onMounted } from "vue";
+<script async setup>
+import { inject, ref, onMounted, defineAsyncComponent } from "vue";
 import { useRoute } from "vue-router";
 import markdownit from "markdown-it";
-import MarkdownComponent from "../components/MarkdownComponent.vue";
-import TechnologyIcon from "../components/icons/Icon.vue";
 import tools from "../helper/tools";
+import TechnologyIcon from "../components/icons/Icon.vue";
+import LoadingComponent from "../components/LoadingComponent.vue";
+import MarkdownComponent from "../components/MarkdownComponent.vue";
 
 const { dataUser } = inject("dataUser");
 const dataArticle = ref({});
@@ -51,7 +57,6 @@ const mdit = markdownit({
 
 async function setup() {
 	const route = useRoute();
-
 	if (dataUser.value == null || typeof dataUser.value.blog == "undefined" || dataUser.value.blog == null) {
 		dataUser.value = await tools.getDataUser();
 	}
@@ -64,11 +69,9 @@ async function setup() {
 	}
 
 	const readmeUrl = ("" + dataArticle.value.url.github).replace("github.com", "raw.githubusercontent.com") + "/main/README.md";
-	// console.log(readmeUrl);
 	const res = await fetch(readmeUrl);
 	const resText = await res.text();
 	dataReadme.value = mdit.render(resText);
-	// console.log(dataReadme.value);
 }
 
 onMounted(setup);

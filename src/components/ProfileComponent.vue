@@ -11,7 +11,7 @@
 					</div>
 				</div>
 				<div class="w-full px-4 mt-12 lg:w-1/2">
-					<h3 v-if="nameParts != null && nameParts.length > 0" class="lan-section-subtitle text-left ml-0">
+					<h3 v-if="nameParts != null && nameParts.length > 0" class="ml-0 text-left lan-section-subtitle">
 						<span v-for="(name, index) in nameParts" :key="index">
 							{{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
 						</span>
@@ -29,7 +29,10 @@
 									<td class="text-primary" v-html="data.label"></td>
 									<td class="w-4"></td>
 									<td v-if="data.type == 'text'" v-html="data.value"></td>
-									<td v-else-if="data.type == 'age'" v-html="monthsToYears(monthDiff(data.value, new Date()))"></td>
+									<td
+										v-else-if="data.type == 'age'"
+										v-html="monthsToYears(monthDiff(data.value, new Date())).replace('yrs', 'yo').replace('yr', 'yo')"
+									></td>
 								</tr>
 							</template>
 
