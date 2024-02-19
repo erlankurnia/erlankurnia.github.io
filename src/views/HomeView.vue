@@ -4,7 +4,7 @@
 	<ContactComponent class="bg-tertiary"></ContactComponent>
 </template>
 
-<script>
+<script setup>
 import HeroComponent from "../components/HeroComponent.vue";
 import IntroComponent from "../components/IntroComponent.vue";
 import ContactComponent from "../components/ContactComponent.vue";
