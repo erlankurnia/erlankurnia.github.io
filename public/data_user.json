@@ -134,8 +134,8 @@
 		]
 	},
 	"learn": {
-		"title": "Trying to Obtain New <span class=\"text-primary\">Abiliti</span>es",
-		"description": "New technology is always available, so learning has no end.<br>Some of the technologies I'm studying.",
+		"title": "Can't Learn All The <span class=\"text-primary\">Technology</span>",
+		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
 		"topics": [
 			{
 				"name": "maxst",
@@ -154,8 +154,8 @@
 				"year": 2023
 			},
 			{
-				"name": "kotlin",
-				"year": 2023
+				"name": "xamarin",
+				"year": 2024
 			}
 		]
 	},

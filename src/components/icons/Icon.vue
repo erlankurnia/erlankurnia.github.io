@@ -5,6 +5,12 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), csharpKeys)">
 		<CSharpIcon class="text-[#512BD4]"></CSharpIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), dotnetKeys)">
+		<DotnetIcon class="text-[#512BD4]"></DotnetIcon>
+	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xamarinKeys)">
+		<XamarinIcon class="text-[#3498DB]"></XamarinIcon>
+	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), maxstKeys)">
 		<MaxstIcon class=""></MaxstIcon>
 	</template>
@@ -111,6 +117,8 @@ export default {
 		AndroidstudioIcon: defineAsyncComponent(() => importSVGIcon("Androidstudio")),
 		ArduinoIcon: defineAsyncComponent(() => importSVGIcon("Arduino")),
 		CSharpIcon: defineAsyncComponent(() => importSVGIcon("Csharp")),
+		XamarinIcon: defineAsyncComponent(() => importSVGIcon("Xamarin")),
+		DotnetIcon: defineAsyncComponent(() => importSVGIcon("Dotnet")),
 		CodeigniterIcon: defineAsyncComponent(() => importSVGIcon("Codeigniter")),
 		FirebaseIcon: defineAsyncComponent(() => importSVGIcon("Firebase")),
 		AppleIcon: defineAsyncComponent(() => importSVGIcon("Apple")),
@@ -149,6 +157,8 @@ export default {
 			androidStudioKeys: ["androidstudio", "androidstudioide"],
 			arduinoKeys: ["arduino", "arduinoide"],
 			csharpKeys: ["csharp", "c#"],
+			dotnetKeys: ["dotnet", ".net"],
+			xamarinKeys: ["xamarin"],
 			codeigniterKeys: ["codeigniter", "ci"],
 			firebaseKeys: ["firebase"],
 			appleKeys: ["apple", "ios", "macos"],
