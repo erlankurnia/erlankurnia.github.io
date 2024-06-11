@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import CreditView from "../views/CreditView.vue";
-import BlogView from "../views/BlogView.vue";
+import JourneyView from "../views/JourneyView.vue";
 import ArticleView from "../views/ArticleView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 
@@ -28,9 +28,9 @@ const router = createRouter({
 			meta: { hideNavbar: false },
 		},
 		{
-			path: "/blog",
-			name: "blog",
-			component: BlogView,
+			path: "/journey",
+			name: "journey",
+			component: JourneyView,
 			meta: { hideNavbar: false },
 		},
 		{

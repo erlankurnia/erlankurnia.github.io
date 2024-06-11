@@ -315,7 +315,7 @@
 			}
 		]
 	},
-	"blog": {
+	"journey": {
 		"title": "Sample <span class=\"text-primary\">Projects</span> from Some Technologies",
 		"description": "",
 		"articles": [
@@ -323,8 +323,9 @@
 				"id": "0",
 				"title": "Portfolio",
 				"description": "Projects / applications I'm working on.",
-				"url": {
-					"github": "https://github.com/krlan2789/apps-link",
+				"source": {
+					"url": "https://github.com/krlan2789/apps-link",
+					"type": "github",
 					"images": []
 				}
 			},
@@ -332,8 +333,19 @@
 				"id": "1",
 				"title": "WebSocket Example Project",
 				"description": "WebSocket Service project using Express.js, WebSocket (Node Library), and PostgresQL.",
-				"url": {
-					"github": "https://github.com/krlan2789/express-ws-app",
+				"source": {
+					"url": "https://github.com/krlan2789/express-ws-app",
+					"type": "github",
+					"images": []
+				}
+			},
+			{
+				"id": "2",
+				"title": "Node.JS WebSocket Service on VPS",
+				"description": "Setup Node.JS WebSocket Service with Subdomain on VPS",
+				"source": {
+					"url": "/journey/Setup Node.JS WebSocket Service with Subdomain on VPS.md",
+					"type": "local",
 					"images": []
 				}
 			}
