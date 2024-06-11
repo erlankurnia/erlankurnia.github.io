@@ -341,10 +341,10 @@
 			},
 			{
 				"id": "2",
-				"title": "Node.JS WebSocket Service on VPS",
-				"description": "Setup Node.JS WebSocket Service with Subdomain on VPS",
+				"title": "WebSocket Service on VPS",
+				"description": "Setup Websocket Service (Node.js) and Subdomain on VPS",
 				"source": {
-					"url": "/journey/Setup Node.JS WebSocket Service with Subdomain on VPS.md",
+					"url": "/journey/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
 					"type": "local",
 					"images": []
 				}
