@@ -323,6 +323,7 @@
 				"id": "0",
 				"title": "Portfolio",
 				"description": "Projects / applications I'm working on.",
+				"date": "2024-02-17",
 				"source": {
 					"url": "https://github.com/krlan2789/apps-link",
 					"type": "github",
@@ -333,6 +334,7 @@
 				"id": "1",
 				"title": "WebSocket Example Project",
 				"description": "WebSocket Service project using Express.js, WebSocket (Node Library), and PostgresQL.",
+				"date": "2024-02-17",
 				"source": {
 					"url": "https://github.com/krlan2789/express-ws-app",
 					"type": "github",
@@ -343,6 +345,7 @@
 				"id": "2",
 				"title": "WebSocket Service on VPS",
 				"description": "Setup Websocket Service (Node.js) and Subdomain on VPS",
+				"date": "2024-06-11",
 				"source": {
 					"url": "/journey/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
 					"type": "local",
