@@ -10,20 +10,15 @@
 			</div>
 
 			<!-- Timeline -->
-			<Timeline2Component :histories="dataUser.history.timeline" @moreInfoClick="showModal"></Timeline2Component>
+			<Timeline2Component :histories="dataUser.history.timeline" @moreInfoClick="showModal">
+			</Timeline2Component>
 			<!-- Timeline -->
 		</div>
 	</section>
 
-	<!-- <div>
-		<button type="button" class="btn" @click="showModal(0)">
-			Open Modal!
-		</button>
-	</div> -->
-
 	<ModalComponent @close="closeModal" ref="modalComponent">
 		<template #body v-if="dataReadme">
-			<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme"></MarkdownComponent>
+			<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme" class="md:p-4"></MarkdownComponent>
 		</template>
 	</ModalComponent>
 
