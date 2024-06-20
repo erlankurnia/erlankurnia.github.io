@@ -10,26 +10,80 @@
 			</div>
 
 			<!-- Timeline -->
-			<Timeline2Component :histories="dataUser.history.timeline"></Timeline2Component>
+			<Timeline2Component :histories="dataUser.history.timeline" @moreInfoClick="showModal"></Timeline2Component>
 			<!-- Timeline -->
 		</div>
 	</section>
+
+	<!-- <div>
+		<button type="button" class="btn" @click="showModal(0)">
+			Open Modal!
+		</button>
+	</div> -->
+
+	<ModalComponent @close="closeModal" ref="modalComponent">
+		<template #body v-if="dataReadme">
+			<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme"></MarkdownComponent>
+		</template>
+	</ModalComponent>
+
 </template>
 
 <script setup></script>
 
 <script>
-import { ref, inject } from "vue";
+import { inject, ref } from "vue";
+import markdownit from "markdown-it";
+import tools from "../helper/tools";
 import Timeline2Component from "./Timeline2Component.vue";
+import ModalComponent from './ModalComponent.vue';
+import MarkdownComponent from "./MarkdownComponent.vue";
 
 export default {
 	name: "StoryComponent",
-	components: { Timeline2Component },
+	components: { Timeline2Component, ModalComponent, MarkdownComponent },
 	setup() {
 		const { dataUser } = inject("dataUser");
+		const modalComponent = ref(null);
+
 		return {
 			dataUser,
+			modalComponent,
 		};
 	},
+	data() {
+		return {
+			dataReadme: "",
+		};
+	},
+	methods: {
+		async showModal(id) {
+			await this.moreInfo(id);
+			this.modalComponent.onVisibleChange(true);
+		},
+		closeModal() {
+			this.modalComponent.onVisibleChange(false);
+		},
+		async moreInfo(id) {
+			const mdit = markdownit({
+				typographer: true,
+				linkify: true,
+			});
+
+			let dataJobSource = {};
+
+			if (this.dataUser != null && typeof this.dataUser.history == "object" &&
+				this.dataUser.history.timeline != null && this.dataUser.history.timeline.length >= id
+			) {
+				dataJobSource = this.dataUser.history.timeline[id].source;
+			}
+
+			if (dataJobSource != null) {
+				const resText = await tools.getContentReadme(dataJobSource);
+				// console.log(resText);
+				this.dataReadme = mdit.render(resText);
+			}
+		}
+	}
 };
 </script>

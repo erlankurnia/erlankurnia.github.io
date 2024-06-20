@@ -1,5 +1,6 @@
 <template>
-	<section v-if="dataUser != null && dataUser.navbarBrand" id="profile" class="pt-24 pb-16 lg:pb-0 max-xs:min-h-screen">
+	<section v-if="dataUser != null && dataUser.navbarBrand" id="profile"
+		class="pt-24 pb-16 lg:pb-0 max-xs:min-h-screen">
 		<div class="container">
 			<div class="flex flex-wrap">
 				<div class="w-full px-4 pt-4 pb-0 text-center">
@@ -16,7 +17,8 @@
 							{{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
 						</span>
 					</h3>
-					<table class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary sm:text-base">
+					<table
+						class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary sm:text-base">
 						<thead>
 							<tr>
 								<th></th>
@@ -29,10 +31,9 @@
 									<td class="text-primary" v-html="data.label"></td>
 									<td class="w-4"></td>
 									<td v-if="data.type == 'text'" v-html="data.value"></td>
-									<td
-										v-else-if="data.type == 'age'"
-										v-html="monthsToYears(monthDiff(data.value, new Date())).replace('yrs', 'yo').replace('yr', 'yo')"
-									></td>
+									<td v-else-if="data.type == 'age'"
+										v-html="monthsToYears(monthDiff(data.value, new Date())).replace('yrs', 'yo').replace('yr', 'yo')">
+									</td>
 								</tr>
 							</template>
 
@@ -40,7 +41,8 @@
 								<td class="text-primary">Email</td>
 								<td class="w-4"></td>
 								<td>
-									<a :href="'mailto://' + dataUser.socialMedia.email" v-html="dataUser.socialMedia.email"></a>
+									<a :href="'mailto://' + dataUser.socialMedia.email"
+										v-html="dataUser.socialMedia.email"></a>
 								</td>
 							</tr>
 						</tbody>

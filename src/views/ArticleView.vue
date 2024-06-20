@@ -30,7 +30,7 @@
 				</div>
 
 				<template v-if="dataReadme">
-					<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme"></MarkdownComponent>
+					<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme" class="p-4"></MarkdownComponent>
 				</template>
 				<template v-else>
 					<LoadingComponent></LoadingComponent>
@@ -79,20 +79,22 @@ async function setup() {
 		}
 	}
 
-	let readmeUrl = '';
+	// let readmeUrl = '';
 
-	switch (dataArticle.value.source.type.toLowerCase()) {
-		case 'github':
-			readmeUrl = ("" + dataArticle.value.source.url).replace("github.com", "raw.githubusercontent.com") + "/main/README.md";
-			break;
-		case 'local':
-			readmeUrl = window.location.origin + dataArticle.value.source.url;
-			break;
-	}
-	console.log(readmeUrl);
+	// switch (dataArticle.value.source.type.toLowerCase()) {
+	// 	case 'github':
+	// 		readmeUrl = ("" + dataArticle.value.source.url).replace("github.com", "raw.githubusercontent.com") + "/main/README.md";
+	// 		break;
+	// 	case 'local':
+	// 		readmeUrl = window.location.origin + dataArticle.value.source.url;
+	// 		break;
+	// }
+	// console.log(readmeUrl);
 
-	const res = await fetch(readmeUrl);
-	const resText = await res.text();
+	// const res = await fetch(readmeUrl);
+	// const resText = await res.text();
+
+	const resText = await tools.getContentReadme(dataArticle.value.source);
 	dataReadme.value = mdit.render(resText);
 }
 
