@@ -52,7 +52,7 @@
 <script async setup>
 import { inject, ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import markdownit from "markdown-it";
+// import markdownit from "markdown-it";
 import tools from "../helper/tools";
 import TechnologyIcon from "../components/icons/Icon.vue";
 import LoadingComponent from "../components/LoadingComponent.vue";
@@ -61,10 +61,10 @@ import MarkdownComponent from "../components/MarkdownComponent.vue";
 const { dataUser } = inject("dataUser");
 const dataArticle = ref({});
 const dataReadme = ref("");
-const mdit = markdownit({
-	typographer: true,
-	linkify: true,
-});
+// const mdit = markdownit({
+// 	typographer: true,
+// 	linkify: true,
+// });
 
 async function setup() {
 	const route = useRoute();
@@ -78,6 +78,7 @@ async function setup() {
 			break;
 		}
 	}
+	dataReadme.value = await tools.getContentReadme(dataArticle.value.source);
 
 	// let readmeUrl = '';
 
@@ -94,8 +95,8 @@ async function setup() {
 	// const res = await fetch(readmeUrl);
 	// const resText = await res.text();
 
-	const resText = await tools.getContentReadme(dataArticle.value.source);
-	dataReadme.value = mdit.render(resText);
+	// const resText = await tools.getContentReadme(dataArticle.value.source);
+	// dataReadme.value = mdit.render(resText);
 }
 
 onMounted(setup);

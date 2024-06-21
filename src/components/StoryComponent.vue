@@ -74,9 +74,10 @@ export default {
 			}
 
 			if (dataJobSource != null) {
-				const resText = await tools.getContentReadme(dataJobSource);
+				this.dataReadme = await tools.getContentReadme(dataJobSource);
 				// console.log(resText);
-				this.dataReadme = mdit.render(resText);
+				// const resText = await tools.getContentReadme(dataJobSource);
+				// this.dataReadme = mdit.render(resText);
 			}
 		}
 	}

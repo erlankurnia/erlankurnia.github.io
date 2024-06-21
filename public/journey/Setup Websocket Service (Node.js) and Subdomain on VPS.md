@@ -1,15 +1,15 @@
 # Setup Websocket Service (Node.js) and Subdomain on VPS
 
-Owner: Erlan Kurnia
-Created time: May 1, 2024 2:11 AM
-
 > Assume the subdomain to be used is websocket.krlan2789.com and the VPS IP is 10.0.27.89
->
+
+<br/>
+
 1. Add DNS Record for subdomain :
 
     | Type | Name      | Points to  | TTL   |
     | ---- | --------- | ---------- | ----- |
     | A    | websocket | 10.0.27.89 | 14400 |
+
 2. Create a certificate for subdomain using certbot :
 
     ```bash

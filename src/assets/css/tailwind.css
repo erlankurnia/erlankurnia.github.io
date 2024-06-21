@@ -144,6 +144,23 @@
 		@apply mb-5 mt-2;
 	}
 
+	#markdown table {
+		@apply border-2 w-full my-2;
+	}
+
+	#markdown table th,
+	#markdown table td {
+		@apply border-primary/50 border-2;
+	}
+
+	#markdown table th {
+		@apply p-3;
+	}
+
+	#markdown table td {
+		@apply py-2 px-3;
+	}
+
 	/* #markdown pre:has(> code[class*="language"]) {
 		@apply bg-secondary rounded-lg p-4;
 	} */
