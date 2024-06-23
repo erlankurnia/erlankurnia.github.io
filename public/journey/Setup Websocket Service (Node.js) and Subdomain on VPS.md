@@ -79,7 +79,7 @@
     ```bash
     sudo service apache2 start
 
-    *OR*
+    OR
 
     sudo systemctl reload apache2
     ```
