@@ -113,35 +113,43 @@
 		"skills": [
 			{
 				"name": "csharp",
+				"title": "C#",
 				"year": 2017
 			},
 			{
 				"name": "unity",
+				"title": "Unity3D",
 				"year": 2017
 			},
 			{
 				"name": "arduino",
+				"title": "Arduino",
 				"year": 2021
 			},
 			{
 				"name": "php",
+				"title": "PHP",
 				"year": 2018
 			},
 			{
 				"name": "postgresql",
+				"title": "PostgreSQL",
 				"year": 2021
 			},
 			{
 				"name": "firebase",
+				"title": "Google Firebase",
 				"year": 2021
 			},
 			{
-				"name": "onesignal",
-				"year": 2023
+				"name": "nodejs",
+				"title": "Node.js",
+				"year": 2020
 			},
 			{
-				"name": "nodejs",
-				"year": 2020
+				"name": "tailwind",
+				"title": "Tailwind CSS",
+				"year": 2023
 			}
 		]
 	},
@@ -151,22 +159,22 @@
 		"topics": [
 			{
 				"name": "maxst",
+				"title": "Maxst",
 				"year": 2022
 			},
 			{
 				"name": "laravel",
+				"title": "Laravel",
 				"year": 2022
 			},
 			{
-				"name": "tailwind",
-				"year": 2023
-			},
-			{
 				"name": "vue",
+				"title": "Vue.js",
 				"year": 2023
 			},
 			{
 				"name": "xamarin",
+				"title": "Xamarin / MAUI",
 				"year": 2024
 			}
 		]
