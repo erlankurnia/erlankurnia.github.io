@@ -15,7 +15,7 @@ export default {
 					readmeUrl = window.location.origin + source.url;
 					break;
 			}
-			console.log(readmeUrl);
+			// console.log(readmeUrl);
 
 			const res = await fetch(readmeUrl);
 			const resText = await res.text();
