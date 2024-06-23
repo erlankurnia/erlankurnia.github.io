@@ -16,7 +16,7 @@
 					<ul class="flex flex-col gap-8">
 						<li v-for="(data, index) in dataUser.journey.articles" :key="index"
 							class="flex flex-col w-full h-auto px-4 py-3 rounded-xl hover:bg-quaternary">
-							<RouterLink :to="'/article/' + data.id">
+							<RouterLink v-if="$route.meta.url?.article" :to="$route.meta.url.article + '/' + data.id">
 								<div class="mb-2 text-xl font-bold text-primary">
 									<h4 v-html="data.title"></h4>
 								</div>

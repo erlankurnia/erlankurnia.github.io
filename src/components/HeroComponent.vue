@@ -7,7 +7,8 @@
 					<h1 class="text-sm font-semibold sm:text-base text-secondary md:text-xl">
 						Hello,<span class="font-bold text-primary">_</span>I'am
 						<span class="block mt-1 text-3xl font-bold sm:text-4xl lg:5xl text-secondary">
-							<a href="/who_iam" class="text-primary">{{ text }}_</a>Kurnia
+							<a v-if="$route.meta.url?.about" :href="$route.meta.url.about" class="text-primary">{{ text
+								}}_</a>Kurnia
 						</span>
 					</h1>
 					<h class="py-6 text-sm font-extrabold sm:text-lg max-w-max lg:ml-auto text-dark lg:text-2xl">
@@ -26,8 +27,8 @@
 						<span id="splash-liquid"
 							class="absolute top-0 bottom-0 w-full transition duration-700 ease-in-out delay-100 -translate-x-1/2 text-primary -z-10 left-1/2"
 							:class="{
-								'scale-[8]': !isPageLoaded,
-								'scale-110': isPageLoaded,
+								'scale-[6]': !isPageLoaded,
+								'scale-[1.05]': isPageLoaded,
 							}">
 							<svg width="100%" height="100%" class="fill-current" viewBox="0 0 200 200"
 								xmlns="http://www.w3.org/2000/svg">

@@ -15,9 +15,10 @@
 							}">Home</a>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/who_iam" class="mx-2 text-sm lan-nav-link" :class="{
-								'text-primary font-bold': $route.name == 'who_iam',
-							}">WHO_I'M</RouterLink>
+							<RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
+								class="mx-2 text-sm lan-nav-link" :class="{
+									'text-primary font-bold': $route.name == 'who_iam',
+								}">WHO_I'M</RouterLink>
 						</li>
 						<!-- <li class="flex items-center group">
 							<RouterLink
@@ -30,14 +31,16 @@
 							>
 						</li> -->
 						<li class="flex items-center group">
-							<RouterLink to="/journey" class="mx-2 text-sm lan-nav-link" :class="{
-								'text-primary font-bold': $route.name == 'journey',
-							}">Journey</RouterLink>
+							<RouterLink v-if="$route.meta.url?.journey" :to="$route.meta.url.journey"
+								class="mx-2 text-sm lan-nav-link" :class="{
+									'text-primary font-bold': $route.name == 'journey',
+								}">Journey</RouterLink>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink to="/references" class="mx-2 text-sm lan-nav-link" :class="{
-								'text-primary font-bold': $route.name == 'references',
-							}">References</RouterLink>
+							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"
+								class="mx-2 text-sm lan-nav-link" :class="{
+									'text-primary font-bold': $route.name == 'references',
+								}">References</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<a href="https://analytics.eu.umami.is/share/P9vSXDhPCyGTUoB2/LAN" target="_blank"

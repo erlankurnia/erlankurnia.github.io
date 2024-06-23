@@ -6,6 +6,13 @@ import JourneyView from "../views/JourneyView.vue";
 import ArticleView from "../views/ArticleView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 
+const urls = {
+	about: '/who_iam',
+	credit: '/references',
+	journey: '/journey',
+	article: '/journey/article',
+};
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -13,37 +20,37 @@ const router = createRouter({
 			path: "/",
 			name: "home",
 			component: HomeView,
-			meta: { hideNavbar: false },
+			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: "/who_iam",
+			path: urls.about,
 			name: "who_iam",
 			component: AboutView,
-			meta: { hideNavbar: false },
+			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: "/references",
+			path: urls.credit,
 			name: "references",
 			component: CreditView,
-			meta: { hideNavbar: false },
+			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: "/journey",
+			path: urls.journey,
 			name: "journey",
 			component: JourneyView,
-			meta: { hideNavbar: false },
+			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: "/article/:id",
+			path: urls.article + "/:id",
 			name: "article",
 			component: ArticleView,
-			meta: { hideNavbar: false },
+			meta: { url: urls, hideNavbar: false },
 		},
 		{
 			path: "/:pathMatch(.*)*",
 			name: "not-found",
 			component: NotFoundView,
-			meta: { hideNavbar: true },
+			meta: { url: urls, hideNavbar: true },
 		},
 	],
 	scrollBehavior(to, from, savedPosition) {

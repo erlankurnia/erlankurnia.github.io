@@ -344,6 +344,7 @@
 				"title": "WebSocket Service on VPS",
 				"description": "Setup Websocket Service (Node.js) and Subdomain on VPS",
 				"date": "2024-06-11",
+				"tags": ["node", "node.js", "websocket", "vps"],
 				"source": {
 					"url": "/journey/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
 					"type": "local",
@@ -355,6 +356,7 @@
 				"title": "WebSocket Example Project",
 				"description": "WebSocket Service project using Express.js, WebSocket (Node Library), and PostgresQL.",
 				"date": "2024-02-17",
+				"tags": ["node", "node.js", "express", "express.js", "websocket", "postgresql"],
 				"source": {
 					"url": "https://github.com/krlan2789/express-ws-app",
 					"type": "github",
@@ -366,6 +368,7 @@
 				"title": "Portfolio",
 				"description": "Projects / applications I'm working on.",
 				"date": "2024-02-17",
+				"tags": ["portfolio", "list"],
 				"source": {
 					"url": "https://github.com/krlan2789/apps-link",
 					"type": "github",

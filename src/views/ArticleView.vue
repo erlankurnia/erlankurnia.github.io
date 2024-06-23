@@ -7,7 +7,8 @@
 						Home
 					</RouterLink>
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link">/</span> -->
-					<RouterLink to="/journey" class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary">
+					<RouterLink v-if="$route.meta.url?.journey" :to="$route.meta.url.journey"
+						class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary">
 						Back
 					</RouterLink>
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link">/</span>

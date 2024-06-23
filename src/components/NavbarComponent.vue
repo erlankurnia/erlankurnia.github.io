@@ -17,14 +17,16 @@
 						}">
 						<ul class="flex flex-wrap w-full justify-evenly">
 							<li class="group">
-								<RouterLink to="/who_iam" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
-									'text-primary font-bold': $route.name == 'who_iam',
-								}">WHO_I'M</RouterLink>
+								<RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
+									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
+										'text-primary font-bold': $route.name == 'who_iam',
+									}">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink to="/journey" class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
-									'text-primary font-bold': $route.name == 'journey',
-								}">Journey</RouterLink>
+								<RouterLink v-if="$route.meta.url?.journey" :to="$route.meta.url.journey"
+									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
+										'text-primary font-bold': $route.name == 'journey',
+									}">Journey</RouterLink>
 							</li>
 						</ul>
 					</nav>
