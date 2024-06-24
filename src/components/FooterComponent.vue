@@ -4,7 +4,7 @@
 	</div>
 	<footer class="py-16 select-none">
 		<div class="container">
-			<div class="flex flex-wrap md:flex-row-reverse">
+			<div class="flex flex-wrap px-4 md:flex-row-reverse">
 				<div class="flex justify-center w-full align-middle md:justify-end md:w-1/2" :class="{
 					hidden: $route.meta.hideNavbar,
 				}">

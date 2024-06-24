@@ -35,7 +35,7 @@ const router = createRouter({
 			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: urls.journey,
+			path: urls.journey + "/:filter?",
 			name: "journey",
 			component: JourneyView,
 			meta: { url: urls, hideNavbar: false },

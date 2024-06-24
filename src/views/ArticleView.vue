@@ -45,6 +45,16 @@
 						</span>
 					</a>
 				</div>
+				<h4 class="px-4 my-4">Related topics</h4>
+				<div v-if="dataArticle.topics && dataArticle.topics.length > 0"
+					class="flex flex-wrap w-full gap-4 px-4 text-left">
+					<template v-for="(topic, index) of dataArticle.topics" :key="index">
+						<a v-if="$route.meta.url?.journey" :href="$route.meta.url?.journey + '/' + topic"
+							class="text-sm lan-link-primary">
+							#{{ topic }}
+						</a>
+					</template>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -80,24 +90,6 @@ async function setup() {
 		}
 	}
 	dataReadme.value = await tools.getContentReadme(dataArticle.value.source);
-
-	// let readmeUrl = '';
-
-	// switch (dataArticle.value.source.type.toLowerCase()) {
-	// 	case 'github':
-	// 		readmeUrl = ("" + dataArticle.value.source.url).replace("github.com", "raw.githubusercontent.com") + "/main/README.md";
-	// 		break;
-	// 	case 'local':
-	// 		readmeUrl = window.location.origin + dataArticle.value.source.url;
-	// 		break;
-	// }
-	// console.log(readmeUrl);
-
-	// const res = await fetch(readmeUrl);
-	// const resText = await res.text();
-
-	// const resText = await tools.getContentReadme(dataArticle.value.source);
-	// dataReadme.value = mdit.render(resText);
 }
 
 onMounted(setup);
