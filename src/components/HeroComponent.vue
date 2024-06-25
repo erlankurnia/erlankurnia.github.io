@@ -1,9 +1,10 @@
 <template>
 	<section class="pt-24 -z-10">
 		<div class="container">
-			<div class="flex flex-wrap lg:flex-row-reverse">
+			<div class="flex flex-wrap h-auto lg:flex-row-reverse">
 				<!-- Right / Top side -->
-				<div class="flex flex-col self-center w-full px-4 lg:justify-end lg:w-1/2 lg:text-right">
+				<div
+					class="flex flex-col self-center w-full px-4 md:h-64 lg:justify-end lg:w-1/2 lg:text-right lg:h-[420px] 2xl:h-[480px] 3xl:h-[660px]">
 					<h1 class="text-sm font-semibold sm:text-base text-secondary md:text-xl">
 						Hello,<span class="font-bold text-primary">_</span>I'am
 						<span class="block mt-1 text-3xl font-bold sm:text-4xl lg:5xl text-secondary">
@@ -22,10 +23,11 @@
 				<!-- Right / Top side -->
 
 				<!-- Left / Bottom side -->
-				<div class="self-end w-full px-0 xs:px-4 lg:w-1/2">
-					<div class="relative mt-10 lg:mt-9 lg:right-0">
+				<div
+					class="self-end w-full px-0 xs:px-4 md:h-[560px] lg:w-1/2 lg:h-[420px] 2xl:h-[480px] 3xl:h-[660px]">
+					<div class="relative h-full mt-10 md:mt-0 md:flex md:flex-col md:justify-end lg:right-0">
 						<span id="splash-liquid"
-							class="absolute top-0 bottom-0 w-full transition duration-700 ease-in-out delay-100 -translate-x-1/2 text-primary -z-10 left-1/2"
+							class="absolute bottom-0 w-full transition duration-500 ease-in-out delay-75 -translate-x-1/2 text-primary -z-10 left-1/2"
 							:class="{
 								'scale-[6]': !isPageLoaded,
 								'scale-[1.05]': isPageLoaded,
