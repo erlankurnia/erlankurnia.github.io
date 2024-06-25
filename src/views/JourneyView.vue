@@ -6,13 +6,13 @@
 			</div>
 
 			<!-- Articles -->
-			<div class="flex flex-wrap" v-if="dataUser.journey.title">
-				<div class="w-full mb-8 text-center">
+			<div class="flex flex-wrap">
+				<div class="w-full mb-8 text-center" v-if="dataUser.journey.title">
 					<h2 class="lan-section-subtitle" v-html="dataUser.journey.title"></h2>
 					<p class="font-medium text-md text-secondary md:text-lg" v-if="dataUser.journey.description"
 						v-html="dataUser.journey.description"></p>
 				</div>
-				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6">
+				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="dataUser.journey.articles.length > 0">
 					<ul class="flex flex-col gap-8">
 						<li v-for="(data, index) in dataUser.journey.articles" :key="index"
 							class="flex flex-col w-full h-auto px-4 py-3 rounded-xl hover:bg-quaternary">
