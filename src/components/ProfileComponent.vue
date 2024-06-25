@@ -12,12 +12,14 @@
 					</div>
 				</div>
 				<div class="w-full px-4 mt-12 lg:w-1/2">
-					<h3 v-if="nameParts != null && nameParts.length > 0" class="ml-0 text-left lan-section-subtitle">
+					<h3 v-if="nameParts != null && nameParts.length > 0"
+						class="ml-0 text-left lan-section-subtitle text-4xl">
 						<span v-for="(name, index) in nameParts" :key="index">
 							{{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
 						</span>
 					</h3>
-					<table
+
+					<!-- <table
 						class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary sm:text-base">
 						<thead>
 							<tr>
@@ -37,16 +39,17 @@
 								</tr>
 							</template>
 
-							<tr v-if="dataUser.socialMedia?.email">
-								<td class="text-primary">Email</td>
-								<td class="w-4"></td>
-								<td>
-									<a :href="'mailto://' + dataUser.socialMedia.email"
-										v-html="dataUser.socialMedia.email"></a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+<tr v-if="dataUser.socialMedia?.email">
+	<td class="text-primary">Email</td>
+	<td class="w-4"></td>
+	<td>
+		<a :href="'mailto://' + dataUser.socialMedia.email" v-html="dataUser.socialMedia.email"></a>
+	</td>
+</tr>
+</tbody>
+</table> -->
+
+					<CardProfileComponent :profile="dataUser.profile"></CardProfileComponent>
 
 					<SocialMediaComponent></SocialMediaComponent>
 				</div>
@@ -58,12 +61,13 @@
 <script>
 import { inject } from "vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
+import CardProfileComponent from "./CardProfileComponent.vue";
 import SocialMediaComponent from "./SocialMediaComponent.vue";
 
 export default {
 	mixins: [dateTimeMixins],
 	name: "ProfileComponent",
-	components: { SocialMediaComponent },
+	components: { CardProfileComponent, SocialMediaComponent },
 	setup() {
 		const { dataUser, nameParts } = inject("dataUser");
 		return {
