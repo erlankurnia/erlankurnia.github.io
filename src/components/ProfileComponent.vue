@@ -12,46 +12,7 @@
 					</div>
 				</div>
 				<div class="w-full px-4 mt-12 lg:w-1/2">
-					<h3 v-if="nameParts != null && nameParts.length > 0"
-						class="ml-0 text-left lan-section-subtitle text-4xl">
-						<span v-for="(name, index) in nameParts" :key="index">
-							{{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
-						</span>
-					</h3>
-
-					<!-- <table
-						class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary sm:text-base">
-						<thead>
-							<tr>
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<template v-for="(data, index) in dataUser.profile">
-								<tr v-if="index != 'name'" :key="index">
-									<td class="text-primary" v-html="data.label"></td>
-									<td class="w-4"></td>
-									<td v-if="data.type == 'text'" v-html="data.value"></td>
-									<td v-else-if="data.type == 'age'"
-										v-html="monthsToYears(monthDiff(data.value, new Date())).replace('yrs', 'yo').replace('yr', 'yo')">
-									</td>
-								</tr>
-							</template>
-
-<tr v-if="dataUser.socialMedia?.email">
-	<td class="text-primary">Email</td>
-	<td class="w-4"></td>
-	<td>
-		<a :href="'mailto://' + dataUser.socialMedia.email" v-html="dataUser.socialMedia.email"></a>
-	</td>
-</tr>
-</tbody>
-</table> -->
-
-					<CardProfileComponent :profile="dataUser.profile"></CardProfileComponent>
-
-					<SocialMediaComponent></SocialMediaComponent>
+					<CardProfileComponent></CardProfileComponent>
 				</div>
 			</div>
 		</div>
@@ -62,16 +23,14 @@
 import { inject } from "vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
 import CardProfileComponent from "./CardProfileComponent.vue";
-import SocialMediaComponent from "./SocialMediaComponent.vue";
 
 export default {
 	mixins: [dateTimeMixins],
 	name: "ProfileComponent",
-	components: { CardProfileComponent, SocialMediaComponent },
+	components: { CardProfileComponent },
 	setup() {
-		const { dataUser, nameParts } = inject("dataUser");
+		const { dataUser } = inject("dataUser");
 		return {
-			nameParts,
 			dataUser,
 		};
 	},

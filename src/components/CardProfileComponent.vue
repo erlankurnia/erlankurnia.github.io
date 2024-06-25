@@ -1,5 +1,40 @@
 <template>
-    <div v-if="profile" class="w-full mb-6 text-sm font-medium flex flex-wrap gap-4 text-secondary sm:text-base">
+    <h3 v-if="nameParts != null && nameParts.length > 0" class="ml-0 text-left lan-section-subtitle text-4xl">
+        <span v-for="(name, index) in nameParts" :key="index">
+            {{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
+        </span>
+    </h3>
+
+    <!-- <table class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary sm:text-base">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <template v-for="(data, index) in dataUser.profile">
+                <tr v-if="index != 'name'" :key="index">
+                    <td class="text-primary" v-html="data.label"></td>
+                    <td class="w-4"></td>
+                    <td v-if="data.type == 'text'" v-html="data.value"></td>
+                    <td v-else-if="data.type == 'age'"
+                        v-html="monthsToYears(monthDiff(data.value, new Date())).replace('yrs', 'yo').replace('yr', 'yo')">
+                    </td>
+                </tr>
+            </template>
+<tr v-if="dataUser.socialMedia?.email">
+    <td class="text-primary">Email</td>
+    <td class="w-4"></td>
+    <td>
+        <a :href="'mailto://' + dataUser.socialMedia.email" v-html="dataUser.socialMedia.email"></a>
+    </td>
+</tr>
+</tbody>
+</table> -->
+
+    <div v-if="dataUser?.profile"
+        class="w-full mb-6 text-xs font-medium flex flex-wrap gap-4 text-secondary sm:text-sm">
         <div class="h-6 text-lg w-full flex justify-start items-center gap-2">
             <span class="w-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -9,7 +44,7 @@
                 </svg>
 
             </span>
-            {{ profile.profession.value }}
+            {{ dataUser.profile.profession.value }}
         </div>
 
         <div class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
@@ -20,7 +55,8 @@
                         d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
             </span>
-            {{ monthsToYears(monthDiff(profile.birthday.value, new Date())).replace('yrs', 'yo').replace('yr', 'yo') }}
+            {{ monthsToYears(monthDiff(dataUser.profile.birthday.value, new Date())).replace('yrs', 'yo').replace('yr',
+                'yo') }}
         </div>
 
         <div class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
@@ -32,7 +68,7 @@
                         d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                 </svg>
             </span>
-            {{ profile.address.value }}
+            {{ dataUser.profile.address.value }}
         </div>
 
         <div class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
@@ -43,23 +79,39 @@
                         d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 0 0-8.862 12.872M12.75 3.031a9 9 0 0 1 6.69 14.036m0 0-.177-.529A2.25 2.25 0 0 0 17.128 15H16.5l-.324-.324a1.453 1.453 0 0 0-2.328.377l-.036.073a1.586 1.586 0 0 1-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 0 1-5.276 3.67m0 0a9 9 0 0 1-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
                 </svg>
             </span>
-            {{ profile.nationality.value }}
+            {{ dataUser.profile.nationality.value }}
         </div>
+
+        <a :href="'mailto://' + dataUser.socialMedia.email"
+            class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
+            <span class="w-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                </svg>
+            </span>
+            {{ dataUser.socialMedia.email }}
+        </a>
     </div>
+
+    <SocialMediaComponent></SocialMediaComponent>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { inject } from 'vue';
 import dateTimeMixins from "../helper/mixins/dateTime";
+import SocialMediaComponent from "./SocialMediaComponent.vue";
 
 export default {
     mixins: [dateTimeMixins],
     name: 'CardProfileComponent',
-    props: ['profile'],
-    setup(props) {
-        const data = ref(props.profile);
+    components: { SocialMediaComponent },
+    setup() {
+        const { dataUser, nameParts } = inject("dataUser");
         return {
-            data,
+            dataUser,
+            nameParts,
         };
     },
 };
