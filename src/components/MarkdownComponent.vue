@@ -39,8 +39,8 @@ export default {
 						elButton.innerHTML = originalCopyLabel;
 						elButton.classList.add(
 							'copy-btn', 'absolute', 'top-2', 'right-[7px]', 'h-6', 'w-auto', 'text-sm',
-							'font-semibold', 'px-[6px]', 'rounded-md', 'cursor-pointer', 'text-primary',
-							'bg-tertiary', 'hover:bg-quaternary', 'hover:text-secondary'
+							'font-semibold', 'px-1', 'rounded-md', 'cursor-pointer', 'text-primary',
+							'bg-tertiary', 'hover:bg-primary', 'hover:text-tertiary'
 						);
 
 						const elLabel = document.createElement("span");

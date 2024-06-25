@@ -25,7 +25,8 @@
 								<p class="text-sm text-secondary" v-if="data.description"
 									v-html="('' + data.description).substring(0, data.description.length > 128 ? 128 : data.description.length)">
 								</p>
-								<p v-if="data.date" class="text-xs font-light text-right text-secondary">{{ data.date }}
+								<p v-if="data.date" class="text-xs font-light mt-2 text-right text-secondary">{{
+									data.date }}
 								</p>
 							</RouterLink>
 						</li>
