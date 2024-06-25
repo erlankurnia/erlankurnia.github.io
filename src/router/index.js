@@ -10,7 +10,7 @@ const urls = {
 	about: '/who_iam',
 	credit: '/references',
 	journey: '/journey',
-	article: '/journey/article',
+	article: '/article',
 };
 
 const router = createRouter({
