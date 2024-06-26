@@ -1,5 +1,6 @@
 <template>
-    <h3 v-if="nameParts != null && nameParts.length > 0" class="ml-0 text-left lan-section-subtitle text-4xl">
+    <h3 v-if="nameParts != null && nameParts.length > 0"
+        class="ml-0 text-left lan-section-subtitle text-3xl sm:text-4xl">
         <span v-for="(name, index) in nameParts" :key="index">
             {{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
         </span>
@@ -35,7 +36,7 @@
 
     <div v-if="dataUser?.profile"
         class="w-full mb-6 text-xs font-medium flex flex-wrap gap-4 text-secondary sm:text-sm">
-        <div class="h-6 text-lg w-full flex justify-start items-center gap-2">
+        <div class="h-6 text-base sm:text-lg w-full flex justify-start items-center gap-2">
             <span class="w-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
