@@ -43,9 +43,11 @@
         # Upgrade connections to WebSockets
         RewriteCond %{HTTP:Upgrade} =websocket [NC]
         RewriteRule /(.*) ws://localhost:8765/$1 [P,L]
+
         # Redirect http to https
         RewriteCond %{HTTPS} off
         RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
         # Everything else forwards as HTTP to the node app.
         ProxyPass / http://localhost:8765/
         ProxyPassReverse / http://localhost:8765/
