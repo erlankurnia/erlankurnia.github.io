@@ -28,9 +28,9 @@
 
     ```ruby
     <VirtualHost *:80>
-    	ServerName websocket.krlan2789.com
+        ServerName websocket.krlan2789.com
 
-      Redirect permanent / https://websocket.krlan2789.com
+        Redirect permanent / https://websocket.krlan2789.com
     </VirtualHost>
 
     <IfModule mod_ssl.c>
@@ -54,7 +54,7 @@
         ErrorLog /var/log/apache2/error.log
         CustomLog /var/log/apache2/access.log combined
 
-    		# SSL Certificate file location
+        # SSL Certificate file location
         SSLEngine On
         SSLCertificateFile /etc/letsencrypt/live/websocket.krlan2789.com/fullchain.pem
         SSLCertificateKeyFile /etc/letsencrypt/live/websocket.krlan2789.com/privkey.pem
