@@ -342,7 +342,7 @@
 			{
 				"id": "3",
 				"title": "Android Background Location for Unity",
-				"description": "Background Location plugin for Unity and Android target platform",
+				"description": "Live Location plugin example for Unity and Android target platform",
 				"date": "2024-07-27",
 				"topics": [
 					"unity",
