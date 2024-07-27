@@ -115,7 +115,8 @@
 		@apply select-text;
 	}
 
-	#markdown p > code {
+	#markdown p > code,
+	#markdown li > code {
 		@apply bg-quaternary rounded-lg py-1 px-2;
 	}
 
