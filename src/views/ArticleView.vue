@@ -31,7 +31,8 @@
 				</div>
 
 				<template v-if="dataReadme">
-					<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme" class="p-4"></MarkdownComponent>
+					<MarkdownComponent v-if="dataReadme" :contentMarkdown="dataReadme"
+						:sourceMarkdown="dataArticle.source" class="p-4"></MarkdownComponent>
 				</template>
 				<template v-else>
 					<LoadingComponent></LoadingComponent>

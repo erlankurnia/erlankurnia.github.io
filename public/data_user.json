@@ -340,11 +340,32 @@
 		"description": "",
 		"articles": [
 			{
+				"id": "3",
+				"title": "Android Background Location for Unity",
+				"description": "Background Location plugin for Unity and Android target platform",
+				"date": "2024-07-27",
+				"topics": [
+					"unity",
+					"android",
+					"unitypackage"
+				],
+				"source": {
+					"url": "https://github.com/krlan2789/Unity-Background-Location",
+					"type": "github",
+					"images": []
+				}
+			},
+			{
 				"id": "2",
 				"title": "WebSocket Service on VPS",
 				"description": "Setup Websocket Service (Node.js) and Subdomain on VPS",
 				"date": "2024-06-11",
-				"topics": ["node", "node.js", "websocket", "vps"],
+				"topics": [
+					"node",
+					"node.js",
+					"websocket",
+					"vps"
+				],
 				"source": {
 					"url": "/journey/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
 					"type": "local",
@@ -356,7 +377,14 @@
 				"title": "WebSocket Example Project",
 				"description": "WebSocket Service project using Express.js, WebSocket (Node Library), and PostgresQL.",
 				"date": "2024-02-17",
-				"topics": ["node", "node.js", "express", "express.js", "websocket", "postgresql"],
+				"topics": [
+					"node",
+					"node.js",
+					"express",
+					"express.js",
+					"websocket",
+					"postgresql"
+				],
 				"source": {
 					"url": "https://github.com/krlan2789/express-ws-app",
 					"type": "github",
@@ -368,7 +396,10 @@
 				"title": "Portfolio",
 				"description": "Projects / applications I'm working on.",
 				"date": "2024-02-17",
-				"topics": ["portfolio", "list"],
+				"topics": [
+					"portfolio",
+					"list"
+				],
 				"source": {
 					"url": "https://github.com/krlan2789/apps-link",
 					"type": "github",

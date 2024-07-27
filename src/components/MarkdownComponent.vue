@@ -17,15 +17,15 @@ const mdit = markdownit({
 
 export default {
 	name: "MarkdownComponent",
-	props: ["sourceMarkdown"],
+	props: ["sourceMarkdown", "contentMarkdown"],
 	setup(props) {
 		const contentMarkdown = ref(null);
 		const originalCopyLabel = ' Copy ';
 		const copiedLabel = 'Copied';
-		// contentMarkdown.value = mdit.render(props.sourceMarkdown);
+		// contentMarkdown.value = mdit.render(props.contentMarkdown);
 
 		onMounted(() => {
-			const parsedContent = mdit.parse(props.sourceMarkdown, {});
+			const parsedContent = mdit.parse(props.contentMarkdown, {});
 
 			const addCopyBtn = (tokens) => {
 				for (let i = 0; i < tokens.length; i++) {
@@ -66,7 +66,26 @@ export default {
 					}
 				}
 			};
+			const replaceGithubAssets = (tokens) => {
+				for (let i = 0; i < tokens.length; i++) {
+					const token = tokens[i];
+					// console.log(token);
+
+					if (token.type === 'html_block' && token.tag == '') {
+						let originalContent = token.content;
+
+						if (originalContent.includes('src="./') && originalContent.includes('use-github-assets')) {
+							const rawContentUrl = props.sourceMarkdown.url.replace('github.com', 'raw.githubusercontent.com');
+							originalContent = originalContent.replace('src="./', `src="${rawContentUrl}/main/`);
+							token.type = 'html_inline';
+							token.content = originalContent;
+							// console.log('RawContentUrl: ' + originalContent);
+						}
+					}
+				}
+			};
 			addCopyBtn(parsedContent);
+			if (props.sourceMarkdown?.type && props.sourceMarkdown.type == 'github') replaceGithubAssets(parsedContent);
 
 			contentMarkdown.value = mdit.renderer.render(parsedContent, {});
 

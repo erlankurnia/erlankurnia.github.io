@@ -18,7 +18,7 @@
 
 	<ModalComponent @close="closeModal" ref="modalComponent">
 		<template #body v-if="dataReadme">
-			<MarkdownComponent v-if="dataReadme" :sourceMarkdown="dataReadme" class="md:p-4"></MarkdownComponent>
+			<MarkdownComponent v-if="dataReadme" :contentMarkdown="dataReadme" class="md:p-4"></MarkdownComponent>
 		</template>
 	</ModalComponent>
 
