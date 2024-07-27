@@ -346,8 +346,10 @@
 				"date": "2024-07-27",
 				"topics": [
 					"unity",
+					"unitypackage",
 					"android",
-					"unitypackage"
+					"plugin",
+					"backgroundservice"
 				],
 				"source": {
 					"url": "https://github.com/krlan2789/Unity-Background-Location",
