@@ -1,6 +1,6 @@
 <template>
     <h3 v-if="nameParts != null && nameParts.length > 0"
-        class="ml-0 text-left lan-section-subtitle text-3xl sm:text-4xl">
+        class="ml-0 text-3xl text-left lan-section-subtitle sm:text-4xl">
         <span v-for="(name, index) in nameParts" :key="index">
             {{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
         </span>
@@ -35,8 +35,8 @@
 </table> -->
 
     <div v-if="dataUser?.profile"
-        class="w-full mb-6 text-xs font-medium flex flex-wrap gap-4 text-secondary sm:text-sm">
-        <div class="h-6 text-base sm:text-lg w-full flex justify-start items-center gap-2">
+        class="flex flex-wrap w-full gap-4 mb-6 text-xs font-medium text-secondary sm:text-sm">
+        <div class="flex items-center justify-start w-full h-6 gap-2 text-base sm:text-lg">
             <span class="w-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
@@ -82,7 +82,7 @@
             {{ dataUser.profile.nationality.value }}
         </div>
 
-        <a :href="'mailto://' + dataUser.socialMedia.email"
+        <a :href="'mailto:' + dataUser.socialMedia.email"
             class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
             <span class="w-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

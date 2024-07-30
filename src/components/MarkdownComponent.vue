@@ -1,6 +1,6 @@
 <template>
 	<section v-if="contentMarkdown" id="markdown" class="w-full py-0 max-xs:min-h-screen">
-		<div id="markdown-content" class="flex-row w-full" v-html="contentMarkdown"></div>
+		<div id="markdown-content" class="flex-row w-full overflow-x-scroll" v-html="contentMarkdown"></div>
 	</section>
 </template>
 
