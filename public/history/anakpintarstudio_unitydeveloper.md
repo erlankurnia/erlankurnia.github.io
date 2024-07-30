@@ -2,7 +2,7 @@
 
 ## **Summary**
 
-> Here, working as Unity Developer at Anak Pintar Studio.
+> Here, working as Unity Developer at Anak Pintar Studio since early 2021.
 
 ## **What I've Done**
 

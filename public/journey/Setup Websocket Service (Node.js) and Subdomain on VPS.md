@@ -1,6 +1,6 @@
 # Setup Websocket Service (Node.js) and Subdomain on VPS
 
-> Assume the subdomain to be used is websocket.krlan2789.com and the VPS IP is 10.0.27.89
+> Assume the subdomain to be used is `websocket.krlan2789.com`, the VPS IP is `10.0.27.89`, and project path at `/root/repositories/WebSocket-Service`
 
 <br/>
 
@@ -53,8 +53,8 @@
         ProxyPassReverse / http://localhost:8765/
 
         DocumentRoot /root/repositories/WebSocket-Service
-        ErrorLog /var/log/apache2/error.log
-        CustomLog /var/log/apache2/access.log combined
+        ErrorLog /var/log/apache2/websocket.krlan2789.com-error.log
+        CustomLog /var/log/apache2/websocket.krlan2789.com-access.log combined
 
         # SSL Certificate file location
         SSLEngine On
@@ -79,7 +79,7 @@
 7. Restart/reload Apache service :
 
     ```bash
-    sudo service apache2 start
+    sudo service apache2 restart
 
     OR
 
