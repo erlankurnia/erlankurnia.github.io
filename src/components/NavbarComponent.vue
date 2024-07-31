@@ -5,7 +5,7 @@
 				<div class="px-2 sm:px-4">
 					<RouterLink to="/"
 						class="block py-6 text-xl sm:text-2xl font-extrabold tracking-[.2em] text-primary">
-						<img src="/img/logo/Logo Fusion nobg@2x.webp" alt="Logo Erlan" class="w-auto h-8">
+						<img :src="'/img/logo/Logo Fusion nobg@2x.webp'" alt="Logo Erlan" class="w-auto h-8">
 					</RouterLink>
 				</div>
 				<div id="nav-menu-area" class="relative h-20 w-full z-[9999]">
