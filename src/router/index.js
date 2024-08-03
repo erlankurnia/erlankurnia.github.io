@@ -41,7 +41,7 @@ const router = createRouter({
 			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: urls.article + "/:id",
+			path: urls.article + "/:id/:title",
 			name: "article",
 			component: ArticleView,
 			meta: { url: urls, hideNavbar: false },
