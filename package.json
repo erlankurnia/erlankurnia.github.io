@@ -11,6 +11,7 @@
 		"deploy": "cd dist && cp index.html 404.html && cd .. && gh-pages -d dist"
 	},
 	"dependencies": {
+		"@unhead/vue": "^1.9.16",
 		"@vue/runtime-dom": "^3.4.30",
 		"markdown-it": "^14.0.0",
 		"moment": "^2.29.4",

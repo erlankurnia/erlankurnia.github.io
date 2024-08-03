@@ -10,10 +10,39 @@
 <script setup>
 import { ref, onMounted, provide } from "vue";
 import { RouterView } from "vue-router";
+import { useHead } from '@unhead/vue';
 import NavbarComponent from "./components/NavbarComponent.vue";
 import BackToTopComponent from "./components/BackToTopComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 
+const homepageHead = useHead({
+	title: "Homepage",
+	meta: [
+		{
+			charset: 'utf-8'
+		},
+		{
+			name: 'viewport',
+			content: 'width=device-width, initial-scale=1'
+		},
+		{
+			property: "og:type",
+			content: "website",
+		},
+		{
+			property: "og:url",
+			content: "https://erlankurnia.github.io/",
+		},
+		{
+			property: "twitter:url",
+			content: "https://erlankurnia.github.io/",
+		},
+		{
+			property: "twitter:card",
+			content: "summary",
+		},
+	]
+});
 const dataUser = ref({});
 const nameParts = ref([]);
 

@@ -1,7 +1,7 @@
 <template>
 	<header id="navbar-menu" class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent select-none">
 		<div class="container px-4">
-			<div class="flex items-center justify-between">
+			<nav class="flex items-center justify-between">
 				<div class="px-2 sm:px-4">
 					<RouterLink to="/"
 						class="block py-6 text-xl sm:text-2xl font-extrabold tracking-[.2em] text-primary">
@@ -50,7 +50,7 @@
 					</div>
 					<!-- Toggle Menu Button -->
 				</div>
-			</div>
+			</nav>
 		</div>
 	</header>
 </template>

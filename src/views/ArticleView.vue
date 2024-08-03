@@ -1,5 +1,5 @@
 <template>
-	<section v-if="dataArticle != null && dataArticle.title" id="profile" class="pt-24 max-xs:min-h-screen">
+	<article v-if="dataArticle != null && dataArticle.title" id="profile" class="pt-24 max-xs:min-h-screen">
 		<div class="container max-w-5xl">
 			<div class="flex flex-wrap mb-16">
 				<div class="flex flex-row flex-wrap w-full px-4 pt-4 pb-0">
@@ -58,12 +58,13 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</article>
 </template>
 
 <script async setup>
 import { inject, ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useHead } from '@unhead/vue';
 // import markdownit from "markdown-it";
 import tools from "../helper/tools";
 import TechnologyIcon from "../components/icons/Icon.vue";
@@ -91,6 +92,41 @@ async function setup() {
 		}
 	}
 	dataReadme.value = await tools.getContentReadme(dataArticle.value.source);
+
+	const metaTitle = dataArticle.value?.title;
+	const metaDesc = dataArticle.value?.description;
+
+	const homepageHead = useHead({
+		title: "Homepage",
+		meta: [
+			{
+				name: "title",
+				content: metaTitle,
+			},
+			{
+				name: "description",
+				content: metaDesc,
+			},
+			{
+				property: "og:title",
+				content: metaTitle,
+			},
+			{
+				property: "og:description",
+				content: metaDesc,
+			},
+			{
+				property: "twitter:title",
+				content: metaTitle,
+			},
+			{
+				property: "twitter:description",
+				content: metaDesc,
+			},
+		]
+	});
+
+	onBeforeUnmount(() => homepageHead.dispose());
 }
 
 onMounted(setup);
