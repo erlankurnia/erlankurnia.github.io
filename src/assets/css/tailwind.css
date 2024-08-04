@@ -97,6 +97,11 @@
 		@apply w-full;
 	}
 
+	#markdown #markdown-content ul > li > img,
+	#markdown #markdown-content ol > li > img {
+		@apply mt-2 mb-4;
+	}
+
 	#markdown h1,
 	#markdown h2,
 	#markdown h3 {
