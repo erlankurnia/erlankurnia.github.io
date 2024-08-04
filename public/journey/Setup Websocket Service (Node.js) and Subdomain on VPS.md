@@ -80,9 +80,11 @@
 
     ```bash
     sudo service apache2 restart
+    ```
 
-    OR
+    Or
 
+    ```bash
     sudo systemctl reload apache2
     ```
 
@@ -92,7 +94,7 @@
     systemctl status apache2.service
     ```
 
-9. Run a Node.js app using PM2 to automatically run it when the application crashes until the system reboots/restarts (make sure the system has node and NPM installed beforehand) :
+9. Run a Node.js app using PM2 to automatically run it when the application crashes until the system reboots/restarts :
 
     ```bash
     npm i -g pm2
