@@ -1,10 +1,14 @@
 <template>
-	<NavbarComponent></NavbarComponent>
-	<div class="select-none lan-container-body">
-		<RouterView />
-	</div>
-	<FooterComponent class="bg-tertiary"></FooterComponent>
-	<BackToTopComponent></BackToTopComponent>
+	<LoadingFullPageComponent>
+		<template #onSuccess>
+			<NavbarComponent></NavbarComponent>
+			<div class="select-none lan-container-body">
+				<RouterView />
+			</div>
+			<FooterComponent class="bg-tertiary"></FooterComponent>
+			<BackToTopComponent></BackToTopComponent>
+		</template>
+	</LoadingFullPageComponent>
 </template>
 
 <script setup>
@@ -12,10 +16,11 @@ import { ref, onMounted, provide } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from '@unhead/vue';
 import NavbarComponent from "./components/NavbarComponent.vue";
+import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
 import BackToTopComponent from "./components/BackToTopComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 
-const homepageHead = useHead({
+useHead({
 	title: "Homepage",
 	meta: [
 		{
