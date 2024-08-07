@@ -2,15 +2,15 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import CreditView from "../views/CreditView.vue";
-import JourneyView from "../views/JourneyView.vue";
+import NotesView from "../views/NotesView.vue";
 import ArticleView from "../views/ArticleView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 
 const urls = {
 	about: '/who_iam',
 	credit: '/references',
-	journey: '/journey',
-	article: '/article',
+	notes: '/notes',
+	article: '/note',
 };
 
 const router = createRouter({
@@ -35,14 +35,14 @@ const router = createRouter({
 			meta: { url: urls, hideNavbar: false },
 		},
 		{
-			path: urls.journey + "/:filter?",
-			name: "journey",
-			component: JourneyView,
+			path: urls.notes + "/:filter?",
+			name: "notes",
+			component: NotesView,
 			meta: { url: urls, hideNavbar: false },
 		},
 		{
 			path: urls.article + "/:id/:title",
-			name: "article",
+			name: "note",
 			component: ArticleView,
 			meta: { url: urls, hideNavbar: false },
 		},

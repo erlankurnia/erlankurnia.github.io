@@ -7,7 +7,7 @@
 						Home
 					</RouterLink>
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link">/</span> -->
-					<RouterLink v-if="$route.meta.url?.journey" :to="$route.meta.url.journey"
+					<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
 						class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary">
 						Back
 					</RouterLink>
@@ -50,7 +50,7 @@
 				<div v-if="dataArticle.topics && dataArticle.topics.length > 0"
 					class="flex flex-wrap w-full gap-4 px-4 text-left">
 					<template v-for="(topic, index) of dataArticle.topics" :key="index">
-						<a v-if="$route.meta.url?.journey" :href="$route.meta.url?.journey + '/' + topic"
+						<a v-if="$route.meta.url?.notes" :href="$route.meta.url?.notes + '/' + topic"
 							class="text-sm lan-link-primary">
 							#{{ topic }}
 						</a>
@@ -62,7 +62,7 @@
 </template>
 
 <script async setup>
-import { inject, ref, onMounted } from "vue";
+import { inject, ref, onMounted, onBeforeUnmount } from "vue";
 import { useRoute } from "vue-router";
 import { useHead } from '@unhead/vue';
 // import markdownit from "markdown-it";
@@ -81,11 +81,11 @@ const dataReadme = ref("");
 
 async function setup() {
 	const route = useRoute();
-	if (dataUser.value == null || typeof dataUser.value.journey == "undefined" || dataUser.value.journey == null) {
+	if (dataUser.value == null || typeof dataUser.value.notes == "undefined" || dataUser.value.notes == null) {
 		dataUser.value = await tools.getDataUser();
 	}
 
-	for (let article of dataUser.value.journey.articles) {
+	for (let article of dataUser.value.notes.articles) {
 		if ("" + article.id == "" + route.params.id) {
 			dataArticle.value = article;
 			break;
@@ -96,7 +96,7 @@ async function setup() {
 	const metaTitle = dataArticle.value?.title;
 	const metaDesc = dataArticle.value?.description;
 
-	const homepageHead = useHead({
+	const articleHead = useHead({
 		title: dataArticle.value?.title,
 		meta: [
 			{
@@ -126,7 +126,7 @@ async function setup() {
 		]
 	});
 
-	onBeforeUnmount(() => homepageHead.dispose());
+	onBeforeUnmount(() => articleHead.dispose());
 }
 
 onMounted(setup);

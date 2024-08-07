@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+import { onBeforeUnmount } from 'vue';
+import { useHead } from '@unhead/vue';
+
+const notFoundHead = useHead({
+	title: "Page not found",
+});
+
+onBeforeUnmount(() => notFoundHead.dispose());
+</script>
 
 <template>
 	<div class="flex items-center justify-center w-10/12 min-h-[80vh] m-auto">

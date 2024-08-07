@@ -9,11 +9,13 @@
 			<div class="flex flex-wrap" v-if="dataUser.reference.title">
 				<div class="w-full mb-8 text-center">
 					<h2 class="lan-section-subtitle" v-html="dataUser.reference.title"></h2>
-					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.reference.description"></p>
+					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.reference.description">
+					</p>
 				</div>
 				<div class="w-full max-w-4xl px-4 mx-auto">
 					<ul class="flex flex-col gap-4">
-						<li v-for="(data, index) in dataUser.reference.credit" :key="index" class="flex flex-col w-full h-auto">
+						<li v-for="(data, index) in dataUser.reference.credit" :key="index"
+							class="flex flex-col w-full h-auto">
 							<a class="flex font-bold text-primary" target="_blank" :href="data.url">
 								<h4 v-html="data.title"></h4>
 								<NewTabIcon class="w-auto h-[18px] pl-[2px] pt-[6px]"></NewTabIcon>
@@ -28,18 +30,17 @@
 	</section>
 </template>
 
-<script>
-import { inject } from "vue";
+<script setup>
+import { inject, onBeforeUnmount } from "vue";
+import { useHead } from '@unhead/vue';
 import NewTabIcon from "../components/icons/NewTabIcon.vue";
 
-export default {
-	name: "CreditView",
-	components: { NewTabIcon },
-	setup() {
-		const { dataUser } = inject("dataUser");
-		return {
-			dataUser,
-		};
-	},
-};
+const { dataUser } = inject("dataUser");
+
+
+const creditHead = useHead({
+	title: "References",
+});
+
+onBeforeUnmount(() => creditHead.dispose());
 </script>

@@ -31,10 +31,10 @@
 							>
 						</li> -->
 						<li class="flex items-center group">
-							<RouterLink v-if="$route.meta.url?.journey" :to="$route.meta.url.journey"
+							<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
 								class="mx-2 text-sm lan-nav-link" :class="{
-									'text-primary font-bold': $route.name == 'journey',
-								}">Journey</RouterLink>
+									'text-primary font-bold': $route.name == 'notes',
+								}">Notes</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"

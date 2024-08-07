@@ -24,10 +24,10 @@
 									}">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink v-if="$route.meta.url?.journey" :to="$route.meta.url.journey"
+								<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
 									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
-										'text-primary font-bold': $route.name == 'journey',
-									}">Journey</RouterLink>
+										'text-primary font-bold': $route.name == 'notes',
+									}">Notes</RouterLink>
 							</li>
 						</ul>
 					</nav>

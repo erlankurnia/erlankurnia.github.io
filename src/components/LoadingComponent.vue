@@ -10,8 +10,5 @@
 	</section>
 </template>
 
-<script>
-export default {
-	name: "LoadingComponent",
-};
+<script setup>
 </script>

@@ -342,7 +342,7 @@
 			}
 		]
 	},
-	"journey": {
+	"notes": {
 		"title": "",
 		"description": "",
 		"articles": [
@@ -376,7 +376,7 @@
 					"vps"
 				],
 				"source": {
-					"url": "/journey/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
+					"url": "/notes/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
 					"type": "local",
 					"images": []
 				}
