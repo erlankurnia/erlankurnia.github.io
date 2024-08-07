@@ -97,7 +97,7 @@ async function setup() {
 	const metaDesc = dataArticle.value?.description;
 
 	const homepageHead = useHead({
-		title: "Homepage",
+		title: dataArticle.value?.title,
 		meta: [
 			{
 				name: "title",

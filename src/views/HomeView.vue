@@ -15,7 +15,7 @@ const metaTitle = "Erlan Kurnia | LAN";
 const metaDesc = "Hello, I'm Erlan Kurnia, Unity Developer, 'to entertain a group, you don't have to join that group'.";
 
 const homepageHead = useHead({
-	title: "Homepage",
+	title: "Erlan Kurnia",
 	meta: [
 		{
 			name: "title",

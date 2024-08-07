@@ -21,7 +21,6 @@ import BackToTopComponent from "./components/BackToTopComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 
 useHead({
-	title: "Homepage",
 	meta: [
 		{
 			charset: 'utf-8'
