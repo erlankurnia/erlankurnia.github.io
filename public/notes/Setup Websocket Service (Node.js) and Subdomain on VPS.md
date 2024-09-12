@@ -98,7 +98,15 @@
 
     ```bash
     npm i -g pm2
-    pm2 start /root/repositories/WebSocket-Service/app.js --name 'Websocket-Service-App'
+
+    # Start the app
+    pm2 start /root/repositories/WebSocket-Service/app.js --name 'Websocket-Service-App' --watch
+
+    # Stop the app
+    pm2 stop 'Websocket-Service-App'
+    # Or
+    pm2 stop 0 # index of the app
+
     pm2 save -f
     pm2 startup systemd
     ```
