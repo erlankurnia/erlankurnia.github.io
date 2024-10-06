@@ -4,8 +4,11 @@
 			<nav class="flex items-center justify-between">
 				<div class="px-2 sm:px-4">
 					<RouterLink to="/"
-						class="block py-6 text-2xl sm:text-3xl font-extrabold tracking-[.1em] text-primary">LAN
-						<!-- <img :src="'/img/logo/violet-white/Logo Fusion nobg@2x.webp'" alt="Logo Erlan" class="w-auto h-8"> -->
+						class="block py-6 text-2xl sm:text-3xl font-extrabold tracking-[.1em] text-primary">
+						<p class="flex flex-row items-center w-auto h-full gap-2 align-middle">
+							<img :src="'/img/logo/Logo Only/Logo_only_logo.webp'" alt="Logo Erlan" class="w-auto h-7">
+							LAN
+						</p>
 					</RouterLink>
 				</div>
 				<div id="nav-menu-area" class="relative h-20 w-full z-[9999]">
