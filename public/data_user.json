@@ -63,6 +63,7 @@
 			{
 				"id": 5,
 				"title": "Unity Developer",
+				"status": "Full-time",
 				"dateFrom": "2021-02-08",
 				"dateTo": "Now",
 				"desc": "Anak Pintar Studio, Bogor, Indonesia",
@@ -75,6 +76,7 @@
 			{
 				"id": 4,
 				"title": "Kitchen Staff",
+				"status": "Full-time",
 				"dateFrom": "2019-03-01",
 				"dateTo": "2021-02-07",
 				"desc": "Rokupang Surabaya, Indonesia"
@@ -82,6 +84,7 @@
 			{
 				"id": 3,
 				"title": "Tax Admin",
+				"status": "Full-time",
 				"dateFrom": "2017-02-20",
 				"dateTo": "2018-10-26",
 				"desc": "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia"
@@ -89,13 +92,15 @@
 			{
 				"id": 2,
 				"title": "Associate TVS",
+				"status": "Contract",
 				"dateFrom": "2015-11-16",
 				"dateTo": "2016-05-15",
 				"desc": "PT. Alfa Retail Indonesia, Surabaya, Indonesia"
 			},
 			{
 				"id": 1,
-				"title": "Flash Animator (Internship)",
+				"title": "Flash Animator",
+				"status": "Internship",
 				"dateFrom": "2015-04-20",
 				"dateTo": "2015-07-30",
 				"desc": "Maulidan Games, Surabaya, Indonesia"
