@@ -104,6 +104,9 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), lenovoKeys)">
 		<LenovoIcon class="text-[#E2231A]"></LenovoIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), dockerKeys)">
+		<DockerIcon class="text-[#2496ED]"></DockerIcon>
+	</template>
 </template>
 
 <script>
@@ -148,6 +151,7 @@ export default {
 		NotionIcon: defineAsyncComponent(() => importSVGIcon("Notion")),
 		XcodeIcon: defineAsyncComponent(() => importSVGIcon("Xcode")),
 		LenovoIcon: defineAsyncComponent(() => importSVGIcon("Lenovo")),
+		DockerIcon: defineAsyncComponent(() => importSVGIcon("Docker")),
 	},
 	props: ["techName"],
 	data() {
@@ -187,6 +191,7 @@ export default {
 			notionKeys: ["notion"],
 			xcodeKeys: ["xcode"],
 			lenovoKeys: ["lenovo"],
+			dockerKeys: ["docker"],
 		};
 	},
 	methods: {

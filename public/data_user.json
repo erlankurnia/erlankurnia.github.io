@@ -63,7 +63,7 @@
 			{
 				"id": 5,
 				"title": "Unity Developer",
-				"status": "Full-time",
+				"status": "Full-time (Remote)",
 				"dateFrom": "2021-02-08",
 				"dateTo": "Now",
 				"desc": "Anak Pintar Studio, Bogor, Indonesia",
@@ -166,9 +166,9 @@
 		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
 		"topics": [
 			{
-				"name": "maxst",
-				"title": "Maxst",
-				"year": 2022
+				"name": "docker",
+				"title": "Docker",
+				"year": 2024
 			},
 			{
 				"name": "laravel",
@@ -220,10 +220,6 @@
 				}
 			],
 			"Phone": [
-				{
-					"name": "Sony Xperia XZ3 - 4GB|64GB",
-					"icon": "sony"
-				},
 				{
 					"name": "Google Pixel 6  - 8GB|128GB",
 					"icon": "google"
