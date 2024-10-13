@@ -107,6 +107,9 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), dockerKeys)">
 		<DockerIcon class="text-[#2496ED]"></DockerIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), expressjsKeys)">
+		<ExpressjsIcon class="text-[#000000]"></ExpressjsIcon>
+	</template>
 </template>
 
 <script>
@@ -152,6 +155,7 @@ export default {
 		XcodeIcon: defineAsyncComponent(() => importSVGIcon("Xcode")),
 		LenovoIcon: defineAsyncComponent(() => importSVGIcon("Lenovo")),
 		DockerIcon: defineAsyncComponent(() => importSVGIcon("Docker")),
+		ExpressjsIcon: defineAsyncComponent(() => importSVGIcon("Expressjs")),
 	},
 	props: ["techName"],
 	data() {
@@ -192,6 +196,7 @@ export default {
 			xcodeKeys: ["xcode"],
 			lenovoKeys: ["lenovo"],
 			dockerKeys: ["docker"],
+			expressjsKeys: ["expressjs", "express.js", "express"],
 		};
 	},
 	methods: {
