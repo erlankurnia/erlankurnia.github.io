@@ -120,13 +120,13 @@
 		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
 		"skills": [
 			{
-				"name": "csharp",
-				"title": "C#",
+				"name": "unity",
+				"title": "Unity3D",
 				"year": 2017
 			},
 			{
-				"name": "unity",
-				"title": "Unity3D",
+				"name": "csharp",
+				"title": "C#",
 				"year": 2017
 			},
 			{
@@ -145,14 +145,14 @@
 				"year": 2021
 			},
 			{
-				"name": "firebase",
-				"title": "Google Firebase",
-				"year": 2021
+				"name": "maxst",
+				"title": "Maxst",
+				"year": 2022
 			},
 			{
-				"name": "nodejs",
-				"title": "Node.js",
-				"year": 2020
+				"name": "expressjs",
+				"title": "Express.js",
+				"year": 2021
 			},
 			{
 				"name": "tailwind",
@@ -186,6 +186,15 @@
 				"year": 2024
 			}
 		]
+	},
+	"portfolio": {
+		"title": "Can't Learn All The <span class=\"text-primary\">Technology</span>",
+		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
+		"source": {
+			"url": "https://github.com/krlan2789/apps-link",
+			"type": "github",
+			"images": []
+		}
 	},
 	"equipment": {
 		"image": "/img/workspace_setup_512x512.jpg",
