@@ -5,7 +5,7 @@
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 lan-section-title">History</h4>
 					<h2 class="lan-section-subtitle" v-html="dataUser.history.title"></h2>
-					<p class="font-medium text-md text-secondary lg:text-lg" v-html="dataUser.history.description"></p>
+					<p class="lan-section-desc" v-html="dataUser.history.description"></p>
 				</div>
 			</div>
 

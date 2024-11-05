@@ -1,14 +1,17 @@
 <template>
-	<LoadingFullPageComponent>
+	<!-- <LoadingFullPageComponent>
 		<template #onSuccess>
-			<NavbarComponent></NavbarComponent>
-			<div class="select-none lan-container-body">
-				<RouterView />
-			</div>
-			<FooterComponent class="bg-tertiary"></FooterComponent>
-			<BackToTopComponent></BackToTopComponent>
 		</template>
-	</LoadingFullPageComponent>
+</LoadingFullPageComponent> -->
+	<NavbarComponent></NavbarComponent>
+	<div class="select-none lan-container-body">
+		<RouterView />
+	</div>
+	<FooterComponent class="bg-tertiary"></FooterComponent>
+	<BackToTopComponent></BackToTopComponent>
+
+	<!-- <LoadingComponent class="fixed z-[8888] top-0 right-0 bottom-0 left-0 h-screen"></LoadingComponent> -->
+
 </template>
 
 <script setup>
@@ -16,6 +19,7 @@ import { ref, onMounted, provide } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from '@unhead/vue';
 import NavbarComponent from "./components/NavbarComponent.vue";
+import LoadingComponent from "./components/LoadingComponent.vue";
 import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
 import BackToTopComponent from "./components/BackToTopComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";

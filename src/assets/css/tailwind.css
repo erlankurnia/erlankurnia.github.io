@@ -61,7 +61,11 @@
 	}
 
 	.lan-section-subtitle {
-		@apply max-w-xl mb-5 leading-7 sm:leading-8 text-2xl sm:text-[1.75rem] mx-auto text-center font-bold text-dark lg:text-3xl;
+		@apply max-w-xl mb-5 leading-7 sm:leading-8 text-2xl sm:text-[1.75rem] mx-auto text-center font-semibold text-dark lg:text-3xl;
+	}
+
+	.lan-section-desc {
+		@apply font-light text-sm text-secondary lg:text-base;
 	}
 
 	.lan-text-primary {

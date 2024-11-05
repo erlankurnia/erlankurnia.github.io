@@ -11,7 +11,7 @@
 				<div v-if="dataUser.skill.title" class="w-full p-4">
 					<div class="mx-auto mb-4 text-center">
 						<h2 class="lan-section-subtitle" v-html="dataUser.skill.title"></h2>
-						<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.skill.description">
+						<p class="lan-section-desc" v-html="dataUser.skill.description">
 						</p>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 				<div v-if="dataUser.learn.title" class="w-full p-4 mt-8">
 					<div class="mx-auto mb-4 text-center">
 						<h2 class="lan-section-subtitle" v-html="dataUser.learn.title"></h2>
-						<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.learn.description">
+						<p class="lan-section-desc" v-html="dataUser.learn.description">
 						</p>
 					</div>
 				</div>

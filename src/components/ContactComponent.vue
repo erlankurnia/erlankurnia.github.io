@@ -5,7 +5,7 @@
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 lan-section-title">Contact_Me</h4>
 					<h2 class="lan-section-subtitle lg:min-w-max" v-html="dataUser.contact.title"></h2>
-					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.contact.description"></p>
+					<p class="lan-section-desc" v-html="dataUser.contact.description"></p>
 				</div>
 			</div>
 

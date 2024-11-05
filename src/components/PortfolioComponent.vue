@@ -1,5 +1,5 @@
 <template>
-	<section id="portfolio" class="pt-24 pb-16">
+	<section id="portfolio" class="pt-24 pb-16 max-lg:min-h-screen">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="max-w-xl mx-auto mb-8 text-center">
@@ -7,26 +7,25 @@
 					<h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl lg:5xl">
 						Latest <span class="text-primary">Project</span>s
 					</h2>
-					<p class="font-medium text-md text-secondary md:text-lg">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid similique quam aspernatur soluta quod magni
+					<p class="lan-section-desc">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab aliquid similique quam aspernatur
+						soluta quod magni
 						fugit id iste. Ratione odio ipsam aliquam laboriosam?
 					</p>
 				</div>
 			</div>
-			<div class="flex flex-wrap justify-center w-full px-2 xl:w-10/12 xl:mx-auto">
-				<div
-					class="p-3 rounded-xl bg-[rgba(248,248,248,1)] mx-2 mb-4 md:w-[44%] 3xl:w-[30%]"
-					v-for="port in portfolio"
-					:key="port.id"
-				>
+			<div class="grid justify-center w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:mx-auto">
+				<a v-for="port in portfolio" :key="port.id" :href="port.url"
+					class="p-3 rounded-xl bg-[rgba(248,248,248,1)]">
 					<div class="overflow-hidden rounded-md shadow-md">
-						<img :src="port.imgPath" :alt="port.title" :class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
+						<img :src="port.imgPath" :alt="port.title"
+							:class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
 					</div>
-					<a class="text-lg font-semibold text-dark hover:text-primary" :href="port.url">
+					<div class="text-lg font-semibold text-dark hover:text-primary">
 						<h3 class="mt-5 mb-3" v-html="port.title"></h3>
-					</a>
+					</div>
 					<p class="text-sm font-medium text-secondary" v-html="port.description"></p>
-				</div>
+				</a>
 			</div>
 		</div>
 	</section>

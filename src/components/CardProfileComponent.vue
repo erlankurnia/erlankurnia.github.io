@@ -47,7 +47,7 @@
             {{ dataUser.profile.profession.value }}
         </div>
 
-        <div class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
+        <!-- <div class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
             <span class="w-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
@@ -57,7 +57,7 @@
             </span>
             {{ monthsToYears(monthDiff(dataUser.profile.birthday.value, new Date())).replace('yrs', 'yo').replace('yr',
                 'yo') }}
-        </div>
+        </div> -->
 
         <div class="h-4 w-full flex justify-start items-center pl-[2px] gap-[10px]">
             <span class="w-4">
