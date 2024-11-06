@@ -16,7 +16,7 @@
 			</div>
 			<div class="grid justify-center w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:mx-auto">
 				<a v-for="port in portfolio" :key="port.id" :href="port.url"
-					class="p-3 rounded-xl bg-[rgba(248,248,248,1)]">
+					class="p-3 transition duration-200 scale-100 bg-transparent rounded-lg hover:bg-tertiary hover:shadow-lg hover:lan-glass-effect hover:scale-105">
 					<div class="overflow-hidden rounded-md shadow-md">
 						<img :src="port.imgPath" :alt="port.title"
 							:class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
@@ -24,7 +24,7 @@
 					<div class="text-lg font-semibold text-dark hover:text-primary">
 						<h3 class="mt-5 mb-3" v-html="port.title"></h3>
 					</div>
-					<p class="text-sm font-medium text-secondary" v-html="port.description"></p>
+					<p class="text-xs lan-section-desc lg:text-sm" v-html="port.description"></p>
 				</a>
 			</div>
 		</div>

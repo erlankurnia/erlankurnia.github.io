@@ -8,8 +8,8 @@
 		<RouterView />
 	</div>
 	<FooterComponent class="bg-tertiary"></FooterComponent>
+	<ScrollUpComponent></ScrollUpComponent>
 	<ScrollDownComponent></ScrollDownComponent>
-	<BackToTopComponent></BackToTopComponent>
 	<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
 
 	<!-- <LoadingComponent class="fixed z-[8888] top-0 right-0 bottom-0 left-0 h-screen"></LoadingComponent> -->
@@ -24,7 +24,7 @@ import NavbarComponent from "./components/NavbarComponent.vue";
 import NavbarMobileComponent from "./components/NavbarMobileComponent.vue";
 // import LoadingComponent from "./components/LoadingComponent.vue";
 // import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
-import BackToTopComponent from "./components/BackToTopComponent.vue";
+import ScrollUpComponent from "./components/ScrollUpComponent.vue";
 import ScrollDownComponent from "./components/ScrollDownComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 

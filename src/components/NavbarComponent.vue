@@ -67,7 +67,7 @@ export default {
 		const onScroll = () => {
 			const header = document.querySelector("#navbar-menu");
 			const fixedNav = header.offsetTop;
-			const backToTop = document.querySelector("#back-to-top");
+			const backToTop = document.querySelector("#scroll-up");
 			if (window.scrollY > fixedNav) {
 				header.classList.add("lan-navbar-fixed");
 				// header.classList.remove("absolute");

@@ -6,7 +6,7 @@
 			</div>
 
 			<!-- Hardware -->
-			<div class="flex flex-wrap" v-if="dataUser.equipment.hardware">
+			<!-- <div class="flex flex-wrap" v-if="dataUser.equipment.hardware">
 				<div class="w-full text-center">
 					<h2 class="lan-section-subtitle">Hard<span class="text-primary">ware</span></h2>
 					<p class="lan-section-desc" v-html="dataUser.equipment.hardware_description"></p>
@@ -36,14 +36,14 @@
 										<td class="pb-2 align-text-top" v-html="data.name"></td>
 									</tr>
 								</template>
-							</template>
-						</tbody>
-					</table>
-				</div>
-			</div>
+</template>
+</tbody>
+</table>
+</div>
+</div> -->
 			<!-- Hardware -->
 
-			<br />
+			<!-- <br /> -->
 
 			<!-- Software -->
 			<div class="flex flex-wrap" v-if="dataUser.equipment.software">
