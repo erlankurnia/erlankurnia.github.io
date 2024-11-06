@@ -1,10 +1,10 @@
 <template>
-	<section class="h-screen max-h-[960px] pt-24 -z-10 overflow-hidden">
+	<section class="h-screen max-h-[960px] pt-16 pb-20 sm:pb-0 sm:pt-24 -z-10 overflow-hidden">
 		<div class="container h-full">
 			<div class="flex flex-wrap h-full lg:flex-row-reverse">
 				<!-- Right / Top side -->
 				<div
-					class="flex flex-col self-center justify-end w-full px-4 xs:justify-start h-1/2 lg:h-full lg:justify-center lg:w-1/2 lg:text-right">
+					class="flex flex-col self-center justify-center w-full px-4 xs:justify-start h-1/2 lg:h-full lg:justify-center lg:w-1/2 lg:text-right">
 					<h1 class="text-sm font-semibold sm:text-base text-secondary md:text-xl">
 						Hello,<span class="font-bold text-primary">_</span>I'am
 						<span class="flex mt-1 text-3xl font-bold sm:justify-end sm:text-4xl lg:5xl text-secondary">
@@ -36,11 +36,7 @@
 					<div
 						class="relative h-full mx-0 mt-0 lg:-ml-16 lg:-mr-24 md:flex md:flex-col md:justify-end lg:right-0">
 						<span id="splash-liquid"
-							class="absolute bottom-0 w-full transition duration-500 ease-in-out delay-75 -translate-x-[55%] text-primary -z-10 left-1/2"
-							:class="{
-								'scale-[6]': !isPageLoaded,
-								'scale-[1.05]': isPageLoaded,
-							}">
+							class="absolute bottom-0 w-full transition duration-500 ease-in-out delay-75 -translate-x-[55%] text-primary -z-10 left-1/2">
 							<!-- <svg width="100%" height="100%" class="fill-current slime" viewBox="0 0 200 200"
 								xmlns="http://www.w3.org/2000/svg">
 								<path

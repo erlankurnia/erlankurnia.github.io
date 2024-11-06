@@ -3,12 +3,14 @@
 		<template #onSuccess>
 		</template>
 </LoadingFullPageComponent> -->
-	<NavbarComponent></NavbarComponent>
+	<NavbarComponent class="hidden sm:block"></NavbarComponent>
 	<div class="select-none lan-container-body">
 		<RouterView />
 	</div>
 	<FooterComponent class="bg-tertiary"></FooterComponent>
+	<ScrollDownComponent></ScrollDownComponent>
 	<BackToTopComponent></BackToTopComponent>
+	<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
 
 	<!-- <LoadingComponent class="fixed z-[8888] top-0 right-0 bottom-0 left-0 h-screen"></LoadingComponent> -->
 
@@ -19,9 +21,11 @@ import { ref, onMounted, provide } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from '@unhead/vue';
 import NavbarComponent from "./components/NavbarComponent.vue";
-import LoadingComponent from "./components/LoadingComponent.vue";
-import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
+import NavbarMobileComponent from "./components/NavbarMobileComponent.vue";
+// import LoadingComponent from "./components/LoadingComponent.vue";
+// import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
 import BackToTopComponent from "./components/BackToTopComponent.vue";
+import ScrollDownComponent from "./components/ScrollDownComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 
 useHead({

@@ -2,7 +2,7 @@
 	<div class="container w-full h-[2px] px-8">
 		<div class="w-full h-full bg-quaternary"></div>
 	</div>
-	<footer class="py-16 select-none">
+	<footer class="py-16 mb-20 select-none sm:mb-0">
 		<div class="container">
 			<div class="flex flex-wrap px-4 md:flex-row-reverse">
 				<div class="flex justify-center w-full align-middle md:justify-end md:w-1/2" :class="{
@@ -11,13 +11,13 @@
 					<ul class="flex flex-wrap justify-center md:justify-end">
 						<li class="flex items-center group">
 							<a href="/" class="mx-2 text-sm lan-nav-link" :class="{
-								'text-primary font-bold': $route.name == 'home',
+								'text-primary font-bold scale-110': $route.name == 'home',
 							}">Home</a>
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
 								class="mx-2 text-sm lan-nav-link" :class="{
-									'text-primary font-bold': $route.name == 'who_iam',
+									'text-primary font-bold scale-110': $route.name == 'who_iam',
 								}">WHO_I'M</RouterLink>
 						</li>
 						<!-- <li class="flex items-center group">
@@ -25,7 +25,7 @@
 								to="/activity"
 								class="mx-2 text-sm lan-nav-link"
 								:class="{
-									'text-primary font-bold': $route.name == 'activity',
+									'text-primary font-bold scale-110': $route.name == 'activity',
 								}"
 								>Activity</RouterLink
 							>
@@ -33,13 +33,13 @@
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
 								class="mx-2 text-sm lan-nav-link" :class="{
-									'text-primary font-bold': $route.name == 'notes',
+									'text-primary font-bold scale-110': $route.name == 'notes',
 								}">Notes</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"
 								class="mx-2 text-sm lan-nav-link" :class="{
-									'text-primary font-bold': $route.name == 'references',
+									'text-primary font-bold scale-110': $route.name == 'references',
 								}">References</RouterLink>
 						</li>
 						<li class="flex items-center group">

@@ -23,13 +23,13 @@
 							<li class="group">
 								<RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
 									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
-										'text-primary font-bold': $route.name == 'who_iam',
+										'text-primary font-bold scale-110': $route.name == 'who_iam',
 									}">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
 								<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
 									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
-										'text-primary font-bold': $route.name == 'notes',
+										'text-primary font-bold scale-110': $route.name == 'notes',
 									}">Notes</RouterLink>
 							</li>
 						</ul>
@@ -37,7 +37,7 @@
 					<!-- Navbar Menu -->
 
 					<!-- Toggle Menu Button -->
-					<div id="hamburger-area"
+					<!-- <div id="hamburger-area"
 						class="absolute right-0 w-12 h-12 px-3 py-[9px] cursor-pointer top-4 bg-tertiary rounded-3xl 2xs:hidden"
 						:class="{
 							hidden: $route.meta.hideNavbar,
@@ -50,7 +50,7 @@
 							<span class="lan-hamburger-line"></span>
 							<span class="origin-bottom-right lan-hamburger-line"></span>
 						</div>
-					</div>
+					</div> -->
 					<!-- Toggle Menu Button -->
 				</div>
 			</nav>

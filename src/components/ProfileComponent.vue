@@ -1,6 +1,6 @@
 <template>
 	<section v-if="dataUser != null && dataUser.navbarBrand" id="profile"
-		class="pt-24 pb-16 max-lg:min-h-screen lg:pb-0">
+		class="pt-16 pb-16 sm:pt-24 max-lg:min-h-screen lg:pb-0">
 		<div class="container">
 			<div class="flex flex-wrap">
 				<div class="w-full px-4 pt-4 pb-0 text-center">
