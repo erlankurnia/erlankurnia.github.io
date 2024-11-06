@@ -259,7 +259,7 @@
 			],
 			"Engine": [
 				{
-					"name": "Unity3D 2022.3.9f1",
+					"name": "Unity 6 (6000.0.23f1)",
 					"icon": "unity"
 				}
 			],
@@ -297,12 +297,20 @@
 					"icon": "postman"
 				},
 				{
-					"name": "XAMPP",
-					"icon": "xampp"
+					"name": "Laravel Herd",
+					"icon": "herd"
+				},
+				{
+					"name": "PostgreSQL",
+					"icon": "postgresql"
 				},
 				{
 					"name": "GitHub Desktop",
 					"icon": "github"
+				},
+				{
+					"name": "Lunacy",
+					"icon": "lunacy"
 				},
 				{
 					"name": "Notion",
