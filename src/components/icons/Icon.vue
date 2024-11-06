@@ -1,226 +1,67 @@
 <template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), unityKeys)">
-		<UnityIcon class="text-black"></UnityIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), csharpKeys)">
-		<CSharpIcon class="text-[#512BD4]"></CSharpIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), dotnetKeys)">
-		<DotnetIcon class="text-[#512BD4]"></DotnetIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xamarinKeys)">
-		<XamarinIcon class="text-[#3498DB]"></XamarinIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), maxstKeys)">
-		<MaxstIcon class=""></MaxstIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), vuforiaKeys)">
-		<VuforiaIcon class=""></VuforiaIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), onesignalKeys)">
-		<OnesignalIcon class=""></OnesignalIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), arduinoKeys)">
-		<ArduinoIcon class="text-[#00878F]"></ArduinoIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), nodejsKeys)">
-		<NodejsIcon class="text-[#339933]"></NodejsIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), phpKeys)">
-		<PhpIcon class="text-[#777BB4]"></PhpIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), laravelKeys)">
-		<LaravelIcon class="text-[#FF2D20]"></LaravelIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), laravelHerdKeys)">
-		<LaravelHerdIcon class="text-[#EC4C47]"></LaravelHerdIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), laragonKeys)">
-		<LaragonIcon class="text-[#0E83CD]"></LaragonIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), postgresqlKeys)">
-		<PostgresqlIcon class="text-[#4169E1]"></PostgresqlIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), mysqlKeys)">
-		<MysqlIcon class="text-[#4479A1]"></MysqlIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), firebaseKeys)">
-		<FirebaseIcon class="text-[#FFCA28]"></FirebaseIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), androidKeys)">
-		<AndroidIcon class="text-[#3DDC84]"></AndroidIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), androidStudioKeys)">
-		<AndroidstudioIcon class="text-[#3DDC84]"></AndroidstudioIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), codeigniterKeys)">
-		<CodeigniterIcon class="text-[#EF4223]"></CodeigniterIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), javascriptKeys)">
-		<JavascriptIcon class="text-[#F7DF1E]"></JavascriptIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), vuejsKeys)">
-		<VuejsIcon class="text-[#4FC08D]"></VuejsIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), appleKeys)">
-		<AppleIcon class="text-[#000000]"></AppleIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), jsonKeys)">
-		<JsonIcon class="text-[#000000]"></JsonIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), kotlinKeys)">
-		<KotlinIcon class="text-[#7F52FF]"></KotlinIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), tailwindcssKeys)">
-		<TailwindcssIcon class="text-[#06B6D4]"></TailwindcssIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), sonyKeys)">
-		<SonyIcon class="text-[#000000]"></SonyIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), githubKeys)">
-		<GithubIcon class="text-[#181717]"></GithubIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), windows11Keys)">
-		<Windows11Icon class="text-[#0078D4]"></Windows11Icon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), visualstudioKeys)">
-		<VisualstudioIcon class="text-[#5C2D91]"></VisualstudioIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), vscodeKeys)">
-		<VscodeIcon class="text-[#007ACC]"></VscodeIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), msedgeKeys)">
-		<MsedgeIcon class="text-[#0078D7]"></MsedgeIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), postmanKeys)">
-		<PostmanIcon class="text-[#FF6C37]"></PostmanIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), zohoKeys)">
-		<ZohoIcon class="text-[#E42527]"></ZohoIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), notionKeys)">
-		<NotionIcon class="text-[#000000]"></NotionIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xamppKeys)">
-		<XamppIcon class="text-[#FB7A24]"></XamppIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xcodeKeys)">
-		<XcodeIcon></XcodeIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), lenovoKeys)">
-		<LenovoIcon></LenovoIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), dockerKeys)">
-		<DockerIcon></DockerIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), expressjsKeys)">
-		<ExpressjsIcon></ExpressjsIcon>
-	</template>
-	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), lunacyKeys)">
-		<LunacyIcon></LunacyIcon>
-	</template>
+	<component :is="currentComponent"></component>
 </template>
 
-<script>
+<script setup>
 import { defineAsyncComponent } from "vue";
-const importSVGIcon = (iconName) => import(`./svg/${iconName}.svg.vue`);
 
-export default {
-	name: "Icon",
-	components: {
-		AndroidIcon: defineAsyncComponent(() => importSVGIcon("Android")),
-		AndroidstudioIcon: defineAsyncComponent(() => importSVGIcon("Androidstudio")),
-		ArduinoIcon: defineAsyncComponent(() => importSVGIcon("Arduino")),
-		CSharpIcon: defineAsyncComponent(() => importSVGIcon("Csharp")),
-		XamarinIcon: defineAsyncComponent(() => importSVGIcon("Xamarin")),
-		DotnetIcon: defineAsyncComponent(() => importSVGIcon("Dotnet")),
-		CodeigniterIcon: defineAsyncComponent(() => importSVGIcon("Codeigniter")),
-		FirebaseIcon: defineAsyncComponent(() => importSVGIcon("Firebase")),
-		AppleIcon: defineAsyncComponent(() => importSVGIcon("Apple")),
-		JavascriptIcon: defineAsyncComponent(() => importSVGIcon("Javascript")),
-		JsonIcon: defineAsyncComponent(() => importSVGIcon("Json")),
-		KotlinIcon: defineAsyncComponent(() => importSVGIcon("Kotlin")),
-		LaravelIcon: defineAsyncComponent(() => importSVGIcon("Laravel")),
-		LaragonIcon: defineAsyncComponent(() => importSVGIcon("Laragon")),
-		LaravelHerdIcon: defineAsyncComponent(() => importSVGIcon("Laravelherd")),
-		MysqlIcon: defineAsyncComponent(() => importSVGIcon("Mysql")),
-		MaxstIcon: defineAsyncComponent(() => importSVGIcon("Maxst")),
-		NodejsIcon: defineAsyncComponent(() => importSVGIcon("Nodejs")),
-		OnesignalIcon: defineAsyncComponent(() => importSVGIcon("Onesignal")),
-		PhpIcon: defineAsyncComponent(() => importSVGIcon("Php")),
-		PostgresqlIcon: defineAsyncComponent(() => importSVGIcon("Postgresql")),
-		TailwindcssIcon: defineAsyncComponent(() => importSVGIcon("Tailwindcss")),
-		UnityIcon: defineAsyncComponent(() => importSVGIcon("Unity")),
-		VuejsIcon: defineAsyncComponent(() => importSVGIcon("Vuejs")),
-		VuforiaIcon: defineAsyncComponent(() => importSVGIcon("Vuforia")),
-		SonyIcon: defineAsyncComponent(() => importSVGIcon("Sony")),
-		GithubIcon: defineAsyncComponent(() => importSVGIcon("Github")),
-		Windows11Icon: defineAsyncComponent(() => importSVGIcon("Windows11")),
-		VisualstudioIcon: defineAsyncComponent(() => importSVGIcon("Visualstudio")),
-		VscodeIcon: defineAsyncComponent(() => importSVGIcon("Vscode")),
-		MsedgeIcon: defineAsyncComponent(() => importSVGIcon("Msedge")),
-		PostmanIcon: defineAsyncComponent(() => importSVGIcon("Postman")),
-		XamppIcon: defineAsyncComponent(() => importSVGIcon("Xampp")),
-		ZohoIcon: defineAsyncComponent(() => importSVGIcon("Zoho")),
-		NotionIcon: defineAsyncComponent(() => importSVGIcon("Notion")),
-		XcodeIcon: defineAsyncComponent(() => importSVGIcon("Xcode")),
-		LenovoIcon: defineAsyncComponent(() => importSVGIcon("Lenovo")),
-		DockerIcon: defineAsyncComponent(() => importSVGIcon("Docker")),
-		ExpressjsIcon: defineAsyncComponent(() => importSVGIcon("Expressjs")),
-		LunacyIcon: defineAsyncComponent(() => importSVGIcon("Lunacy")),
-	},
-	props: ["techName"],
-	data() {
-		return {
-			unityKeys: ["unity", "unity3d", "unityengine"],
-			androidKeys: ["android", "androidos"],
-			androidStudioKeys: ["androidstudio", "androidstudioide"],
-			arduinoKeys: ["arduino", "arduinoide"],
-			csharpKeys: ["csharp", "c#"],
-			dotnetKeys: ["dotnet", ".net"],
-			xamarinKeys: ["xamarin"],
-			codeigniterKeys: ["codeigniter", "ci"],
-			firebaseKeys: ["firebase"],
-			appleKeys: ["apple", "ios", "macos"],
-			javascriptKeys: ["javascript", "js"],
-			jsonKeys: ["json"],
-			kotlinKeys: ["kotlin"],
-			laravelKeys: ["laravel"],
-			laragonKeys: ["laragon"],
-			laravelHerdKeys: ["laravelherd", "herd"],
-			mysqlKeys: ["mysql"],
-			maxstKeys: ["maxst", "maxstar"],
-			nodejsKeys: ["nodejs", "node"],
-			onesignalKeys: ["onesignal"],
-			phpKeys: ["php"],
-			postgresqlKeys: ["postgresql", "pqsql", "postgres"],
-			tailwindcssKeys: ["tailwindcss", "tailwind"],
-			vuejsKeys: ["vuejs", "vue"],
-			vuforiaKeys: ["vuforia", "vuforiaengine"],
-			sonyKeys: ["sony"],
-			githubKeys: ["github"],
-			windows11Keys: ["windows11", "win11"],
-			visualstudioKeys: ["visualstudio", "msvisualstudio", "vs2019", "vs2017", "vs2015"],
-			vscodeKeys: ["vscode", "visualstudiocode"],
-			msedgeKeys: ["msedge", "microsoftedge"],
-			postmanKeys: ["postman"],
-			xamppKeys: ["xampp"],
-			zohoKeys: ["zoho"],
-			notionKeys: ["notion"],
-			xcodeKeys: ["xcode"],
-			lenovoKeys: ["lenovo"],
-			dockerKeys: ["docker"],
-			expressjsKeys: ["expressjs", "express.js", "express"],
-			lunacyKeys: ["lunacy"],
-		};
-	},
-	methods: {
-		isContains(techName, keys) {
-			for (const key of keys) {
-				if (key == techName) return true;
-			}
-			return false;
-		},
-	},
+const props = defineProps({ techName: { type: String, required: true }, })
+const icons = {
+	unity: ["unity", "unity3d", "unityengine"],
+	android: ["android", "androidos"],
+	androidstudio: ["androidstudio", "androidstudioide"],
+	arduino: ["arduino", "arduinoide"],
+	csharp: ["csharp", "c#"],
+	dotnet: ["dotnet", ".net"],
+	xamarin: ["xamarin"],
+	codeigniter: ["codeigniter", "ci"],
+	firebase: ["firebase"],
+	apple: ["apple", "ios", "macos"],
+	javascript: ["javascript", "js"],
+	json: ["json"],
+	kotlin: ["kotlin"],
+	laravel: ["laravel"],
+	laragon: ["laragon"],
+	laravelherd: ["laravelherd", "herd"],
+	mysql: ["mysql"],
+	maxst: ["maxst", "maxstar"],
+	nodejs: ["nodejs", "node"],
+	onesignal: ["onesignal"],
+	php: ["php"],
+	postgresql: ["postgresql", "pqsql", "postgres"],
+	tailwindcss: ["tailwindcss", "tailwind"],
+	vuejs: ["vuejs", "vue"],
+	vuforia: ["vuforia", "vuforiaengine"],
+	sony: ["sony"],
+	github: ["github"],
+	windows11: ["windows11", "win11"],
+	visualstudio: ["visualstudio", "msvisualstudio", "vs2019", "vs2017", "vs2015"],
+	vscode: ["vscode", "visualstudiocode"],
+	msedge: ["msedge", "microsoftedge"],
+	postman: ["postman"],
+	xampp: ["xampp"],
+	zoho: ["zoho"],
+	notion: ["notion"],
+	xcode: ["xcode"],
+	lenovo: ["lenovo"],
+	docker: ["docker"],
+	expressjs: ["expressjs", "express.js", "express"],
+	lunacy: ["lunacy"],
 };
+const currentComponentName = (techName, icons) => {
+	let name = "";
+	for (const [key, value] of Object.entries(icons)) {
+		for (let tag of value) {
+			if (tag.toLowerCase() == techName.toLowerCase()) {
+				name = key.charAt(0).toUpperCase() + key.substring(1);
+			}
+
+			if (name) break;
+		}
+		if (name) break;
+	}
+
+	return name;
+};
+const currentComponent = defineAsyncComponent(() => import(`./svg/${currentComponentName(props.techName, icons)}.svg.vue`));
 </script>

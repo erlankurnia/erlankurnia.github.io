@@ -1,5 +1,5 @@
 <template>
-    <svg height="100%" width="auto" class="fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1"
+    <svg height="100%" width="auto" class="fill-current text-[#EC4C47]" xmlns="http://www.w3.org/2000/svg" version="1.1"
         viewBox="0 0 440 550">
         <title>Laravel Herd</title>
         <path fill="currentColor" d="
@@ -94,6 +94,6 @@
 <!-- #EC4C47 -->
 <script>
 export default {
-    name: "LaravelHerdIcon",
+    name: "LaravelherdIcon",
 };
 </script>
