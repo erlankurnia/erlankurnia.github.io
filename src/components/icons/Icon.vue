@@ -32,6 +32,12 @@
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), laravelKeys)">
 		<LaravelIcon class="text-[#FF2D20]"></LaravelIcon>
 	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), laravelHerdKeys)">
+		<LaravelHerdIcon class="text-[#EC4C47]"></LaravelHerdIcon>
+	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), laragonKeys)">
+		<LaragonIcon class="text-[#0E83CD]"></LaragonIcon>
+	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), postgresqlKeys)">
 		<PostgresqlIcon class="text-[#4169E1]"></PostgresqlIcon>
 	</template>
@@ -99,16 +105,19 @@
 		<XamppIcon class="text-[#FB7A24]"></XamppIcon>
 	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), xcodeKeys)">
-		<XcodeIcon class="text-[#147EFB]"></XcodeIcon>
+		<XcodeIcon></XcodeIcon>
 	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), lenovoKeys)">
-		<LenovoIcon class="text-[#E2231A]"></LenovoIcon>
+		<LenovoIcon></LenovoIcon>
 	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), dockerKeys)">
-		<DockerIcon class="text-[#2496ED]"></DockerIcon>
+		<DockerIcon></DockerIcon>
 	</template>
 	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), expressjsKeys)">
-		<ExpressjsIcon class="text-[#000000]"></ExpressjsIcon>
+		<ExpressjsIcon></ExpressjsIcon>
+	</template>
+	<template v-if="isContains(('' + techName).toLowerCase().replace(' ', ''), lunacyKeys)">
+		<LunacyIcon></LunacyIcon>
 	</template>
 </template>
 
@@ -132,6 +141,8 @@ export default {
 		JsonIcon: defineAsyncComponent(() => importSVGIcon("Json")),
 		KotlinIcon: defineAsyncComponent(() => importSVGIcon("Kotlin")),
 		LaravelIcon: defineAsyncComponent(() => importSVGIcon("Laravel")),
+		LaragonIcon: defineAsyncComponent(() => importSVGIcon("Laragon")),
+		LaravelHerdIcon: defineAsyncComponent(() => importSVGIcon("Laravelherd")),
 		MysqlIcon: defineAsyncComponent(() => importSVGIcon("Mysql")),
 		MaxstIcon: defineAsyncComponent(() => importSVGIcon("Maxst")),
 		NodejsIcon: defineAsyncComponent(() => importSVGIcon("Nodejs")),
@@ -156,6 +167,7 @@ export default {
 		LenovoIcon: defineAsyncComponent(() => importSVGIcon("Lenovo")),
 		DockerIcon: defineAsyncComponent(() => importSVGIcon("Docker")),
 		ExpressjsIcon: defineAsyncComponent(() => importSVGIcon("Expressjs")),
+		LunacyIcon: defineAsyncComponent(() => importSVGIcon("Lunacy")),
 	},
 	props: ["techName"],
 	data() {
@@ -174,6 +186,8 @@ export default {
 			jsonKeys: ["json"],
 			kotlinKeys: ["kotlin"],
 			laravelKeys: ["laravel"],
+			laragonKeys: ["laragon"],
+			laravelHerdKeys: ["laravelherd", "herd"],
 			mysqlKeys: ["mysql"],
 			maxstKeys: ["maxst", "maxstar"],
 			nodejsKeys: ["nodejs", "node"],
@@ -197,6 +211,7 @@ export default {
 			lenovoKeys: ["lenovo"],
 			dockerKeys: ["docker"],
 			expressjsKeys: ["expressjs", "express.js", "express"],
+			lunacyKeys: ["lunacy"],
 		};
 	},
 	methods: {
