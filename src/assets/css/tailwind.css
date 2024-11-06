@@ -17,6 +17,10 @@
 		@apply bg-tertiary;
 		font-family: "Roboto Mono", monospace;
 	}
+
+	button {
+		@apply outline-none;
+	}
 }
 
 @layer components {
