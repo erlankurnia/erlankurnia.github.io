@@ -7,12 +7,12 @@ import App from "./App.vue";
 import router from "./router";
 import "./assets/css/tailwind.css";
 
-const app = createApp(App);
-const head = createHead();
 const pinia = createPinia();
+const head = createHead();
+const app = createApp(App);
 
-app.use(head);
 app.use(pinia);
+app.use(head);
 app.use(router);
 app.use(VueClipboard, {
     autoSetContainer: true,

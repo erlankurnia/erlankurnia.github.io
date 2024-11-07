@@ -13,7 +13,7 @@
 						v-html="dataUser.notes.description"></p>
 				</div>
 				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="dataUser.notes.articles.length > 0">
-					<ul class="flex flex-col gap-8">
+					<transition-group name="slide-right" tag="ul" class="flex flex-col gap-8">
 						<li v-for="(data, index) in dataUser.notes.articles" :key="index"
 							class="flex flex-col w-full h-auto px-4 py-3 rounded-xl hover:bg-quaternary">
 							<RouterLink
@@ -30,7 +30,7 @@
 								</p>
 							</RouterLink>
 						</li>
-					</ul>
+					</transition-group>
 				</div>
 			</div>
 			<!-- Articles -->

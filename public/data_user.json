@@ -194,7 +194,17 @@
 			"url": "https://github.com/krlan2789/apps-link",
 			"type": "github",
 			"images": []
-		}
+		},
+		"rootDir": "/img/portfolio/projects/",
+		"projects": [
+			{
+				"id": 0,
+				"title": "",
+				"imagesDir": "",
+				"description": "",
+				"url": ""
+			}
+		]
 	},
 	"equipment": {
 		"image": "/img/workspace_setup_512x512.jpg",

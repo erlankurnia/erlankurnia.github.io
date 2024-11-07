@@ -23,7 +23,7 @@
 							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary lan-50-to-100">
 							<!-- Icon -->
 							<div class="flex items-center justify-center w-12 h-12 lg:h-16 lg:w-16">
-								<TechnologyIcon :techName="skill.name"></TechnologyIcon>
+								<Icon :techName="skill.name"></Icon>
 							</div>
 							<!-- Icon -->
 
@@ -59,7 +59,7 @@
 							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary lan-50-to-100">
 							<!-- Icon -->
 							<div class="flex items-center justify-center w-12 h-12 lg:h-16 lg:w-16">
-								<TechnologyIcon :techName="skill.name"></TechnologyIcon>
+								<Icon :techName="skill.name"></Icon>
 							</div>
 							<!-- Icon -->
 
@@ -83,13 +83,13 @@
 
 <script>
 import { inject } from "vue";
-import TechnologyIcon from "./icons/Icon.vue";
+import Icon from "./icons/Icon.vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
 
 export default {
 	mixins: [dateTimeMixins],
 	name: "SkillsComponent",
-	components: { TechnologyIcon },
+	components: { Icon },
 	setup() {
 		const { dataUser } = inject("dataUser");
 		return {

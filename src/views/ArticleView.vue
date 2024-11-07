@@ -74,10 +74,6 @@ import MarkdownComponent from "../components/MarkdownComponent.vue";
 const { dataUser } = inject("dataUser");
 const dataArticle = ref({});
 const dataReadme = ref("");
-// const mdit = markdownit({
-// 	typographer: true,
-// 	linkify: true,
-// });
 
 async function setup() {
 	const route = useRoute();

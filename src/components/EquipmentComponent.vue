@@ -72,7 +72,7 @@
 											<div
 												class="max-h-[36px] lg:max-h-[44px] w-fit max-w-xs py-2 lan-50-to-100 flex flex-row">
 												<div class="h-full mr-2 aspect-square lg:mr-4">
-													<TechnologyIcon :techName="data.icon"></TechnologyIcon>
+													<Icon :techName="data.icon"></Icon>
 												</div>
 												<h4 class="h-auto my-auto text-xs font-bold min-w-min text-secondary"
 													v-html="data.name"></h4>
@@ -93,12 +93,12 @@
 <script>
 import { inject } from "vue";
 import dateTimeMixins from "../helper/mixins/dateTime";
-import TechnologyIcon from "./icons/Icon.vue";
+import Icon from "./icons/Icon.vue";
 
 export default {
 	mixins: [dateTimeMixins],
 	name: "EquipmentComponent",
-	components: { TechnologyIcon },
+	components: { Icon },
 	setup() {
 		const { dataUser } = inject("dataUser");
 		return {

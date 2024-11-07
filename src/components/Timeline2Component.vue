@@ -99,7 +99,7 @@ export default {
 	methods: {
 		onMoreInfo(index) {
 			this.$emit('moreInfoClick', index);
-			console.log('more info: ' + index);
+			// console.log('more info: ' + index);
 		},
 	},
 };

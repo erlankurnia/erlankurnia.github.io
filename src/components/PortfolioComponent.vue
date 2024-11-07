@@ -32,11 +32,12 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { inject, ref } from "vue";
 
 export default {
 	name: "PortfolioComponent",
 	setup() {
+		const { dataUser } = inject("dataUser");
 		const portfolio = ref([
 			{
 				id: 0,

@@ -5,6 +5,7 @@ import CreditView from "../views/CreditView.vue";
 import NotesView from "../views/NotesView.vue";
 import ArticleView from "../views/ArticleView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
+import CMSView from "../views/CMSView.vue";
 
 const urls = {
 	about: '/who_iam',
@@ -44,6 +45,18 @@ const router = createRouter({
 			path: urls.article + "/:id/:title",
 			name: "note",
 			component: ArticleView,
+			meta: { url: urls, hideNavbar: false },
+		},
+		{
+			path: "/cms",
+			name: "cms",
+			component: CMSView,
+			meta: { url: urls, hideNavbar: false },
+		},
+		{
+			path: "/404",
+			name: "404",
+			component: NotFoundView,
 			meta: { url: urls, hideNavbar: false },
 		},
 		{
