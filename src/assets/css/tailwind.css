@@ -16,7 +16,7 @@
 /* Page Up */
 .page-up-enter-active,
 .page-up-leave-active {
-	transition: all 0.5s;
+	transition: all 0.4s;
 }
 
 .page-up-enter-from {

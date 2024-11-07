@@ -15,17 +15,19 @@
 				</div>
 			</div>
 			<div class="grid justify-center w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:mx-auto">
-				<a v-for="port in portfolio" :key="port.id" :href="port.url"
-					class="p-3 transition duration-200 scale-100 bg-transparent rounded-lg hover:bg-tertiary hover:shadow-lg hover:lan-glass-effect hover:scale-105">
-					<div class="overflow-hidden rounded-md shadow-md">
-						<img :src="port.imgPath" :alt="port.title"
-							:class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
-					</div>
-					<div class="text-lg font-semibold text-dark hover:text-primary">
-						<h3 class="mt-5 mb-3" v-html="port.title"></h3>
-					</div>
-					<p class="text-xs lan-section-desc lg:text-sm" v-html="port.description"></p>
-				</a>
+				<transition name="slide-up" v-for="(port, index) in portfolio" :key="index" ref="projects">
+					<a v-if="isVisible" :href="port.url" :style="`transition-delay: ${index * 50}ms`"
+						class="p-3 transition duration-200 scale-100 bg-transparent rounded-lg hover:bg-tertiary hover:shadow-lg hover:lan-glass-effect hover:scale-105">
+						<div class="overflow-hidden rounded-md shadow-md">
+							<img :src="port.imgPath" :alt="port.title"
+								:class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
+						</div>
+						<div class="text-lg font-semibold text-dark hover:text-primary">
+							<h3 class="mt-5 mb-3" v-html="port.title"></h3>
+						</div>
+						<p class="text-xs lan-section-desc lg:text-sm" v-html="port.description"></p>
+					</a>
+				</transition>
 			</div>
 		</div>
 	</section>
@@ -37,6 +39,8 @@ import { inject, ref } from "vue";
 export default {
 	name: "PortfolioComponent",
 	setup() {
+		const isVisible = ref(false);
+		const distanceFromCenter = ref(0);
 		const { dataUser } = inject("dataUser");
 		const portfolio = ref([
 			{
@@ -72,7 +76,36 @@ export default {
 				url: "",
 			},
 		]);
-		return { portfolio };
+		return { portfolio, isVisible, distanceFromCenter };
+	},
+	mounted() {
+		this.calculateDistanceFromCenter();
+		window.addEventListener('resize', this.calculateDistanceFromCenter);
+	},
+	beforeDestroy() {
+		window.removeEventListener('resize', this.calculateDistanceFromCenter);
+	},
+	methods: {
+		calculateDistanceFromCenter() {
+			// const projects = useTemplateRef('projects');
+			// console.log(projects);
+			this.portfolio.forEach((project, index) => {
+				console.log(this.$refs['project' + index]);
+				if (this.$refs['project' + index]) {
+					const componentRect = this.$refs['project' + index].getBoundingClientRect();
+					const viewportCenterX = window.innerWidth / 2;
+					const viewportCenterY = window.innerHeight / 2;
+
+					const componentCenterX = componentRect.left + componentRect.width / 2;
+					const componentCenterY = componentRect.top + componentRect.height / 2;
+
+					const deltaX = componentCenterX - viewportCenterX;
+					const deltaY = componentCenterY - viewportCenterY;
+
+					this.distanceFromCenter = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+				}
+			});
+		},
 	},
 };
 </script>
