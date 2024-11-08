@@ -17,7 +17,8 @@
 					<ul class="flex flex-col gap-4">
 						<li v-for="(data, index) in dataUser.reference.credit" :key="index"
 							class="flex flex-col w-full h-auto">
-							<a class="flex font-bold text-primary" target="_blank" :href="data.url">
+							<a class="flex font-bold text-primary dark:text-primaryDark" target="_blank"
+								:href="data.url">
 								<h4 v-html="data.title"></h4>
 								<NewTabIcon class="w-auto h-[18px] pl-[2px] pt-[6px]"></NewTabIcon>
 							</a>
