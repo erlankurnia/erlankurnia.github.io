@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	darkMode: 'class',
 	content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
 	theme: {
 		container: {
@@ -10,9 +11,15 @@ module.exports = {
 			colors: {
 				primary: "#79678F", // French Lilac
 				secondary: "#334155", // Charcoal
-				tertiary: "#FFFFFF",
-				quaternary: "#F0F3FF",
-				dark: "#020617",
+				tertiary: "#FFFFFF", // White
+				quaternary: "#F0F3FF", // Alice Blue
+				dark: "#020617", // Rich Black
+				primaryDark: "#FFDD00", // Golden Yellow
+				secondaryDark: "#FFEEFF", // Magnolia
+				tertiaryDark: "#161616", // Chinese Black
+				quaternaryDark: "#404040", // Black Olive
+				// quaternaryDark: "#606040", // Quincy
+				light: "#C8CCCE", // Silver Finish
 			},
 			screens: {
 				"3xs": "288px",

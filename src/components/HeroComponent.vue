@@ -7,16 +7,16 @@
 					class="flex flex-col self-center justify-center w-full px-4 xs:justify-start h-1/2 lg:h-full lg:!justify-center lg:w-1/2 lg:text-right">
 					<transition name="slide-left" appear>
 						<h1 style="transition-delay: 0ms"
-							class="text-sm font-semibold sm:text-base text-secondary md:text-xl">
-							Hello,<span class="font-bold text-primary">_</span>I'am
+							class="text-sm font-semibold sm:text-base text-secondary dark:text-secondaryDark md:text-xl">
+							Hello,<span class="font-bold text-primary dark:text-primaryDark">_</span>I'am
 						</h1>
 					</transition>
 
 					<transition name="slide-left" appear>
 						<span style="transition-delay: 50ms"
-							class="flex mt-1 text-3xl font-bold justify-start lg:justify-end sm:text-4xl lg:5xl text-secondary">
+							class="flex mt-1 text-3xl font-bold justify-start lg:justify-end sm:text-4xl lg:5xl text-secondary dark:text-secondaryDark">
 							<a v-if="$route.meta.url?.about" :href="$route.meta.url.about"
-								class="flex flex-row sm:mr-5 text-primary">
+								class="flex flex-row sm:mr-5 text-primary dark:text-primaryDark">
 								<span v-for="(letter, index) in letters" :key="index" class="relative w-5 md:w-6">
 									<transition name="slide-up">
 										<span v-if="texts[0][index] == letter" v-html="texts[0][index]"
@@ -31,15 +31,15 @@
 
 					<transition name="slide-left" appear>
 						<h style="transition-delay: 150ms"
-							class="py-6 text-sm font-extrabold sm:text-lg max-w-max lg:ml-auto text-dark lg:text-2xl">
-							Unity<span class="font-bold text-primary">_</span>Developer
-							<div class="border-b-[2px] mt-1 border-b-quaternary"></div>
+							class="py-6 text-sm font-extrabold sm:text-lg max-w-max lg:ml-auto text-dark dark:text-light lg:text-2xl">
+							Unity<span class="font-bold text-primary dark:text-primaryDark">_</span>Developer
+							<div class="border-b-[2px] mt-1 border-b-quaternary dark:border-b-quaternaryDark"></div>
 						</h>
 					</transition>
 
 					<transition name="slide-left" appear>
 						<p style="transition-delay: 200ms"
-							class="mb-10 text-sm font-medium leading-relaxed sm:text-base text-secondary"
+							class="mb-10 text-sm font-medium leading-relaxed sm:text-base text-secondary dark:text-secondaryDark"
 							v-html="dataUser.quote"></p>
 					</transition>
 					<!-- <RouterLink to="/contact" class="lan-button-primary">Contact</RouterLink> -->
@@ -51,7 +51,7 @@
 					<div
 						class="relative max-screen-sm:scale-100 scale-125 sm:scale-100 origin-bottom h-full mx-0 mt-0 lg:-ml-16 lg:-mr-24 md:flex md:flex-col md:justify-end lg:right-0">
 						<span id="splash-liquid"
-							class="absolute bottom-0 w-full transition duration-500 ease-in-out delay-75 -translate-x-[55%] text-primary -z-10 left-1/2">
+							class="absolute bottom-0 w-full transition duration-500 ease-in-out delay-75 -translate-x-[55%] text-primary dark:text-primaryDark -z-10 left-1/2">
 							<svg width="100%" height="100%" class="fill-current slime" viewBox="0 0 200 200"
 								xmlns="http://www.w3.org/2000/svg">
 								<path

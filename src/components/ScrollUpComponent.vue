@@ -1,7 +1,7 @@
 <template>
 	<button id="scroll-up" @click="scrollToPrevSection"
 		class="fixed h-12 w-12 z-[9999] right-4 bottom-[46%] hidden -translate-y-12 rounded-full shadow-lg border-[1px] p-1 hover:animate-pulse justify-center items-center lan-glass-effect 4xl:right-1/2 4xl:-mr-[760px]">
-		<span class="w-full h-full text-primary">
+		<span class="w-full h-full text-primary dark:text-primaryDark">
 			<svg xmlns="http://www.w3.org/2000/svg" class="fill-current" viewBox="0 0 24 24">
 				<path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path>
 			</svg>

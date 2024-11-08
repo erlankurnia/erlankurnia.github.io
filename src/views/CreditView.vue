@@ -9,7 +9,8 @@
 			<div class="flex flex-wrap" v-if="dataUser.reference.title">
 				<div class="w-full mb-8 text-center">
 					<h2 class="lan-section-subtitle" v-html="dataUser.reference.title"></h2>
-					<p class="font-medium text-md text-secondary md:text-lg" v-html="dataUser.reference.description">
+					<p class="font-medium text-md text-secondary dark:text-secondaryDark md:text-lg"
+						v-html="dataUser.reference.description">
 					</p>
 				</div>
 				<div class="w-full max-w-4xl px-4 mx-auto">
@@ -20,7 +21,7 @@
 								<h4 v-html="data.title"></h4>
 								<NewTabIcon class="w-auto h-[18px] pl-[2px] pt-[6px]"></NewTabIcon>
 							</a>
-							<p class="text-sm text-secondary" v-html="data.description"></p>
+							<p class="text-sm text-secondary dark:text-secondaryDark" v-html="data.description"></p>
 						</li>
 					</ul>
 				</div>

@@ -9,24 +9,25 @@
 			<div class="flex flex-wrap">
 				<div class="w-full mb-8 text-center" v-if="dataUser.notes.title">
 					<h2 class="lan-section-subtitle" v-html="dataUser.notes.title"></h2>
-					<p class="font-medium text-md text-secondary md:text-lg" v-if="dataUser.notes.description"
-						v-html="dataUser.notes.description"></p>
+					<p class="font-medium text-md text-secondary dark:text-secondaryDark md:text-lg"
+						v-if="dataUser.notes.description" v-html="dataUser.notes.description"></p>
 				</div>
 				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="dataUser.notes.articles.length > 0">
 					<transition-group name="slide-right" tag="ul" class="flex flex-col gap-8">
 						<li v-for="(data, index) in dataUser.notes.articles" :key="index"
-							class="flex flex-col w-full h-auto px-4 py-3 rounded-xl hover:bg-quaternary">
+							class="flex flex-col w-full h-auto px-4 py-3 rounded-xl hover:bg-quaternary dark:hover:bg-quaternaryDark">
 							<RouterLink
 								v-if="(($route.params == null || ('' + $route.params.filter) == '') || data.topics?.includes($route.params.filter)) && $route.meta.url?.article"
 								:to="$route.meta.url.article + '/' + data.id + '/' + data.title">
-								<div class="mb-2 text-xl font-bold text-primary">
+								<div class="mb-2 text-xl font-bold text-primary dark:text-primaryDark">
 									<h4 v-html="data.title"></h4>
 								</div>
-								<p class="text-sm text-secondary" v-if="data.description"
+								<p class="text-sm text-secondary dark:text-secondaryDark" v-if="data.description"
 									v-html="('' + data.description).substring(0, data.description.length > 128 ? 128 : data.description.length)">
 								</p>
-								<p v-if="data.date" class="mt-2 text-xs font-light text-right text-secondary">{{
-									data.date }}
+								<p v-if="data.date"
+									class="mt-2 text-xs font-light text-right text-secondary dark:text-secondaryDark">{{
+										data.date }}
 								</p>
 							</RouterLink>
 						</li>

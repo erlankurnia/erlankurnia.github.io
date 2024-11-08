@@ -1,22 +1,22 @@
 {
 	"navbarBrand": "LAN",
-	"quote": "To <span class=\"font-bold text-dark\">entertain</span> a group, you don't have <span class=\"font-bold text-dark\">to join</span> that group!",
+	"quote": "To <span class=\"font-bold text-dark dark:text-light\">entertain</span> a group, you don't have <span class=\"font-bold text-dark dark:text-light\">to join</span> that group!",
 	"image": "/img/fotor.comimagescreate_3.webp",
 	"logo": [
 		"/img/logo/Logo Fusion@2x.webp"
 	],
 	"intro": [
 		{
-			"title": "Started by <span class=\"text-primary\">Eliminat</span>ing What I Didn't Like",
+			"title": "Started by <span class=\"text-primary dark:text-primaryDark\">Eliminat</span>ing What I Didn't Like",
 			"description": "It started by choosing a department during high school, not because I liked or was interested in computers.<br>But because other departments have the impression of playing around in a place that I think is not clean."
 		},
 		{
-			"title": "There is Always <span class=\"text-primary\">Free Time</span> in a Busy Life",
+			"title": "There is Always <span class=\"text-primary dark:text-primaryDark\">Free Time</span> in a Busy Life",
 			"description": "A lot of time is used doing work as Unity Developer, learn about Laravel, Vue.js, Tailwind CSS, and business.<br>Also weightlifting, badminton, and swimming. Playing my favorite PC games, eFootball PES 2021."
 		}
 	],
 	"contact": {
-		"title": "Have Something <span class=\"text-primary\">to Discuss</span> With Me",
+		"title": "Have Something <span class=\"text-primary dark:text-primaryDark\">to Discuss</span> With Me",
 		"description": "To have business discussions, you can contact me via :"
 	},
 	"socialMedia": {
@@ -57,7 +57,7 @@
 		}
 	},
 	"history": {
-		"title": "How Did I <span class=\"text-primary\">Reach</span> This Moment",
+		"title": "How Did I <span class=\"text-primary dark:text-primaryDark\">Reach</span> This Moment",
 		"description": "Having work experience in various fields.<br>Because as long as the final goal can be achieved the process can adapt to the current situation.",
 		"timeline": [
 			{
@@ -116,7 +116,7 @@
 		]
 	},
 	"skill": {
-		"title": "There Are Many Things That Aren't My <span class=\"text-primary\">Ability</span>",
+		"title": "There Are Many Things That Aren't My <span class=\"text-primary dark:text-primaryDark\">Ability</span>",
 		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
 		"skills": [
 			{
@@ -162,7 +162,7 @@
 		]
 	},
 	"learn": {
-		"title": "Can't Learn All The <span class=\"text-primary\">Technology</span>",
+		"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",
 		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
 		"topics": [
 			{
@@ -188,7 +188,7 @@
 		]
 	},
 	"portfolio": {
-		"title": "Can't Learn All The <span class=\"text-primary\">Technology</span>",
+		"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",
 		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
 		"source": {
 			"url": "https://github.com/krlan2789/apps-link",
@@ -330,17 +330,17 @@
 		}
 	},
 	"reference": {
-		"title": "<span class=\"text-primary\">Attribution</span> for Who Inspired Me",
+		"title": "<span class=\"text-primary dark:text-primaryDark\">Attribution</span> for Who Inspired Me",
 		"description": "Thanks for your creation which helped me in creating this website.",
 		"credit": [
 			{
 				"title": "Web Programming UNPAS",
-				"description": "By watching tutorials from <span class=\"text-primary font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
+				"description": "By watching tutorials from <span class=\"text-primary dark:text-primaryDark font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
 				"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
 			},
 			{
 				"title": "DITLAB",
-				"description": "Thanks to my cousin <span class=\"text-primary font-bold\">Adit</span>, as inspiration in determining some of the content shown.",
+				"description": "Thanks to my cousin <span class=\"text-primary dark:text-primaryDark font-bold\">Adit</span>, as inspiration in determining some of the content shown.",
 				"url": "https://aditiafa.dev"
 			},
 			{

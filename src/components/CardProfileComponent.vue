@@ -3,12 +3,12 @@
         <h3 v-if="nameParts != null && nameParts.length > 0" style="transition-delay: 0ms"
             class="ml-0 text-3xl text-left lan-section-subtitle sm:text-4xl">
             <span v-for="(name, index) in nameParts" :key="index">
-                {{ name }}<span v-if="index < nameParts.length - 1" class="text-primary">_</span>
+                {{ name }}<span v-if="index < nameParts.length - 1" class="text-primary dark:text-primaryDark">_</span>
             </span>
         </h3>
     </transition>
 
-    <!-- <table class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary sm:text-base">
+    <!-- <table class="w-full mb-6 text-sm font-medium border-separate table-auto text-secondary dark:text-secondaryDark sm:text-base">
         <thead>
             <tr>
                 <th></th>
@@ -18,7 +18,7 @@
         <tbody>
             <template v-for="(data, index) in dataUser.profile">
                 <tr v-if="index != 'name'" :key="index">
-                    <td class="text-primary" v-html="data.label"></td>
+                    <td class="text-primary dark:text-primaryDark" v-html="data.label"></td>
                     <td class="w-4"></td>
                     <td v-if="data.type == 'text'" v-html="data.value"></td>
                     <td v-else-if="data.type == 'age'"
@@ -27,7 +27,7 @@
                 </tr>
             </template>
 <tr v-if="dataUser.socialMedia?.email">
-    <td class="text-primary">Email</td>
+    <td class="text-primary dark:text-primaryDark">Email</td>
     <td class="w-4"></td>
     <td>
         <a :href="'mailto://' + dataUser.socialMedia.email" v-html="dataUser.socialMedia.email"></a>
@@ -37,7 +37,7 @@
 </table> -->
 
     <div v-if="dataUser?.profile"
-        class="flex flex-wrap w-full gap-4 mb-6 text-xs font-medium text-secondary sm:text-sm">
+        class="flex flex-wrap w-full gap-4 mb-6 text-xs font-medium text-secondary dark:text-secondaryDark sm:text-sm">
         <transition name="slide-right" appear>
             <div v-if="dataUser.profile.profession" style="transition-delay: 50ms"
                 class="flex items-center justify-start w-full h-6 gap-2 text-base sm:text-lg">

@@ -20,7 +20,7 @@
 						class="grid items-center justify-center grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 xl:grid-cols-4 xl:gap-8">
 						<!-- Skill Icon -->
 						<div v-for="skill in dataUser.skill.skills"
-							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary lan-50-to-100">
+							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
 							<!-- Icon -->
 							<div class="flex items-center justify-center w-12 h-12 lg:h-16 lg:w-16">
 								<Icon :techName="skill.name"></Icon>
@@ -56,7 +56,7 @@
 						class="grid items-center justify-center grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 xl:grid-cols-4 xl:gap-8">
 						<!-- Skill Icon -->
 						<div v-for="skill in dataUser.learn.topics"
-							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary lan-50-to-100">
+							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
 							<!-- Icon -->
 							<div class="flex items-center justify-center w-12 h-12 lg:h-16 lg:w-16">
 								<Icon :techName="skill.name"></Icon>

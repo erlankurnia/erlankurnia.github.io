@@ -1,6 +1,6 @@
 <template>
     <button type="button" @click="copyToClipboard"
-        class="w-full h-full p-1 rounded-md cursor-pointer text-primary bg-tertiary hover:bg-quaternary">
+        class="w-full h-full p-1 rounded-md cursor-pointer text-primary dark:text-primaryDark bg-tertiary dark:bg-tertiaryDark hover:bg-quaternary dark:hover:bg-quaternaryDark">
         <span class="">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="size-6" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor">

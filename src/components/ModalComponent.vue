@@ -1,14 +1,16 @@
 <template>
     <transition name="show-up">
         <div v-show="isVisible" id="block-modal"
-            class="fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-end md:items-center justify-center bg-dark bg-opacity-30 -m-64 p-64"
+            class="fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-end md:items-center justify-center bg-dark dark:bg-light bg-opacity-30 dark:bg-opacity-30 -m-64 p-64"
             @click="onCloseModal($event)">
             <div
-                class="flex flex-col shadow-md bg-tertiary max-h-screen md:max-w-[92%] md:max-h-[80%] xl:max-w-3xl rounded-t-xl md:rounded-b-xl">
+                class="flex flex-col shadow-md bg-tertiary dark:bg-tertiaryDark max-h-screen md:max-w-[92%] md:max-h-[80%] xl:max-w-3xl rounded-t-xl md:rounded-b-xl">
                 <section
-                    class="relative z-10 flex flex-col items-center justify-center w-full h-auto px-6 py-4 text-center text-dark">
+                    class="relative z-10 flex flex-col items-center justify-center w-full h-auto px-6 py-4 text-center text-dark dark:text-light">
                     <slot name="header"></slot>
-                    <div class="absolute bottom-0 border-b-[2px] border-quaternary w-full h-px"></div>
+                    <div
+                        class="absolute bottom-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
+                    </div>
                 </section>
 
                 <section class="relative px-6 py-3 overflow-x-hidden overflow-y-auto" ref="modalBody">
@@ -16,7 +18,8 @@
                 </section>
 
                 <section class="relative flex items-center justify-center">
-                    <div class="absolute top-0 border-b-[2px] border-quaternary w-full h-px"></div>
+                    <div class="absolute top-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
+                    </div>
                     <button type="button"
                         class="p-1 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer lan-text-primary"
                         @click="onCloseModal()">

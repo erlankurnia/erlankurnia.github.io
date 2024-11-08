@@ -28,7 +28,7 @@
 			<div class="flex flex-wrap h-full lg:flex-row-reverse">
 				<!-- Right / Top side -->
 				<div
-					class="flex flex-col self-center justify-center w-full px-4 xs:justify-start h-1/2 lg:h-full lg:!justify-center lg:w-1/2 lg:text-right">
+					class="flex flex-col self-center z-10 justify-center w-full px-4 xs:justify-start h-1/2 lg:h-full lg:!justify-center lg:w-1/2 lg:text-right">
 					<CardProfileComponent></CardProfileComponent>
 				</div>
 				<!-- Right / Top side -->

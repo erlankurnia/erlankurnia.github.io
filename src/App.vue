@@ -1,29 +1,33 @@
 <template>
-	<!-- <LoadingFullPageComponent>
-		<template #onSuccess>
-		</template>
+	<div :class="{ 'dark': isDarkMode }">
+		<!-- <LoadingFullPageComponent>
+			<template #onSuccess>
+			</template>
 </LoadingFullPageComponent> -->
-	<NavbarComponent class="hidden sm:block"></NavbarComponent>
-	<div v-if="dataUser" class="select-none lan-container-body">
-		<!-- <transition name="page-up" mode="out-in">
-			<RouterView></RouterView>
-		</transition> -->
-		<router-view v-slot="{ Component }">
-			<transition name="page-up" mode="out-in">
-				<component :is="Component" />
-			</transition>
-		</router-view>
+		<NavbarComponent class="hidden sm:block"></NavbarComponent>
+		<div v-if="dataUser" class="select-none lan-container-body">
+			<!-- <transition name="page-up" mode="out-in">
+				<RouterView></RouterView>
+			</transition> -->
+			<router-view v-slot="{ Component }">
+				<transition name="page-up" mode="out-in">
+					<component :is="Component" />
+				</transition>
+			</router-view>
+		</div>
+		<FooterComponent></FooterComponent>
+		<ScrollUpComponent></ScrollUpComponent>
+		<ScrollDownComponent></ScrollDownComponent>
+		<ToggleDarkModeComponent></ToggleDarkModeComponent>
+		<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
 	</div>
-	<FooterComponent class="bg-tertiary"></FooterComponent>
-	<ScrollUpComponent></ScrollUpComponent>
-	<ScrollDownComponent></ScrollDownComponent>
-	<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
 </template>
 
 <script setup>
 import { ref, onMounted, provide } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from "@unhead/vue";
+import tools from "./helper/tools";
 import NavbarComponent from "./components/NavbarComponent.vue";
 import NavbarMobileComponent from "./components/NavbarMobileComponent.vue";
 // import LoadingComponent from "./components/LoadingComponent.vue";
@@ -31,7 +35,7 @@ import NavbarMobileComponent from "./components/NavbarMobileComponent.vue";
 import ScrollUpComponent from "./components/ScrollUpComponent.vue";
 import ScrollDownComponent from "./components/ScrollDownComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
-import tools from "./helper/tools";
+import ToggleDarkModeComponent from "./components/ToggleDarkModeComponent.vue";
 
 useHead({
 	meta: [
@@ -60,6 +64,7 @@ useHead({
 		},
 	],
 });
+const isDarkMode = ref(false);
 const dataUser = ref({});
 const nameParts = ref([]);
 
@@ -72,4 +77,5 @@ async function getDataUser() {
 
 onMounted(getDataUser);
 provide("dataUser", { dataUser, nameParts });
+provide("darkMode", { isDarkMode });
 </script>

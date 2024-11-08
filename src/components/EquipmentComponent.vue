@@ -8,7 +8,7 @@
 			<!-- Hardware -->
 			<!-- <div class="flex flex-wrap" v-if="dataUser.equipment.hardware">
 				<div class="w-full text-center">
-					<h2 class="lan-section-subtitle">Hard<span class="text-primary">ware</span></h2>
+					<h2 class="lan-section-subtitle">Hard<span class="text-primary dark:text-primaryDark">ware</span></h2>
 					<p class="lan-section-desc" v-html="dataUser.equipment.hardware_description"></p>
 				</div>
 				<div class="w-full px-4 lg:w-1/3">
@@ -19,7 +19,7 @@
 				</div>
 				<div class="w-full px-4 mt-6 lg:w-2/3">
 					<table
-						class="w-full mb-6 text-sm font-medium border-separate table-auto lg:ml-4 2xl:ml-8 4xl:ml-12 text-secondary sm:text-base">
+						class="w-full mb-6 text-sm font-medium border-separate table-auto lg:ml-4 2xl:ml-8 4xl:ml-12 text-secondary dark:text-secondaryDark sm:text-base">
 						<thead>
 							<tr>
 								<th></th>
@@ -30,7 +30,7 @@
 							<template v-for="(item, key) in dataUser.equipment.hardware" :key="key">
 								<template v-for="(data, index) in item" :key="index">
 									<tr class="">
-										<td class="pb-2 align-text-top text-primary" v-html="index == 0 ? key : ''">
+										<td class="pb-2 align-text-top text-primary dark:text-primaryDark" v-html="index == 0 ? key : ''">
 										</td>
 										<td class="w-4 pb-2"></td>
 										<td class="pb-2 align-text-top" v-html="data.name"></td>
@@ -48,12 +48,13 @@
 			<!-- Software -->
 			<div class="flex flex-wrap" v-if="dataUser.equipment.software">
 				<div class="w-full text-center">
-					<h2 class="lan-section-subtitle">Soft<span class="text-primary">ware</span></h2>
+					<h2 class="lan-section-subtitle">Soft<span class="text-primary dark:text-primaryDark">ware</span>
+					</h2>
 					<p class="lan-section-desc" v-html="dataUser.equipment.software_description"></p>
 				</div>
 				<div class="w-full px-4">
 					<table
-						class="w-full mb-6 text-sm font-medium border-separate table-auto lg:ml-4 2xl:ml-8 4xl:ml-12 text-secondary sm:text-base">
+						class="w-full mb-6 text-sm font-medium border-separate table-auto lg:ml-4 2xl:ml-8 4xl:ml-12 text-secondary dark:text-secondaryDark sm:text-base">
 						<thead>
 							<tr>
 								<th></th>
@@ -63,7 +64,7 @@
 						<tbody>
 							<template v-for="(item, key) in dataUser.equipment.software" :key="key">
 								<tr class="">
-									<td class="py-6 align-top lg:py-7 text-primary">
+									<td class="py-6 align-top lg:py-7 text-primary dark:text-primaryDark">
 										<h3 class="" v-html="key"></h3>
 									</td>
 									<td class="w-4 md:w-10 xl:w-16 2xl:w-24"></td>
@@ -74,7 +75,7 @@
 												<div class="h-full mr-2 aspect-square lg:mr-4">
 													<Icon :techName="data.icon"></Icon>
 												</div>
-												<h4 class="h-auto my-auto text-xs font-bold min-w-min text-secondary"
+												<h4 class="h-auto my-auto text-xs font-bold min-w-min text-secondary dark:text-secondaryDark"
 													v-html="data.name"></h4>
 											</div>
 										</template>

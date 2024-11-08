@@ -1,5 +1,5 @@
 <template>
-	<section v-if="dataUser && dataUser.contact" id="contact" class="pt-24 pb-16 select-none bg-tertiary">
+	<section v-if="dataUser && dataUser.contact" id="contact" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
 			<div v-if="dataUser.contact.title && dataUser.contact.description" class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
@@ -40,48 +40,101 @@
 			<!-- Contact button -->
 
 			<!-- Sparator -->
-			<!-- <div class="flex items-center justify-center w-full gap-4 p-4 mx-auto my-4 xl:max-w-2xl">
-				<span class="w-full border-t-2 border-quaternary"></span>
-				<span class="text-sm font-bold text-primary md:text-base">OR</span>
-				<span class="w-full border-t-2 border-quaternary"></span>
-			</div> -->
+			<div class="flex items-center justify-center w-full gap-4 p-4 mx-auto my-4 xl:max-w-2xl">
+				<span class="w-full border-t-2 border-quaternary dark:border-quaternaryDark"></span>
+				<span class="text-sm font-bold text-primary dark:text-primaryDark md:text-base">OR</span>
+				<span class="w-full border-t-2 border-quaternary dark:border-quaternaryDark"></span>
+			</div>
 			<!-- Sparator -->
 
 			<!-- Message form -->
-			<!-- <div class="xl:max-w-2xl xl:mx-auto">
-				<form action="">
+			<div class="xl:max-w-2xl xl:mx-auto">
+				<form @submit.prevent="submitForm">
 					<div class="w-full px-4 mb-8">
-						<label for="name" class="text-base font-bold text-primary">Name</label>
-						<input type="text" id="name" class="w-full lan-textfield-primary" />
+						<label for="name" class="text-base font-bold text-primary dark:text-primaryDark">Name</label>
+						<input type="text" id="name" class="w-full lan-textfield-primary" v-model="formName" />
 					</div>
 					<div class="w-full px-4 mb-8">
-						<label for="email" class="text-base font-bold text-primary">Email</label>
-						<input type="email" id="email" class="w-full lan-textfield-primary" />
+						<label for="email" class="text-base font-bold text-primary dark:text-primaryDark">Email</label>
+						<input type="email" id="email" class="w-full lan-textfield-primary" v-model="formEmail" />
 					</div>
 					<div class="w-full px-4 mb-8">
-						<label for="message" class="text-base font-bold text-primary">Message</label>
-						<textarea type="text" id="message" class="w-full h-24 lan-textfield-primary"></textarea>
+						<label for="message"
+							class="text-base font-bold text-primary dark:text-primaryDark">Message</label>
+						<textarea type="text" id="message" class="w-full h-24 lan-textfield-primary"
+							v-model="formMessage"></textarea>
 					</div>
 					<div class="w-full px-4">
 						<button type="submit" class="w-full lan-button-primary">Send Message</button>
 					</div>
 				</form>
-			</div> -->
+			</div>
 			<!-- Message form -->
 		</div>
 	</section>
+
+	<ModalComponent @close="closeModal" ref="modalComponent">
+		<template #body>
+			<div class="text-dark dark:text-light min-w-96 min-h-24 flex flex-grow justify-center items-center">
+				<p class="w-full h-full flex flex-grow justify-center items-center" v-html="modalMessage"></p>
+			</div>
+		</template>
+	</ModalComponent>
+
+	<transition appear>
+		<div v-if="showLoading"
+			class="fixed z-[9998] top-0 bottom-0 left-0 right-0 bg-dark bg-opacity-20 flex justify-center items-center">
+			<LoadingComponent></LoadingComponent>
+		</div>
+	</transition>
 </template>
 
-<script>
+<script setup>
 import { inject, ref } from "vue";
+import { useRouter } from 'vue-router';
+import ModalComponent from './ModalComponent.vue';
+import LoadingComponent from "./LoadingComponent.vue";
 
-export default {
-	name: "ContactComponent",
-	setup() {
-		const { dataUser } = inject("dataUser");
-		return {
-			dataUser,
-		};
-	},
-};
+const router = useRouter();
+const modalComponent = ref(null);
+const showLoading = ref(false);
+const { dataUser } = inject("dataUser");
+const formName = ref('');
+const formEmail = ref('');
+const formMessage = ref('');
+const modalMessage = ref('');
+
+function closeModal() {
+	document.body.style.overflow = '';
+	modalComponent.value.onVisibleChange(false);
+	router.replace({ path: '/' });
+}
+
+async function submitForm() {
+	showLoading.value = true;
+	document.body.style.overflow = 'hidden';
+	const response = await fetch('https://formspree.io/f/myzywvog', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			name: formName.value,
+			email: formEmail.value,
+			message: formMessage.value,
+		})
+	});
+
+	if (response.ok) {
+		formName.value = '';
+		formEmail.value = '';
+		formMessage.value = '';
+		modalMessage.value = 'Thank you for your message! We will get back to you soon.';
+	} else {
+		modalMessage.value = 'There was an error submitting the form. Please try again.';
+	}
+
+	modalComponent.value.onVisibleChange(true);
+	showLoading.value = false;
+}
 </script>

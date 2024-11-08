@@ -1,6 +1,7 @@
 <template>
 	<section v-if="contentMarkdown" id="markdown" class="w-full py-0 max-xs:min-h-screen">
-		<div id="markdown-content" class="flex-row w-full overflow-x-auto" v-html="contentMarkdown"></div>
+		<div id="markdown-content" class="flex-row w-full overflow-x-auto text-dark dark:text-light"
+			v-html="contentMarkdown"></div>
 	</section>
 </template>
 
@@ -39,13 +40,13 @@ export default {
 						elButton.innerHTML = originalCopyLabel;
 						elButton.classList.add(
 							'copy-btn', 'absolute', 'top-2', 'right-[7px]', 'h-6', 'w-auto', 'text-sm',
-							'font-semibold', 'px-1', 'rounded-md', 'cursor-pointer', 'text-primary',
-							'bg-tertiary', 'hover:bg-primary', 'hover:text-tertiary'
+							'font-semibold', 'px-1', 'rounded-md', 'cursor-pointer', 'text-primary', 'dark:text-primaryDark',
+							'bg-tertiary', 'dark:bg-tertiaryDark', 'hover:bg-primary', 'dark:hover:bg-primaryDark', 'hover:text-tertiary', 'dark:hover:text-tertiaryDark'
 						);
 
 						const elLabel = document.createElement("span");
 						elLabel.innerHTML = 'Type or copy the command/code below';
-						elLabel.classList.add('absolute', 'top-3', 'text-xs', 'text-primary', 'select-none');
+						elLabel.classList.add('absolute', 'top-3', 'text-xs', 'text-primary', 'dark:text-primaryDark', 'select-none');
 
 						const elContent = document.createElement("p");
 						elContent.innerText = originalContent;

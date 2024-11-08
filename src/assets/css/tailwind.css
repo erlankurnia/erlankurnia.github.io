@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .lan-glass-effect {
-	@apply bg-quaternary bg-opacity-60 backdrop-blur-sm;
+	@apply bg-quaternary dark:bg-quaternaryDark bg-opacity-50 backdrop-blur-sm;
 	/* backdrop-filter: blur(10px); */
 	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
@@ -16,24 +16,24 @@
 /* Page Up */
 .page-up-enter-active,
 .page-up-leave-active {
-	transition: all 0.4s;
+	transition: all 0.5s;
 }
 
 .page-up-enter-from {
 	/* @apply opacity-50 translate-y-[256px]; */
-	@apply opacity-80 translate-y-full;
+	@apply opacity-25 translate-y-[100vh];
 }
 
 .page-up-leave-to {
 	/* @apply opacity-50 -translate-y-[256px]; */
-	@apply opacity-80 -translate-y-full;
+	@apply opacity-0 -translate-y-[100vh];
 }
 /* Page Up */
 
 /* Page Left */
 .page-left-enter-active,
 .page-left-leave-active {
-	transition: all 0.8s;
+	transition: all 0.5s;
 }
 
 .page-left-enter-from {
@@ -48,7 +48,7 @@
 /* Slide Up */
 .slide-up-enter-active,
 .slide-up-leave-active {
-	transition: all 0.25s ease-out;
+	transition: all 0.4s ease-out;
 }
 
 .slide-up-enter-from {
@@ -98,6 +98,7 @@
 
 /* Show Up */
 .show-up-enter-active {
+	transition-delay: 1000ms;
 	transition: all 0.25s ease-out;
 }
 
@@ -113,11 +114,26 @@
 	@apply opacity-0 scale-x-100 scale-y-75;
 }
 /* Show Up */
+
+/* Fade and Rotate */
+.fade-rotate-enter-active,
+.fade-rotate-leave-active {
+	transition: all 0.5s ease-out;
+}
+
+.fade-rotate-enter-from {
+	@apply opacity-0 rotate-180;
+}
+
+.fade-rotate-leave-to {
+	@apply opacity-0 -rotate-180;
+}
+/* Fade and Rotate */
 /* ------------ Transition ------------ */
 
 @layer base {
 	body {
-		@apply bg-tertiary;
+		@apply bg-tertiary dark:bg-tertiaryDark;
 		font-family: "Roboto Mono", monospace;
 	}
 
@@ -140,15 +156,15 @@
 	}
 
 	.lan-router-link {
-		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary hover:opacity-75 uppercase;
+		@apply flex items-center px-3 py-2 text-xs font-bold leading-snug text-primary dark:text-primaryDark hover:opacity-75 uppercase;
 	}
 
 	.lan-nav-link {
-		@apply flex py-2 mx-4 text-base text-dark transition duration-1000 group-hover:duration-300 group-hover:text-primary group-hover:font-extrabold uppercase;
+		@apply flex py-2 mx-4 text-base text-dark dark:text-light transition duration-1000 group-hover:duration-300 group-hover:text-primary dark:group-hover:text-primaryDark group-hover:font-extrabold uppercase;
 	}
 
 	.lan-hamburger-line {
-		@apply w-[24px] h-[2px] my-[6px] block bg-primary transition duration-300 ease-in-out;
+		@apply w-[24px] h-[2px] my-[6px] block bg-primary dark:bg-primaryDark transition duration-300 ease-in-out;
 	}
 
 	.lan-hamburger-active {
@@ -168,27 +184,27 @@
 	}
 
 	.lan-section-title {
-		@apply text-base sm:text-xl font-bold uppercase text-secondary;
+		@apply text-base sm:text-xl font-bold uppercase text-secondary dark:text-secondaryDark;
 	}
 
 	.lan-section-subtitle {
-		@apply max-w-xl mb-5 leading-7 sm:leading-8 text-2xl sm:text-[1.75rem] mx-auto text-center font-semibold text-dark lg:text-3xl;
+		@apply max-w-xl mb-5 leading-7 sm:leading-8 text-2xl sm:text-[1.75rem] mx-auto text-center font-semibold text-dark dark:text-light lg:text-3xl;
 	}
 
 	.lan-section-desc {
-		@apply font-light text-sm text-secondary lg:text-base;
+		@apply font-light text-sm text-secondary dark:text-secondaryDark lg:text-base;
 	}
 
 	.lan-text-primary {
-		@apply text-primary border-primary transition duration-1000 hover:duration-300 hover:border-tertiary hover:bg-primary hover:text-tertiary;
+		@apply text-primary dark:text-primaryDark border-primary dark:border-primaryDark transition duration-1000 hover:duration-300 hover:border-tertiary dark:hover:border-tertiaryDark hover:bg-primary dark:hover:bg-primaryDark hover:text-tertiary dark:hover:text-tertiaryDark;
 	}
 
 	.lan-text-secondary {
-		@apply text-tertiary border-tertiary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-tertiary hover:text-primary;
+		@apply text-tertiary dark:text-tertiaryDark border-tertiary dark:border-tertiaryDark transition duration-1000 hover:duration-300 hover:border-primary dark:hover:border-primaryDark hover:bg-tertiary dark:hover:bg-tertiaryDark hover:text-primary dark:hover:text-primaryDark;
 	}
 
 	.lan-link-primary {
-		@apply transition duration-1000 text-primary hover:duration-300 hover:text-secondary;
+		@apply transition duration-1000 text-primary dark:text-primaryDark hover:duration-300 hover:text-secondaryDark dark:hover:text-secondaryDark;
 	}
 
 	.lan-50-to-100 {
@@ -196,15 +212,15 @@
 	}
 
 	.lan-button-primary {
-		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-tertiary bg-primary transition duration-1000 hover:duration-300 hover:border-primary hover:bg-tertiary hover:text-primary;
+		@apply px-6 py-2 text-base font-semibold border-2 border-primary dark:border-primaryDark rounded-full text-tertiary dark:text-tertiaryDark bg-primary dark:bg-primaryDark transition duration-1000 hover:duration-300 hover:border-primary dark:hover:border-primaryDark hover:bg-tertiary dark:hover:bg-tertiaryDark hover:text-primary dark:hover:text-primaryDark;
 	}
 
 	.lan-button-secondary {
-		@apply px-6 py-2 text-base font-semibold border-2 border-primary rounded-full text-primary bg-tertiary transition duration-1000 hover:duration-300 hover:bg-primary hover:text-tertiary;
+		@apply px-6 py-2 text-base font-semibold border-2 border-primary dark:border-primaryDark rounded-full text-primary dark:text-primaryDark bg-tertiary dark:bg-tertiaryDark transition duration-1000 hover:duration-300 hover:bg-primary dark:hover:bg-primaryDark hover:text-tertiary dark:hover:text-tertiaryDark;
 	}
 
 	.lan-textfield-primary {
-		@apply p-2 mt-1 rounded-lg bg-quaternary text-dark transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary focus:border-2 min-h-[40px];
+		@apply p-2 mt-1 rounded-lg bg-quaternary dark:bg-quaternaryDark text-dark dark:text-light transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary dark:focus:ring-primaryDark focus:ring-1 focus:border-primary dark:focus:border-primaryDark focus:border-2 min-h-[40px];
 	}
 
 	/* ------------ Markdown ------------ */
@@ -224,7 +240,7 @@
 	}
 
 	#markdown h1 {
-		@apply mt-8 mb-6 text-2xl border-b-2 pb-2 border-b-secondary;
+		@apply mt-8 mb-6 text-2xl border-b-2 pb-2 border-b-secondary dark:border-b-secondaryDark;
 	}
 
 	#markdown h2 {
@@ -237,7 +253,7 @@
 
 	#markdown p > code,
 	#markdown li > code {
-		@apply bg-quaternary rounded-lg py-1 px-2;
+		@apply bg-quaternary dark:bg-quaternaryDark rounded-lg py-1 px-2;
 	}
 
 	#markdown ol > *,
@@ -258,7 +274,7 @@
 	}
 
 	#markdown pre > code {
-		@apply w-full block overflow-x-auto bg-quaternary rounded-lg p-4 pr-8 text-secondary;
+		@apply w-full block overflow-x-auto bg-quaternary dark:bg-quaternaryDark rounded-lg p-4 pr-8 text-secondary dark:text-secondaryDark;
 	}
 
 	#markdown pre:has(> code) {
@@ -275,7 +291,7 @@
 
 	#markdown table th,
 	#markdown table td {
-		@apply border-primary/50 border-2;
+		@apply border-primary/50 dark:border-primaryDark/50 border-2;
 	}
 
 	#markdown table th {

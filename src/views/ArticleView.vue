@@ -3,12 +3,12 @@
 		<div class="container max-w-5xl">
 			<div class="flex flex-wrap mb-16">
 				<div class="flex flex-row flex-wrap w-full px-4 pt-4 pb-0">
-					<!-- <RouterLink to="/" class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary">
+					<!-- <RouterLink to="/" class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary dark:text-primaryDark">
 						Home
 					</RouterLink>
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link">/</span> -->
 					<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
-						class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary">
+						class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary dark:text-primaryDark">
 						Back
 					</RouterLink>
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link">/</span>
@@ -27,7 +27,7 @@
 				</div>
 
 				<div class="w-full px-4 pt-6 mb-0" v-if="dataArticle.description">
-					<p class="text-sm text-secondary" v-html="dataArticle.description"></p>
+					<p class="text-sm text-secondary dark:text-secondaryDark" v-html="dataArticle.description"></p>
 				</div>
 
 				<template v-if="dataReadme">
@@ -46,7 +46,7 @@
 						</span>
 					</a>
 				</div>
-				<h4 class="px-4 my-4">Related topics</h4>
+				<h4 class="px-4 my-4 text-dark dark:text-light">Related topics</h4>
 				<div v-if="dataArticle.topics && dataArticle.topics.length > 0"
 					class="flex flex-wrap w-full gap-4 px-4 text-left">
 					<template v-for="(topic, index) of dataArticle.topics" :key="index">

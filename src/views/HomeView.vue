@@ -1,9 +1,9 @@
 <template>
 	<div class="page-up">
 		<HeroComponent id="home"></HeroComponent>
-		<IntroComponent class="bg-quaternary"></IntroComponent>
-		<ContactComponent class="bg-tertiary"></ContactComponent>
-		<NextPageComponent path="/who_iam" label="Goto My Profile"></NextPageComponent>
+		<IntroComponent class="bg-quaternary dark:bg-quaternaryDark"></IntroComponent>
+		<NextPageComponent class="bg-quaternary dark:bg-quaternaryDark" path="/who_iam" label="More About Me">
+		</NextPageComponent>
 	</div>
 </template>
 
@@ -12,7 +12,6 @@ import { onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
 import HeroComponent from "../components/HeroComponent.vue";
 import IntroComponent from "../components/IntroComponent.vue";
-import ContactComponent from "../components/ContactComponent.vue";
 import NextPageComponent from '../components/NextPageComponent.vue';
 
 const metaTitle = "Erlan Kurnia | LAN";
