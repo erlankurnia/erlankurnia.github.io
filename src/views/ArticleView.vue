@@ -1,6 +1,6 @@
 <template>
-	<article v-if="dataArticle != null && dataArticle.title" id="profile" class="pt-24 max-xs:min-h-screen">
-		<div class="container max-w-5xl">
+	<article id="profile" class="pt-24 min-h-screen">
+		<div v-if="dataArticle != null && dataArticle.title" class="container max-w-5xl">
 			<div class="flex flex-wrap mb-16">
 				<div class="flex flex-row flex-wrap w-full px-4 pt-4 pb-0">
 					<!-- <RouterLink to="/" class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link text-primary dark:text-primaryDark">
