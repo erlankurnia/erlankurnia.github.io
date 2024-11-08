@@ -50,10 +50,10 @@
 				<div v-if="dataArticle.topics && dataArticle.topics.length > 0"
 					class="flex flex-wrap w-full gap-4 px-4 text-left">
 					<template v-for="(topic, index) of dataArticle.topics" :key="index">
-						<a v-if="$route.meta.url?.notes" :href="$route.meta.url?.notes + '/' + topic"
+						<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url?.notes + '/' + topic"
 							class="text-sm lan-link-primary">
 							#{{ topic }}
-						</a>
+						</RouterLink>
 					</template>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 
 <script async setup>
 import { inject, ref, onMounted, onBeforeUnmount } from "vue";
-import { useRoute } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 import { useHead } from '@unhead/vue';
 // import markdownit from "markdown-it";
 import tools from "../helper/tools";
