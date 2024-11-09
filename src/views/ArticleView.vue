@@ -1,5 +1,5 @@
 <template>
-	<article id="profile" class="pt-24 min-h-screen">
+	<article id="profile" :class="['pt-24 min-h-screen', $attrs.class]">
 		<div v-if="dataArticle != null && dataArticle.title" class="container max-w-5xl">
 			<div class="flex flex-wrap mb-16">
 				<div class="flex flex-row flex-wrap w-full px-4 pt-4 pb-0">

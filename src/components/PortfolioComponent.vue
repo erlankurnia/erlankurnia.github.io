@@ -1,5 +1,5 @@
 <template>
-	<section id="portfolio" class="pt-24 pb-16 max-lg:min-h-screen">
+	<section id="portfolio" :class="['pt-24 pb-16 max-lg:min-h-screen', $attrs.class]">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="max-w-xl mx-auto mb-8 text-center">

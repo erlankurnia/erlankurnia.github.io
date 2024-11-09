@@ -1,5 +1,5 @@
 <template>
-	<section v-if="dataUser != null && dataUser.reference" id="credit" class="pt-24 pb-16">
+	<section v-if="dataUser != null && dataUser.reference" id="credit" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
 				<h4 class="mb-3 lan-section-title">References</h4>

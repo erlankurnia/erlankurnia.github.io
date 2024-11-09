@@ -82,7 +82,7 @@
 						</p>
 						<div v-if="typeof history.source == 'object'" class="w-full h-auto">
 							<button class="w-full px-4 py-1 text-sm text-center rounded-full lan-text-primary"
-								@click="onMoreInfo(index)">
+								@click="$emit('moreInfoClick', index)">
 								More Info
 							</button>
 						</div>
@@ -97,10 +97,12 @@
 <script>
 import dateTimeMixins from "../helper/mixins/dateTime";
 
+// const emit = defineEmits(['inFocus', 'submit'])
 export default {
 	mixins: [dateTimeMixins],
 	name: "Timeline2Component",
 	props: ["histories"],
+	emits: ['moreInfoClick'],
 	methods: {
 		onMoreInfo(index) {
 			this.$emit('moreInfoClick', index);

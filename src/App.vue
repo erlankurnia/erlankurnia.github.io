@@ -1,14 +1,7 @@
 <template>
 	<div :class="{ 'dark': isDarkMode }">
-		<!-- <LoadingFullPageComponent>
-			<template #onSuccess>
-			</template>
-</LoadingFullPageComponent> -->
 		<NavbarComponent class="hidden sm:block"></NavbarComponent>
 		<div v-if="dataUser" class="select-none lan-container-body">
-			<!-- <transition name="page-up" mode="out-in">
-				<RouterView></RouterView>
-			</transition> -->
 			<router-view v-slot="{ Component }">
 				<transition name="page-up" mode="out-in">
 					<component :is="Component" />
@@ -30,8 +23,6 @@ import { useHead } from "@unhead/vue";
 import tools from "./helper/tools";
 import NavbarComponent from "./components/NavbarComponent.vue";
 import NavbarMobileComponent from "./components/NavbarMobileComponent.vue";
-// import LoadingComponent from "./components/LoadingComponent.vue";
-// import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
 import ScrollUpComponent from "./components/ScrollUpComponent.vue";
 import ScrollDownComponent from "./components/ScrollDownComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";

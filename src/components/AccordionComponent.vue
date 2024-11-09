@@ -17,9 +17,10 @@
 </template>
 
 <script>
-// import { computed } from "vue";
-export default {
-	name: "AccordionComponent",
-	props: ["collection"],
-};
+const props = defineProps({
+	collection: {
+		type: String,
+		required: true,
+	}
+});
 </script>

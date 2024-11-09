@@ -5,6 +5,7 @@
             @click="onCloseModal($event)">
             <div
                 class="flex flex-col shadow-md bg-tertiary dark:bg-tertiaryDark max-h-screen md:max-w-[92%] md:max-h-[80%] xl:max-w-3xl rounded-t-xl md:rounded-b-xl">
+                <!-- Modal Header -->
                 <section
                     class="relative z-10 flex flex-col items-center justify-center w-full h-auto px-6 py-4 text-center text-dark dark:text-light">
                     <slot name="header"></slot>
@@ -12,11 +13,15 @@
                         class="absolute bottom-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
                     </div>
                 </section>
+                <!-- Modal Header -->
 
+                <!-- Modal Body -->
                 <section class="relative px-6 py-3 overflow-x-hidden overflow-y-auto" ref="modalBody">
                     <slot name="body"></slot>
                 </section>
+                <!-- Modal Body -->
 
+                <!-- Modal Footer -->
                 <section class="relative flex items-center justify-center">
                     <div class="absolute top-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
                     </div>
@@ -26,6 +31,7 @@
                         <CloseIcon class="w-auto h-8"></CloseIcon>
                     </button>
                 </section>
+                <!-- Modal Footer -->
             </div>
         </div>
     </transition>

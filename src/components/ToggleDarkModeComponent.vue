@@ -1,6 +1,6 @@
 <template>
     <button id="toggle-dark-mode" @click="toggleDarkMode"
-        class="fixed z-[9999] right-4 bottom-24 sm:bottom-4 justify-center items-center 4xl:right-1/2 4xl:-mr-[760px]">
+        :class="['fixed z-[9999] right-4 bottom-24 sm:bottom-4 justify-center items-center 4xl:right-1/2 4xl:-mr-[760px]', $attrs.class]">
         <transition name="fade-rotate" mode="out-in">
             <div
                 class="relative size-12 rounded-full shadow-lg text-quaternary dark:text-quaternaryDark bg-primary dark:bg-primaryDark">

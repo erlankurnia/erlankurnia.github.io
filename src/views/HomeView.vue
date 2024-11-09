@@ -1,5 +1,5 @@
 <template>
-	<div class="page-up">
+	<div :class="['page-up', $attrs.class]">
 		<HeroComponent id="home"></HeroComponent>
 		<IntroComponent class="bg-quaternary dark:bg-quaternaryDark"></IntroComponent>
 		<NextPageComponent class="bg-quaternary dark:bg-quaternaryDark" path="/who_iam" label="More About Me">

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="path" class="w-full h-auto flex justify-center pb-16 items-center">
+    <div v-if="path" :class="['w-full h-auto flex justify-center pb-16 items-center', $attrs.class]">
         <RouterLink :to="path" class="h-auto w-auto flex flex-col lan-router-link">
             {{ label ?? 'Next Page' }}
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-bounce" fill="currentColor"

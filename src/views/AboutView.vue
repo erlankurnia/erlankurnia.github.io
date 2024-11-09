@@ -1,5 +1,5 @@
 <template>
-	<div class="page-up">
+	<div :class="['page-up', $attrs.class]">
 		<ProfileComponent class="bg-quaternary dark:bg-quaternaryDark"></ProfileComponent>
 		<!-- <ProfileComponent class="bg-tertiary dark:bg-tertiaryDark"></ProfileComponent>
 		<PortfolioComponent class="bg-quaternary dark:bg-quaternaryDark"></PortfolioComponent> -->

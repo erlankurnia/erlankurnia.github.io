@@ -1,5 +1,6 @@
 <template>
-	<section v-if="dataUser != null && dataUser.notes" id="credit" class="min-h-screen pt-16 pb-16 sm:pt-24">
+	<section v-if="dataUser != null && dataUser.notes" id="credit"
+		:class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
 				<h4 class="mb-3 lan-section-title">Notes</h4>
