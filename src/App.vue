@@ -55,6 +55,7 @@ useHead({
 		},
 	],
 });
+
 const isDarkMode = ref(false);
 const dataUser = ref({});
 const nameParts = ref([]);
