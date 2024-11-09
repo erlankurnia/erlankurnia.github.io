@@ -26,9 +26,9 @@
                     <div class="absolute top-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
                     </div>
                     <button type="button"
-                        class="p-1 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer lan-text-primary"
+                        class="p-2 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer lan-text-primary"
                         @click="onCloseModal()">
-                        <CloseIcon class="w-auto h-8"></CloseIcon>
+                        <CloseIcon class="w-auto h-6"></CloseIcon>
                     </button>
                 </section>
                 <!-- Modal Footer -->
