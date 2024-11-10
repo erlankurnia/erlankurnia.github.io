@@ -10,12 +10,12 @@ import { ref, onMounted, onUpdated } from "vue";
 import markdownit from "markdown-it";
 import { copyText } from 'vue3-clipboard';
 import 'highlight.js/styles/stackoverflow-dark.min.css';
-// import 'highlight.js/styles/github-dark.min.css';
 import hljs from 'highlight.js/lib/core';
 import hljsApache from 'highlight.js/lib/languages/apache';
 import hljsBash from 'highlight.js/lib/languages/bash';
 import hljsCsharp from 'highlight.js/lib/languages/csharp';
 import hljsGradle from 'highlight.js/lib/languages/gradle';
+import hljsHttp from 'highlight.js/lib/languages/http';
 import hljsIni from 'highlight.js/lib/languages/ini';
 import hljsJavascript from 'highlight.js/lib/languages/javascript';
 import hljsProp from 'highlight.js/lib/languages/properties';
@@ -27,6 +27,7 @@ hljs.registerLanguage('apache', hljsApache);
 hljs.registerLanguage('bash', hljsBash);
 hljs.registerLanguage('csharp', hljsCsharp);
 hljs.registerLanguage('gradle', hljsGradle);
+hljs.registerLanguage('http', hljsHttp);
 hljs.registerLanguage('ini', hljsIni);
 hljs.registerLanguage('javascript', hljsJavascript);
 hljs.registerLanguage('properties', hljsProp);
@@ -47,7 +48,7 @@ export default {
 		const contentMarkdown = ref(null);
 		const originalCopyLabel = ' Copy ';
 		const copiedLabel = 'Copied';
-		// contentMarkdown.value = mdit.render(props.contentMarkdown);
+		const rawCodeList = [];
 
 		onMounted(() => {
 			const parsedContent = mdit.parse(props.contentMarkdown, {});
@@ -58,11 +59,13 @@ export default {
 
 					if (token.type === 'fence' && token.tag === 'code') {
 						const originalContent = hljs.highlight(token.content, { language: token.info }).value;
-						console.log(token.content);
-						console.log(originalContent);
+						// console.log(token.content);
+						// console.log(originalContent);
 
 						const elButton = document.createElement("button");
 						elButton.type = 'button';
+						elButton.id = 'btn-copy-code-' + rawCodeList.length;
+						rawCodeList.push(token.content);
 						elButton.innerHTML = originalCopyLabel;
 						elButton.classList.add(
 							'copy-btn', 'absolute', 'top-2', 'right-[7px]', 'h-6', 'w-auto', 'text-sm',
@@ -92,31 +95,12 @@ export default {
 
 						token.type = 'html_inline';
 						token.content = elContainer.outerHTML;
-						// token.content = originalContent;
-
-						// const elContent = document.createElement("p");
-						// elContent.innerText = originalContent;
-						// elContent.classList.add('min-w-max');
-
-						// const elCode = document.createElement("code");
-						// elCode.appendChild(elLabel);
-						// elCode.appendChild(elContent);
-						// elCode.classList.add('!pt-8');
-
-						// const elContainer = document.createElement("pre");
-						// elContainer.appendChild(elCode);
-						// elContainer.appendChild(elButton);
-						// elContainer.classList.add('relative');
-
-						// token.type = 'html_inline';
-						// token.content = elContainer.outerHTML;
 					}
 				}
 			};
 			const replaceGithubAssets = (tokens) => {
 				for (let i = 0; i < tokens.length; i++) {
 					const token = tokens[i];
-					// console.log(token);
 
 					if (token.type === 'html_block' && token.tag == '') {
 						let originalContent = token.content;
@@ -126,7 +110,6 @@ export default {
 							originalContent = originalContent.replace('src="./', `src="${rawContentUrl}/main/`);
 							token.type = 'html_inline';
 							token.content = originalContent;
-							// console.log('RawContentUrl: ' + originalContent);
 						}
 					}
 				}
@@ -152,12 +135,13 @@ export default {
 						});
 					}
 
-					const preContainer = document.querySelectorAll('#markdown-content pre');
+					const preContainer = document.querySelectorAll('#markdown-content span.relative.hljs');
 					for (let pre of preContainer) {
 						// console.log(pre);
-						const content = pre.querySelector('code p');
+						const content = pre.querySelector('#markdown-code-container');
 						const btn = pre.querySelector('button.copy-btn');
-						// btn.addEventListener('click', () => copyToClipboard(content.innerText, btn));
+						const idx = Number.parseInt(btn.id.replace('btn-copy-code-', ''));
+						btn.addEventListener('click', () => copyToClipboard(rawCodeList[idx], btn));
 					}
 				}
 			});
