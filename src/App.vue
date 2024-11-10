@@ -11,7 +11,7 @@
 		<FooterComponent></FooterComponent>
 		<ScrollUpComponent></ScrollUpComponent>
 		<ScrollDownComponent></ScrollDownComponent>
-		<ToggleDarkModeComponent></ToggleDarkModeComponent>
+		<ToggleDarkModeComponent class="lan-floating size-12 sm:hidden"></ToggleDarkModeComponent>
 		<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
 	</div>
 </template>

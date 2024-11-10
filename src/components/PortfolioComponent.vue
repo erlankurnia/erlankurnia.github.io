@@ -18,7 +18,7 @@
 				class="grid justify-center w-full grid-cols-1 sm:gap-2 sm:grid-cols-2 2xl:gap-6 lg:grid-cols-3 2xl:grid-cols-4 2xl:mx-auto">
 				<transition name="slide-up" v-for="(port, index) in portfolio" :key="projectKey + index" appear>
 					<RouterLink to="" :id="projectShow + port.id"
-						class="p-3 w-auto h-auto transition duration-200 scale-100 bg-transparent rounded-lg hover:bg-tertiary dark:hover:bg-tertiaryDark hover:shadow-lg hover:lan-glass-effect hover:scale-105"
+						class="w-auto h-auto p-3 transition duration-200 scale-100 bg-transparent rounded-lg group hover:bg-tertiary dark:hover:bg-tertiaryDark hover:shadow-lg hover:lan-glass-effect hover:scale-105"
 						:class="{
 							'opacity-0': !port.isVisible,
 							'opacity-100': port.isVisible,
@@ -27,23 +27,24 @@
 							<img :src="port.imgPath" :alt="port.title"
 								:class="{ 'w-full': port.imgPath != null && port.imgPath.length > 5 }" />
 						</div>
-						<div class="text-lg font-semibold text-dark dark:text-light">
+						<div
+							class="text-lg font-semibold text-dark dark:text-light group-hover:text-primary dark:group-hover:text-primaryDark">
 							<h3 class="mt-5 mb-3" v-html="port.title"></h3>
 						</div>
 						<p class="text-xs lan-section-desc lg:text-sm" v-html="port.description"></p>
-						<div class="w-full h-auto flex flex-row gap-2 pt-4">
+						<div class="flex flex-row w-full h-auto gap-2 pt-4">
 							<a :href="port.url" target="_blank"
-								class="lan-button-primary py-1 flex-grow flex flex-row justify-center items-center gap-2">
+								class="flex flex-row items-center justify-center flex-grow gap-2 py-1 lan-button-secondary">
 								View
-								<NewTabIcon class="h-4 w-auto"></NewTabIcon>
+								<NewTabIcon class="w-auto h-4"></NewTabIcon>
 							</a>
-							<RouterLink :to="port.urlRepo"
-								class="lan-button-primary group py-1 flex-grow flex flex-row justify-center items-center gap-2">
+							<a :href="port.urlRepo" target="_blank"
+								class="flex flex-row items-center justify-center flex-grow gap-2 py-1 lan-button-secondary group/github">
 								Repo
 								<Icon techName="Github"
-									class="size-4 transition dark:duration-1000 dark:group-hover:duration-300 text-tertiary group-hover:text-primary dark:text-tertiaryDark dark:group-hover:text-primaryDark">
+									class="transition size-4 dark:duration-1000 dark:group-hover/github:duration-300 text-primary group-hover/github:text-tertiary dark:text-primaryDark dark:group-hover/github:text-tertiaryDark">
 								</Icon>
-							</RouterLink>
+							</a>
 						</div>
 					</RouterLink>
 				</transition>
@@ -112,8 +113,8 @@ const onScroll = () => {
 	for (let a = 0; a < portfolio.value.length; a++) {
 		const itemElement = document.querySelector("#" + projectShow + portfolio.value[a].id);
 		const offset = itemElement.offsetTop - window.scrollY - viewportCenterY;
-		const offscreen = itemElement.offsetTop - window.scrollY - window.innerHeight;
-		console.log(offset);
+		// const offscreen = itemElement.offsetTop - window.scrollY - window.innerHeight;
+		// console.log(offset);
 
 		const status = offset <= 0 || projectShow == projectKey.value;
 		projectKey.value = status ? projectShow : projectHide;

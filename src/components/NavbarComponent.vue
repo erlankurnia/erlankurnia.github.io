@@ -53,6 +53,9 @@
 										'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
 									}">Notes</RouterLink>
 							</li>
+							<li>
+								<ToggleDarkModeComponent class="block my-1 size-8"></ToggleDarkModeComponent>
+							</li>
 						</ul>
 					</nav>
 					<!-- Navbar Menu -->
@@ -81,8 +84,10 @@
 
 <script>
 import { ref } from "vue";
+import ToggleDarkModeComponent from "./ToggleDarkModeComponent.vue";
 export default {
 	name: "HeaderComponent",
+	components: { ToggleDarkModeComponent },
 	setup() {
 		//#region On scrolling event to create sticky navbar
 		const onScroll = () => {

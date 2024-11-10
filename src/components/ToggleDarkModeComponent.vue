@@ -1,13 +1,12 @@
 <template>
-    <button id="toggle-dark-mode" @click="toggleDarkMode(false)"
-        :class="['fixed z-[9999] right-4 bottom-24 sm:bottom-4 justify-center items-center 4xl:right-1/2 4xl:-mr-[760px]', $attrs.class]">
+    <button id="toggle-dark-mode" @click="toggleDarkMode(false)" :class="['justify-center items-center', $attrs.class]">
         <transition name="fade-rotate" mode="out-in">
             <div
-                class="relative size-12 rounded-full shadow-lg text-quaternary dark:text-quaternaryDark bg-primary dark:bg-primaryDark">
+                class="relative rounded-full shadow-sm size-full text-quaternary dark:shadow-primaryDark/50 dark:text-primaryDark bg-primary dark:bg-quaternaryDark">
                 <transition name="fade-rotate" mode="out-in">
                     <!-- Moon -->
                     <div v-if="!isDarkMode" key="moon"
-                        class="absolute inset-0 top-2 bottom-2 flex items-center justify-center">
+                        class="absolute inset-0 flex items-center justify-center top-[15%] bottom-[15%]">
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-full" fill="currentColor"
                             viewBox="0 0 24 24">
                             <path
@@ -18,7 +17,8 @@
                     <!-- Moon -->
 
                     <!-- Sun -->
-                    <div v-else key="sun" class="absolute inset-0 top-2 bottom-2 flex items-center justify-center">
+                    <div v-else key="sun"
+                        class="absolute inset-0 flex items-center justify-center top-[15%] bottom-[15%]">
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-full" fill="currentColor"
                             viewBox="0 0 24 24">
                             <path

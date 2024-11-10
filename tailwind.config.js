@@ -39,6 +39,7 @@ module.exports = {
 				// ...defaultTheme.screens,
 			},
 		},
+		// variants: { extend: { screens: ['max-xs', 'max-sm', 'max-md', 'max-lg', 'max-xl', 'max-2xl'], }, },
 	},
 	plugins: [],
 };

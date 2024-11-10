@@ -65,7 +65,7 @@
 							v-model="formMessage"></textarea>
 					</div>
 					<div class="w-full px-4">
-						<button type="submit" class="w-full lan-button-primary">Send Message</button>
+						<button type="submit" class="w-full lan-button-secondary">Send Message</button>
 					</div>
 				</form>
 			</div>
@@ -75,8 +75,8 @@
 
 	<ModalComponent @close="closeModal" ref="modalComponent">
 		<template #body>
-			<div class="text-dark dark:text-light min-w-96 min-h-24 flex flex-grow justify-center items-center">
-				<p class="w-full h-full flex flex-grow justify-center items-center" v-html="modalMessage"></p>
+			<div class="flex items-center justify-center flex-grow text-dark dark:text-light min-w-96 min-h-24">
+				<p class="flex items-center justify-center flex-grow w-full h-full" v-html="modalMessage"></p>
 			</div>
 		</template>
 	</ModalComponent>

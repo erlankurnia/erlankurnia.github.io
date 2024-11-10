@@ -2,7 +2,8 @@
     <header id="navbar-menu"
         class="fixed bottom-0 left-0 right-0 z-[8888] flex items-center w-full h-auto bg-transparent select-none">
         <div id="nav-menu-area" class="h-auto p-4 w-full z-[9999]">
-            <nav id="nav-menu" class="rounded-full shadow-lg bg-quaternary dark:bg-quaternaryDark">
+            <nav id="nav-menu"
+                class="rounded-full shadow-sm bg-quaternary shadow-primary/50 dark:shadow-primaryDark/50 dark:bg-quaternaryDark">
                 <ul class="flex flex-wrap w-full py-2 justify-evenly">
                     <li class="group">
                         <RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
