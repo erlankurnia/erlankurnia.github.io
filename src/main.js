@@ -2,7 +2,8 @@ import { createApp } from "vue";
 import VueClipboard from 'vue3-clipboard';
 import { createHead } from '@unhead/vue';
 import { createPinia } from 'pinia'
-// import VueCodeHighlight from "vue-code-highlight";
+// import hljsVuePlugin from "@highlightjs/vue-plugin";
+
 import App from "./App.vue";
 import router from "./router";
 import "./assets/css/tailwind.css";
@@ -18,5 +19,5 @@ app.use(VueClipboard, {
     autoSetContainer: true,
     appendToBody: true,
 });
-// app.use(VueCodeHighlight);
+// app.use(hljsVuePlugin);
 app.mount("#app");

@@ -1,5 +1,5 @@
 <template>
-	<section v-if="contentMarkdown" id="markdown" class="w-full py-0 max-xs:min-h-screen">
+	<section v-if="contentMarkdown" id="markdown" class="w-full py-0 select-text max-xs:min-h-screen">
 		<div id="markdown-content" class="flex-row w-full overflow-x-auto text-dark dark:text-light"
 			v-html="contentMarkdown"></div>
 	</section>
@@ -9,6 +9,30 @@
 import { ref, onMounted, onUpdated } from "vue";
 import markdownit from "markdown-it";
 import { copyText } from 'vue3-clipboard';
+import 'highlight.js/styles/stackoverflow-dark.min.css';
+// import 'highlight.js/styles/github-dark.min.css';
+import hljs from 'highlight.js/lib/core';
+import hljsApache from 'highlight.js/lib/languages/apache';
+import hljsBash from 'highlight.js/lib/languages/bash';
+import hljsCsharp from 'highlight.js/lib/languages/csharp';
+import hljsGradle from 'highlight.js/lib/languages/gradle';
+import hljsIni from 'highlight.js/lib/languages/ini';
+import hljsJavascript from 'highlight.js/lib/languages/javascript';
+import hljsProp from 'highlight.js/lib/languages/properties';
+import hljsRuby from 'highlight.js/lib/languages/ruby';
+import hljsShell from 'highlight.js/lib/languages/shell';
+import hljsXml from 'highlight.js/lib/languages/xml';
+
+hljs.registerLanguage('apache', hljsApache);
+hljs.registerLanguage('bash', hljsBash);
+hljs.registerLanguage('csharp', hljsCsharp);
+hljs.registerLanguage('gradle', hljsGradle);
+hljs.registerLanguage('ini', hljsIni);
+hljs.registerLanguage('javascript', hljsJavascript);
+hljs.registerLanguage('properties', hljsProp);
+hljs.registerLanguage('ruby', hljsRuby);
+hljs.registerLanguage('shell', hljsShell);
+hljs.registerLanguage('xml', hljsXml);
 
 const mdit = markdownit({
 	html: true,
@@ -33,7 +57,9 @@ export default {
 					const token = tokens[i];
 
 					if (token.type === 'fence' && token.tag === 'code') {
-						const originalContent = token.content;
+						const originalContent = hljs.highlight(token.content, { language: token.info }).value;
+						console.log(token.content);
+						console.log(originalContent);
 
 						const elButton = document.createElement("button");
 						elButton.type = 'button';
@@ -46,24 +72,44 @@ export default {
 
 						const elLabel = document.createElement("span");
 						elLabel.innerHTML = 'Type or copy the command/code below';
-						elLabel.classList.add('absolute', 'top-3', 'text-xs', 'text-primary', 'dark:text-primaryDark', 'select-none');
+						elLabel.classList.add('absolute', 'top-3', 'text-xs', 'text-light', 'select-none');
 
-						const elContent = document.createElement("p");
-						elContent.innerText = originalContent;
+						const elContent = document.createElement("code");
+						elContent.innerHTML = originalContent;
 						elContent.classList.add('min-w-max');
 
-						const elCode = document.createElement("code");
+						const elCode = document.createElement("pre");
 						elCode.appendChild(elLabel);
 						elCode.appendChild(elContent);
 						elCode.classList.add('!pt-8');
+						elCode.id = "markdown-code-content";
 
-						const elContainer = document.createElement("pre");
+						const elContainer = document.createElement("span");
 						elContainer.appendChild(elCode);
 						elContainer.appendChild(elButton);
-						elContainer.classList.add('relative');
+						elContainer.classList.add('relative', 'hljs');
+						elContainer.id = "markdown-code-container";
 
 						token.type = 'html_inline';
 						token.content = elContainer.outerHTML;
+						// token.content = originalContent;
+
+						// const elContent = document.createElement("p");
+						// elContent.innerText = originalContent;
+						// elContent.classList.add('min-w-max');
+
+						// const elCode = document.createElement("code");
+						// elCode.appendChild(elLabel);
+						// elCode.appendChild(elContent);
+						// elCode.classList.add('!pt-8');
+
+						// const elContainer = document.createElement("pre");
+						// elContainer.appendChild(elCode);
+						// elContainer.appendChild(elButton);
+						// elContainer.classList.add('relative');
+
+						// token.type = 'html_inline';
+						// token.content = elContainer.outerHTML;
 					}
 				}
 			};
@@ -111,7 +157,7 @@ export default {
 						// console.log(pre);
 						const content = pre.querySelector('code p');
 						const btn = pre.querySelector('button.copy-btn');
-						btn.addEventListener('click', () => copyToClipboard(content.innerText, btn));
+						// btn.addEventListener('click', () => copyToClipboard(content.innerText, btn));
 					}
 				}
 			});

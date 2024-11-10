@@ -14,7 +14,7 @@
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link">/</span>
 					<span class="ml-0 mr-1 text-sm font-bold capitalize lan-nav-link" v-html="dataArticle.title"></span>
 				</div>
-				<div class="w-full px-4 pt-4 pb-0 text-center">
+				<div class="w-full px-4 pt-4 pb-0 text-center select-text">
 					<h1 class="mb-3 text-2xl lan-section-title" v-html="dataArticle.title"></h1>
 				</div>
 
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 
-				<div class="w-full px-4 pt-6 mb-0" v-if="dataArticle.description">
+				<div class="w-full px-4 pt-6 mb-0 select-text" v-if="dataArticle.description">
 					<p class="text-sm text-secondary dark:text-secondaryDark" v-html="dataArticle.description"></p>
 				</div>
 

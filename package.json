@@ -13,12 +13,11 @@
 	"dependencies": {
 		"@unhead/vue": "^1.9.16",
 		"@vue/runtime-dom": "^3.4.30",
+		"highlight.js": "^11.10.0",
 		"markdown-it": "^14.0.0",
 		"moment": "^2.29.4",
 		"pinia": "^2.1.6",
-		"sweetalert": "^2.1.2",
 		"vue": "^3.3.4",
-		"vue-code-highlight": "^0.7.8",
 		"vue-router": "^4.2.4",
 		"vue3-clipboard": "^1.0.0"
 	},
