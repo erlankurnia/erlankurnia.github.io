@@ -38,10 +38,10 @@
 
         <transition name="slide-right" appear>
             <div v-if="dataUser.profile.address" style="transition-delay: 100ms"
-                class="h-4 w-full flex justify-start items-center pl-[0px] gap-[11px]">
-                <span class="w-4">
+                class="h-4 w-full flex justify-start items-center pl-[0px] gap-[4px]">
+                <span class="w-6">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                        stroke="currentColor" class="size-full">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -54,8 +54,8 @@
 
         <transition name="slide-right" appear>
             <div v-if="dataUser.profile.nationality" style="transition-delay: 150ms"
-                class="h-4 w-full flex justify-start items-center pl-[4px] gap-[7px]">
-                <span class="w-4">
+                class="h-4 w-full flex justify-start items-center pl-[2px] gap-[6px]">
+                <span class="w-5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -69,10 +69,10 @@
         <transition name="slide-right" appear>
             <a v-if="dataUser.socialMedia.email" style="transition-delay: 200ms"
                 :href="'mailto:' + dataUser.socialMedia.email"
-                class="h-4 w-full flex justify-start items-center pl-[0px] gap-[12px]">
-                <span class="w-4">
+                class="h-4 w-full flex justify-start items-center pl-[2px] gap-[6px]">
+                <span class="w-5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
+                        stroke="currentColor" class="size-full">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                     </svg>
