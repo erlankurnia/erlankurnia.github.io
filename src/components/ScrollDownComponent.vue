@@ -16,13 +16,13 @@ function scrollToNextSection() {
     let scrolled = false;
     sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top > 0 && !scrolled) {
+        if (rect.top > 8 && !scrolled) {
             section.scrollIntoView({ behavior: 'smooth' });
             scrolled = true;
         }
     });
     if (!scrolled) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: -8, behavior: 'smooth' });
     }
 }
 const isAtBottom = () => {

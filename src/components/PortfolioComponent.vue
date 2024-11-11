@@ -33,7 +33,7 @@
 						</div>
 						<p class="text-xs lan-section-desc lg:text-sm" v-html="port.description"></p>
 						<div class="flex flex-row w-full h-auto gap-2 pt-4">
-							<a :href="port.url" target="_blank"
+							<a :href="`${route.meta.project}/${port.slug}`" target="_blank"
 								class="flex flex-row items-center justify-center flex-grow gap-2 py-1 lan-button-secondary">
 								View
 								<NewTabIcon class="w-auto h-4"></NewTabIcon>
@@ -55,10 +55,11 @@
 
 <script setup>
 import { inject, onUnmounted, ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 import Icon from "./icons/Icon.vue";
 import NewTabIcon from "./icons/NewTabIcon.vue";
 
+const route = useRoute();
 const projectHide = 'portfolio-project-hide-';
 const projectShow = 'portfolio-project-show-';
 
@@ -68,42 +69,42 @@ const portfolio = ref([
 	{
 		id: 0,
 		title: "Portfolio 1",
+		slug: "",
 		imgPath: "/img/portfolio/1.png",
 		description:
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
-		isVisible: false,
 	},
 	{
 		id: 1,
 		title: "Portfolio 2",
+		slug: "",
 		imgPath: "/img/portfolio/2.png",
 		description:
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
-		isVisible: false,
 	},
 	{
 		id: 2,
 		title: "Portfolio 3",
+		slug: "",
 		imgPath: "/img/portfolio/3.png",
 		description:
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
-		isVisible: false,
 	},
 	{
 		id: 3,
 		title: "Portfolio 4",
+		slug: "",
 		imgPath: "/img/portfolio/4.png",
 		description:
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
-		isVisible: false,
 	},
 ]);
 
@@ -119,11 +120,6 @@ const onScroll = () => {
 		const status = offset <= 0 || projectShow == projectKey.value;
 		projectKey.value = status ? projectShow : projectHide;
 		portfolio.value[a].isVisible = status;
-		// if (offscreen > 0) {
-		// 	backToTop.classList.add("opacity-0");
-		// } else {
-		// 	backToTop.classList.remove("opacity-0");
-		// }
 	}
 };
 window.addEventListener("scroll", onScroll);
