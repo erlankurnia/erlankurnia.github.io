@@ -56,12 +56,10 @@
 	</div>
 </template>
 
-<script>
-import dateTimeMixins from "../helper/mixins/dateTime";
+<script lang="ts">
+import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
+// import { useDateTime } from "../helper/mixins/dateTime";
 
-export default {
-	mixins: [dateTimeMixins],
-	name: "TimelineComponent",
-	props: ["histories"],
-};
+// const { monthsToYears, monthDiff, dateFormat } = useDateTime();
+defineProps<{ experiences: IWorkExperience[] }>();
 </script>

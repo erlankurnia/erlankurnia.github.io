@@ -1,21 +1,21 @@
 <template>
-	<section v-if="dataUser != null && dataUser.reference" id="credit" :class="['pt-24 pb-16', $attrs.class]">
+	<section v-if="data && data.reference" id="credit" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
 				<h4 class="mb-3 lan-section-title">References</h4>
 			</div>
 
 			<!-- Attribution -->
-			<div class="flex flex-wrap" v-if="dataUser.reference.title">
+			<div class="flex flex-wrap" v-if="data.reference.title">
 				<div class="w-full mb-8 text-center">
-					<h2 class="lan-section-subtitle" v-html="dataUser.reference.title"></h2>
+					<h2 class="lan-section-subtitle" v-html="data.reference.title"></h2>
 					<p class="font-medium text-md text-secondary dark:text-secondaryDark md:text-lg"
-						v-html="dataUser.reference.description">
+						v-html="data.reference.description">
 					</p>
 				</div>
 				<div class="w-full max-w-4xl px-4 mx-auto">
 					<ul class="flex flex-col gap-4">
-						<li v-for="(data, index) in dataUser.reference.credit" :key="index"
+						<li v-for="(data, index) in data.reference.attributions" :key="index"
 							class="flex flex-col w-full h-auto">
 							<a class="flex font-bold text-primary dark:text-primaryDark" target="_blank"
 								:href="data.url">
@@ -32,17 +32,19 @@
 	</section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { inject, onBeforeUnmount } from "vue";
 import { useHead } from '@unhead/vue';
 import NewTabIcon from "../components/icons/NewTabIcon.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
-const { dataUser } = inject("dataUser");
-
+const data = inject(DataUserSymbol);
 
 const creditHead = useHead({
 	title: "References",
 });
 
-onBeforeUnmount(() => creditHead.dispose());
+onBeforeUnmount(() => {
+	if (creditHead !== undefined) creditHead.dispose();
+});
 </script>

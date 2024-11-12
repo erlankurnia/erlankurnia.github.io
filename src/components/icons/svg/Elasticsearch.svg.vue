@@ -7,9 +7,3 @@
 </template>
 
 <!-- #005571 -->
-
-<script>
-export default {
-    name: "ElasticsearchIcon",
-};
-</script>

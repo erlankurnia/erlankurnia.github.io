@@ -7,10 +7,4 @@
 	</svg>
 </template>
 
-<script>
-export default {
-	name: "DotnetIcon",
-};
-</script>
-
 <!-- #512BD4 -->

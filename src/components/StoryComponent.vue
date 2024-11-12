@@ -1,16 +1,16 @@
 <template>
-	<section v-if="dataUser != null && dataUser.history?.timeline" id="story" :class="['pt-24 pb-0', $attrs.class]">
+	<section v-if="data && data.history?.timeline" id="story" :class="['pt-24 pb-0', $attrs.class]">
 		<div class="container">
 			<div class="w-full p-4 pb-0">
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 lan-section-title">History</h4>
-					<h2 class="lan-section-subtitle" v-html="dataUser.history.title"></h2>
-					<p class="lan-section-desc" v-html="dataUser.history.description"></p>
+					<h2 class="lan-section-subtitle" v-html="data.history.title"></h2>
+					<p class="lan-section-desc" v-html="data.history.description"></p>
 				</div>
 			</div>
 
 			<!-- Timeline -->
-			<Timeline2Component :histories="dataUser.history.timeline" @more-info-click="showModal">
+			<Timeline2Component :experiences="data.history.timeline" @more-info-click="showModal">
 			</Timeline2Component>
 			<!-- Timeline -->
 		</div>
@@ -23,45 +23,42 @@
 	</ModalComponent>
 </template>
 
-<script setup>
-import { inject, ref } from "vue";
-// import markdownit from "markdown-it";
+<script setup lang="ts">
+import { inject, ref, useTemplateRef } from "vue";
 import tools from "../helper/tools";
 import Timeline2Component from "./Timeline2Component.vue";
 import ModalComponent from './ModalComponent.vue';
 import MarkdownComponent from "./MarkdownComponent.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
-const { dataUser } = inject("dataUser");
-const modalComponent = ref(null);
+type ModalType = InstanceType<typeof ModalComponent>
+const modalComponent = useTemplateRef<ModalType>('modalComponent');
+
+const data = inject(DataUserSymbol);
 const dataReadme = ref('');
 
-const moreInfo = async (id) => {
-	// const mdit = markdownit({
-	// 	typographer: true,
-	// 	linkify: true,
-	// });
-
+const moreInfo = async (id: number) => {
 	let dataJobSource = null;
 
-	if (dataUser != null && typeof dataUser.value.history == "object" &&
-		dataUser.value.history.timeline != null && dataUser.value.history.timeline.length >= id
+	if (data?.value && typeof data.value.history == "object" &&
+		data.value.history.timeline != null && data.value.history.timeline.length >= id
 	) {
-		dataJobSource = dataUser.value.history.timeline[id].source;
+		dataJobSource = data.value.history.timeline[id].source;
 	}
 
-	if (dataJobSource != null) {
+	if (dataJobSource) {
 		dataReadme.value = await tools.getContentReadme(dataJobSource);
-		// const resText = await tools.getContentReadme(dataJobSource);
-		// dataReadme = mdit.render(resText);
 	}
+
+	console.log(dataReadme.value);
 };
 
-const showModal = async (id) => {
+const showModal = async (id: number) => {
 	await moreInfo(id);
-	modalComponent.value.onVisibleChange(true);
+	modalComponent.value?.onVisibleChange(true);
 };
 
 const closeModal = () => {
-	modalComponent.value.onVisibleChange(false);
+	modalComponent.value?.onVisibleChange(false);
 };
 </script>

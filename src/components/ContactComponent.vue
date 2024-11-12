@@ -1,11 +1,11 @@
 <template>
-	<section v-if="dataUser && dataUser.contact" id="contact" :class="['pt-24 pb-16', $attrs.class]">
+	<section v-if="data && data.contact" id="contact" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
-			<div v-if="dataUser.contact.title && dataUser.contact.description" class="w-full p-4">
+			<div v-if="data.contact.title && data.contact.description" class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
 					<h4 class="mb-2 lan-section-title">Contact_Me</h4>
-					<h2 class="lan-section-subtitle lg:min-w-max" v-html="dataUser.contact.title"></h2>
-					<p class="lan-section-desc" v-html="dataUser.contact.description"></p>
+					<h2 class="lan-section-subtitle lg:min-w-max" v-html="data.contact.title"></h2>
+					<p class="lan-section-desc" v-html="data.contact.description"></p>
 				</div>
 			</div>
 
@@ -13,7 +13,7 @@
 			<div class="w-full px-4">
 				<div class="flex flex-wrap items-center justify-center">
 					<!-- Telegram -->
-					<a v-if="dataUser.socialMedia?.telegram" :href="dataUser.socialMedia.telegram" target="_blank"
+					<a v-if="data.socialMedia?.telegram" :href="data.socialMedia.telegram" target="_blank"
 						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"><svg
 							role="img" width="100%" class="fill-current" viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
 					<!-- Telegram -->
 
 					<!-- Email -->
-					<a v-if="dataUser.socialMedia?.email" :href="'mailto:' + dataUser.socialMedia.email" target="_blank"
+					<a v-if="data.socialMedia?.email" :href="'mailto:' + data.socialMedia.email" target="_blank"
 						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg">
@@ -89,16 +89,19 @@
 	</transition>
 </template>
 
-<script setup>
-import { inject, ref } from "vue";
+<script setup lang="ts">
+import { inject, ref, useTemplateRef } from "vue";
 import { useRouter } from 'vue-router';
 import ModalComponent from './ModalComponent.vue';
 import LoadingComponent from "./LoadingComponent.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+
+type ModalType = InstanceType<typeof ModalComponent>
+const modalComponent = useTemplateRef<ModalType>('modalComponent');
 
 const router = useRouter();
-const modalComponent = ref(null);
 const showLoading = ref(false);
-const { dataUser } = inject("dataUser");
+const data = inject(DataUserSymbol);
 const formName = ref('');
 const formEmail = ref('');
 const formMessage = ref('');
@@ -106,7 +109,7 @@ const modalMessage = ref('');
 
 function closeModal() {
 	document.body.style.overflow = '';
-	modalComponent.value.onVisibleChange(false);
+	modalComponent.value?.onVisibleChange(false);
 	router.replace({ path: '/' });
 }
 
@@ -134,7 +137,7 @@ async function submitForm() {
 		modalMessage.value = 'There was an error submitting the form. Please try again.';
 	}
 
-	modalComponent.value.onVisibleChange(true);
+	modalComponent.value?.onVisibleChange(true);
 	showLoading.value = false;
 }
 </script>

@@ -65,7 +65,7 @@
 				"title": "Unity Developer",
 				"status": "Full-time (Remote)",
 				"dateFrom": "2021-02-08",
-				"dateTo": "Now",
+				"dateTo": "NOW",
 				"desc": "Anak Pintar Studio, Bogor, Indonesia",
 				"source": {
 					"url": "/history/anakpintarstudio_unitydeveloper.md",
@@ -118,7 +118,7 @@
 	"skill": {
 		"title": "There Are Many Things That Aren't My <span class=\"text-primary dark:text-primaryDark\">Ability</span>",
 		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
-		"skills": [
+		"topics": [
 			{
 				"name": "unity",
 				"title": "Unity3D",
@@ -145,9 +145,9 @@
 				"year": 2021
 			},
 			{
-				"name": "maxst",
-				"title": "Maxst",
-				"year": 2022
+				"name": "vue",
+				"title": "Vue.js",
+				"year": 2023
 			},
 			{
 				"name": "expressjs",
@@ -210,132 +210,138 @@
 		]
 	},
 	"equipment": {
-		"image": "/img/workspace_setup_512x512.jpg",
-		"hardware_description": "My workspace setup for work from home.",
 		"hardware": {
-			"Computer": [
-				{
-					"name": "Lenovo Slim 7 ProX - Ryzen 9|RTX3050|32GB|1TB",
-					"icon": "lenovo"
-				},
-				{
-					"name": "Apple Macbook Pro 2019 - Core i7|16GB|512GB",
-					"icon": "apple"
-				}
-			],
-			"Monitor": [
-				{
-					"name": "Lenovo L24i-40 - 24\"|FullHD",
-					"icon": "lenovo"
-				}
-			],
-			"Mouse": [
-				{
-					"name": "Logitech Pebble M350",
-					"icon": "logitech"
-				}
-			],
-			"Keyboard": [
-				{
-					"name": "Logitech K375s",
-					"icon": "logitech"
-				}
-			],
-			"Phone": [
-				{
-					"name": "Google Pixel 6  - 8GB|128GB",
-					"icon": "google"
-				},
-				{
-					"name": "Apple iPhone XR - 3GB|256GB",
-					"icon": "apple"
-				}
-			],
-			"Microcontroller": [
-				{
-					"name": "Espressif Esp32 DevKit",
-					"icon": "espressif"
-				}
-			]
+			"image": "/img/workspace_setup_512x512.jpg",
+			"title": "Hard<span class=\"text-primary dark:text-primaryDark\">ware</span>",
+			"description": "My workspace setup for work from home.",
+			"equipments": {
+				"Computer": [
+					{
+						"name": "Lenovo Slim 7 ProX - Ryzen 9|RTX3050|32GB|1TB",
+						"icon": "lenovo"
+					},
+					{
+						"name": "Apple Macbook Pro 2019 - Core i7|16GB|512GB",
+						"icon": "apple"
+					}
+				],
+				"Monitor": [
+					{
+						"name": "Lenovo L24i-40 - 24\"|FullHD",
+						"icon": "lenovo"
+					}
+				],
+				"Mouse": [
+					{
+						"name": "Logitech Pebble M350",
+						"icon": "logitech"
+					}
+				],
+				"Keyboard": [
+					{
+						"name": "Logitech K375s",
+						"icon": "logitech"
+					}
+				],
+				"Phone": [
+					{
+						"name": "Google Pixel 6  - 8GB|128GB",
+						"icon": "google"
+					},
+					{
+						"name": "Apple iPhone XR - 3GB|256GB",
+						"icon": "apple"
+					}
+				],
+				"Microcontroller": [
+					{
+						"name": "Espressif Esp32 DevKit",
+						"icon": "espressif"
+					}
+				]
+			}
 		},
-		"software_description": "Programs that I often use in doing my work.",
 		"software": {
-			"OS": [
-				{
-					"name": "Windows 11 23H2",
-					"icon": "windows11"
-				},
-				{
-					"name": "MacOS Ventura 13.1",
-					"icon": "apple"
-				}
-			],
-			"Engine": [
-				{
-					"name": "Unity 6 (6000.0.23f1)",
-					"icon": "unity"
-				}
-			],
-			"Editor": [
-				{
-					"name": "Ms Visual Studio Community 2022",
-					"icon": "visualstudio"
-				},
-				{
-					"name": "Ms Visual Studio Code",
-					"icon": "vscode"
-				},
-				{
-					"name": "Android Studio Hedgehog 2023.1.1",
-					"icon": "androidstudio"
-				},
-				{
-					"name": "Arduino IDE",
-					"icon": "arduino"
-				},
-				{
-					"name": "Xcode 14.3.1",
-					"icon": "xcode"
-				}
-			],
-			"Browser": [
-				{
-					"name": "Microsoft Edge",
-					"icon": "msedge"
-				}
-			],
-			"Others": [
-				{
-					"name": "Postman",
-					"icon": "postman"
-				},
-				{
-					"name": "Laravel Herd",
-					"icon": "herd"
-				},
-				{
-					"name": "PostgreSQL",
-					"icon": "postgresql"
-				},
-				{
-					"name": "GitHub Desktop",
-					"icon": "github"
-				},
-				{
-					"name": "Lunacy",
-					"icon": "lunacy"
-				},
-				{
-					"name": "Notion",
-					"icon": "notion"
-				}
-			]
+			"title": "Soft<span class=\"text-primary dark:text-primaryDark\">ware</span>",
+			"description": "Programs that I often use in doing my work.",
+			"equipments": {
+				"OS": [
+					{
+						"name": "Windows 11 23H2",
+						"icon": "windows11"
+					},
+					{
+						"name": "MacOS Ventura 13.1",
+						"icon": "apple"
+					}
+				],
+				"Engine": [
+					{
+						"name": "Unity 6 (6000.0.23f1)",
+						"icon": "unity"
+					}
+				],
+				"Editor": [
+					{
+						"name": "Ms Visual Studio Community 2022",
+						"icon": "visualstudio"
+					},
+					{
+						"name": "Ms Visual Studio Code",
+						"icon": "vscode"
+					},
+					{
+						"name": "Android Studio Hedgehog 2023.1.1",
+						"icon": "androidstudio"
+					},
+					{
+						"name": "Arduino IDE",
+						"icon": "arduino"
+					},
+					{
+						"name": "Xcode 14.3.1",
+						"icon": "xcode"
+					}
+				],
+				"Browser": [
+					{
+						"name": "Microsoft Edge",
+						"icon": "msedge"
+					}
+				],
+				"Others": [
+					{
+						"name": "Postman",
+						"icon": "postman"
+					},
+					{
+						"name": "Laravel Herd",
+						"icon": "herd"
+					},
+					{
+						"name": "PostgreSQL",
+						"icon": "postgresql"
+					},
+					{
+						"name": "GitHub Desktop",
+						"icon": "github"
+					},
+					{
+						"name": "Lunacy",
+						"icon": "lunacy"
+					},
+					{
+						"name": "Notion",
+						"icon": "notion"
+					}
+				]
+			}
 		}
 	},
 	"reference": {
 		"title": "<span class=\"text-primary dark:text-primaryDark\">Attribution</span> for Who Inspired Me",
 		"description": "Thanks for your creation which helped me in creating this website.",
-		"credit": [
+		"attributions": [
 			{
 				"title": "Web Programming UNPAS",
 				"description": "By watching tutorials from <span class=\"text-primary dark:text-primaryDark font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
@@ -373,10 +379,10 @@
 			}
 		]
 	},
-	"notes": {
+	"notebook": {
 		"title": "",
 		"description": "",
-		"articles": [
+		"notes": [
 			{
 				"id": "3",
 				"title": "Android Background Location for Unity",

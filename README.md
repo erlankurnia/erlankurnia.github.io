@@ -5,7 +5,10 @@
 ## Technologies
 
 - Vue.js
+- TypeScript
 - Tailwind CSS
+- Markdown-It
+- highlight.js
 
 ## Attributions
 

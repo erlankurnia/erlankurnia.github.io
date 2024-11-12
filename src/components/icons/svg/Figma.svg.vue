@@ -7,9 +7,3 @@
 </template>
 
 <!-- #F24E1E -->
-
-<script>
-export default {
-    name: "FigmaIcon",
-};
-</script>

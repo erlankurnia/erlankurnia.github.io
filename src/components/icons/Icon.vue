@@ -2,10 +2,10 @@
 	<component :is="currentComponent"></component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 
-const props = defineProps({ techName: { type: String, required: true }, })
+const props = defineProps<{ techName: string }>()
 const icons = {
 	unity: ["unity", "unity3d", "unityengine"],
 	android: ["android", "androidos"],
@@ -48,7 +48,7 @@ const icons = {
 	expressjs: ["expressjs", "express.js", "express"],
 	lunacy: ["lunacy"],
 };
-const currentComponentName = (techName, icons) => {
+const currentComponentName = (techName: string, icons: Record<string, string[]>) => {
 	let name = "";
 	for (const [key, value] of Object.entries(icons)) {
 		for (let tag of value) {

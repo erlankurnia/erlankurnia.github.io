@@ -7,9 +7,3 @@
 </template>
 
 <!-- #D22128 -->
-
-<script>
-export default {
-    name: "ApacheIcon",
-};
-</script>

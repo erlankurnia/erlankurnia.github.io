@@ -7,9 +7,3 @@
 </template>
 
 <!-- #ED1C24 -->
-
-<script>
-export default {
-    name: "AMDIcon",
-};
-</script>

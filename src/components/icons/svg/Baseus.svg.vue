@@ -3,9 +3,3 @@
 		<img src="../../../assets/techs/baseus_icon.webp" class="w-full mt-3 h-auto" />
 	</div>
 </template>
-
-<script>
-export default {
-	name: "BaseusIcon",
-};
-</script>

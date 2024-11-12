@@ -7,9 +7,3 @@
 </template>
 
 <!-- #0D96F6 -->
-
-<script>
-export default {
-    name: "AppStoreIcon",
-};
-</script>

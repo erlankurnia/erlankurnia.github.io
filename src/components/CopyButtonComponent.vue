@@ -11,29 +11,17 @@
     </button>
 </template>
 
-<script>
-import { copyText } from 'vue3-clipboard';
+<script setup lang="ts">
+import useClipboard from 'vue-clipboard3';
 
-export default {
-    name: "CopyButtonComponent",
-    props: ['content'],
-    methods: {
-        copyToClipboard() {
-            copyText(
-                'CopyButtonComponent',
-                undefined,
-                (error, event) => {
-                    if (error) {
-                        // alert("Can't copy!")
-                        console.log(error)
-                    } else {
-                        // alert("Text copied!");
-                        console.log(event)
-                        // alert(`${props.content} copied to clipboard!`);
-                    }
-                }
-            );
-        },
-    },
-};
+const { toClipboard } = useClipboard();
+const props = defineProps<{ content?: string }>();
+
+async function copyToClipboard() {
+    try {
+        await toClipboard("" + props.content);
+    } catch (e) {
+        console.log(e);
+    }
+}
 </script>

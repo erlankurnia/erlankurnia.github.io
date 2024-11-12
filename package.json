@@ -1,32 +1,44 @@
 {
-	"name": "personal-web",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"dev": "vite",
-		"dev:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./dist/output.css --watch",
-		"build": "vite build",
-		"preview": "vite preview",
-		"predeploy": "npm run build",
-		"deploy": "cd dist && cp index.html 404.html && cd .. && gh-pages -d dist"
-	},
-	"dependencies": {
-		"@unhead/vue": "^1.9.16",
-		"@vue/runtime-dom": "^3.4.30",
-		"highlight.js": "^11.10.0",
-		"markdown-it": "^14.0.0",
-		"moment": "^2.29.4",
-		"pinia": "^2.1.6",
-		"vue": "^3.3.4",
-		"vue-router": "^4.2.4",
-		"vue3-clipboard": "^1.0.0"
-	},
-	"devDependencies": {
-		"@vitejs/plugin-vue": "^4.3.4",
-		"autoprefixer": "^10.4.15",
-		"gh-pages": "^6.1.0",
-		"postcss": "^8.4.29",
-		"tailwindcss": "^3.3.3",
-		"vite": "^4.4.9"
-	}
+  "name": "personal-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -o ./dist/output.css --watch",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force",
+    "predeploy": "npm run build",
+    "deploy": "cd dist && cp index.html 404.html && cd .. && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@unhead/vue": "^1.11.11",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0",
+    "moment": "^2.30.1",
+    "vue": "^3.5.12",
+    "vue-clipboard3": "^2.0.0",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/jsdom": "^21.1.7",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.9.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/tsconfig": "^0.5.1",
+    "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.2.0",
+    "jsdom": "^25.0.1",
+    "npm-run-all2": "^7.0.1",
+    "postcss": "^8.4.48",
+    "tailwindcss": "^3.4.14",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.10",
+    "vite-plugin-vue-devtools": "^7.5.4",
+    "vue-tsc": "^2.1.10"
+  }
 }

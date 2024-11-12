@@ -57,62 +57,29 @@
     </header>
 </template>
 
-<script>
-import { ref } from "vue";
-export default {
-    name: "HeaderMobileComponent",
-    setup() {
-        //#region On scrolling event to create sticky navbar
-        const onScroll = () => {
-            const header = document.querySelector("#navbar-menu");
-            const fixedNav = header.offsetTop;
-            const backToTop = document.querySelector("#back-to-top");
-            if (window.scrollY > fixedNav) {
-                header.classList.add("lan-navbar-fixed");
-                // header.classList.remove("absolute");
-                if (backToTop) {
-                    backToTop.classList.remove("hidden");
-                    backToTop.classList.add("flex");
-                }
-            } else {
-                header.classList.remove("lan-navbar-fixed");
-                // header.classList.add("absolute");
-                if (backToTop) {
-                    backToTop.classList.remove("flex");
-                    backToTop.classList.add("hidden");
-                }
-            }
-        };
-        window.addEventListener("scroll", onScroll);
-        //#endregion On scrolling event to create sticky navbar
+<script setup lang="ts">
 
-        //#region On click outside nav menu
-        const isHamburgerOpen = ref(false);
-        const preventHamburger = ref(false);
-        const onOutsideMenu = (e) => {
-            if (e.target.id != "hamburger" && e.target.id != "nav-menu-area" && e.target.id != "hamburger-area") {
-                setTimeout(() => {
-                    preventHamburger.value = false;
-                    isHamburgerOpen.value = false;
-                }, 100);
-            }
-        };
-        window.addEventListener("click", onOutsideMenu);
-        window.addEventListener("touchend", onOutsideMenu);
-        //#endregion On click outside nav menu
-
-        return { isHamburgerOpen };
-    },
-    methods: {
-        toggleHamburger: function () {
-            if (!this.preventHamburger) {
-                this.isHamburgerOpen = !this.isHamburgerOpen;
-                setTimeout(() => {
-                    this.preventHamburger = false;
-                }, 500);
-            }
-            this.preventHamburger = true;
-        },
-    },
+//#region On scrolling event to create sticky navbar
+const onScroll = () => {
+    const header = document.querySelector("#navbar-menu") as HTMLElement;
+    const fixedNav = header?.offsetTop ?? 0;
+    const backToTop = document.querySelector("#back-to-top") as HTMLElement;
+    if (window.scrollY > fixedNav) {
+        header.classList.add("lan-navbar-fixed");
+        // header.classList.remove("absolute");
+        if (backToTop) {
+            backToTop.classList.remove("hidden");
+            backToTop.classList.add("flex");
+        }
+    } else {
+        header.classList.remove("lan-navbar-fixed");
+        // header.classList.add("absolute");
+        if (backToTop) {
+            backToTop.classList.remove("flex");
+            backToTop.classList.add("hidden");
+        }
+    }
 };
+window.addEventListener("scroll", onScroll);
+//#endregion On scrolling event to create sticky navbar
 </script>

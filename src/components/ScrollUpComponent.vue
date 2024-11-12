@@ -9,7 +9,7 @@
 	</button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 function scrollToPrevSection() {
 	const sections = document.querySelectorAll('section');
 	let scrolled = false;

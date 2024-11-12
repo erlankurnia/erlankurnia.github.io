@@ -6,9 +6,3 @@
 </template>
 
 <!-- #8BC0D0 -->
-
-<script>
-export default {
-    name: "AlpineJsIcon",
-};
-</script>

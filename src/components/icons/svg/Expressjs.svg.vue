@@ -8,9 +8,3 @@
 </template>
 
 <!-- #000000 -->
-
-<script>
-export default {
-    name: "ExpressjsIcon",
-};
-</script>

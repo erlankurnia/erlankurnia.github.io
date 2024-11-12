@@ -87,10 +87,6 @@
 	<section></section>
 </template>
 
-<script>
+<script setup lang="ts">
 import NewTabIcon from "./icons/NewTabIcon.vue";
-export default {
-	name: "FooterComponent",
-	components: { NewTabIcon },
-};
 </script>

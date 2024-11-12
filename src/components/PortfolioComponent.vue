@@ -53,18 +53,19 @@
 	</section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { inject, onUnmounted, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import Icon from "./icons/Icon.vue";
 import NewTabIcon from "./icons/NewTabIcon.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
 const route = useRoute();
 const projectHide = 'portfolio-project-hide-';
 const projectShow = 'portfolio-project-show-';
 
 const projectKey = ref(projectHide);
-const { dataUser } = inject("dataUser");
+const data = inject(DataUserSymbol);
 const portfolio = ref([
 	{
 		id: 0,
@@ -75,6 +76,7 @@ const portfolio = ref([
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
+		isVisible: false,
 	},
 	{
 		id: 1,
@@ -85,6 +87,7 @@ const portfolio = ref([
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
+		isVisible: false,
 	},
 	{
 		id: 2,
@@ -95,6 +98,7 @@ const portfolio = ref([
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
+		isVisible: false,
 	},
 	{
 		id: 3,
@@ -105,6 +109,7 @@ const portfolio = ref([
 			"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel nemo molestias aliquid ducimus similique quo. Non?",
 		url: "",
 		urlRepo: "",
+		isVisible: false,
 	},
 ]);
 
@@ -112,7 +117,7 @@ const onScroll = () => {
 	const viewportCenterY = window.innerHeight * 9 / 10;
 
 	for (let a = 0; a < portfolio.value.length; a++) {
-		const itemElement = document.querySelector("#" + projectShow + portfolio.value[a].id);
+		const itemElement = document.querySelector("#" + projectShow + portfolio.value[a].id) as HTMLElement;
 		const offset = itemElement.offsetTop - window.scrollY - viewportCenterY;
 		// const offscreen = itemElement.offsetTop - window.scrollY - window.innerHeight;
 		// console.log(offset);

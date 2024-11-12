@@ -7,9 +7,3 @@
 </template>
 
 <!-- #FF61F6 -->
-
-<script>
-export default {
-    name: "AdobeXDIcon",
-};
-</script>

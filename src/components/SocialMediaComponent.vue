@@ -1,8 +1,8 @@
 <template>
-	<div class="flex items-center">
+	<div v-if="data?.socialMedia" class="flex items-center">
 		<!-- Facebook -->
 		<transition name="slide-right-d150" appear>
-			<a v-if="dataUser.socialMedia?.facebook" :href="dataUser.socialMedia.facebook" target="_blank"
+			<a v-if="data.socialMedia.facebook" :href="data.socialMedia.facebook" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>Facebook</title>
@@ -15,7 +15,7 @@
 
 		<!-- Instagram -->
 		<transition name="slide-right-d100" appear>
-			<a v-if="dataUser.socialMedia?.instagram" :href="dataUser.socialMedia.instagram" target="_blank"
+			<a v-if="data.socialMedia.instagram" :href="data.socialMedia.instagram" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>Instagram</title>
@@ -28,7 +28,7 @@
 
 		<!-- Twitter -->
 		<!-- <transition name="slide-right-d100" appear>
-			<a v-if="dataUser.socialMedia?.twitter" :href="dataUser.socialMedia.twitter" target="_blank"
+			<a v-if="data.socialMedia.twitter" :href="data.socialMedia.twitter" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>X</title>
@@ -41,7 +41,7 @@
 
 		<!-- LinkedIn -->
 		<transition name="slide-right-d50" appear>
-			<a v-if="dataUser.socialMedia?.linkedin" :href="dataUser.socialMedia.linkedin" target="_blank"
+			<a v-if="data.socialMedia.linkedin" :href="data.socialMedia.linkedin" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>LinkedIn</title>
@@ -54,7 +54,7 @@
 
 		<!-- GitHub -->
 		<transition name="slide-right" appear>
-			<a v-if="dataUser.socialMedia?.github" :href="dataUser.socialMedia.github" target="_blank"
+			<a v-if="data.socialMedia.github" :href="data.socialMedia.github" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>GitHub</title>
@@ -67,16 +67,9 @@
 	</div>
 </template>
 
-<script>
+<script setup lang="ts">
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import { inject } from "vue";
 
-export default {
-	name: "SocialMediaComponent",
-	setup() {
-		const { dataUser } = inject("dataUser");
-		return {
-			dataUser,
-		};
-	},
-};
+const data = inject(DataUserSymbol);
 </script>

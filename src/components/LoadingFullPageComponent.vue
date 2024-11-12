@@ -11,24 +11,16 @@ import { onMounted } from 'vue';
 	</template>
 </template>
 
-<script>
+<script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-export default {
-	name: "LoadingFullPageComponent",
-	// props: ["isLoading"],
-	setup() {
-		const isLoading = ref(true);
+const isLoading = ref(true);
 
-		onMounted(() => {
-			setTimeout(() => {
-				isLoading.value = false;
-				console.log('isLoading: false');
-			}, 2000);
-			console.log('on mounted done!');
-		});
-
-		return { isLoading };
-	}
-};
+onMounted(() => {
+	setTimeout(() => {
+		isLoading.value = false;
+		console.log('isLoading: false');
+	}, 2000);
+	console.log('on mounted done!');
+});
 </script>

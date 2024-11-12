@@ -9,7 +9,7 @@
     </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 function scrollToNextSection() {
     const sections = document.querySelectorAll('section');
     // const windowHeight = window.innerHeight;

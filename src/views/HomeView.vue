@@ -7,7 +7,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
 import HeroComponent from "../components/HeroComponent.vue";
@@ -47,5 +47,7 @@ const homepageHead = useHead({
 	]
 });
 
-onBeforeUnmount(() => homepageHead.dispose());
+onBeforeUnmount(() => {
+	if (homepageHead !== undefined) homepageHead.dispose();
+});
 </script>

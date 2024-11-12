@@ -7,9 +7,3 @@
 </template>
 
 <!-- #0F0F11 -->
-
-<script>
-export default {
-    name: "AngularIcon",
-};
-</script>

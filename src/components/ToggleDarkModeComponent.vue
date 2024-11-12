@@ -5,7 +5,7 @@
                 class="relative rounded-full shadow-sm size-full text-quaternary dark:shadow-primaryDark/50 dark:text-primaryDark bg-primary dark:bg-quaternaryDark">
                 <transition name="fade-rotate" mode="out-in">
                     <!-- Moon -->
-                    <div v-if="!isDarkMode" key="moon"
+                    <div v-if="!themeMode" key="moon"
                         class="absolute inset-0 flex items-center justify-center top-[15%] bottom-[15%]">
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-full" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -33,14 +33,16 @@
     </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import ThemeModeSymbol from '@/helper/symbols/ThemeModeSymbol';
 import { inject, onBeforeMount } from 'vue';
 
-const { isDarkMode } = inject("darkMode");
+const themeMode = inject(ThemeModeSymbol);
 
 function toggleDarkMode(forceDark = false) {
-    isDarkMode.value = !isDarkMode.value;
-    if (isDarkMode.value || forceDark) {
+    if (themeMode) themeMode.value = !themeMode.value;
+
+    if (themeMode?.value || forceDark) {
         localStorage.setItem('themeMode', 'dark');
         document.documentElement.classList.add('dark');
     } else {
@@ -52,6 +54,7 @@ function toggleDarkMode(forceDark = false) {
 onBeforeMount(() => {
     if (localStorage.getItem('themeMode') == 'dark') {
         toggleDarkMode(true);
+        if (themeMode) themeMode.value = true;
     }
 });
 </script>

@@ -2,7 +2,7 @@
 	<div id="accordion" class="p-4 space-y-2 xl:max-w-2xl xl:mx-auto">
 		<!-- Collection items -->
 		<div v-for="(coll, index) in collection"
-			class="flex flex-col p-5 text-tertiary dark:text-tertiaryDark rounded-lg bg-primary dark:bg-primaryDark group"
+			class="flex flex-col p-5 rounded-lg text-tertiary dark:text-tertiaryDark bg-primary dark:bg-primaryDark group"
 			tabindex="1" :key="index">
 			<div class="flex items-center justify-between cursor-pointer">
 				<span class="text-base font-semibold" v-html="coll.title"></span>
@@ -16,11 +16,10 @@
 	</div>
 </template>
 
-<script>
-const props = defineProps({
-	collection: {
-		type: String,
-		required: true,
-	}
-});
+<script setup lang="ts">
+import type IGreetings from '@/helper/interfaces/IGreetings';
+
+const props = defineProps<{
+	collection: IGreetings[]
+}>();
 </script>

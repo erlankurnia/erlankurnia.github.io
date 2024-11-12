@@ -7,9 +7,3 @@
 </template>
 
 <!-- #00599C -->
-
-<script>
-export default {
-    name: "CPPIcon",
-};
-</script>

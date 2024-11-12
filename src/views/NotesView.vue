@@ -1,5 +1,5 @@
 <template>
-	<section v-if="dataUser != null && dataUser.notes" id="credit"
+	<section v-if="data != null && data.notebook.notes" id="credit"
 		:class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
@@ -8,18 +8,18 @@
 
 			<!-- Articles -->
 			<div class="flex flex-wrap">
-				<div class="w-full mb-8 text-center" v-if="dataUser.notes.title">
-					<h2 class="lan-section-subtitle" v-html="dataUser.notes.title"></h2>
+				<div class="w-full mb-8 text-center" v-if="data.notebook.title">
+					<h2 class="lan-section-subtitle" v-html="data.notebook.title"></h2>
 					<p class="font-medium text-md text-secondary dark:text-secondaryDark md:text-lg"
-						v-if="dataUser.notes.description" v-html="dataUser.notes.description"></p>
+						v-if="data.notebook.description" v-html="data.notebook.description"></p>
 				</div>
-				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="dataUser.notes.articles.length > 0">
+				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="data.notebook.notes.length > 0">
 					<transition-group name="slide-right" tag="ul" class="flex flex-col gap-8">
-						<li v-for="(data, index) in dataUser.notes.articles" :key="index"
+						<li v-for="(data, index) in data.notebook.notes" :key="index"
 							class="flex flex-col w-full h-auto px-4 py-3 transition duration-500 rounded-xl hover:bg-quaternary dark:hover:bg-quaternaryDark">
 							<RouterLink
-								v-if="(($route.params == null || ('' + $route.params.filter) == '') || data.topics?.includes($route.params.filter)) && $route.meta.url?.article"
-								:to="$route.meta.url.article + '/' + data.id + '/' + data.title">
+								v-if="(('' + filter) == '' || data.topics.includes(filter)) && route.meta.url?.note"
+								:to="route.meta.url.note + '/' + data.id + '/' + data.title">
 								<div class="mb-2 text-xl font-bold text-primary dark:text-primaryDark">
 									<h4 v-html="data.title"></h4>
 								</div>
@@ -40,26 +40,38 @@
 	</section>
 </template>
 
-<script setup>
-import { inject, onBeforeUnmount, watchEffect } from "vue";
+<script setup lang="ts">
+import { inject, onBeforeUnmount, ref, watchEffect } from "vue";
+import { useRoute } from "vue-router";
 import { useHead } from '@unhead/vue';
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
-const { dataUser } = inject("dataUser");
+const route = useRoute()
+const data = inject(DataUserSymbol);
+const filter = ref('');
+
+if (route.params.filter instanceof Array) {
+	filter.value = route.params.filter[0];
+} else {
+	filter.value = route.params.filter;
+}
 
 watchEffect(() => {
-	if (dataUser?.journey?.articles != null && Array.isArray(dataUser.notes.articles)) {
-		dataUser.notes.articles.sort((a, b) => {
+	if (data?.value?.notebook?.notes != null && Array.isArray(data.value.notebook.notes)) {
+		data.value.notebook.notes.sort((a, b) => {
 			const dateA = new Date(a.date);
 			const dateB = new Date(b.date);
 			return dateA.getTime() - dateB.getTime();
 		});
-		dataUser.notes.articles.reverse();
+		data.value.notebook.notes.reverse();
 	}
 });
 
-const journeyHead = useHead({
+const notesHead = useHead({
 	title: "Erlan Kurnia's Notes",
 });
 
-onBeforeUnmount(() => journeyHead.dispose());
+onBeforeUnmount(() => {
+	if (notesHead !== undefined) notesHead.dispose();
+});
 </script>

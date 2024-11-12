@@ -1,5 +1,5 @@
 <template>
-	<div :class="{ 'dark': isDarkMode }">
+	<div :class="{ 'dark': themeMode }">
 		<NavbarComponent class="hidden sm:block"></NavbarComponent>
 		<div v-if="dataUser" class="select-none lan-container-body">
 			<router-view v-slot="{ Component }">
@@ -16,8 +16,8 @@
 	</div>
 </template>
 
-<script setup>
-import { ref, onMounted, provide } from "vue";
+<script setup lang="ts">
+import { ref, onMounted, provide, type Ref, inject } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from "@unhead/vue";
 import tools from "./helper/tools";
@@ -27,6 +27,10 @@ import ScrollUpComponent from "./components/ScrollUpComponent.vue";
 import ScrollDownComponent from "./components/ScrollDownComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 import ToggleDarkModeComponent from "./components/ToggleDarkModeComponent.vue";
+import type IDataUser from "./helper/interfaces/IDataUser";
+import DataUserSymbol from "./helper/symbols/DataUserSymbol";
+import ThemeModeSymbol from "./helper/symbols/ThemeModeSymbol";
+import NamePartSymbol from "./helper/symbols/NamePartSymbol";
 
 useHead({
 	meta: [
@@ -56,18 +60,18 @@ useHead({
 	],
 });
 
-const isDarkMode = ref(false);
-const dataUser = ref({});
-const nameParts = ref([]);
+const themeMode = ref(false);
+const dataUser: Ref<IDataUser | null> = ref(null);
+const nameParts: Ref<string[]> = ref([]);
 
 async function getDataUser() {
-	dataUser.value = await tools.getDataUser();
-	// const res = await fetch("/data_user.json");
-	// dataUser.value = await res.json();
+	dataUser.value = await tools.getDataUser<IDataUser>();
+	// console.log(dataUser.value);
 	nameParts.value = ("" + dataUser.value.profile.name.value).split(" ");
 }
 
 onMounted(getDataUser);
-provide("dataUser", { dataUser, nameParts });
-provide("darkMode", { isDarkMode });
+provide(DataUserSymbol, dataUser);
+provide(NamePartSymbol, nameParts);
+provide(ThemeModeSymbol, themeMode);
 </script>

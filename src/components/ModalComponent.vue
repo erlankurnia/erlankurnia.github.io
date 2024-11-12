@@ -37,35 +37,32 @@
     </transition>
 </template>
 
-<script>
-import { ref } from "vue";
+<script setup lang="ts">
+import { ref, useTemplateRef } from "vue";
 import CloseIcon from "./icons/CloseIcon.vue";
 
-export default {
-    name: 'ModalComponent',
-    components: { CloseIcon },
-    setup() {
-        const isVisible = ref(false);
-        const modalBody = ref(null);
-        return {
-            isVisible,
-            modalBody
-        };
-    },
-    expose: ['onVisibleChange'],
-    methods: {
-        onCloseModal(event = null) {
-            if (event == null || event.target.id == "block-modal") {
-                this.$emit('close');
-                this.onVisibleChange(false);
-            }
-        },
-        onVisibleChange(status) {
-            this.isVisible = status;
-            // console.log(`onVisibleChange: ${status}`);
-            document.documentElement.style.overflow = this.isVisible ? 'hidden' : 'auto';
-            this.modalBody.scrollTop = 0;
-        }
+const isVisible = ref(false);
+const modalBody = useTemplateRef<HTMLElement>('modalBody');
+const emit = defineEmits<{
+    (e: 'close'): void
+}>();
+
+const onVisibleChange = (status: boolean) => {
+    isVisible.value = status;
+    // console.log(`onVisibleChange: ${status}`);
+    document.documentElement.style.overflow = isVisible.value ? 'hidden' : 'auto';
+    if (modalBody.value) modalBody.value.scrollTop = 0;
+}
+
+function onCloseModal(event: Event | null = null) {
+    const target = event?.target as HTMLElement;
+    if (event == null || event.target == null || target.id == "block-modal") {
+        emit('close');
+        onVisibleChange(false);
     }
-};
+}
+
+defineExpose({
+    onVisibleChange
+});
 </script>

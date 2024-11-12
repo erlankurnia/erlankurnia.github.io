@@ -11,7 +11,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
 import ProfileComponent from "../components/ProfileComponent.vue";
@@ -26,5 +26,7 @@ const aboutHead = useHead({
 	title: "About Erlan Kurnia",
 });
 
-onBeforeUnmount(() => aboutHead.dispose());
+onBeforeUnmount(() => {
+	if (aboutHead !== undefined) aboutHead.dispose();
+});
 </script>

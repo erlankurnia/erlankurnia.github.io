@@ -5,9 +5,3 @@
 		<path d="M24 24H0V0h24L12 12Z" />
 	</svg>
 </template>
-
-<script>
-export default {
-	name: "KotlinIcon",
-};
-</script>
