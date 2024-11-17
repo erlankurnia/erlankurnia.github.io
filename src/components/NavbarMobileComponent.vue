@@ -9,7 +9,7 @@
                         <RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
                             class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
                                 'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'who_iam',
-                            }">WHO_I'M</RouterLink>
+                            }" translate="no">WHO_I'M</RouterLink>
                     </li>
                     <li class="group">
                         <RouterLink to="/"
@@ -17,7 +17,7 @@
                             :class="{
                                 'text-primary dark:text-primaryDark font-bold scale-125': $route.name == 'home',
                             }">
-                            <p class="flex flex-row items-center w-auto h-full gap-2 align-middle">
+                            <p class="flex flex-row items-center w-auto h-full gap-2 align-middle" translate="no">
                                 <!-- <img :src="'/img/logo/Logo Only/Logo_only_logo.webp'" alt="Logo Erlan"
                                     class="w-auto h-7"> -->
                                 <span class="size-7 text-primary dark:text-primaryDark">
@@ -49,7 +49,7 @@
                         <RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
                             class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
                                 'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
-                            }">Notes</RouterLink>
+                            }" translate="no">Notes</RouterLink>
                     </li>
                 </ul>
             </nav>

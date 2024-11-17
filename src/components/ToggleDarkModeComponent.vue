@@ -1,5 +1,6 @@
 <template>
-    <button id="toggle-dark-mode" @click="toggleDarkMode(false)" :class="['justify-center items-center', $attrs.class]">
+    <button id="toggle-dark-mode" @click="toggleDarkMode(false)" title="Theme Mode Toggle" type="button"
+        :class="['justify-center items-center', $attrs.class]">
         <transition name="fade-rotate" mode="out-in">
             <div
                 class="relative rounded-full shadow-sm size-full text-quaternary dark:shadow-primaryDark/50 dark:text-primaryDark bg-primary dark:bg-quaternaryDark">

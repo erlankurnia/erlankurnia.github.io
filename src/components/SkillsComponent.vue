@@ -3,90 +3,142 @@
 		<div class="container">
 			<div class="w-full">
 				<div class="mx-auto text-center">
-					<h4 class="mb-2 lan-section-title">Skills</h4>
+					<h4 class="relative mb-2 lan-section-title">
+						Skills
+						<!-- Tooltip -->
+						<!-- <div v-if="data.ability.tooltip"
+							class="absolute translate-x-[52px] sm:translate-x-[64px] top-[4px] right-1/2 group cursor-help">
+							<span
+								class="flex size-4 sm:size-5 group-hover:text-primary dark:group-hover:text-primaryDark group-focus:text-primary dark:group-focus:text-primaryDark">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+									<path
+										d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z">
+									</path>
+									<path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path>
+								</svg>
+							</span>
+							<p class="absolute hidden top-6 -left-[23vw] md:-top-4 md:left-6 [text-transform:_math-auto] p-2 text-xs shadow-md rounded-lg font-normal group-hover:block group-focus:block bg-tertiary text-dark dark:bg-tertiaryDark dark:text-light break-words w-60"
+								v-html="data.ability.tooltip"></p>
+						</div> -->
+						<!-- Tooltip -->
+					</h4>
 				</div>
 			</div>
 			<!-- Current Ability -->
-			<template v-if="data.skill">
-				<div v-if="data.skill.title" class="w-full p-4">
+			<template v-if="data.ability.skill">
+				<div v-if="data.ability.skill.title" class="w-full p-4">
 					<div class="mx-auto mb-4 text-center">
-						<h2 class="lan-section-subtitle" v-html="data.skill.title"></h2>
-						<p class="lan-section-desc" v-html="data.skill.description">
+						<h2 class="lan-section-subtitle" v-html="data.ability.skill.title"></h2>
+						<p class="lan-section-desc" v-html="data.ability.skill.description">
 						</p>
 					</div>
 				</div>
-				<div v-if="data.skill.topics && data.skill.topics.length > 0" class="w-full px-4">
-					<div
-						class="grid items-center justify-center grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 xl:grid-cols-4 xl:gap-8">
+				<div v-if="data.ability.skill.topics && data.ability.skill.topics.length > 0"
+					class="w-full max-w-[1080px] mx-auto sm:px-4">
+					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
 						<!-- Skill Icon -->
-						<div v-for="skill in data.skill.topics"
-							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
+						<button v-for="skill in data.ability.skill.topics" type="button"
+							@click="showOptions($event, skill)"
+							class="flex flex-col justify-start w-[84px] h-auto gap-2 md:w-24 md:p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
 							<!-- Icon -->
-							<div class="flex items-center justify-center w-12 h-12 lg:h-16 lg:w-16">
+							<div class="flex items-center justify-center mx-auto size-[44px] md:size-12">
 								<Icon :techName="skill.name"></Icon>
 							</div>
 							<!-- Icon -->
 
-							<div class="flex flex-col text-xs text-left justify-evenly">
-								<h3 class="w-full text-[0.8rem] font-bold">{{ skill.title }}</h3>
-								<h4 class="w-full">
-									{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ?
-										getYearDiff(skill.year) : 1 }}
-										{{ getYearDiff(skill.year) > 1 ? "years" : "year" }}
-								</h4>
-							</div>
-						</div>
-						<!-- Skill Icon -->
-					</div>
-				</div>
-			</template>
-			<!-- Current Ability -->
-
-			<!-- New Ability -->
-			<template v-if="data.learn">
-				<div v-if="data.learn.title" class="w-full p-4 mt-8">
-					<div class="mx-auto mb-4 text-center">
-						<h2 class="lan-section-subtitle" v-html="data.learn.title"></h2>
-						<p class="lan-section-desc" v-html="data.learn.description">
-						</p>
-					</div>
-				</div>
-				<div v-if="data.learn.topics && data.learn.topics.length > 0" class="w-full px-4">
-					<div
-						class="grid items-center justify-center grid-cols-2 gap-2 md:grid-cols-3 md:gap-5 xl:grid-cols-4 xl:gap-8">
-						<!-- Skill Icon -->
-						<div v-for="skill in data.learn.topics"
-							class="grid justify-between h-16 lg:h-20 grid-cols-[2fr_5fr] gap-3 p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
-							<!-- Icon -->
-							<div class="flex items-center justify-center w-12 h-12 lg:h-16 lg:w-16">
-								<Icon :techName="skill.name"></Icon>
-							</div>
-							<!-- Icon -->
-
-							<div class="flex flex-col text-xs text-left justify-evenly">
-								<h3 class="w-full text-[0.8rem] font-bold">{{ skill.title }}</h3>
+							<div
+								class="flex flex-col mx-auto gap-0 text-xs text-center justify-evenly font-light md:font-normal text-[9px] md:text-[12px]">
+								<h3 class="w-full" translate="no" v-html="skill.title"></h3>
+								<!-- <h4 class="w-full" v-html="skill.level.toString().charAt(0).toUpperCase() +
+									skill.level.toString().slice(1).toLowerCase()"></h4> -->
 								<!-- <h4 class="w-full">
 									{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ?
 										getYearDiff(skill.year) : 1 }}
 										{{ getYearDiff(skill.year) > 1 ? "years" : "year" }}
 								</h4> -->
 							</div>
-						</div>
+						</button>
+						<!-- Skill Icon -->
+					</div>
+				</div>
+			</template>
+			<!-- Current Ability -->
+
+			<!-- New Ability -->
+			<template v-if="data.ability.learn">
+				<div v-if="data.ability.learn.title" class="w-full p-4 mt-24">
+					<div class="mx-auto mb-4 text-center">
+						<h2 class="lan-section-subtitle" v-html="data.ability.learn.title"></h2>
+						<p class="lan-section-desc" v-html="data.ability.learn.description">
+						</p>
+					</div>
+				</div>
+				<div v-if="data.ability.learn.topics && data.ability.learn.topics.length > 0"
+					class="w-full max-w-[1080px] mx-auto sm:px-4">
+					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
+						<!-- Skill Icon -->
+						<button v-for="skill in data.ability.learn.topics" type="button"
+							@click="showOptions($event, skill)"
+							class="flex flex-col justify-start w-[84px] h-auto gap-2 md:w-24 md:p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
+							<!-- Icon -->
+							<div class="flex items-center justify-center mx-auto size-[44px] md:size-12">
+								<Icon :techName="skill.name"></Icon>
+							</div>
+							<!-- Icon -->
+
+							<div
+								class="flex flex-col mx-auto gap-0 text-xs text-center justify-evenly font-light md:font-normal text-[9px] md:text-[12px]">
+								<h3 class="w-full" translate="no" v-html="skill.title"></h3>
+								<!-- <h4 class="w-full" v-html="skill.level.toString().charAt(0).toUpperCase() +
+									skill.level.toString().slice(1).toLowerCase()"></h4> -->
+								<!-- <h4 class="w-full">
+									{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ?
+										getYearDiff(skill.year) : 1 }}
+										{{ getYearDiff(skill.year) > 1 ? "years" : "year" }}
+								</h4> -->
+							</div>
+						</button>
 						<!-- Skill Icon -->
 					</div>
 				</div>
 			</template>
 			<!-- New Ability -->
 		</div>
+
+		<ContextMenuComponent v-if="selectedSkill" ref="optionComponent">
+			<div class="flex flex-col w-auto text-sm font-light divide-y divide-quaternary dark:divide-quaternaryDark">
+				<RouterLink :to="'/projects/' + selectedSkill.name"
+					class="flex items-center justify-start w-full px-3 py-1 rounded-lg min-h-8 hover:bg-quaternary/90 dark:hover:bg-quaternaryDark/50">
+					Show Related Project
+				</RouterLink>
+				<a v-if="selectedSkill.urlInfo" :href="selectedSkill.urlInfo" target="_blank"
+					class="flex items-center justify-start w-full px-3 py-1 rounded-lg min-h-8 hover:bg-quaternary/90 dark:hover:bg-quaternaryDark/50">
+					What is <span class="pl-2 font-medium"> {{ selectedSkill.title }}</span>?
+				</a>
+			</div>
+		</ContextMenuComponent>
 	</section>
 </template>
 
 <script setup lang="ts">
-import { inject } from "vue";
+import { inject, ref, useTemplateRef, type Ref } from "vue";
 import Icon from "./icons/Icon.vue";
-import { useDateTime } from "../helper/mixins/DateTime";
+// import { useDateTime } from "../helper/mixins/DateTime";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import ContextMenuComponent from "./ContextMenuComponent.vue";
+import type ISkillInfo from "@/helper/interfaces/ISkillInfo";
 
 const data = inject(DataUserSymbol);
-const { getYearDiff } = useDateTime();
+const selectedSkill: Ref<ISkillInfo | null> = ref(null);
+// const { getYearDiff } = useDateTime();
+
+type ContextMenuType = InstanceType<typeof ContextMenuComponent>;
+const optionComponent = useTemplateRef<ContextMenuType>('optionComponent');
+const showOptions = (event: MouseEvent, skill: ISkillInfo) => {
+	selectedSkill.value = skill;
+	optionComponent.value?.show({
+		x: event.clientX,
+		y: event.clientY,
+	});
+};
 </script>

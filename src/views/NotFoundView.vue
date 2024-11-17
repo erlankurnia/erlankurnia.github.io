@@ -3,7 +3,7 @@ import { onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
 
 const notFoundHead = useHead({
-	title: "Page not found",
+	title: "Page Not Found",
 });
 
 onBeforeUnmount(() => {
@@ -19,7 +19,7 @@ onBeforeUnmount(() => {
 					class="text-primary dark:text-primaryDark">_</span>Found
 			</h1>
 			<p class="mb-8 text-lg text-secondary dark:text-secondaryDark md:text-xl">
-				Oops!<br />I have no intention of creating the page you are looking for.
+				Oops!<br />I'm not planning to make the page you're looking for.
 			</p>
 			<a href="/" class="inline-block px-3 py-1 lan-button-primary">Go to Home</a>
 		</div>

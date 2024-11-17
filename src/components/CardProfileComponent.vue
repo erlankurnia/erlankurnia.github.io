@@ -77,6 +77,9 @@
                     </svg>
                 </span>
                 {{ data.socialMedia.email }}
+                <span class="h-full aspect-square">
+                    <NewTabIcon></NewTabIcon>
+                </span>
             </a>
         </transition>
 
@@ -93,6 +96,7 @@ import { inject } from 'vue';
 import SocialMediaComponent from "./SocialMediaComponent.vue";
 import DataUserSymbol from '@/helper/symbols/DataUserSymbol';
 import NamePartSymbol from '@/helper/symbols/NamePartSymbol';
+import NewTabIcon from './icons/NewTabIcon.vue';
 
 const data = inject(DataUserSymbol);
 const namePart = inject(NamePartSymbol);

@@ -57,8 +57,8 @@
 		}
 	},
 	"history": {
-		"title": "How Did I <span class=\"text-primary dark:text-primaryDark\">Reach</span> This Moment",
-		"description": "Having work experience in various fields.<br>Because as long as the final goal can be achieved the process can adapt to the current situation.",
+		"title": "Why am I Still <span class=\"text-primary dark:text-primaryDark\">Here</span> ?",
+		"description": "Having work experience in various fields.<br>As long as the goals can be achieved, the process can adapt to the current situation.",
 		"timeline": [
 			{
 				"id": 5,
@@ -115,77 +115,150 @@
 			}
 		]
 	},
-	"skill": {
-		"title": "There Are Many Things That Aren't My <span class=\"text-primary dark:text-primaryDark\">Ability</span>",
-		"description": "Some of the skills that I can do and how long I have used them.<br>I also use it quite often in work and personal projects.",
-		"topics": [
-			{
-				"name": "unity",
-				"title": "Unity3D",
-				"year": 2017
-			},
-			{
-				"name": "csharp",
-				"title": "C#",
-				"year": 2017
-			},
-			{
-				"name": "arduino",
-				"title": "Arduino",
-				"year": 2021
-			},
-			{
-				"name": "php",
-				"title": "PHP",
-				"year": 2018
-			},
-			{
-				"name": "postgresql",
-				"title": "PostgreSQL",
-				"year": 2021
-			},
-			{
-				"name": "vue",
-				"title": "Vue.js",
-				"year": 2023
-			},
-			{
-				"name": "expressjs",
-				"title": "Express.js",
-				"year": 2021
-			},
-			{
-				"name": "tailwind",
-				"title": "Tailwind CSS",
-				"year": 2023
-			}
-		]
-	},
-	"learn": {
-		"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",
-		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
-		"topics": [
-			{
-				"name": "docker",
-				"title": "Docker",
-				"year": 2024
-			},
-			{
-				"name": "laravel",
-				"title": "Laravel",
-				"year": 2022
-			},
-			{
-				"name": "vue",
-				"title": "Vue.js",
-				"year": 2023
-			},
-			{
-				"name": "dotnet",
-				"title": ".NET MAUI",
-				"year": 2024
-			}
-		]
+	"ability": {
+		"tooltip": "Proficiency scale based on <a href=\"https://hr.nih.gov/working-nih/competencies/competencies-proficiency-scale\" class=\"lan-link-secondary underline\" target=\"_blank\">NIH Proficiency Scale</a>",
+		"skill": {
+			"title": "There Are Many Things That Aren't My <span class=\"text-primary dark:text-primaryDark\">Skills</span>",
+			"description": "Some of the skills that I can do,<br> also use it quite often in work and personal projects.",
+			"topics": [
+				{
+					"name": "csharp",
+					"title": "C#",
+					"year": 2017,
+					"level": "ADVANCED"
+				},
+				{
+					"name": "unity",
+					"title": "Unity3D",
+					"year": 2017,
+					"level": "ADVANCED",
+					"urlInfo": "https://unity.com/"
+				},
+				{
+					"name": "maxst",
+					"title": "Maxst",
+					"year": 2022,
+					"level": "NOVICE",
+					"urlInfo": "https://maxst.com/"
+				},
+				{
+					"name": "php",
+					"title": "PHP",
+					"year": 2018,
+					"level": "INTERMEDIATE"
+				},
+				{
+					"name": "postgresql",
+					"title": "PostgreSQL",
+					"year": 2021,
+					"level": "INTERMEDIATE"
+				},
+				{
+					"name": "mysql",
+					"title": "MySQL",
+					"year": 2018,
+					"level": "INTERMEDIATE"
+				},
+				{
+					"name": "tailwind",
+					"title": "Tailwind CSS",
+					"year": 2023,
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://tailwindcss.com/"
+				},
+				{
+					"name": "node",
+					"title": "Node.js",
+					"year": 2021,
+					"level": "INTERMEDIATE"
+				},
+				{
+					"name": "javascript",
+					"title": "JavaScript",
+					"year": 2020,
+					"level": "INTERMEDIATE"
+				},
+				{
+					"name": "typescript",
+					"title": "TypeScript",
+					"year": 2023,
+					"level": "INTERMEDIATE"
+				},
+				{
+					"name": "expressjs",
+					"title": "Express.js",
+					"year": 2021,
+					"level": "NOVICE",
+					"urlInfo": "https://expressjs.com/"
+				},
+				{
+					"name": "cpp",
+					"title": "C++",
+					"year": 2016,
+					"level": "NOVICE"
+				},
+				{
+					"name": "arduino",
+					"title": "Arduino",
+					"year": 2021,
+					"level": "NOVICE",
+					"urlInfo": "https://www.arduino.cc/"
+				},
+				{
+					"name": "firebase",
+					"title": "Firebase",
+					"year": 2021,
+					"level": "NOVICE",
+					"urlInfo": "https://firebase.google.com/"
+				}
+			]
+		},
+		"learn": {
+			"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",
+			"description": "There are many skills that I can't do, so learning has no end.<br>Some interesting technologies that I learned about.",
+			"topics": [
+				{
+					"name": "vue",
+					"title": "Vue.js",
+					"year": 2023,
+					"level": "NOVICE",
+					"urlInfo": "https://vuejs.org/"
+				},
+				{
+					"name": "dotnet",
+					"title": ".NET MAUI",
+					"year": 2024,
+					"level": "BASIC",
+					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/maui"
+				},
+				{
+					"name": "laravel",
+					"title": "Laravel",
+					"year": 2022,
+					"level": "NOVICE",
+					"urlInfo": "https://laravel.com/"
+				},
+				{
+					"name": "kotlin",
+					"title": "Kotlin",
+					"year": 2023,
+					"level": "NOVICE"
+				},
+				{
+					"name": "docker",
+					"title": "Docker",
+					"year": 2024,
+					"level": "BASIC",
+					"urlInfo": "https://www.docker.com/"
+				},
+				{
+					"name": "python",
+					"title": "Python",
+					"year": 2020,
+					"level": "NOVICE"
+				}
+			]
+		}
 	},
 	"portfolio": {
 		"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",

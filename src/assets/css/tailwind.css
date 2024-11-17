@@ -190,6 +190,18 @@
 		font-family: "Roboto Mono", monospace;
 	}
 
+	*::-webkit-scrollbar {
+		@apply p-1 w-2;
+	}
+
+	*::-webkit-scrollbar-track {
+		@apply bg-tertiary dark:bg-tertiaryDark;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		@apply rounded-full bg-primary dark:bg-primaryDark hover:bg-primary/90 dark:hover:bg-primaryDark/90;
+	}
+
 	button {
 		@apply outline-none;
 	}
@@ -256,12 +268,16 @@
 		@apply text-tertiary dark:text-tertiaryDark border-tertiary dark:border-tertiaryDark transition duration-1000 hover:duration-300 hover:border-primary dark:hover:border-primaryDark hover:bg-tertiary dark:hover:bg-tertiaryDark hover:text-primary dark:hover:text-primaryDark;
 	}
 
+	.lan-text-danger {
+		@apply text-danger dark:text-danger border-danger dark:border-danger transition duration-1000 hover:duration-300 hover:border-tertiary dark:hover:border-tertiaryDark hover:bg-danger dark:hover:bg-danger hover:text-tertiary dark:hover:text-tertiaryDark;
+	}
+
 	.lan-link-primary {
 		@apply transition duration-1000 text-primary dark:text-primaryDark hover:duration-300 hover:text-secondaryDark dark:hover:text-secondaryDark;
 	}
 
 	.lan-50-to-100 {
-		@apply opacity-50 transition duration-1000 hover:duration-300 hover:opacity-100;
+		@apply opacity-100 sm:opacity-50 transition duration-1000 hover:duration-300 hover:opacity-100;
 	}
 
 	.lan-button-primary {

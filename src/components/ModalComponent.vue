@@ -7,8 +7,14 @@
                 class="flex flex-col shadow-md bg-tertiary dark:bg-tertiaryDark max-h-screen md:max-w-[92%] md:max-h-[80%] xl:max-w-3xl rounded-t-xl md:rounded-b-xl">
                 <!-- Modal Header -->
                 <section
-                    class="relative z-10 flex flex-col items-center justify-center w-full h-auto px-6 py-4 text-center text-dark dark:text-light">
+                    class="relative z-10 flex flex-col items-center justify-center w-full h-auto px-6 py-4 text-center min-h-16 text-dark dark:text-light">
                     <slot name="header"></slot>
+
+                    <button type="button"
+                        class="absolute flex items-center justify-center p-1 font-bold bg-transparent border-2 rounded-full cursor-pointer top-4 right-6 lan-text-danger"
+                        @click="onCloseModal()">
+                        <CloseIcon class="w-auto h-5"></CloseIcon>
+                    </button>
                     <div
                         class="absolute bottom-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
                     </div>
@@ -22,14 +28,14 @@
                 <!-- Modal Body -->
 
                 <!-- Modal Footer -->
-                <section class="relative flex items-center justify-center">
+                <section class="relative flex items-center justify-center min-h-16">
                     <div class="absolute top-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
                     </div>
-                    <button type="button"
-                        class="p-2 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer lan-text-primary"
+                    <!-- <button type="button"
+                        class="p-2 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer lan-text-danger"
                         @click="onCloseModal()">
                         <CloseIcon class="w-auto h-6"></CloseIcon>
-                    </button>
+                    </button> -->
                 </section>
                 <!-- Modal Footer -->
             </div>
@@ -50,7 +56,8 @@ const emit = defineEmits<{
 const onVisibleChange = (status: boolean) => {
     isVisible.value = status;
     // console.log(`onVisibleChange: ${status}`);
-    document.documentElement.style.overflow = isVisible.value ? 'hidden' : 'auto';
+    document.body.style.overflow = isVisible.value ? 'hidden' : 'auto';
+    document.body.style.padding = isVisible.value ? '0 8px 0 0' : '0';
     if (modalBody.value) modalBody.value.scrollTop = 0;
 }
 

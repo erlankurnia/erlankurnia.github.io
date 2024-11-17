@@ -15,11 +15,12 @@ export default {
         quaternary: "#F0F3FF", // Alice Blue
         dark: "#020617", // Rich Black
         primaryDark: "#FFDD00", // Golden Yellow
-        secondaryDark: "#FFEEFF", // Magnolia
-        tertiaryDark: "#161616", // Chinese Black
+        secondaryDark: "#FFFCE6", // Cosmic Latte
+        tertiaryDark: "#252525", // Raisin Black
         quaternaryDark: "#404040", // Black Olive
         // quaternaryDark: "#606040", // Quincy
         light: "#C8CCCE", // Silver Finish
+        danger: "#A52A2A", // Auburn
       },
       screens: {
         "3xs": "288px",
@@ -36,10 +37,8 @@ export default {
         'h-sm': { 'raw': '(min-height: 768px)' },
         'max-h-sm': { 'raw': '(max-height: 768px)' },
         'max-screen-sm': { 'raw': '(max-height: 768px) and (max-width: 560px)' },
-        // ...defaultTheme.screens,
       },
     },
-    // variants: { extend: { screens: ['max-xs', 'max-sm', 'max-md', 'max-lg', 'max-xl', 'max-2xl'], }, },
   },
   plugins: [],
 }

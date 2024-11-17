@@ -18,7 +18,7 @@
 
 	<ModalComponent @close="closeModal" ref="modalComponent">
 		<template #body v-if="dataReadme">
-			<MarkdownComponent v-if="dataReadme" :content-markdown="dataReadme" class="md:p-4"></MarkdownComponent>
+			<MarkdownComponent v-if="dataReadme" :content-markdown="dataReadme" class="mb-8 md:p-4"></MarkdownComponent>
 		</template>
 	</ModalComponent>
 </template>
@@ -31,7 +31,7 @@ import ModalComponent from './ModalComponent.vue';
 import MarkdownComponent from "./MarkdownComponent.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
-type ModalType = InstanceType<typeof ModalComponent>
+type ModalType = InstanceType<typeof ModalComponent>;
 const modalComponent = useTemplateRef<ModalType>('modalComponent');
 
 const data = inject(DataUserSymbol);

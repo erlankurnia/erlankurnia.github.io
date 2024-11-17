@@ -7,6 +7,8 @@
 				<div
 					class="flex flex-col self-center z-10 justify-center w-full px-4 h-1/2 lg:h-full lg:!justify-center lg:w-1/2 lg:text-right">
 					<CardProfileComponent></CardProfileComponent>
+					<!-- <RouterLink to="/#contact" class="mt-4 text-center w-[180px] lan-button-secondary">Get in touch
+					</RouterLink> -->
 				</div>
 				<!-- Right / Top side -->
 

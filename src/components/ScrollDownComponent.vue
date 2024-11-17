@@ -1,5 +1,5 @@
 <template>
-    <button id="scroll-down" @click="scrollToNextSection"
+    <button id="scroll-down" @click="scrollToNextSection" title="Next Section" type="button"
         :class="['fixed z-[8888] h-12 w-12 right-4 bottom-[44%] rounded-full shadow-lg border-[1px] p-1 animate-bounce justify-center items-center lan-glass-effect 4xl:right-1/2 4xl:-mr-[760px]', $attrs.class]">
         <span class="w-full h-full text-primary dark:text-primaryDark">
             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current" viewBox="0 0 24 24">
