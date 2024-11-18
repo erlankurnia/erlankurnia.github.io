@@ -6,6 +6,7 @@ import type IUserEquipment from "./IUserEquipment";
 import type INotebook from "./INotebook";
 import type IReference from "./IReference";
 import type IAbility from "./IAbility";
+import type { IPortfolio } from "./IPortfolio";
 
 export default interface IDataUser {
     navbarBrand: string;
@@ -18,6 +19,7 @@ export default interface IDataUser {
     profile: IUserProfile;
     history: IUserHistory;
     ability: IAbility;
+    portfolio: IPortfolio;
     equipment: { hardware?: IUserEquipment, software?: IUserEquipment };
     notebook: INotebook;
     reference: IReference;

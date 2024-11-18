@@ -8,14 +8,15 @@
 
 			<!-- Articles -->
 			<div class="flex flex-wrap">
-				<div class="w-full mb-8 text-center" v-if="data.notebook.title">
-					<h2 class="lan-section-subtitle" v-html="data.notebook.title"></h2>
-					<p class="font-medium text-md text-secondary dark:text-secondaryDark md:text-lg"
-						v-if="data.notebook.description" v-html="data.notebook.description"></p>
+				<div class="w-full mb-8 text-center" v-if="data.notebook">
+					<h2 v-if="data.notebook.title" class="lan-section-subtitle" v-html="data.notebook.title"></h2>
+					<p v-if="data.notebook.description"
+						class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
+						v-html="data.notebook.description"></p>
 				</div>
-				<div class="w-full mb-8 px-3 sm:px-6 text-center">
+				<div class="w-full px-3 mb-8 text-center sm:px-6">
 					<div class="relative w-full max-w-[848px] mx-auto">
-						<input type="search" class="lan-textfield-primary text-center px-8 w-full"
+						<input type="search" class="w-full px-8 text-center lan-textfield-primary"
 							v-model="searchKeyword">
 						<SearchIcon class="absolute size-6 top-3 bottom-3 left-2 text-primary dark:text-primaryDark">
 						</SearchIcon>
@@ -57,7 +58,7 @@ import SearchIcon from "@/components/icons/SearchIcon.vue";
 import type INote from "@/helper/interfaces/INote";
 import Dictionary from "@/helper/interfaces/Dictionary";
 
-const listNotes = new Dictionary<INote>();
+const notesList = new Dictionary<INote>();
 
 const route = useRoute()
 const data = inject(DataUserSymbol);
@@ -79,16 +80,16 @@ watchEffect(() => {
 		});
 		data.value.notebook.notes.reverse();
 
-		listNotes.clear();
+		notesList.clear();
 		for (let note of data.value.notebook.notes) {
 			const key = `${note.title}_${note.description}_${note.topics.join(' ')}_${note.date}`.toLowerCase();
-			listNotes.add(key, note);
+			notesList.add(key, note);
 		}
 	}
 });
 
 const computedListNotes = computed(() => {
-	return listNotes.filter((key: string, value: INote) => key.includes(searchKeyword.value.toLowerCase()));
+	return notesList.filter((key: string, value: INote) => key.includes(searchKeyword.value.toLowerCase()));
 })
 
 const notesHead = useHead({

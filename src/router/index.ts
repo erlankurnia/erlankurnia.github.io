@@ -7,6 +7,7 @@ import NoteView from "../views/NoteView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 import CMSView from "../views/CMSView.vue";
 import urls from "./urls";
+import ProjectsView from "@/views/ProjectsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +45,7 @@ const router = createRouter({
     {
       path: urls.projects + "/:filter?",
       name: "projects",
-      component: NotFoundView,
+      component: ProjectsView,
       meta: { url: urls, hideNavbar: false },
     },
     {

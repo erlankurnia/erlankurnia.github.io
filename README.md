@@ -8,7 +8,7 @@
 - TypeScript
 - Tailwind CSS
 - Markdown-It
-- highlight.js
+- Highlight.js
 
 ## Attributions
 

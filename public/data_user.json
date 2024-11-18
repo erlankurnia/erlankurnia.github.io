@@ -264,8 +264,8 @@
 		}
 	},
 	"portfolio": {
-		"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",
-		"description": "There are many abilities that I can't do, so learning has no end.<br>Some of the technologies I'm studying.",
+		"title": "",
+		"description": "Here you'll find a showcase of my diverse and successful projects.<br>Each reflecting my dedication, versatility, and technical prowess.",
 		"source": {
 			"url": "https://github.com/krlan2789/apps-link",
 			"type": "github",
@@ -280,6 +280,7 @@
 				"imagesDir": "",
 				"description": "",
 				"url": "",
+				"repo": "",
 				"features": [],
 				"technologies": []
 			}

@@ -1,5 +1,5 @@
 <template>
-	<section id="portfolio" :class="['pt-24 pb-16 max-lg:min-h-screen', $attrs.class]">
+	<section id="portfolio" :class="['pt-24 max-lg:min-h-screen', $attrs.class]">
 		<div class="container">
 			<div class="w-full p-4">
 				<div class="max-w-xl mx-auto mb-8 text-center">
@@ -14,8 +14,10 @@
 					</p>
 				</div>
 			</div>
+
+			<!-- Project List -->
 			<div
-				class="grid justify-center w-full grid-cols-1 sm:gap-2 sm:grid-cols-2 2xl:gap-6 lg:grid-cols-3 2xl:grid-cols-4 2xl:mx-auto">
+				class="grid justify-center w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 2xl:grid-cols-3 2xl:gap-6 2xl:mx-auto">
 				<transition name="slide-up" v-for="(port, index) in portfolio" :key="projectKey + index" appear>
 					<RouterLink to="" :id="projectShow + port.id"
 						class="w-auto h-auto p-3 transition duration-200 scale-100 bg-transparent rounded-lg group hover:bg-tertiary dark:hover:bg-tertiaryDark hover:shadow-lg hover:lan-glass-effect hover:scale-105"
@@ -33,7 +35,7 @@
 						</div>
 						<p class="text-xs lan-section-desc lg:text-sm" v-html="port.description"></p>
 						<div class="flex flex-row w-full h-auto gap-2 pt-4">
-							<a :href="`${route.meta.project}/${port.slug}`" target="_blank"
+							<a :href="`${route.meta.url.project}/${port.slug}`" target="_blank"
 								class="flex flex-row items-center justify-center flex-grow gap-2 py-1 lan-button-secondary">
 								View
 								<NewTabIcon class="w-auto h-4"></NewTabIcon>
@@ -49,16 +51,20 @@
 					</RouterLink>
 				</transition>
 			</div>
+			<!-- Project List -->
 		</div>
+
+		<NextPageComponent label="See All Projects" :path="route.meta.url.projects" class="mt-16"></NextPageComponent>
 	</section>
 </template>
 
 <script setup lang="ts">
-import { inject, onUnmounted, ref } from "vue";
+import { inject, onMounted, onUnmounted, ref } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import Icon from "./icons/Icon.vue";
 import NewTabIcon from "./icons/NewTabIcon.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import NextPageComponent from "./NextPageComponent.vue";
 
 const route = useRoute();
 const projectHide = 'portfolio-project-hide-';
@@ -127,7 +133,9 @@ const onScroll = () => {
 		portfolio.value[a].isVisible = status;
 	}
 };
-window.addEventListener("scroll", onScroll);
+onMounted(() => {
+	window.addEventListener("scroll", onScroll);
+});
 onUnmounted(() => {
 	window.removeEventListener("scroll", onScroll);
 });
