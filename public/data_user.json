@@ -57,7 +57,7 @@
 		}
 	},
 	"history": {
-		"title": "Why am I Still <span class=\"text-primary dark:text-primaryDark\">Here</span> ?",
+		"title": "Why Am I Still <span class=\"text-primary dark:text-primaryDark\">Here</span> ?",
 		"description": "Having work experience in various fields.<br>As long as the goals can be achieved, the process can adapt to the current situation.",
 		"timeline": [
 			{
@@ -151,13 +151,15 @@
 					"name": "postgresql",
 					"title": "PostgreSQL",
 					"year": 2021,
-					"level": "INTERMEDIATE"
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://www.postgresql.org/"
 				},
 				{
-					"name": "mysql",
-					"title": "MySQL",
+					"name": "mariadb",
+					"title": "MariaDB",
 					"year": 2018,
-					"level": "INTERMEDIATE"
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://mariadb.org/"
 				},
 				{
 					"name": "tailwind",
@@ -170,7 +172,8 @@
 					"name": "node",
 					"title": "Node.js",
 					"year": 2021,
-					"level": "INTERMEDIATE"
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://nodejs.org/en"
 				},
 				{
 					"name": "javascript",

@@ -289,7 +289,7 @@
 	}
 
 	.lan-textfield-primary {
-		@apply p-2 mt-1 rounded-lg bg-quaternary dark:bg-quaternaryDark text-dark dark:text-light transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary dark:focus:ring-primaryDark focus:ring-1 focus:border-primary dark:focus:border-primaryDark focus:border-2 min-h-[40px];
+		@apply p-2 mt-1 rounded-lg bg-quaternary dark:bg-quaternaryDark text-dark dark:text-light transition duration-1000 focus:duration-300 focus:outline-none focus:ring-primary dark:focus:ring-primaryDark focus:ring-1 focus:border-primary dark:focus:border-primaryDark focus:m-0 focus:border-2 min-h-[40px];
 	}
 
 	.lan-floating {

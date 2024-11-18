@@ -26,6 +26,7 @@ const icons = {
 	laravel: ["laravel"],
 	laragon: ["laragon"],
 	laravelherd: ["laravelherd", "herd"],
+	mariadb: ["mariadb"],
 	mysql: ["mysql"],
 	maxst: ["maxst", "maxstar"],
 	nodejs: ["nodejs", "node"],

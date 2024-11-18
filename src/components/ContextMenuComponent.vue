@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import type ICoordinate from '@/helper/interfaces/ICoordinate';
-import { computed, onMounted, onUnmounted, ref, type Ref } from 'vue';
+import { computed, ref, type Ref } from 'vue';
 
 const options = ref<HTMLElement | null>(null);
 const targetCoords: Ref<ICoordinate> = ref({ x: 0, y: 0 });
@@ -43,7 +43,7 @@ const menuStyles = computed(() => {
 
         if (!offsideX) containerWidth = 0;
         if (!offsideY) containerHeight = 0;
-        if (offsideY || offsideX) styles.transform = `translate(-${containerWidth}px, ${containerHeight}px)`;
+        if (offsideY || offsideX) styles.transform = `translate(-${containerWidth}px, -${containerHeight}px)`;
 
         return {
             styles
