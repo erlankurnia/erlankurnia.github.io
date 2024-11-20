@@ -83,7 +83,7 @@ watchEffect(() => {
 		notesList.clear();
 		for (let note of data.value.notebook.notes) {
 			const key = `${note.title}_${note.description}_${note.topics.join(' ')}_${note.date}`.toLowerCase();
-			notesList.add(key, note);
+			notesList.set(key, note);
 		}
 	}
 });

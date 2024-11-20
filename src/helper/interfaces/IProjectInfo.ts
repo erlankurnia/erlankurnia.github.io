@@ -7,6 +7,6 @@ export default interface IProjectInfo {
     imagesDir?: string;
     url?: string;
     repo?: string;
-    features: string[];
+    features?: string[];
     technologies: string[];
 }

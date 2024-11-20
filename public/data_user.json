@@ -275,14 +275,230 @@
 		"projects": [
 			{
 				"id": 0,
-				"title": "",
-				"slug": "",
+				"title": "Personal Website",
+				"slug": "personal-website",
 				"imagesDir": "",
-				"description": "",
+				"description": "A personal website that built using Vue.js and Tailwind CSS.",
+				"url": "https://erlankurnia.github.io",
+				"repo": "https://github.com/erlankurnia/erlankurnia.github.io",
+				"features": [],
+				"technologies": [
+					"Vue.js",
+					"TypeScript",
+					"Tailwind CSS",
+					"Markdown-It",
+					"Highlight.js"
+				]
+			},
+			{
+				"id": 1,
+				"title": "Final Team Project in Progate",
+				"slug": "progate-final-team-project",
+				"imagesDir": "",
+				"description": "Collaborated on a team project to master HTML5 and CSS3 in Progate Platform.",
+				"url": "https://krlan2789.github.io/progate-ceb-e02",
+				"repo": "https://github.com/krlan2789/progate-ceb-e02",
+				"features": [],
+				"technologies": [
+					"HML5",
+					"CSS3"
+				]
+			},
+			{
+				"id": 2,
+				"title": "Final Project in Sanbercode Bootcamp",
+				"slug": "android-kotlin-sanbercode",
+				"imagesDir": "",
+				"description": "Final Project Kotlin Compose application in Sanbercode Platform.",
+				"url": "https://github.com/krlan2789/Sanbercode-B48-Final-Project/releases/download/1.0/SanbercodeFinalProject_Erlan_Kurnia-1.0.apk",
+				"repo": "https://github.com/krlan2789/Sanbercode-B48-Final-Project",
+				"features": [],
+				"technologies": [
+					"Kotlin",
+					"Jetpack Compose",
+					"REST API Client"
+				]
+			},
+			{
+				"id": 3,
+				"title": "Background Location",
+				"slug": "unity-background-location",
+				"imagesDir": "",
+				"description": "Developed Unity Mobile Application with a focus on background location services.",
+				"url": "https://github.com/krlan2789/Unity-Background-Location/releases/download/1.0.3/BackgroundLocation-1.0.3.apk",
+				"repo": "https://github.com/krlan2789/Unity-Background-Location",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"Live Location"
+				]
+			},
+			{
+				"id": 4,
+				"title": "WebSocket Server",
+				"slug": "websocket-server",
+				"imagesDir": "",
+				"description": "Built using Node, Express.js, and PostgreSQL. Featuring real-time updates via a WebSocket server.",
+				"url": "",
+				"repo": "https://github.com/krlan2789/express-ws-app",
+				"features": [],
+				"technologies": [
+					"Node.js",
+					"Express.js",
+					"PostgreSQL"
+				]
+			},
+			{
+				"id": 5,
+				"title": "Event Invitation",
+				"slug": "event-invitation",
+				"imagesDir": "",
+				"description": "Event Invitation (Currently only Wedding Invitation) built using Laravel and Tailwind CSS, integrating PostgreSQL for data management.",
 				"url": "",
 				"repo": "",
 				"features": [],
-				"technologies": []
+				"technologies": [
+					"Laravel 8",
+					"Tailwind CSS",
+					"PostgreSQL"
+				]
+			},
+			{
+				"id": 6,
+				"title": "Perumahan RT",
+				"slug": "perumahan-rt",
+				"imagesDir": "",
+				"description": "Comprehensive app developed with Unity, Google Firebase, Google AdMob, Midtrans, Xendit, and IAK for features like GPS tracking and payment processing.",
+				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.perumahan",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"Android",
+					"iOS",
+					"Live Location",
+					"REST API Client",
+					"Xendit",
+					"Midtrans",
+					"IAK",
+					"Google AdMob",
+					"Google Firebase"
+				]
+			},
+			{
+				"id": 7,
+				"title": "CLC Let's Talk (CLC Speaking App's remake)",
+				"slug": "clc-tels-talk",
+				"imagesDir": "",
+				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School, built with Unity and Google Firebase for seamless cross-platform functionality.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"Android",
+					"iOS",
+					"REST API Client",
+					"Google Firebase"
+				]
+			},
+			{
+				"id": 8,
+				"title": "CLC Report App",
+				"slug": "clc-report-app",
+				"imagesDir": "",
+				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
+				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"Android",
+					"iOS",
+					"WebView",
+					"REST API Client"
+				]
+			},
+			{
+				"id": 9,
+				"title": "CLC Word Explorer",
+				"slug": "clc-world-explorer",
+				"imagesDir": "",
+				"description": "A series of educational and functional apps for students in Chinese Language School designed for kids, built with Unity.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"Android",
+					"iOS",
+					"REST API Client"
+				]
+			},
+			{
+				"id": 10,
+				"title": "5T Fine Blend (Sales Tracking App)",
+				"slug": "5t-fine-blend",
+				"imagesDir": "",
+				"description": "A robust and feature-rich sales tracker application designed for Android platform. This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
+				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"Android",
+					"Live Location",
+					"Google Firebase",
+					"REST API Client"
+				]
+			},
+			{
+				"id": 11,
+				"title": "Xendit Payment API for Perumahan RT",
+				"slug": "perumahan-rt-xendit-api",
+				"imagesDir": "",
+				"description": "Implemented Xendit APIs for e-Wallet (OVO, DANA), Virtual Account, Disbursement, using Express.jsand PostgreSQL for backend management.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Xendit",
+					"Node.js",
+					"Express.js",
+					"PostgreSQL"
+				]
+			},
+			{
+				"id": 12,
+				"title": "MIdtrans Payment API for Perumahan RT",
+				"slug": "perumahan-rt-midtrans-api",
+				"imagesDir": "",
+				"description": "Implemented Midtrans APIs for e-Wallet (GoPay, ShopeePay), using Express.js and PostgreSQL for backend management.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Midtrans",
+					"Node.js",
+					"Express.js",
+					"PostgreSQL"
+				]
+			},
+			{
+				"id": 13,
+				"title": "IAK PPOB API for Perumahan RT",
+				"slug": "perumahan-rt-iak-api",
+				"imagesDir": "",
+				"description": "Integrated services for Pulsa, PDAM, and PLN payments, managed through Express.js and PostgreSQL.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"IAK PPOB",
+					"Node.js",
+					"Express.js",
+					"PostgreSQL"
+				]
 			}
 		]
 	},

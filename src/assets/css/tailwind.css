@@ -273,7 +273,7 @@
 	}
 
 	.lan-link-primary {
-		@apply transition duration-1000 text-primary dark:text-primaryDark hover:duration-300 hover:text-secondaryDark dark:hover:text-secondaryDark;
+		@apply transition duration-1000 text-primary hover:duration-300 hover:text-secondary dark:text-primaryDark dark:hover:text-secondaryDark;
 	}
 
 	.lan-50-to-100 {

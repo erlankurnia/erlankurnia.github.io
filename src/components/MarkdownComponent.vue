@@ -70,9 +70,9 @@ onMounted(() => {
 				rawCodeList.push(token.content);
 				elButton.innerHTML = originalCopyLabel;
 				elButton.classList.add(
-					'copy-btn', 'absolute', 'top-2', 'right-[7px]', 'h-6', 'w-auto', 'text-sm',
-					'font-semibold', 'px-1', 'rounded-md', 'cursor-pointer', 'text-primary', 'dark:text-primaryDark',
-					'bg-tertiary', 'dark:bg-tertiaryDark', 'hover:bg-primary', 'dark:hover:bg-primaryDark', 'hover:text-tertiary', 'dark:hover:text-tertiaryDark'
+					'copy-btn', 'absolute', 'top-2', 'right-[7px]', 'h-6', 'w-auto', 'text-sm', 'font-semibold', 'px-1',
+					'rounded-md', 'cursor-pointer', 'text-primary', 'bg-tertiary', 'hover:bg-primary', 'hover:font-bold',
+					'dark:text-primaryDark', 'dark:bg-tertiaryDark', 'dark:hover:bg-primaryDark', //'dark:hover:font-bold'
 				);
 
 				const elLabel = document.createElement("span");

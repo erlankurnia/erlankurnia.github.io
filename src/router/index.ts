@@ -49,7 +49,7 @@ const router = createRouter({
       meta: { url: urls, hideNavbar: false },
     },
     {
-      path: urls.project + "/:id/:title",
+      path: urls.project + "/:slug",
       name: "project",
       component: NotFoundView,
       meta: { url: urls, hideNavbar: false },

@@ -3,7 +3,7 @@ import type IDictionary from "./IDictionary";
 export default class Dictionary<T> implements IDictionary<T> {
     private _items: { [key: string]: T } = {};
 
-    add(key: string, value: T): void {
+    set(key: string, value: T): void {
         this._items[key] = value;
     }
 
@@ -15,7 +15,7 @@ export default class Dictionary<T> implements IDictionary<T> {
         return false;
     }
 
-    getItem(key: string): T | undefined {
+    get(key: string): T | undefined {
         return this._items[key];
     }
 
@@ -43,7 +43,7 @@ export default class Dictionary<T> implements IDictionary<T> {
         const filteredDictionary = new Dictionary<T>();
         for (const key in this._items) {
             if (this._items.hasOwnProperty(key) && callback(key, this._items[key])) {
-                filteredDictionary.add(key, this._items[key]);
+                filteredDictionary.set(key, this._items[key]);
             }
         }
         return filteredDictionary;
