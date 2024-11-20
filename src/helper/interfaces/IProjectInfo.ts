@@ -8,5 +8,6 @@ export default interface IProjectInfo {
     url?: string;
     repo?: string;
     features?: string[];
-    technologies: string[];
+    technologies?: string[];
+    tags: string[];
 }

@@ -39,6 +39,10 @@ export default class Dictionary<T> implements IDictionary<T> {
         this._items = {};
     }
 
+    count(): number {
+        return this.items().length;
+    }
+
     filter(callback: (key: string, value: T) => boolean): IDictionary<T> {
         const filteredDictionary = new Dictionary<T>();
         for (const key in this._items) {

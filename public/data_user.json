@@ -266,11 +266,6 @@
 	"portfolio": {
 		"title": "",
 		"description": "Here you'll find a showcase of my diverse and successful projects.<br>Each reflecting my dedication, versatility, and technical prowess.",
-		"source": {
-			"url": "https://github.com/krlan2789/apps-link",
-			"type": "github",
-			"images": []
-		},
 		"rootDir": "/img/portfolio/projects/",
 		"projects": [
 			{
@@ -283,11 +278,19 @@
 				"repo": "https://github.com/erlankurnia/erlankurnia.github.io",
 				"features": [],
 				"technologies": [
-					"Vue.js",
 					"TypeScript",
+					"Vue.js",
+					"CSS",
 					"Tailwind CSS",
 					"Markdown-It",
 					"Highlight.js"
+				],
+				"tags": [
+					"javascript",
+					"typescript",
+					"vue",
+					"css",
+					"tailwind"
 				]
 			},
 			{
@@ -300,8 +303,12 @@
 				"repo": "https://github.com/krlan2789/progate-ceb-e02",
 				"features": [],
 				"technologies": [
-					"HML5",
-					"CSS3"
+					"HTML5",
+					"CSS"
+				],
+				"tags": [
+					"html5",
+					"css"
 				]
 			},
 			{
@@ -317,6 +324,12 @@
 					"Kotlin",
 					"Jetpack Compose",
 					"REST API Client"
+				],
+				"tags": [
+					"android",
+					"kotlin",
+					"compose",
+					"restapi"
 				]
 			},
 			{
@@ -330,7 +343,15 @@
 				"features": [],
 				"technologies": [
 					"Unity",
+					"C#",
 					"Live Location"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"backgroundservice",
+					"location",
+					"gps"
 				]
 			},
 			{
@@ -343,9 +364,16 @@
 				"repo": "https://github.com/krlan2789/express-ws-app",
 				"features": [],
 				"technologies": [
+					"JavaScript",
 					"Node.js",
 					"Express.js",
 					"PostgreSQL"
+				],
+				"tags": [
+					"javascript",
+					"node",
+					"express",
+					"postgresql"
 				]
 			},
 			{
@@ -358,9 +386,18 @@
 				"repo": "",
 				"features": [],
 				"technologies": [
+					"PHP",
 					"Laravel 8",
+					"CSS",
 					"Tailwind CSS",
 					"PostgreSQL"
+				],
+				"tags": [
+					"php",
+					"laravel",
+					"css",
+					"tailwind",
+					"postgresql"
 				]
 			},
 			{
@@ -368,21 +405,29 @@
 				"title": "Perumahan RT",
 				"slug": "perumahan-rt",
 				"imagesDir": "",
-				"description": "Comprehensive app developed with Unity, Google Firebase, Google AdMob, Midtrans, Xendit, and IAK for features like GPS tracking and payment processing.",
+				"description": "Comprehensive app developed with Unity, Google Firebase, Google AdMob, features like GPS tracking and payment processing.",
 				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.perumahan",
 				"repo": "",
 				"features": [],
 				"technologies": [
 					"Unity",
-					"Android",
-					"iOS",
+					"C#",
 					"Live Location",
 					"REST API Client",
-					"Xendit",
-					"Midtrans",
-					"IAK",
 					"Google AdMob",
 					"Google Firebase"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"backgroundservice",
+					"location",
+					"gps",
+					"admob",
+					"firebase"
 				]
 			},
 			{
@@ -390,16 +435,23 @@
 				"title": "CLC Let's Talk (CLC Speaking App's remake)",
 				"slug": "clc-tels-talk",
 				"imagesDir": "",
-				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School, built with Unity and Google Firebase for seamless cross-platform functionality.",
+				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School.<br>Built with Unity and Google Firebase for seamless cross-platform functionality.",
 				"url": "",
 				"repo": "",
 				"features": [],
 				"technologies": [
 					"Unity",
-					"Android",
-					"iOS",
+					"C#",
 					"REST API Client",
 					"Google Firebase"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"firebase"
 				]
 			},
 			{
@@ -413,10 +465,17 @@
 				"features": [],
 				"technologies": [
 					"Unity",
-					"Android",
-					"iOS",
+					"C#",
 					"WebView",
 					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"webview"
 				]
 			},
 			{
@@ -430,9 +489,15 @@
 				"features": [],
 				"technologies": [
 					"Unity",
-					"Android",
-					"iOS",
+					"C#",
 					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi"
 				]
 			},
 			{
@@ -440,16 +505,27 @@
 				"title": "5T Fine Blend (Sales Tracking App)",
 				"slug": "5t-fine-blend",
 				"imagesDir": "",
-				"description": "A robust and feature-rich sales tracker application designed for Android platform. This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
+				"description": "A robust and feature-rich sales tracker application designed for Android platform.<br>This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
 				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
 				"repo": "",
 				"features": [],
 				"technologies": [
 					"Unity",
-					"Android",
+					"C#",
 					"Live Location",
 					"Google Firebase",
 					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"restapi",
+					"backgroundservice",
+					"location",
+					"gps",
+					"admob",
+					"firebase"
 				]
 			},
 			{
@@ -463,9 +539,17 @@
 				"features": [],
 				"technologies": [
 					"Xendit",
+					"JavaScript",
 					"Node.js",
 					"Express.js",
 					"PostgreSQL"
+				],
+				"tags": [
+					"xendit",
+					"javascript",
+					"node",
+					"express",
+					"postgresql"
 				]
 			},
 			{
@@ -479,9 +563,17 @@
 				"features": [],
 				"technologies": [
 					"Midtrans",
+					"JavaScript",
 					"Node.js",
 					"Express.js",
 					"PostgreSQL"
+				],
+				"tags": [
+					"midtrans",
+					"javascript",
+					"node",
+					"express",
+					"postgresql"
 				]
 			},
 			{
@@ -495,9 +587,80 @@
 				"features": [],
 				"technologies": [
 					"IAK PPOB",
+					"JavaScript",
 					"Node.js",
 					"Express.js",
 					"PostgreSQL"
+				],
+				"tags": [
+					"iak",
+					"javascript",
+					"node",
+					"express",
+					"postgresql"
+				]
+			},
+			{
+				"id": 14,
+				"title": "Live Location Unity Plugin",
+				"slug": "unity-lan-live-location",
+				"imagesDir": "",
+				"description": "A project designed to integrate live location tracking into Unity applications.<br>It leverages the ForegroundGPSTracker library for Android by SingularityIndonesia.",
+				"url": "https://erlankurnia.github.io/note/3/Android%20Background%20Location%20for%20Unity",
+				"repo": "https://github.com/krlan2789/Unity-LAN-LiveLocation-Plugin",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"Live Location"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"backgroundservice",
+					"location",
+					"gps"
+				]
+			},
+			{
+				"id": 15,
+				"title": "Nearest Coordinate Search",
+				"slug": "unity-nearest-coordinate",
+				"imagesDir": "",
+				"description": "A Unity project that leverages the K-Means Clustering algorithm to efficiently search for the nearest coordinate within a coordinates list.<br>This project is particularly useful for applications requiring spatial data analysis and nearest neighbor searches.",
+				"url": "",
+				"repo": "https://github.com/krlan2789/Unity-Nearest-Coordinate",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"multiplatform",
+					"clustering",
+					"k-means"
+				]
+			},
+			{
+				"id": 16,
+				"title": "Land Property",
+				"slug": "land-property",
+				"imagesDir": "",
+				"description": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
+				"url": "https://github.com/krlan2789/Land-Property-App/releases/download/1.0.0/com.lan.destate-Signed.apk",
+				"repo": "https://github.com/krlan2789/Land-Property-App",
+				"features": [],
+				"technologies": [
+					".NET",
+					"C#"
+				],
+				"tags": [
+					"dotnet",
+					"csharp",
+					"multiplatform"
 				]
 			}
 		]
@@ -686,6 +849,8 @@
 					"unitypackage",
 					"android",
 					"plugin",
+					"gps",
+					"location",
 					"backgroundservice"
 				],
 				"source": {

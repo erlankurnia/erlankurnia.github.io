@@ -24,7 +24,7 @@
 				</div>
 				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="data.notebook.notes.length > 0">
 					<transition-group name="show-up" tag="ul" class="flex flex-col gap-8">
-						<li v-for="[index, note] of computedListNotes.items()" :key="index"
+						<li v-for="[index, note] of computedNotesList.items()" :key="index"
 							class="flex flex-col w-full h-auto px-4 py-3 transition duration-500 rounded-lg hover:bg-quaternary dark:hover:bg-quaternaryDark">
 							<RouterLink
 								v-if="(('' + filter) == '' || note.topics.includes(filter)) && route.meta.url?.note"
@@ -88,7 +88,7 @@ watchEffect(() => {
 	}
 });
 
-const computedListNotes = computed(() => {
+const computedNotesList = computed(() => {
 	return notesList.filter((key: string, value: INote) => key.includes(searchKeyword.value.toLowerCase()));
 })
 

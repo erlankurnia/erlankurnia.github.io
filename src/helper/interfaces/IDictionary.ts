@@ -7,5 +7,6 @@ export default interface IDictionary<T> {
     keys(): string[];
     values(): T[];
     clear(): void;
+    count(): number;
     filter(callback: (key: string, value: T) => boolean): IDictionary<T>;
 }

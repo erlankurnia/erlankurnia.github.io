@@ -1,4 +1,5 @@
 <template>
+    <component is=""></component>
     <RouterLink :to="'' + url"
         class="grid grid-rows-[auto,auto,auto,52px] w-auto h-auto p-3 transition duration-200 scale-100 rounded-lg group hover:shadow-lg hover:lan-glass-effect hover:scale-105"
         :class="{
@@ -15,7 +16,7 @@
             <h3 class="mt-5 mb-3" v-html="title"></h3>
         </div>
 
-        <p class="row-start-3 text-[10px] text-center lan-section-desc lg:text-xs" v-html="description"></p>
+        <p class="row-start-3 text-[10px] text-center lan-section-desc lg:text-xs" v-html="shortDesc"></p>
 
         <div v-if="urlDemo || urlRepo" class="grid w-full h-auto grid-cols-2 row-start-4 gap-2 pt-4">
             <a v-if="urlDemo" :href="urlDemo" @click.stop target="_blank"
@@ -24,7 +25,7 @@
                 <NewTabIcon class="w-auto h-4"></NewTabIcon>
             </a>
             <div v-else
-                class="flex items-center justify-center px-2 text-[10px] font-normal text-secondary/50 dark:text-secondaryDark/50">
+                class="flex items-center justify-center px-2 text-[11px] text-center font-normal text-secondary/50 dark:text-secondaryDark/50">
                 Live not available
             </div>
 
@@ -36,22 +37,23 @@
                 </Icon>
             </a>
             <div v-else
-                class="flex items-center justify-center px-2 text-[10px] font-light text-secondary/50 dark:text-secondaryDark/50">
+                class="flex items-center justify-center px-2 text-[11px] text-center font-normal text-secondary/50 dark:text-secondaryDark/50">
                 Repository is restricted
             </div>
         </div>
         <div v-else
-            class="flex items-center justify-center row-start-4 px-2 pt-3 pb-1 text-xs font-normal text-secondary/50 dark:text-secondaryDark/50">
+            class="flex items-center justify-center row-start-4 px-2 pt-3 pb-1 text-[11px] text-center font-normal text-secondary/50 dark:text-secondaryDark/50">
             Live and Repository are not available
         </div>
     </RouterLink>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import Icon from './icons/Icon.vue';
 import NewTabIcon from './icons/NewTabIcon.vue';
 
-defineProps<{
+const props = defineProps<{
     title: string,
     description: string,
     imagesPath?: string | string[],
@@ -61,4 +63,7 @@ defineProps<{
     reverseTheme?: boolean,
 }>();
 
+const shortDesc = computed(() => {
+    return props.description.length > 144 ? props.description.substring(0, 120) + '..' : props.description;
+});
 </script>
