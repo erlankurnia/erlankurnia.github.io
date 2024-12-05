@@ -14,7 +14,7 @@
                         class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
                         v-html="data.portfolio.description"></p>
                 </div>
-                <div class="w-full px-3 mb-8 text-center sm:px-6">
+                <div class="w-full px-0 mb-8 text-center 2xl:px-6">
                     <div class="relative w-full max-w-[848px] mx-auto">
                         <input type="search" class="w-full px-8 text-center lan-textfield-primary"
                             v-model="searchKeyword">

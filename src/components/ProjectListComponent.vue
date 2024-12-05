@@ -5,7 +5,8 @@
             <CardItemComponent v-for="proj in computedProjectList" :key="proj.slug ?? proj.id"
                 :id="'project-' + proj.id" :title="proj.title" :description="proj.description"
                 :imagesPath="proj.imagesDir" :url="`${route.meta.url.project}/${proj.slug ?? proj.id}`"
-                :urlDemo="proj.url" :urlRepo="proj.repo" :reverseTheme="reverseTheme"></CardItemComponent>
+                :urlDemo="proj.url" :urlRepo="proj.repo" :tags="proj.tags" :technologies="proj.technologies"
+                :reverseTheme="reverseTheme"></CardItemComponent>
         </transition-group>
     </section>
 </template>

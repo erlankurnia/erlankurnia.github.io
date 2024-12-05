@@ -280,7 +280,7 @@
 				"technologies": [
 					"TypeScript",
 					"Vue.js",
-					"CSS",
+					"CSS3",
 					"Tailwind CSS",
 					"Markdown-It",
 					"Highlight.js"
@@ -304,7 +304,7 @@
 				"features": [],
 				"technologies": [
 					"HTML5",
-					"CSS"
+					"CSS3"
 				],
 				"tags": [
 					"html5",
@@ -388,7 +388,7 @@
 				"technologies": [
 					"PHP",
 					"Laravel 8",
-					"CSS",
+					"CSS3",
 					"Tailwind CSS",
 					"PostgreSQL"
 				],

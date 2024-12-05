@@ -11,7 +11,7 @@
                     <slot name="header"></slot>
 
                     <button type="button"
-                        class="absolute flex items-center justify-center p-1 font-bold bg-transparent border-2 rounded-full cursor-pointer top-4 right-6 lan-text-danger"
+                        class="absolute items-center justify-center hidden p-1 font-bold bg-transparent border-2 rounded-full cursor-pointer md:flex top-4 right-6 lan-text-danger"
                         @click="onCloseModal()">
                         <CloseIcon class="w-auto h-5"></CloseIcon>
                     </button>
@@ -31,11 +31,11 @@
                 <section class="relative flex items-center justify-center min-h-16">
                     <div class="absolute top-0 border-b-[2px] border-quaternary dark:border-quaternaryDark w-full h-px">
                     </div>
-                    <!-- <button type="button"
-                        class="p-2 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer lan-text-danger"
+                    <button type="button"
+                        class="block p-2 m-3 text-xl font-bold bg-transparent border-2 rounded-full cursor-pointer md:hidden lan-text-danger"
                         @click="onCloseModal()">
                         <CloseIcon class="w-auto h-6"></CloseIcon>
-                    </button> -->
+                    </button>
                 </section>
                 <!-- Modal Footer -->
             </div>
