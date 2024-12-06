@@ -191,7 +191,7 @@
 	}
 
 	*::-webkit-scrollbar {
-		@apply p-1 w-2;
+		@apply p-1 w-2 h-2;
 	}
 
 	*::-webkit-scrollbar-track {

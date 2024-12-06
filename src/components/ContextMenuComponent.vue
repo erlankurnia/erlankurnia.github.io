@@ -53,21 +53,55 @@ const menuStyles = computed(() => {
     return {};
 });
 
+const preventScroll = (event: Event) => {
+    event.preventDefault();
+};
+
+const disableScroll = () => {
+    window.addEventListener('scroll', preventScroll, { passive: false });
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('touchmove', preventScroll, { passive: false });
+};
+
+const enableScroll = () => {
+    window.removeEventListener('scroll', preventScroll);
+    window.removeEventListener('wheel', preventScroll);
+    window.removeEventListener('touchmove', preventScroll);
+};
+
+// const isTouchDevice = () => {
+//     return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+// };
+
+const applyPadding = () => {
+    let paddingShow = '0';
+    if (window.matchMedia('(min-width: 560px)').matches) {
+        paddingShow = '0 8px 0 0';
+    }
+    // if (isTouchDevice()) {
+    //     paddingShow = '0';
+    // }
+    document.body.style.overflow = isVisible.value ? 'hidden' : 'auto';
+    document.body.style.padding = isVisible.value ? paddingShow : '0';
+};
+
 const show = (coords: ICoordinate) => {
     isVisible.value = true;
     targetCoords.value = coords;
-    document.body.style.overflow = 'hidden';
-    document.body.style.padding = '0 8px 0 0';
+    applyPadding();
+    disableScroll();
 };
 
 const hide = (event: MouseEvent) => {
-    document.body.style.overflow = 'auto';
-    document.body.style.padding = '0';
     isVisible.value = false;
+    applyPadding();
+    enableScroll();
 };
 
+applyPadding();
 defineExpose({
     show,
     hide,
 });
+window.addEventListener('resize', applyPadding);
 </script>

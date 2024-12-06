@@ -22,7 +22,7 @@
 
         <div v-if="technologies && technologies.length > 0" class="flex flex-wrap justify-center gap-1 pt-4">
             <div v-for="(tech, index) of technologies" :key="index"
-                class="w-auto h-6 px-2 py-1 text-xs rounded-full bg-secondary/10 dark:bg-secondaryDark/10"
+                class="w-auto h-6 px-2 py-1 text-xs rounded-full text-dark dark:text-light bg-secondary/10 dark:bg-secondaryDark/10"
                 v-html="tech">
             </div>
         </div>

@@ -121,24 +121,47 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, useTemplateRef, type Ref } from "vue";
+import { inject, onMounted, ref, type Ref } from "vue";
 import Icon from "./icons/Icon.vue";
-// import { useDateTime } from "../helper/mixins/DateTime";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import ContextMenuComponent from "./ContextMenuComponent.vue";
 import type ISkillInfo from "@/helper/interfaces/ISkillInfo";
 
 const data = inject(DataUserSymbol);
 const selectedSkill: Ref<ISkillInfo | null> = ref(null);
-// const { getYearDiff } = useDateTime();
 
 type ContextMenuType = InstanceType<typeof ContextMenuComponent>;
-const optionComponent = useTemplateRef<ContextMenuType>('optionComponent');
-const showOptions = (event: MouseEvent, skill: ISkillInfo) => {
-	selectedSkill.value = skill;
-	optionComponent.value?.show({
-		x: event.clientX,
-		y: event.clientY,
-	});
+const optionComponent = ref<ContextMenuType | null>(null);
+const showOptions = (event: MouseEvent | null, skill: ISkillInfo | null) => {
+	if (event != null && skill != null) {
+		console.log(skill.name);
+		selectedSkill.value = skill;
+		optionComponent.value?.show({
+			x: event.clientX,
+			y: event.clientY,
+		});
+	}
 };
+onMounted(() => {
+	if (data?.value?.ability.skill.topics) {
+		const simulatedEvent = new MouseEvent('click', {
+			bubbles: true,
+			cancelable: true,
+			view: window,
+			detail: 1,
+			screenX: 0,
+			screenY: 0,
+			clientX: 0,
+			clientY: 0,
+			ctrlKey: false,
+			altKey: false,
+			shiftKey: false,
+			metaKey: false,
+			button: 0,
+			buttons: 0,
+			relatedTarget: null,
+		});
+		showOptions(simulatedEvent, data?.value?.ability.skill.topics[0]);
+	}
+});
 </script>
