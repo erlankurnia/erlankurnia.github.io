@@ -272,7 +272,7 @@
 				"id": 0,
 				"title": "Personal Website",
 				"slug": "personal-website",
-				"imagesDir": "",
+				"imagesDir": "/img/portfolio/projects/personal.web/",
 				"description": "A personal website that built using Vue.js and Tailwind CSS.",
 				"url": "https://erlankurnia.github.io",
 				"repo": "https://github.com/erlankurnia/erlankurnia.github.io",
@@ -294,6 +294,198 @@
 				]
 			},
 			{
+				"id": 2,
+				"title": "Final Project in Sanbercode Bootcamp",
+				"slug": "android-kotlin-sanbercode",
+				"imagesDir": "/img/portfolio/projects/com.lan.sanbercodefinalproject/",
+				"description": "Final Project Kotlin Compose application in Sanbercode Platform.",
+				"url": "https://github.com/krlan2789/Sanbercode-B48-Final-Project/releases/download/1.0/SanbercodeFinalProject_Erlan_Kurnia-1.0.apk",
+				"repo": "https://github.com/krlan2789/Sanbercode-B48-Final-Project",
+				"features": [],
+				"technologies": [
+					"Kotlin",
+					"Jetpack Compose",
+					"REST API Client"
+				],
+				"tags": [
+					"android",
+					"kotlin",
+					"compose",
+					"restapi"
+				]
+			},
+			{
+				"id": 5,
+				"title": "Event Invitation",
+				"slug": "event-invitation",
+				"imagesDir": "",
+				"description": "Event Invitation (Currently only Wedding Invitation) built using Laravel and Tailwind CSS, integrating PostgreSQL for data management.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"PHP",
+					"Laravel 8",
+					"CSS3",
+					"Tailwind CSS",
+					"PostgreSQL"
+				],
+				"tags": [
+					"php",
+					"laravel",
+					"css",
+					"tailwind",
+					"postgresql"
+				]
+			},
+			{
+				"id": 6,
+				"title": "Perumahan RT",
+				"slug": "perumahan-rt",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.perumahanrt/",
+				"description": "Comprehensive app developed with Unity, Google Firebase, Google AdMob, features like GPS tracking and payment processing.",
+				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.perumahan",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"Live Location",
+					"REST API Client",
+					"Google AdMob",
+					"Google Firebase"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"backgroundservice",
+					"location",
+					"gps",
+					"admob",
+					"firebase"
+				]
+			},
+			{
+				"id": 7,
+				"title": "CLC Let's Talk (CLC Speaking App's remake)",
+				"slug": "clc-tels-talk",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.letstalk/",
+				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School.<br>Built with Unity and Google Firebase for seamless cross-platform functionality.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"REST API Client",
+					"Google Firebase"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"firebase"
+				]
+			},
+			{
+				"id": 8,
+				"title": "CLC Report App",
+				"slug": "clc-report-app",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcreport/",
+				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
+				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"WebView",
+					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"webview"
+				]
+			},
+			{
+				"id": 9,
+				"title": "CLC Word Explorer",
+				"slug": "clc-world-explorer",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcmeaningforkids/",
+				"description": "A series of educational and functional apps for students in Chinese Language School designed for kids, built with Unity.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi"
+				]
+			},
+			{
+				"id": 10,
+				"title": "5T Fine Blend (Sales Tracking App)",
+				"slug": "5t-fine-blend",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.5tfineblend/",
+				"description": "A robust and feature-rich sales tracker application designed for Android platform.<br>This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
+				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"Live Location",
+					"Google Firebase",
+					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"restapi",
+					"backgroundservice",
+					"location",
+					"gps",
+					"admob",
+					"firebase"
+				]
+			},
+			{
+				"id": 16,
+				"title": "Land Estate",
+				"slug": "land-property",
+				"imagesDir": "/img/portfolio/projects/com.lan.destate/",
+				"description": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
+				"url": "https://github.com/krlan2789/Land-Property-App/releases/download/1.0.0/com.lan.destate-Signed.apk",
+				"repo": "https://github.com/krlan2789/Land-Property-App",
+				"features": [],
+				"technologies": [
+					".NET",
+					"C#"
+				],
+				"tags": [
+					"dotnet",
+					"csharp",
+					"multiplatform"
+				]
+			},
+			{
 				"id": 1,
 				"title": "Final Team Project in Progate",
 				"slug": "progate-final-team-project",
@@ -309,27 +501,6 @@
 				"tags": [
 					"html5",
 					"css"
-				]
-			},
-			{
-				"id": 2,
-				"title": "Final Project in Sanbercode Bootcamp",
-				"slug": "android-kotlin-sanbercode",
-				"imagesDir": "",
-				"description": "Final Project Kotlin Compose application in Sanbercode Platform.",
-				"url": "https://github.com/krlan2789/Sanbercode-B48-Final-Project/releases/download/1.0/SanbercodeFinalProject_Erlan_Kurnia-1.0.apk",
-				"repo": "https://github.com/krlan2789/Sanbercode-B48-Final-Project",
-				"features": [],
-				"technologies": [
-					"Kotlin",
-					"Jetpack Compose",
-					"REST API Client"
-				],
-				"tags": [
-					"android",
-					"kotlin",
-					"compose",
-					"restapi"
 				]
 			},
 			{
@@ -374,158 +545,6 @@
 					"node",
 					"express",
 					"postgresql"
-				]
-			},
-			{
-				"id": 5,
-				"title": "Event Invitation",
-				"slug": "event-invitation",
-				"imagesDir": "",
-				"description": "Event Invitation (Currently only Wedding Invitation) built using Laravel and Tailwind CSS, integrating PostgreSQL for data management.",
-				"url": "",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"PHP",
-					"Laravel 8",
-					"CSS3",
-					"Tailwind CSS",
-					"PostgreSQL"
-				],
-				"tags": [
-					"php",
-					"laravel",
-					"css",
-					"tailwind",
-					"postgresql"
-				]
-			},
-			{
-				"id": 6,
-				"title": "Perumahan RT",
-				"slug": "perumahan-rt",
-				"imagesDir": "",
-				"description": "Comprehensive app developed with Unity, Google Firebase, Google AdMob, features like GPS tracking and payment processing.",
-				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.perumahan",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"Live Location",
-					"REST API Client",
-					"Google AdMob",
-					"Google Firebase"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi",
-					"backgroundservice",
-					"location",
-					"gps",
-					"admob",
-					"firebase"
-				]
-			},
-			{
-				"id": 7,
-				"title": "CLC Let's Talk (CLC Speaking App's remake)",
-				"slug": "clc-tels-talk",
-				"imagesDir": "",
-				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School.<br>Built with Unity and Google Firebase for seamless cross-platform functionality.",
-				"url": "",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"REST API Client",
-					"Google Firebase"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi",
-					"firebase"
-				]
-			},
-			{
-				"id": 8,
-				"title": "CLC Report App",
-				"slug": "clc-report-app",
-				"imagesDir": "",
-				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
-				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"WebView",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi",
-					"webview"
-				]
-			},
-			{
-				"id": 9,
-				"title": "CLC Word Explorer",
-				"slug": "clc-world-explorer",
-				"imagesDir": "",
-				"description": "A series of educational and functional apps for students in Chinese Language School designed for kids, built with Unity.",
-				"url": "",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi"
-				]
-			},
-			{
-				"id": 10,
-				"title": "5T Fine Blend (Sales Tracking App)",
-				"slug": "5t-fine-blend",
-				"imagesDir": "",
-				"description": "A robust and feature-rich sales tracker application designed for Android platform.<br>This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
-				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"Live Location",
-					"Google Firebase",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"restapi",
-					"backgroundservice",
-					"location",
-					"gps",
-					"admob",
-					"firebase"
 				]
 			},
 			{
@@ -642,25 +661,6 @@
 					"multiplatform",
 					"clustering",
 					"k-means"
-				]
-			},
-			{
-				"id": 16,
-				"title": "Land Property",
-				"slug": "land-property",
-				"imagesDir": "",
-				"description": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
-				"url": "https://github.com/krlan2789/Land-Property-App/releases/download/1.0.0/com.lan.destate-Signed.apk",
-				"repo": "https://github.com/krlan2789/Land-Property-App",
-				"features": [],
-				"technologies": [
-					".NET",
-					"C#"
-				],
-				"tags": [
-					"dotnet",
-					"csharp",
-					"multiplatform"
 				]
 			}
 		]

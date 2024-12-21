@@ -6,10 +6,11 @@
             'bg-tertiary dark:bg-tertiaryDark': !(reverseTheme ?? false),
             'bg-quaternary dark:bg-quaternaryDark': (reverseTheme ?? false),
         }">
-        <div class="overflow-hidden rounded-md" :class="{ 'shadow-md': imagesPath }">
+        <div class="overflow-hidden rounded-md aspect-[16/9]" :class="{ 'shadow-inner': imagesPath, }">
             <template v-if="imagesPath">
-                <img v-for="(img, index) in (typeof imagesPath === 'string' ? [imagesPath] : imagesPath)" :key="index"
-                    :src="img" :alt="title" :class="{ 'w-full': img != null && img.length > 5 }" />
+                <img :src="imagesPath" :alt="title"
+                    class="transition-transform duration-500 scale-100 group-hover:scale-110"
+                    :class="{ 'w-full': imagesPath != null && imagesPath.length > 5 }" />
             </template>
         </div>
 
@@ -65,7 +66,7 @@ import NewTabIcon from './icons/NewTabIcon.vue';
 const props = defineProps<{
     title: string,
     description: string,
-    imagesPath?: string | string[],
+    imagesPath?: string,
     url?: string,
     urlDemo?: string,
     urlRepo?: string,

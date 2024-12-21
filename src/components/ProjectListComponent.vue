@@ -4,9 +4,9 @@
         <transition-group name="slide-up" appear>
             <CardItemComponent v-for="proj in computedProjectList" :key="proj.slug ?? proj.id"
                 :id="'project-' + proj.id" :title="proj.title" :description="proj.description"
-                :imagesPath="proj.imagesDir" :url="`${route.meta.url.project}/${proj.slug ?? proj.id}`"
-                :urlDemo="proj.url" :urlRepo="proj.repo" :tags="proj.tags" :technologies="proj.technologies"
-                :reverseTheme="reverseTheme"></CardItemComponent>
+                :imagesPath="(proj.imagesDir ? proj.imagesDir + 'sample@0,5x.webp' : '')"
+                :url="`${route.meta.url.project}/${proj.slug ?? proj.id}`" :urlDemo="proj.url" :urlRepo="proj.repo"
+                :tags="proj.tags" :technologies="proj.technologies" :reverseTheme="reverseTheme"></CardItemComponent>
         </transition-group>
     </section>
 </template>
