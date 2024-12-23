@@ -315,30 +315,6 @@
 				]
 			},
 			{
-				"id": 5,
-				"title": "Event Invitation",
-				"slug": "event-invitation",
-				"imagesDir": "",
-				"description": "Event Invitation (Currently only Wedding Invitation) built using Laravel and Tailwind CSS, integrating PostgreSQL for data management.",
-				"url": "",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"PHP",
-					"Laravel 8",
-					"CSS3",
-					"Tailwind CSS",
-					"PostgreSQL"
-				],
-				"tags": [
-					"php",
-					"laravel",
-					"css",
-					"tailwind",
-					"postgresql"
-				]
-			},
-			{
 				"id": 6,
 				"title": "Perumahan RT",
 				"slug": "perumahan-rt",
@@ -483,6 +459,30 @@
 					"dotnet",
 					"csharp",
 					"multiplatform"
+				]
+			},
+			{
+				"id": 5,
+				"title": "Event Invitation",
+				"slug": "event-invitation",
+				"imagesDir": "",
+				"description": "Event Invitation (Currently only Wedding Invitation) built using Laravel and Tailwind CSS, integrating PostgreSQL for data management.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"PHP",
+					"Laravel 8",
+					"CSS3",
+					"Tailwind CSS",
+					"PostgreSQL"
+				],
+				"tags": [
+					"php",
+					"laravel",
+					"css",
+					"tailwind",
+					"postgresql"
 				]
 			},
 			{
