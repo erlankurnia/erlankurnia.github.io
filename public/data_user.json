@@ -294,24 +294,77 @@
 				]
 			},
 			{
-				"id": 2,
-				"title": "Final Project in Sanbercode Bootcamp",
-				"slug": "android-kotlin-sanbercode",
-				"imagesDir": "/img/portfolio/projects/com.lan.sanbercodefinalproject/",
-				"description": "Final Project Kotlin Compose application in Sanbercode Platform.",
-				"url": "https://github.com/krlan2789/Sanbercode-B48-Final-Project/releases/download/1.0/SanbercodeFinalProject_Erlan_Kurnia-1.0.apk",
-				"repo": "https://github.com/krlan2789/Sanbercode-B48-Final-Project",
+				"id": 10,
+				"title": "5T Fine Blend (Sales Tracking App)",
+				"slug": "5t-fine-blend",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.5tfineblend/",
+				"description": "A robust and feature-rich sales tracker application designed for Android platform.<br>This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
+				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
+				"repo": "",
 				"features": [],
 				"technologies": [
-					"Kotlin",
-					"Jetpack Compose",
+					"Unity",
+					"C#",
+					"Live Location",
+					"Google Firebase",
 					"REST API Client"
 				],
 				"tags": [
+					"unity",
+					"csharp",
 					"android",
-					"kotlin",
-					"compose",
+					"restapi",
+					"backgroundservice",
+					"location",
+					"gps",
+					"admob",
+					"firebase"
+				]
+			},
+			{
+				"id": 9,
+				"title": "CLC Word Explorer",
+				"slug": "clc-world-explorer",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcmeaningforkids/",
+				"description": "A series of educational and functional apps for students in Chinese Language School designed for kids, built with Unity.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
 					"restapi"
+				]
+			},
+			{
+				"id": 7,
+				"title": "CLC Let's Talk (CLC Speaking App's remake)",
+				"slug": "clc-tels-talk",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.letstalk/",
+				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School.<br>Built with Unity and Google Firebase for seamless cross-platform functionality.",
+				"url": "",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"REST API Client",
+					"Google Firebase"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"restapi",
+					"firebase"
 				]
 			},
 			{
@@ -345,30 +398,6 @@
 				]
 			},
 			{
-				"id": 7,
-				"title": "CLC Let's Talk (CLC Speaking App's remake)",
-				"slug": "clc-tels-talk",
-				"imagesDir": "/img/portfolio/projects/com.anakpintar.letstalk/",
-				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School.<br>Built with Unity and Google Firebase for seamless cross-platform functionality.",
-				"url": "",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"REST API Client",
-					"Google Firebase"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi",
-					"firebase"
-				]
-			},
-			{
 				"id": 8,
 				"title": "CLC Report App",
 				"slug": "clc-report-app",
@@ -393,56 +422,6 @@
 				]
 			},
 			{
-				"id": 9,
-				"title": "CLC Word Explorer",
-				"slug": "clc-world-explorer",
-				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcmeaningforkids/",
-				"description": "A series of educational and functional apps for students in Chinese Language School designed for kids, built with Unity.",
-				"url": "",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi"
-				]
-			},
-			{
-				"id": 10,
-				"title": "5T Fine Blend (Sales Tracking App)",
-				"slug": "5t-fine-blend",
-				"imagesDir": "/img/portfolio/projects/com.anakpintar.5tfineblend/",
-				"description": "A robust and feature-rich sales tracker application designed for Android platform.<br>This project highlights the seamless integration of advanced technologies to enhance sales tracking and management.",
-				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"Live Location",
-					"Google Firebase",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"restapi",
-					"backgroundservice",
-					"location",
-					"gps",
-					"admob",
-					"firebase"
-				]
-			},
-			{
 				"id": 16,
 				"title": "Land Estate",
 				"slug": "land-property",
@@ -459,6 +438,27 @@
 					"dotnet",
 					"csharp",
 					"multiplatform"
+				]
+			},
+			{
+				"id": 2,
+				"title": "Final Project in Sanbercode Bootcamp",
+				"slug": "android-kotlin-sanbercode",
+				"imagesDir": "/img/portfolio/projects/com.lan.sanbercodefinalproject/",
+				"description": "Final Project Kotlin Compose application in Sanbercode Platform.",
+				"url": "https://github.com/krlan2789/Sanbercode-B48-Final-Project/releases/download/1.0/SanbercodeFinalProject_Erlan_Kurnia-1.0.apk",
+				"repo": "https://github.com/krlan2789/Sanbercode-B48-Final-Project",
+				"features": [],
+				"technologies": [
+					"Kotlin",
+					"Jetpack Compose",
+					"REST API Client"
+				],
+				"tags": [
+					"android",
+					"kotlin",
+					"compose",
+					"restapi"
 				]
 			},
 			{
