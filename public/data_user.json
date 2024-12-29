@@ -313,8 +313,8 @@
 					"unity",
 					"csharp",
 					"android",
-					"restapi",
-					"backgroundservice",
+					"rest-api",
+					"background-service",
 					"location",
 					"gps",
 					"admob",
@@ -340,7 +340,7 @@
 					"csharp",
 					"android",
 					"ios",
-					"restapi"
+					"rest-api"
 				]
 			},
 			{
@@ -363,8 +363,75 @@
 					"csharp",
 					"android",
 					"ios",
-					"restapi",
+					"rest-api",
 					"firebase"
+				]
+			},
+			{
+				"id": 8,
+				"title": "CLC Report App",
+				"slug": "clc-report-app",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcreport/",
+				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
+				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"WebView",
+					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"rest-api",
+					"webview"
+				]
+			},
+			{
+				"id": 16,
+				"title": "Land Property - Mobile App",
+				"slug": "land-property",
+				"imagesDir": "/img/portfolio/projects/com.lan.destate/",
+				"description": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
+				"url": "https://github.com/krlan2789/Land-Property-App/releases/download/1.0.0/com.lan.destate-Signed.apk",
+				"repo": "https://github.com/krlan2789/Land-Property-App",
+				"features": [],
+				"technologies": [
+					".NET MAUI",
+					"C#"
+				],
+				"tags": [
+					"dotnet",
+					"csharp",
+					"multi-platform"
+				]
+			},
+			{
+				"id": 17,
+				"title": "Land Property - REST API",
+				"slug": "land-property-api",
+				"imagesDir": "/img/portfolio/projects/landestate.api/",
+				"description": "A project built using ASP.NET Core and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The REST API allows users to browse and manage property listings.",
+				"url": "https://land-property.apidocumentation.com/reference",
+				"repo": "https://github.com/krlan2789/Land-Property-Server",
+				"features": [],
+				"technologies": [
+					"ASP.NET Core",
+					"C#",
+					"Entity Framework Core",
+					"Microsoft SQL Server"
+				],
+				"tags": [
+					"dotnet",
+					"asp-net",
+					"csharp",
+					"sql-server",
+					"entity-framework-core",
+					"rest-api"
 				]
 			},
 			{
@@ -389,55 +456,12 @@
 					"csharp",
 					"android",
 					"ios",
-					"restapi",
-					"backgroundservice",
+					"rest-api",
+					"background-service",
 					"location",
 					"gps",
 					"admob",
 					"firebase"
-				]
-			},
-			{
-				"id": 8,
-				"title": "CLC Report App",
-				"slug": "clc-report-app",
-				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcreport/",
-				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
-				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"WebView",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"restapi",
-					"webview"
-				]
-			},
-			{
-				"id": 16,
-				"title": "Land Estate",
-				"slug": "land-property",
-				"imagesDir": "/img/portfolio/projects/com.lan.destate/",
-				"description": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
-				"url": "https://github.com/krlan2789/Land-Property-App/releases/download/1.0.0/com.lan.destate-Signed.apk",
-				"repo": "https://github.com/krlan2789/Land-Property-App",
-				"features": [],
-				"technologies": [
-					".NET",
-					"C#"
-				],
-				"tags": [
-					"dotnet",
-					"csharp",
-					"multiplatform"
 				]
 			},
 			{
@@ -458,7 +482,7 @@
 					"android",
 					"kotlin",
 					"compose",
-					"restapi"
+					"rest-api"
 				]
 			},
 			{
@@ -520,7 +544,7 @@
 				"tags": [
 					"unity",
 					"csharp",
-					"backgroundservice",
+					"background-service",
 					"location",
 					"gps"
 				]
@@ -637,7 +661,7 @@
 					"unity",
 					"csharp",
 					"android",
-					"backgroundservice",
+					"background-service",
 					"location",
 					"gps"
 				]
@@ -658,7 +682,7 @@
 				"tags": [
 					"unity",
 					"csharp",
-					"multiplatform",
+					"multi-platform",
 					"clustering",
 					"k-means"
 				]
@@ -851,7 +875,7 @@
 					"plugin",
 					"gps",
 					"location",
-					"backgroundservice"
+					"background-service"
 				],
 				"source": {
 					"url": "https://github.com/krlan2789/Unity-Background-Location",
