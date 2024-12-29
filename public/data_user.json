@@ -576,7 +576,7 @@
 				"title": "Xendit Payment API for Perumahan RT",
 				"slug": "perumahan-rt-xendit-api",
 				"imagesDir": "",
-				"description": "Implemented Xendit APIs for e-Wallet (OVO, DANA), Virtual Account, Disbursement, using Express.jsand PostgreSQL for backend management.",
+				"description": "Implemented Xendit APIs for e-Wallet (OVO, DANA), Virtual Account, Disbursement, using Express.js and PostgreSQL for backend management.",
 				"url": "",
 				"repo": "",
 				"features": [],
