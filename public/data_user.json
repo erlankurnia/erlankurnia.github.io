@@ -368,30 +368,6 @@
 				]
 			},
 			{
-				"id": 8,
-				"title": "CLC Report App",
-				"slug": "clc-report-app",
-				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcreport/",
-				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
-				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#",
-					"WebView",
-					"REST API Client"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"rest-api",
-					"webview"
-				]
-			},
-			{
 				"id": 16,
 				"title": "Land Property - Mobile App",
 				"slug": "land-property",
@@ -432,6 +408,30 @@
 					"sql-server",
 					"entity-framework-core",
 					"rest-api"
+				]
+			},
+			{
+				"id": 8,
+				"title": "CLC Report App",
+				"slug": "clc-report-app",
+				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcreport/",
+				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
+				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"WebView",
+					"REST API Client"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"rest-api",
+					"webview"
 				]
 			},
 			{
