@@ -41,12 +41,12 @@ export function useDateTime() {
 		let yearsStr = "";
 		let monthsStr = "";
 
-		if (years > 1) yearsStr = years + " yrs";
-		else if (years == 1) yearsStr = years + " yr";
+		if (years > 1) yearsStr = years + " years";
+		else if (years == 1) yearsStr = years + " year";
 		else yearsStr = "";
 
-		if (months > 1) monthsStr = months + " mos";
-		else if (months == 1) monthsStr = months + " mo";
+		if (months > 1) monthsStr = months + " months";
+		else if (months == 1) monthsStr = months + " month";
 		else monthsStr = "";
 
 		return `${yearsStr} ${monthsStr}`.trim();

@@ -1,16 +1,18 @@
-# **Unity Developer at Anak Pintar Studio**
+# **<span class="text-primary dark:text-primaryDark">Unity Developer</span> at Anak Pintar Studio**
 
 ## **Summary**
 
-> Here, working as Unity Developer at Anak Pintar Studio since early 2021.
+Working as **Unity Developer** at Anak Pintar Studio since early 2021, and experienced with a proven track record in:
 
-## **What I've Done**
+<br>
 
-- Maintain mobile apps for learning management system
-- Create a housing management mobile app
-- Modify some Virtual Reality or Augmented Reality apps (change the SDK, e.g: from Vuforia to Maxst/AR Foundation)
-- Help Web Programmer to creating API for housing management mobile app
-- Create an API that consumes the payment gateway service API for housing management mobile app
-- Program a microcontroller device to open the housing gate using RFID/NFC tag
-- Help configure company Server
-- Create a sales activity tracker (Android app)
+- Remake and maintain mobile apps for a learning management system. 
+- Integrating housing management mobile app with the payment gateway (**Xendit**, **Midtrans**, **IAK**) service API.
+- Collaborating with the Web Programmer to create the API for the housing management mobile app.
+- Developing a sales activity tracker (**Location Tracker**) Android app.
+- Modifying Virtual Reality or Augmented Reality apps, including transitioning from **Vuforia** to **Maxst** / **AR Foundation** SDK.
+- Creating a housing management mobile app.
+
+<br>
+
+My versatility is further showcased by programming a **microcontroller (ESP32)** device to open a housing gate system and configuring the company **Server** to enhance operational success.

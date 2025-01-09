@@ -229,6 +229,13 @@
 				},
 				{
 					"name": "dotnet",
+					"title": "ASP.NET",
+					"year": 2023,
+					"level": "NOVICE",
+					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet"
+				},
+				{
+					"name": "dotnet",
 					"title": ".NET MAUI",
 					"year": 2024,
 					"level": "BASIC",
@@ -240,12 +247,6 @@
 					"year": 2022,
 					"level": "NOVICE",
 					"urlInfo": "https://laravel.com/"
-				},
-				{
-					"name": "kotlin",
-					"title": "Kotlin",
-					"year": 2023,
-					"level": "NOVICE"
 				},
 				{
 					"name": "docker",
