@@ -487,6 +487,28 @@
 				]
 			},
 			{
+				"id": 16,
+				"title": "Global Game Jam 2025 by GADAS - Rising Bubble",
+				"slug": "ggj2025-risings-bubble",
+				"imagesDir": "/img/portfolio/projects/com.ggj2025.risingbubble/",
+				"description": "Team 19's Project. Protects the bubble from various obstacles.",
+				"url": "https://krlan2789.itch.io/rising-bubble",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#"
+				],
+				"tags": [
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"windows",
+					"mac"
+				]
+			},
+			{
 				"id": 5,
 				"title": "Event Invitation",
 				"slug": "event-invitation",
