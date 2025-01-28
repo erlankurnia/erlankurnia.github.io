@@ -1,6 +1,7 @@
 <template>
     <component is=""></component>
-    <RouterLink :to="'' + url"
+    <!-- <RouterLink :to="'' + url" -->
+    <a :href="urlDemo" target="_blank"
         class="grid grid-rows-[auto,auto,auto,auto,52px] grid-cols-1 w-auto h-auto p-3 transition duration-200 scale-100 rounded-lg group hover:shadow-lg hover:lan-glass-effect hover:scale-105"
         :class="{
             'bg-tertiary dark:bg-tertiaryDark': !(reverseTheme ?? false),
@@ -55,7 +56,8 @@
             class="flex items-center justify-center row-start-4 px-2 pt-3 pb-1 text-[11px] text-center font-normal text-secondary/50 dark:text-secondaryDark/50">
             Live and Repository are not available
         </div> -->
-    </RouterLink>
+    </a>
+    <!-- </RouterLink> -->
 </template>
 
 <script setup lang="ts">
