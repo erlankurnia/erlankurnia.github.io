@@ -79,7 +79,12 @@
 				"status": "Full-time",
 				"dateFrom": "2019-03-01",
 				"dateTo": "2021-02-07",
-				"desc": "Rokupang Surabaya, Indonesia"
+				"desc": "Rokupang Surabaya, Indonesia",
+				"source": {
+					"url": "/history/rokupang_kitchenstaff.md",
+					"type": "local",
+					"images": []
+				}
 			},
 			{
 				"id": 3,
@@ -87,7 +92,12 @@
 				"status": "Full-time",
 				"dateFrom": "2017-02-20",
 				"dateTo": "2018-10-26",
-				"desc": "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia"
+				"desc": "CV. Karya Mandiri Sejahtera, Surabaya, Indonesia",
+				"source": {
+					"url": "/history/karyamandirisejahtera_taxadmin.md",
+					"type": "local",
+					"images": []
+				}
 			},
 			{
 				"id": 2,
@@ -95,7 +105,12 @@
 				"status": "Contract",
 				"dateFrom": "2015-11-16",
 				"dateTo": "2016-05-15",
-				"desc": "PT. Alfa Retail Indonesia, Surabaya, Indonesia"
+				"desc": "PT. Alfa Retail Indonesia, Surabaya, Indonesia",
+				"source": {
+					"url": "/history/alfaretailindonesia_associatetvs.md",
+					"type": "local",
+					"images": []
+				}
 			},
 			{
 				"id": 1,
@@ -103,7 +118,12 @@
 				"status": "Internship",
 				"dateFrom": "2015-04-20",
 				"dateTo": "2015-07-30",
-				"desc": "Maulidan Games, Surabaya, Indonesia"
+				"desc": "Maulidan Games, Surabaya, Indonesia",
+				"source": {
+					"url": "/history/maulidangames_flashanimator.md",
+					"type": "local",
+					"images": []
+				}
 			},
 			{
 				"id": 0,

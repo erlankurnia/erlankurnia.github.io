@@ -134,7 +134,7 @@ type ContextMenuType = InstanceType<typeof ContextMenuComponent>;
 const optionComponent = ref<ContextMenuType | null>(null);
 const showOptions = (event: MouseEvent | null, skill: ISkillInfo | null) => {
 	if (event != null && skill != null) {
-		console.log(skill.name);
+		// console.log(skill.name);
 		selectedSkill.value = skill;
 		optionComponent.value?.show({
 			x: event.clientX,

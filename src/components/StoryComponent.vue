@@ -10,55 +10,17 @@
 			</div>
 
 			<!-- Timeline -->
-			<Timeline2Component :experiences="data.history.timeline" @more-info-click="showModal">
+			<Timeline2Component :experiences="data.history.timeline">
 			</Timeline2Component>
 			<!-- Timeline -->
 		</div>
 	</section>
-
-	<ModalComponent @close="closeModal" ref="modalComponent">
-		<template #body v-if="dataReadme">
-			<MarkdownComponent v-if="dataReadme" :content-markdown="dataReadme" class="mb-8 md:p-4"></MarkdownComponent>
-		</template>
-	</ModalComponent>
 </template>
 
 <script setup lang="ts">
-import { inject, ref, useTemplateRef } from "vue";
-import tools from "../helper/tools";
+import { inject } from "vue";
 import Timeline2Component from "./Timeline2Component.vue";
-import ModalComponent from './ModalComponent.vue';
-import MarkdownComponent from "./MarkdownComponent.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
-type ModalType = InstanceType<typeof ModalComponent>;
-const modalComponent = useTemplateRef<ModalType>('modalComponent');
-
 const data = inject(DataUserSymbol);
-const dataReadme = ref('');
-
-const moreInfo = async (id: number) => {
-	let dataJobSource = null;
-
-	if (data?.value && typeof data.value.history == "object" &&
-		data.value.history.timeline != null && data.value.history.timeline.length >= id
-	) {
-		dataJobSource = data.value.history.timeline[id].source;
-	}
-
-	if (dataJobSource) {
-		dataReadme.value = await tools.getContentReadme(dataJobSource);
-	}
-
-	console.log(dataReadme.value);
-};
-
-const showModal = async (id: number) => {
-	await moreInfo(id);
-	modalComponent.value?.onVisibleChange(true);
-};
-
-const closeModal = () => {
-	modalComponent.value?.onVisibleChange(false);
-};
 </script>

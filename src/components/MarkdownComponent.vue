@@ -25,6 +25,7 @@ import hljsXml from 'highlight.js/lib/languages/xml';
 import MarkdownIt from "markdown-it";
 import type { Token } from "markdown-it/index.js";
 import type ISourceContent from "@/helper/interfaces/ISourceContent";
+import type IPropsMarkdownComponent from "@/helper/interfaces/IPropsMarkdownComponent";
 
 hljs.registerLanguage('apache', hljsApache);
 hljs.registerLanguage('bash', hljsBash);
@@ -45,7 +46,7 @@ const mdit = new MarkdownIt({
 });
 const { toClipboard } = useClipboard();
 
-const props = defineProps<{ sourceMarkdown?: ISourceContent, contentMarkdown: string }>();
+const props = defineProps<IPropsMarkdownComponent>();
 const generatedContent: Ref<string | null> = ref(null);
 
 const originalCopyLabel = ' Copy ';

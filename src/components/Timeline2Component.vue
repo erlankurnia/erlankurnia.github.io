@@ -86,7 +86,7 @@
 						</p>
 						<div v-if="typeof history.source == 'object'" class="w-full h-auto">
 							<button class="w-full px-4 py-1 text-sm text-center rounded-full lan-text-primary"
-								@click="emit('moreInfoClick', index)">
+								@click="onMoreInfo(index)">
 								More Info
 							</button>
 						</div>
@@ -99,18 +99,27 @@
 </template>
 
 <script setup lang="ts">
+import EventBus, { EventBusEnum } from "@/helper/EventBus";
 import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
 import { useDateTime } from "@/helper/mixins/DateTime";
+import tools from "@/helper/tools";
+import MarkdownComponent from "./MarkdownComponent.vue";
+import type { TDynamicModalComponent } from "@/helper/interfaces/TDynamicModalComponent";
 
 const { monthsToYears, monthDiff, dateFormat } = useDateTime();
-defineProps<{ experiences: IWorkExperience[] }>();
-const emit = defineEmits<{
-	(e: 'moreInfoClick', id: number): void
-}>();
+const { experiences } = defineProps<{ experiences: IWorkExperience[] }>();
 
-function onMoreInfo(index: number) {
-	emit('moreInfoClick', index);
+async function onMoreInfo(index: number) {
 	console.log('more info: ' + index);
+	const dataSource = experiences[index].source;
+	if (dataSource) {
+		const dataMarkdown = await tools.getContentReadme(dataSource);
+		const componentData: TDynamicModalComponent = {
+			component: MarkdownComponent,
+			props: { contentMarkdown: dataMarkdown }
+		};
+		EventBus.$emit(EventBusEnum.ShowModal, componentData);
+	}
 }
 
 // function replaceSpaceWithUnderscore(text: string): string {

@@ -4,7 +4,7 @@
             class="fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-end md:items-center justify-center bg-dark dark:bg-light bg-opacity-30 dark:bg-opacity-30 -m-64 p-64"
             @click="onCloseModal($event)">
             <div
-                class="flex flex-col shadow-md bg-tertiary dark:bg-tertiaryDark max-h-screen md:max-w-[92%] md:max-h-[80%] xl:max-w-3xl rounded-t-xl md:rounded-b-xl">
+                class="flex flex-col shadow-md bg-tertiary dark:bg-tertiaryDark min-w-32 w-full sm:w-auto max-h-screen md:max-w-[92%] md:max-h-[92%] xl:max-w-5xl rounded-t-xl md:rounded-b-xl">
                 <!-- Modal Header -->
                 <section
                     class="relative z-10 flex flex-col items-center justify-center w-full h-auto px-6 py-4 text-center min-h-16 text-dark dark:text-light">
