@@ -11,6 +11,9 @@
                 <img v-for="(validImage, index) in validImages" :key="index" :src="validImage" :alt="project.title"
                     class="w-auto h-full" />
             </template>
+            <template v-else>
+                <img :src="project.imagesDir + 'sample@0,5x.webp'" :alt="project.title" class="w-auto h-full md:pb-2" />
+            </template>
         </div>
 
         <p class="pt-4 text-sm leading-tight text-left lan-section-desc lg:text-base" v-html="project.description">

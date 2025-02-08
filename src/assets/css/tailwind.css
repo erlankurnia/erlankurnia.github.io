@@ -160,10 +160,16 @@
 	/* transition-delay: 1000ms; */
 }
 .show-up-leave-active {
-	transition: all 0.15s ease-out;
+	transition: all 0.075s ease-out;
 }
 .show-up-enter-from {
-	@apply opacity-0 scale-x-100 scale-y-90;
+	@apply opacity-75 scale-x-100 scale-y-90;
+}
+.show-up-enter-to {
+	@apply opacity-100;
+}
+.show-up-leave-from {
+	@apply opacity-25;
 }
 .show-up-leave-to {
 	@apply opacity-0 scale-x-100 scale-y-75;
