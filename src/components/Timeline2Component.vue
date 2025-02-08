@@ -39,18 +39,27 @@
 								'h-full': index != 0,
 							}"></div>
 						</div>
-						<div class="absolute w-6 h-6 -mt-3 rounded-full shadow top-1/2" :class="{
-							'bg-quaternary dark:bg-quaternaryDark': index != 0,
-							'bg-primary dark:bg-primaryDark': index == 0,
+						<div class="absolute size-8 -mt-3 -translate-x-1 rounded-full shadow top-1/2" :class="{
+							'bg-quaternary dark:bg-quaternaryDark p-[6px]': index != 0,
+							'bg-primary dark:bg-primaryDark p-1': index == 0,
 							'translate-y-6': index == 0,
 							'-translate-y-6': index == experiences.length - 1,
 						}">
 							<div v-if="index == 0"
 								class="flex items-center justify-center w-full h-full bg-transparent">
 								<div
-									class="w-4 h-4 m-auto rounded-full bg-quaternary dark:bg-quaternaryDark animate-pulse">
+									class="size-full m-auto rounded-full bg-quaternary dark:bg-quaternaryDark animate-pulse">
 								</div>
 							</div>
+							<template v-else>
+								<template
+									v-if="history.status && history.status.toLocaleLowerCase().includes('graduate')">
+									<GraduateIcon class="text-primary dark:text-primaryDark"></GraduateIcon>
+								</template>
+								<template v-else>
+									<WorkIcon class="text-primary dark:text-primaryDark"></WorkIcon>
+								</template>
+							</template>
 						</div>
 					</div>
 				</div>
@@ -62,11 +71,18 @@
 						<div class="flex items-center justify-center w-6 h-full">
 							<div class="w-1 h-full pointer-events-none bg-quaternary dark:bg-quaternaryDark"></div>
 						</div>
-						<div class="absolute w-6 h-6 -mt-3 rounded-full shadow bg-quaternary dark:bg-quaternaryDark top-1/2"
+						<div class="absolute size-8 -mt-3 p-[6px] -translate-x-1 rounded-full shadow bg-quaternary dark:bg-quaternaryDark top-1/2"
 							:class="{
 								'translate-y-6': index == 0,
 								'-translate-y-6': index == experiences.length - 1,
-							}"></div>
+							}">
+							<template v-if="history.status && history.status.toLocaleLowerCase().includes('graduate')">
+								<GraduateIcon class="text-primary dark:text-primaryDark"></GraduateIcon>
+							</template>
+							<template v-else>
+								<WorkIcon class="text-primary dark:text-primaryDark"></WorkIcon>
+							</template>
+						</div>
 					</div>
 					<div class="col-start-6 col-end-10 p-4 my-8 mr-auto rounded-lg shadow-md text-secondary dark:text-secondaryDark bg-quaternary dark:bg-quaternaryDark"
 						:class="{
@@ -74,7 +90,8 @@
 							'mb-20': index == experiences.length - 1,
 						}">
 						<h3 class="px-2 mb-2 -mx-2 text-lg font-extrabold text-primary dark:text-primaryDark"
-							v-html="history.title"></h3>
+							v-html="history.title">
+						</h3>
 						<p v-if="history.status" class="mb-2 text-xs opacity-75 lg:text-sm" v-html="history.status">
 						</p>
 						<p class="mb-2 text-sm leading-tight" v-html="history.desc"></p>
@@ -101,10 +118,12 @@
 <script setup lang="ts">
 import EventBus, { EventBusEnum } from "@/helper/EventBus";
 import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
+import type { TDynamicModalComponent } from "@/helper/interfaces/TDynamicModalComponent";
 import { useDateTime } from "@/helper/mixins/DateTime";
 import tools from "@/helper/tools";
 import MarkdownComponent from "./MarkdownComponent.vue";
-import type { TDynamicModalComponent } from "@/helper/interfaces/TDynamicModalComponent";
+import GraduateIcon from "./icons/GraduateIcon.vue";
+import WorkIcon from "./icons/WorkIcon.vue";
 
 const { monthsToYears, monthDiff, dateFormat } = useDateTime();
 const { experiences } = defineProps<{ experiences: IWorkExperience[] }>();
