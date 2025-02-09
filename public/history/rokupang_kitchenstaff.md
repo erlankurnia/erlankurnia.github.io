@@ -1,7 +1,5 @@
 # **<span class="text-primary dark:text-primaryDark">Kitchen Staff</span> at Rokupang Surabaya**
 
-<br>
-
 - Food Preparation: Prepare ingredients and cook dishes.
 - Cleaning: Maintain kitchen cleanliness and hygiene.
 - Inventory Management: Check and restock supplies.

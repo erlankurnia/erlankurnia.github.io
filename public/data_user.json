@@ -8,16 +8,16 @@
 	"intro": [
 		{
 			"title": "Started by <span class=\"text-primary dark:text-primaryDark\">Eliminat</span>ing What I Didn't Like",
-			"description": "It started by choosing a department during high school, not because I liked or was interested in computers.<br>But because other departments have the impression of playing around in a place that I think is not clean."
+			"description": "It started by choosing a department during high school, not because I liked or was interested in computers.<br>But because other departments have the impression of playing around in a dirty place."
 		},
 		{
 			"title": "There is Always <span class=\"text-primary dark:text-primaryDark\">Free Time</span> in a Busy Life",
-			"description": "A lot of time is used doing work as Unity Developer, learn about Laravel, Vue.js, Tailwind CSS, and business.<br>Also weightlifting, badminton, and swimming. Playing my favorite PC games, eFootball PES 2021."
+			"description": "A lot of time is used doing work as Unity Developer, learn about new technologies, and business.<br>Also weightlifting, badminton, and sometimes playing my favorite PC game, eFootball PES 2021."
 		}
 	],
 	"contact": {
 		"title": "Have Something <span class=\"text-primary dark:text-primaryDark\">to Discuss</span> With Me",
-		"description": "To have business discussions, you can contact me via :"
+		"description": "To have a business discussion or just have a question, you can contact me via:"
 	},
 	"socialMedia": {
 		"email": "erlank2789@gmail.com",
@@ -27,7 +27,7 @@
 		"linkedin": "https://www.linkedin.com/in/krlan2789",
 		"telegram": "https://t.me/kurnia_erlan",
 		"twitter": "https://twitter.com/krlan2789",
-		"whatsapp": "https://wa.me/6282245319478"
+		"whatsapp": ""
 	},
 	"profile": {
 		"name": {
@@ -57,7 +57,7 @@
 		}
 	},
 	"history": {
-		"title": "Why Am I Still <span class=\"text-primary dark:text-primaryDark\">Here</span> ?",
+		"title": "Why Am I Still <span class=\"text-primary dark:text-primaryDark\">Here</span>?",
 		"description": "Having work experience in various fields.<br>As long as the goals can be achieved, the process can adapt to the current situation.",
 		"timeline": [
 			{
@@ -138,7 +138,7 @@
 	"ability": {
 		"tooltip": "Proficiency scale based on <a href=\"https://hr.nih.gov/working-nih/competencies/competencies-proficiency-scale\" class=\"lan-link-secondary underline\" target=\"_blank\">NIH Proficiency Scale</a>",
 		"skill": {
-			"title": "There Are Many Things That Aren't My <span class=\"text-primary dark:text-primaryDark\">Skills</span>",
+			"title": "There Are Many Things That not My <span class=\"text-primary dark:text-primaryDark\">Skills</span>",
 			"description": "Some of the skills that I can do,<br> also use it quite often in work and personal projects.",
 			"topics": [
 				{
@@ -153,13 +153,6 @@
 					"year": 2017,
 					"level": "ADVANCED",
 					"urlInfo": "https://unity.com/"
-				},
-				{
-					"name": "maxst",
-					"title": "Maxst",
-					"year": 2022,
-					"level": "NOVICE",
-					"urlInfo": "https://maxst.com/"
 				},
 				{
 					"name": "php",
@@ -215,6 +208,13 @@
 					"urlInfo": "https://expressjs.com/"
 				},
 				{
+					"name": "vue",
+					"title": "Vue.js",
+					"year": 2023,
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://vuejs.org/"
+				},
+				{
 					"name": "cpp",
 					"title": "C++",
 					"year": 2016,
@@ -237,15 +237,15 @@
 			]
 		},
 		"learn": {
-			"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technology</span>",
+			"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technologi</span>es",
 			"description": "There are many skills that I can't do, so learning has no end.<br>Some interesting technologies that I learned about.",
 			"topics": [
 				{
-					"name": "vue",
-					"title": "Vue.js",
-					"year": 2023,
+					"name": "maxst",
+					"title": "Maxst",
+					"year": 2022,
 					"level": "NOVICE",
-					"urlInfo": "https://vuejs.org/"
+					"urlInfo": "https://maxst.com/"
 				},
 				{
 					"name": "dotnet",
@@ -267,19 +267,6 @@
 					"year": 2022,
 					"level": "NOVICE",
 					"urlInfo": "https://laravel.com/"
-				},
-				{
-					"name": "docker",
-					"title": "Docker",
-					"year": 2024,
-					"level": "BASIC",
-					"urlInfo": "https://www.docker.com/"
-				},
-				{
-					"name": "python",
-					"title": "Python",
-					"year": 2020,
-					"level": "NOVICE"
 				}
 			]
 		}
@@ -294,7 +281,8 @@
 				"title": "Personal Website",
 				"slug": "personal-website",
 				"imagesDir": "/img/portfolio/projects/personal.web/",
-				"description": "A personal website that built using Vue.js and Tailwind CSS.",
+				"summary": "A personal website that built using Vue.js and Tailwind CSS.",
+				"description": "",
 				"url": "https://erlankurnia.github.io",
 				"repo": "https://github.com/erlankurnia/erlankurnia.github.io",
 				"features": [],
@@ -315,11 +303,12 @@
 				]
 			},
 			{
-				"id": 10,
+				"id": 0,
 				"title": "5T Fine Blend (Sales Tracking App)",
 				"slug": "5t-fine-blend",
 				"imagesDir": "/img/portfolio/projects/com.anakpintar.5tfineblend/",
-				"description": "A Sales Tracker mobile application developed specifically for our client, aiming to streamline and enhance their sales operations.<br>This tailored solution provides the company's sales team with comprehensive tools to monitor performance, manage client relationships, and analyze key sales metrics—all within a unified platform.",
+				"summary": "A Sales Tracker mobile application developed specifically for our client, aiming to streamline and enhance their sales operations.<br>This tailored solution provides the company's sales team with comprehensive tools to monitor performance, manage client relationships, and analyze key sales metrics—all within a unified platform.",
+				"description": "- Mobile App Developer, develop the mobile application using Unity.\n- Unity Plugin Development, assisted the Android development team in creating a plugin for real-time location tracking.\n- Real-Time Data Integration, built a WebSocket Server with Express.js for server-client communication.\n- API Integration and Collaboration, worked closely with the web development team to design and implement a comprehensive REST API.",
 				"url": "https://play.google.com/store/apps/details?id=com.AnakPintar.SalesTracker",
 				"repo": "",
 				"features": [],
@@ -334,20 +323,20 @@
 					"unity",
 					"csharp",
 					"android",
-					"rest-api",
+					"rest-client",
 					"background-service",
 					"location",
 					"gps",
-					"admob",
 					"firebase"
 				]
 			},
 			{
-				"id": 9,
+				"id": 0,
 				"title": "CLC Word Explorer",
 				"slug": "clc-world-explorer",
 				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcmeaningforkids/",
-				"description": "A series of educational and functional apps for students in Chinese Language School designed for kids, built with Unity.",
+				"summary": "An educational tool designed for young students in Chinese Language Schools. Built with Unity, the app helps children learn and understand Chinese vocabulary through interactive and engaging activities.",
+				"description": "- Developed the application using Unity, ensuring that it is both engaging and educational for young learners.\n- Implemented intuitive and interactive user interfaces that are visually appealing and easy to navigate for children based on provided designs.\n- Created educational content and activities that make learning Chinese vocabulary fun and effective.\n- Worked closely with educators to ensure the app's content aligns with the educational standards and is appropriate for the target age group.",
 				"url": "",
 				"repo": "",
 				"features": [],
@@ -361,15 +350,16 @@
 					"csharp",
 					"android",
 					"ios",
-					"rest-api"
+					"rest-client"
 				]
 			},
 			{
-				"id": 7,
+				"id": 0,
 				"title": "CLC Let's Talk (CLC Speaking App's remake)",
 				"slug": "clc-tels-talk",
 				"imagesDir": "/img/portfolio/projects/com.anakpintar.letstalk/",
-				"description": "A series of educational and functional apps (Reading, Meaning, Teacher, Speaking, Let's Talk) for students in Chinese Language School.<br>Built with Unity and Google Firebase for seamless cross-platform functionality.",
+				"summary": "Part of a series of educational and functional applications designed for students in Chinese Language Schools. This app focuses on improving speaking skills and offers a seamless cross-platform experience using Unity and Google Firebase.",
+				"description": "- Developed the application using Unity, focusing on engaging and interactive speaking exercises.\n- Implemented user-friendly interfaces to ensure a smooth and enjoyable learning experience based on provided designs.\n- Collaborated with educators to ensure the app's content aligns with the educational standards and effective for language learning.",
 				"url": "",
 				"repo": "",
 				"features": [],
@@ -384,16 +374,42 @@
 					"csharp",
 					"android",
 					"ios",
-					"rest-api",
+					"rest-client",
 					"firebase"
 				]
 			},
 			{
-				"id": 16,
-				"title": "Land Property - Mobile App",
+				"id": 0,
+				"title": "Lanvender - e-Boutique",
+				"slug": "lanvender-eboutique",
+				"imagesDir": "/img/portfolio/projects/lanvender.eboutique/",
+				"summary": "An e-commerce platform built using Laravel, TailwindCSS, and AlpineJS. This platform allows users to browse, shop, and manage products seamlessly with a modern and responsive design.",
+				"description": "- Developed the e-commerce platform using Laravel for backend logic, ensuring robust and scalable application performance.\n- Designed and implemented responsive and visually appealing user interfaces using TailwindCSS.\n- Integrated dynamic functionality with AlpineJS to enhance user interactivity and experience.\n- Continuously improved the platform to enhance features and overall performance.",
+				"url": "",
+				"repo": "https://github.com/krlan2789/lan-boutique",
+				"features": [],
+				"technologies": [
+					"Laravel 11",
+					"PHP",
+					"AlpineJS",
+					"Tailwind CSS",
+					"SQLite"
+				],
+				"tags": [
+					"laravel",
+					"php",
+					"alpinejs",
+					"tailwind",
+					"sqlite"
+				]
+			},
+			{
+				"id": 0,
+				"title": "Land Estate - Properties Platform Mobile App",
 				"slug": "land-property",
 				"imagesDir": "/img/portfolio/projects/com.lan.destate/",
-				"description": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
+				"summary": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
+				"description": "",
 				"url": "https://github.com/krlan2789/Land-Property-App/releases/download/1.0.0/com.lan.destate-Signed.apk",
 				"repo": "https://github.com/krlan2789/Land-Property-App",
 				"features": [],
@@ -408,19 +424,21 @@
 				]
 			},
 			{
-				"id": 17,
-				"title": "Land Property - REST API",
+				"id": 0,
+				"title": "Land Estate - Properties Platform API",
 				"slug": "land-property-api",
 				"imagesDir": "/img/portfolio/projects/landestate.api/",
-				"description": "A project built using ASP.NET Core and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The REST API allows users to browse and manage property listings.",
-				"url": "https://land-property.apidocumentation.com/reference",
+				"summary": "A project built using ASP.NET Core and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The REST API allows users to browse and manage property listings.",
+				"description": "",
+				"url": "https://land-estate.apidocumentation.com/reference",
 				"repo": "https://github.com/krlan2789/Land-Property-Server",
 				"features": [],
 				"technologies": [
 					"ASP.NET Core",
 					"C#",
 					"Entity Framework Core",
-					"Microsoft SQL Server"
+					"Microsoft SQL Server",
+					"REST API"
 				],
 				"tags": [
 					"dotnet",
@@ -432,11 +450,38 @@
 				]
 			},
 			{
-				"id": 8,
+				"id": 0,
+				"title": "LanGeng - Social Media API",
+				"slug": "lan-socialmedia-api",
+				"imagesDir": "/img/portfolio/projects/langeng.socialmedia.api/",
+				"summary": "A REST API project designed to manage social media functionalities. It allows users to perform actions such as registering accounts, logging in, posting messages, and viewing messages from other users.",
+				"description": "- Designed and implemented API endpoints for user registration, authentication, posting messages, and viewing messages.\n- Handled data retrieval and storage using appropriate database solutions.\n- Ensured API security and performance through best practices and optimization techniques.",
+				"url": "https://langeng.apidocumentation.com/reference",
+				"repo": "https://github.com/krlan2789/Lan-SocialMedia-API",
+				"features": [],
+				"technologies": [
+					"ASP.NET Core",
+					"C#",
+					"Entity Framework Core",
+					"Microsoft SQL Server",
+					"REST API"
+				],
+				"tags": [
+					"dotnet",
+					"asp-net",
+					"csharp",
+					"sql-server",
+					"entity-framework-core",
+					"rest-api"
+				]
+			},
+			{
+				"id": 0,
 				"title": "CLC Report App",
 				"slug": "clc-report-app",
 				"imagesDir": "/img/portfolio/projects/com.anakpintar.clcreport/",
-				"description": "A series of educational and functional apps for parent in Chinese Language School, built with Unity and WebView.",
+				"summary": "A series of educational and functional applications designed to assist parents in Chinese Language Schools. These apps are built using Unity and WebView to provide a seamless and engaging user experience.",
+				"description": "- Developed the mobile application using Unity, ensuring smooth performance and user interaction.\n- Designed and implemented a user-friendly interface in Unity based on provided designs, enhancing usability and visual appeal.\n- Collaborated closely with the web development team to design and implement a comprehensive REST API, enabling seamless data integration and communication between the mobile app and web services.",
 				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.clcreport",
 				"repo": "",
 				"features": [],
@@ -451,16 +496,17 @@
 					"csharp",
 					"android",
 					"ios",
-					"rest-api",
+					"rest-client",
 					"webview"
 				]
 			},
 			{
-				"id": 6,
+				"id": 0,
 				"title": "Perumahan RT",
 				"slug": "perumahan-rt",
 				"imagesDir": "/img/portfolio/projects/com.anakpintar.perumahanrt/",
-				"description": "Perumahan RT is a specialized mobile application designed to streamline the management of residential communities.<br>Unlike typical property apps that focus on marketing houses, apartments, or other property types, Perumahan RT is dedicated to managing community dues, payments, inventory, news, and vital information related to the administration of a housing complex.",
+				"summary": "A specialized mobile application designed to streamline the management of residential communities.<br>Unlike typical property apps that focus on marketing houses, apartments, or other property types, Perumahan RT is dedicated to managing community dues, payments, inventory, news, and vital information related to the administration of a housing complex.",
+				"description": "- Mobile App Developer, develop the mobile application using Unity.\n- Payment Integration, created a REST API with Express.js for payment gateway services.\n- API Integration and Collaboration, worked closely with the web development team to design and implement a comprehensive REST API.",
 				"url": "https://play.google.com/store/apps/details?id=com.anakpintar.perumahan",
 				"repo": "",
 				"features": [],
@@ -477,7 +523,7 @@
 					"csharp",
 					"android",
 					"ios",
-					"rest-api",
+					"rest-client",
 					"background-service",
 					"location",
 					"gps",
@@ -486,11 +532,12 @@
 				]
 			},
 			{
-				"id": 2,
+				"id": 0,
 				"title": "Final Project in Sanbercode Bootcamp",
 				"slug": "android-kotlin-sanbercode",
 				"imagesDir": "/img/portfolio/projects/com.lan.sanbercodefinalproject/",
-				"description": "Final Project Kotlin Compose application in Sanbercode Platform.",
+				"summaryption": "Final Project Kotlin Compose application in Sanbercode Platform.",
+				"description": "",
 				"url": "https://github.com/krlan2789/Sanbercode-B48-Final-Project/releases/download/1.0/SanbercodeFinalProject_Erlan_Kurnia-1.0.apk",
 				"repo": "https://github.com/krlan2789/Sanbercode-B48-Final-Project",
 				"features": [],
@@ -503,15 +550,16 @@
 					"android",
 					"kotlin",
 					"compose",
-					"rest-api"
+					"rest-client"
 				]
 			},
 			{
-				"id": 16,
-				"title": "Global Game Jam 2025 by GADAS - Rising Bubble",
-				"slug": "ggj2025-risings-bubble",
+				"id": 0,
+				"title": "Rising Bubble - GGJ 2025 by GADAS",
+				"slug": "ggj2025-rising-bubble",
 				"imagesDir": "/img/portfolio/projects/com.ggj2025.risingbubble/",
-				"description": "Team 19's Project. Protects the bubble from various obstacles.",
+				"summary": "Team 19's Project of Global Game Jam 2025 event held by GADAS (Game Developer Arek Suroboyo) with the theme Bubble. Protects the bubble from various obstacles.",
+				"description": "",
 				"url": "https://krlan2789.itch.io/rising-bubble",
 				"repo": "",
 				"features": [],
@@ -524,16 +572,16 @@
 					"csharp",
 					"android",
 					"ios",
-					"windows",
-					"mac"
+					"windows"
 				]
 			},
 			{
-				"id": 5,
+				"id": 0,
 				"title": "Event Invitation",
 				"slug": "event-invitation",
 				"imagesDir": "",
-				"description": "Event Invitation (Currently only Wedding Invitation) built using Laravel and Tailwind CSS, integrating PostgreSQL for data management.",
+				"summary": "Event Invitation (Currently only Wedding Invitation) project is a web application that allows users to create, send, and manage event invitations. The application includes features such as user authentication, event creation, invitation sending, and RSVP tracking.",
+				"description": "- Designed and implemented API endpoints for user authentication, event creation, invitation sending, and RSVP tracking.\n- Handled data retrieval and storage using PostgreSQL.\n- Ensured API security and performance through best practices and optimization techniques.\n- Managed the PostgreSQL database schema and ensured data integrity and performance.\n- Handled database migrations and backups to maintain data consistency.\n- Developed the user interface using Tailwind CSS for styling.\n- Implemented responsive design to ensure the application works well on various devices.",
 				"url": "",
 				"repo": "",
 				"features": [],
@@ -553,11 +601,12 @@
 				]
 			},
 			{
-				"id": 1,
+				"id": 0,
 				"title": "Final Team Project in Progate",
 				"slug": "progate-final-team-project",
 				"imagesDir": "",
-				"description": "Collaborated on a team project to master HTML5 and CSS3 in Progate Platform.",
+				"summary": "Collaborated on a team project to master HTML5 and CSS3 in Progate Platform.",
+				"description": "",
 				"url": "https://krlan2789.github.io/progate-ceb-e02",
 				"repo": "https://github.com/krlan2789/progate-ceb-e02",
 				"features": [],
@@ -571,11 +620,12 @@
 				]
 			},
 			{
-				"id": 3,
+				"id": 0,
 				"title": "Background Location",
 				"slug": "unity-background-location",
 				"imagesDir": "",
-				"description": "Developed Unity Mobile Application with a focus on background location services.",
+				"summary": "Developed Unity Mobile Application with a focus on background location services.",
+				"description": "",
 				"url": "https://github.com/krlan2789/Unity-Background-Location/releases/download/1.0.3/BackgroundLocation-1.0.3.apk",
 				"repo": "https://github.com/krlan2789/Unity-Background-Location",
 				"features": [],
@@ -593,11 +643,12 @@
 				]
 			},
 			{
-				"id": 4,
+				"id": 0,
 				"title": "WebSocket Server",
 				"slug": "websocket-server",
 				"imagesDir": "",
-				"description": "Built using Node, Express.js, and PostgreSQL. Featuring real-time updates via a WebSocket server.",
+				"summary": "Built using Node, Express.js, and PostgreSQL. Featuring real-time updates via a WebSocket server.",
+				"description": "",
 				"url": "",
 				"repo": "https://github.com/krlan2789/express-ws-app",
 				"features": [],
@@ -615,11 +666,12 @@
 				]
 			},
 			{
-				"id": 11,
+				"id": 0,
 				"title": "Xendit Payment API for Perumahan RT",
 				"slug": "perumahan-rt-xendit-api",
 				"imagesDir": "",
-				"description": "Implemented Xendit APIs for e-Wallet (OVO, DANA), Virtual Account, Disbursement, using Express.js and PostgreSQL for backend management.",
+				"summary": "Implemented Xendit APIs for e-Wallet (OVO, DANA), Virtual Account, Disbursement, using Express.js and PostgreSQL for backend management.",
+				"description": "",
 				"url": "",
 				"repo": "",
 				"features": [],
@@ -639,11 +691,12 @@
 				]
 			},
 			{
-				"id": 12,
+				"id": 0,
 				"title": "MIdtrans Payment API for Perumahan RT",
 				"slug": "perumahan-rt-midtrans-api",
 				"imagesDir": "",
-				"description": "Implemented Midtrans APIs for e-Wallet (GoPay, ShopeePay), using Express.js and PostgreSQL for backend management.",
+				"summary": "Implemented Midtrans APIs for e-Wallet (GoPay, ShopeePay), using Express.js and PostgreSQL for backend management.",
+				"description": "",
 				"url": "",
 				"repo": "",
 				"features": [],
@@ -663,11 +716,12 @@
 				]
 			},
 			{
-				"id": 13,
+				"id": 0,
 				"title": "IAK PPOB API for Perumahan RT",
 				"slug": "perumahan-rt-iak-api",
 				"imagesDir": "",
-				"description": "Integrated services for Pulsa, PDAM, and PLN payments, managed through Express.js and PostgreSQL.",
+				"summary": "Integrated services for Pulsa, PDAM, and PLN payments, managed through Express.js and PostgreSQL.",
+				"description": "",
 				"url": "",
 				"repo": "",
 				"features": [],
@@ -687,11 +741,12 @@
 				]
 			},
 			{
-				"id": 14,
+				"id": 0,
 				"title": "Live Location Unity Plugin",
 				"slug": "unity-lan-live-location",
 				"imagesDir": "",
-				"description": "A project designed to integrate live location tracking into Unity applications.<br>It leverages the ForegroundGPSTracker library for Android by SingularityIndonesia.",
+				"summary": "A project designed to integrate live location tracking into Unity applications.<br>It leverages the ForegroundGPSTracker library for Android by SingularityIndonesia.",
+				"description": "",
 				"url": "https://erlankurnia.github.io/note/3/Android%20Background%20Location%20for%20Unity",
 				"repo": "https://github.com/krlan2789/Unity-LAN-LiveLocation-Plugin",
 				"features": [],
@@ -710,11 +765,12 @@
 				]
 			},
 			{
-				"id": 15,
+				"id": 0,
 				"title": "Nearest Coordinate Search",
 				"slug": "unity-nearest-coordinate",
 				"imagesDir": "",
-				"description": "A Unity project that leverages the K-Means Clustering algorithm to efficiently search for the nearest coordinate within a coordinates list.<br>This project is particularly useful for applications requiring spatial data analysis and nearest neighbor searches.",
+				"summary": "A Unity project that leverages the K-Means Clustering algorithm to efficiently search for the nearest coordinate within a coordinates list.<br>This project is particularly useful for applications requiring spatial data analysis and nearest neighbor searches.",
+				"description": "",
 				"url": "",
 				"repo": "https://github.com/krlan2789/Unity-Nearest-Coordinate",
 				"features": [],
@@ -785,7 +841,7 @@
 			}
 		},
 		"software": {
-			"title": "Soft<span class=\"text-primary dark:text-primaryDark\">ware</span>",
+			"title": "Only Experienced Using Some Soft<span class=\"text-primary dark:text-primaryDark\">ware</span>",
 			"description": "Programs that I often use in doing my work.",
 			"equipments": {
 				"OS": [

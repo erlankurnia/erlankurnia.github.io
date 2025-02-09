@@ -12,7 +12,7 @@ Working as **Unity Developer** at Anak Pintar Studio since early 2021, and exper
 - Integrating housing management mobile app with the payment gateway (**Xendit**, **Midtrans**, **IAK**) service API.
 - Developing a sales activity tracker (**Location Tracker**) Android app.
 - Modifying Virtual Reality or Augmented Reality apps, including transitioning from **Vuforia** to **Maxst** / **AR Foundation** SDK.
-- Handle the publishing process for mobile apps to the Google Play Store and Apple App Store, ensuring all requirements and guidelines are met.
+- Handle the publishing process for mobile apps to the **Google Play Store** and **Apple App Store**, ensuring all requirements and guidelines are met.
 
 <br>
 

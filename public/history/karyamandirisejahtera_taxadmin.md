@@ -1,7 +1,5 @@
 # **<span class="text-primary dark:text-primaryDark">Tax Administrator</span> at CV Karya Mandiri Sejahtera**
 
-<br>
-
 - Tax Document Management: Prepare and process tax documents like returns and reports.
 - Tax Calculation: Calculate taxes due for the company or individual.
 - Document Filing: File and print tax invoices and other required documents.
