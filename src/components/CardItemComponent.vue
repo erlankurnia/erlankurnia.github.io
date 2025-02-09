@@ -80,6 +80,6 @@ async function preview() {
 }
 
 const shortDesc = computed(() => {
-    return props.project.description.length > 144 ? props.project.description.substring(0, 120) + '..' : props.project.description;
+    return props.project.description.length > 144 ? props.project.summary.substring(0, 120) + '..' : props.project.summary;
 });
 </script>

@@ -14,7 +14,7 @@
 		<ToggleDarkModeComponent class="lan-floating size-12 sm:hidden"></ToggleDarkModeComponent>
 		<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
 
-		<ModalComponent @close="closeModal" ref="modalComponent">
+		<ModalComponent @close="hideModal" ref="modalComponent">
 			<template #body v-if="dynamicComponent">
 				<component :is="dynamicComponent.component" v-bind="dynamicComponent.props"></component>
 			</template>
@@ -87,17 +87,19 @@ function showModal(component: TDynamicModalComponent | null = null) {
 	modalComponent.value?.onVisibleChange(true);
 }
 
-function closeModal(): void {
+function hideModal(): void {
 	modalComponent.value?.onVisibleChange(false);
 	if (dynamicComponent) dynamicComponent.value = null;
 }
 
 onMounted(async () => {
 	EventBus.$on(EventBusEnum.ShowModal, showModal);
+	EventBus.$on(EventBusEnum.HideModal, hideModal);
 	await getDataUser();
 });
 onUnmounted(() => {
 	EventBus.$off(EventBusEnum.ShowModal, showModal);
+	EventBus.$off(EventBusEnum.HideModal, hideModal);
 });
 provide(DataUserSymbol, dataUser);
 provide(NamePartSymbol, nameParts);

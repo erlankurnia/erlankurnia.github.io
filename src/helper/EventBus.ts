@@ -1,5 +1,6 @@
 export enum EventBusEnum {
     ShowModal = "show-modal",
+    HideModal = "hide-modal",
 }
 
 export type EventBusCallback = (...args: any[]) => void;

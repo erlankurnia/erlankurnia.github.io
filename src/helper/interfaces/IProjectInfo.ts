@@ -1,6 +1,7 @@
 export default interface IProjectInfo {
     id: number;
     title: string;
+    summary: string;
     description: string;
     date: string;
     slug?: string;

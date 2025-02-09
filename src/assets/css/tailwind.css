@@ -304,7 +304,7 @@
 	
 	/* ------------ Markdown ------------ */
 	#markdown #markdown-content > * {
-		@apply w-full;
+		@apply w-full text-secondary dark:text-secondaryDark;
 	}
 	
 	#markdown #markdown-content ul > li > img,
@@ -326,13 +326,10 @@
 		@apply text-xl;
 	}
 	
-	/* #markdown code { */
 	#markdown #markdown-code-content {
 		@apply select-text;
 	}
 	
-	/* #markdown p > code,
-	#markdown li > code { */
 	#markdown p > #markdown-code-content,
 	#markdown li > #markdown-code-content {
 		@apply bg-quaternaryDark rounded-lg py-1 px-2;
@@ -355,15 +352,16 @@
 		@apply font-bold lan-link-primary;
 	}
 	
-	/* #markdown pre > code { */
 	#markdown #markdown-code-container > #markdown-code-content {
 		@apply w-full block overflow-x-auto bg-quaternaryDark rounded-lg p-4 pr-8;
-		/* @apply text-secondary dark:text-secondaryDark; */
 	}
-	
-	/* #markdown pre:has(> code) { */
+
 	#markdown #markdown-code-container:has(> #markdown-code-content) {
 		@apply mb-5 mt-2;
+	}
+	
+	#markdown #markdown-content > p:has(> strong) {
+		@apply mt-4 mb-2;
 	}
 	
 	#markdown table {
@@ -386,9 +384,5 @@
 	#markdown table td {
 		@apply py-2 px-3;
 	}
-	
-	/* #markdown pre:has(> code[class*="language"]) {
-	@apply bg-secondary rounded-lg p-4;
-	} */
 	/* ------------ Markdown ------------ */
 }
