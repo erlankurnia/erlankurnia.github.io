@@ -91,7 +91,7 @@ const props = defineProps<IPropsDetailItemComponent>();
 const validImages = ref<string[]>([]);
 
 function getImageUrl(filename: string) {
-    return `${props.project.imagesDir}/${filename}`;
+    return `${props.project.imagesDir}${filename}`;
 }
 
 async function validateImages(): Promise<void> {
