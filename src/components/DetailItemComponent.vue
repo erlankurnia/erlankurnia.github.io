@@ -95,23 +95,23 @@ function getImageUrl(filename: string) {
 }
 
 async function validateImages(): Promise<void> {
-    const imageUrls = [];
+    // const imageUrls = [];
     let imageIndex = 1;
 
     let imageUrl = getImageUrl('sample@2x.webp');
     if (await tools.verifyImageUrl(imageUrl)) {
-        imageUrls.push(imageUrl);
+        validImages.value.push(imageUrl);
         imageIndex++;
     }
 
     imageUrl = getImageUrl(`${imageIndex}.png`);
     while (await tools.verifyImageUrl(imageUrl)) {
-        imageUrls.push(imageUrl);
+        validImages.value.push(imageUrl);
         imageIndex++;
         imageUrl = getImageUrl(`${imageIndex}.png`);
     }
 
-    validImages.value = imageUrls;
+    // validImages.value = imageUrls;
 }
 
 function hideModal(): void {
