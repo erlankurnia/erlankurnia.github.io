@@ -3,7 +3,7 @@
         :class="['justify-center items-center', $attrs.class]">
         <transition name="fade-rotate" mode="out-in">
             <div
-                class="relative rounded-full shadow-sm size-full text-quaternary dark:shadow-primaryDark/50 dark:text-primaryDark bg-primary dark:bg-quaternaryDark">
+                class="relative rounded-full shadow-xs size-full text-quaternary dark:shadow-primaryDark/50 dark:text-primaryDark bg-primary dark:bg-quaternaryDark">
                 <transition name="fade-rotate" mode="out-in">
                     <!-- Moon -->
                     <div v-if="!themeMode" key="moon"

@@ -1,7 +1,7 @@
 import { onMounted } from 'vue';
 <template>
 	<template v-if="isLoading">
-		<main id="loading-fullpage-component" class="fixed top-0 bottom-0 left-0 right-0 z-[1000]">
+		<main id="loading-fullpage-component" class="fixed top-0 bottom-0 left-0 right-0 z-1000">
 			<div class="flex items-center justify-center w-full h-full bg-primary">
 			</div>
 		</main>

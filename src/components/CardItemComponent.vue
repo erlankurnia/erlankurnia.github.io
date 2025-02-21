@@ -1,12 +1,12 @@
 <template>
     <!-- <RouterLink :to="'' + url" -->
     <button @click="preview()"
-        class="grid grid-rows-[auto,auto,auto,auto,52px] grid-cols-1 w-auto h-auto p-3 transition duration-200 scale-100 rounded-lg group hover:shadow-lg hover:lan-glass-effect hover:scale-105"
+        class="grid grid-rows-[auto_auto_auto_auto_52px] grid-cols-1 w-auto h-auto p-3 transition duration-200 scale-100 rounded-lg group hover:shadow-lg hover:lan-glass-effect hover:scale-105"
         :class="{
             'bg-tertiary dark:bg-tertiaryDark': !(reverseTheme ?? false),
             'bg-quaternary dark:bg-quaternaryDark': (reverseTheme ?? false),
         }">
-        <div class="overflow-hidden rounded-md aspect-[16/9]" :class="{ 'shadow-inner': project.imagesDir, }">
+        <div class="overflow-hidden rounded-md aspect-16/9" :class="{ 'shadow-inner': project.imagesDir, }">
             <template v-if="project.imagesDir">
                 <img :src="project.imagesDir + 'sample@0,5x.webp'" :alt="project.title"
                     class="transition-transform duration-500 scale-100 group-hover:scale-110"
@@ -31,7 +31,7 @@
 
         <div class="grid w-full h-auto grid-cols-2 gap-2 pt-4">
             <a v-if="project.url" :href="project.url" @click.stop target="_blank"
-                class="flex flex-row items-center justify-center flex-grow gap-2 py-1 lan-button-secondary">
+                class="flex flex-row items-center justify-center grow gap-2 py-1 lan-button-secondary">
                 View
                 <NewTabIcon class="w-auto h-4"></NewTabIcon>
             </a>
@@ -41,7 +41,7 @@
             </div>
 
             <a v-if="project.repo" :href="project.repo" @click.stop target="_blank"
-                class="flex flex-row items-center justify-center flex-grow gap-2 py-1 lan-button-secondary group/github">
+                class="flex flex-row items-center justify-center grow gap-2 py-1 lan-button-secondary group/github">
                 Repo
                 <Icon techName="Github"
                     class="transition size-4 dark:duration-1000 dark:group-hover/github:duration-300 text-primary group-hover/github:text-tertiary dark:text-primaryDark dark:group-hover/github:text-tertiaryDark">

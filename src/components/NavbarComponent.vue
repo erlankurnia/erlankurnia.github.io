@@ -1,5 +1,5 @@
 <template>
-	<header id="navbar-menu" class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent select-none">
+	<header id="navbar-menu" class="fixed top-0 left-0 z-100 flex items-center w-full bg-transparent select-none">
 		<div class="container px-4">
 			<nav class="flex items-center justify-between">
 				<div class="px-2 sm:px-4">
@@ -32,7 +32,7 @@
 						</p>
 					</RouterLink>
 				</div>
-				<div id="nav-menu-area" class="relative h-20 w-full z-[9999]">
+				<div id="nav-menu-area" class="relative h-20 w-full z-9999">
 					<!-- Navbar Menu -->
 					<nav id="nav-menu"
 						class="absolute right-0 w-auto h-auto py-1 pl-2 -ml-16 transition duration-300 ease-in-out delay-100 origin-top-right 2xs:pr-2 top-4 max-2xs:pr-12 bg-tertiary dark:bg-tertiaryDark rounded-3xl"

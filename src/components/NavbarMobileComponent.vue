@@ -1,9 +1,9 @@
 <template>
-    <header id="navbar-menu"
-        class="fixed bottom-0 left-0 right-0 z-[8888] flex items-center w-full h-auto bg-transparent select-none">
-        <div id="nav-menu-area" class="h-auto p-4 w-full z-[9999]">
+    <header id="navbar-menu-mobile"
+        class="fixed bottom-0 left-0 right-0 z-8888 flex items-center w-full h-auto bg-transparent select-none">
+        <div id="nav-menu-area" class="h-auto p-4 w-full z-9999">
             <nav id="nav-menu"
-                class="rounded-full shadow-sm bg-quaternary shadow-primary/50 dark:shadow-primaryDark/50 dark:bg-quaternaryDark">
+                class="rounded-full shadow-xs bg-quaternary shadow-primary/50 dark:shadow-primaryDark/50 dark:bg-quaternaryDark">
                 <ul class="flex flex-wrap w-full py-2 justify-evenly">
                     <li class="group">
                         <RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
@@ -61,7 +61,7 @@
 
 //#region On scrolling event to create sticky navbar
 const onScroll = () => {
-    const header = document.querySelector("#navbar-menu") as HTMLElement;
+    const header = document.querySelector("#navbar-menu-mobile") as HTMLElement;
     const fixedNav = header?.offsetTop ?? 0;
     const backToTop = document.querySelector("#back-to-top") as HTMLElement;
     if (window.scrollY > fixedNav) {

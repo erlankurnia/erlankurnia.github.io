@@ -39,7 +39,7 @@
 								'h-full': index != 0,
 							}"></div>
 						</div>
-						<div class="absolute size-8 -mt-3 -translate-x-1 rounded-full shadow top-1/2" :class="{
+						<div class="absolute size-8 -mt-3 -translate-x-1 rounded-full shadow-sm top-1/2" :class="{
 							'bg-quaternary dark:bg-quaternaryDark p-[6px]': index != 0,
 							'bg-primary dark:bg-primaryDark p-1': index == 0,
 							'translate-y-6': index == 0,
@@ -71,7 +71,7 @@
 						<div class="flex items-center justify-center w-6 h-full">
 							<div class="w-1 h-full pointer-events-none bg-quaternary dark:bg-quaternaryDark"></div>
 						</div>
-						<div class="absolute size-8 -mt-3 p-[6px] -translate-x-1 rounded-full shadow bg-quaternary dark:bg-quaternaryDark top-1/2"
+						<div class="absolute size-8 -mt-3 p-[6px] -translate-x-1 rounded-full shadow-sm bg-quaternary dark:bg-quaternaryDark top-1/2"
 							:class="{
 								'translate-y-6': index == 0,
 								'-translate-y-6': index == experiences.length - 1,

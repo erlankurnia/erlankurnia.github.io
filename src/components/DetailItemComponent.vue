@@ -1,6 +1,6 @@
 <template>
     <div
-        class="grid grid-rows-[auto,auto,auto,auto,auto,auto] grid-cols-1 gap-x-4 gap-y-2 w-auto h-auto p-3 transition duration-200 group bg-transparent">
+        class="grid grid-rows-[auto_auto_auto_auto_auto_auto] grid-cols-1 gap-x-4 gap-y-2 w-auto h-auto p-3 transition duration-200 group bg-transparent">
         <div
             class="text-4xl font-semibold text-center lg:col-span-2 lg:row-span-1 text-dark dark:text-light pb-2 border-b border-secondary/50 dark:border-secondaryDark/50">
             <h3 class="mb-3" :class="{ 'mt-5': project.imagesDir }" v-html="project.title"></h3>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="pt-4 lg:col-span-2 text-sm leading-tight text-left lan-section-desc lg:text-base">
-            <div class="overflow-x-auto overflow-y-hidden flex flex-row lg:w-1/2 gap-2 rounded-md w-full lg:object-cover lg:float-left lg:mr-6 aspect-[16/9] bg-quaternary dark:bg-quaternaryDark"
+            <div class="overflow-x-auto overflow-y-hidden flex flex-row lg:w-1/2 gap-2 rounded-md w-full lg:object-cover lg:float-left lg:mr-6 aspect-16/9 bg-quaternary dark:bg-quaternaryDark"
                 :class="{ 'shadow-inner': project.imagesDir, }">
                 <template v-if="validImages && validImages.length > 0">
                     <img v-for="(validImage, index) in validImages" :key="index" :src="validImage" :alt="project.title"

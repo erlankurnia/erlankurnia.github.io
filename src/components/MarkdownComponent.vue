@@ -72,8 +72,8 @@ onMounted(() => {
 				elButton.innerHTML = originalCopyLabel;
 				elButton.classList.add(
 					'copy-btn', 'absolute', 'top-2', 'right-[7px]', 'h-6', 'w-auto', 'text-sm', 'font-semibold', 'px-1',
-					'rounded-md', 'cursor-pointer', 'text-primary', 'bg-tertiary', 'hover:bg-primary', 'hover:font-bold',
-					'dark:text-primaryDark', 'dark:bg-tertiaryDark', 'dark:hover:bg-primaryDark', //'dark:hover:font-bold'
+					'rounded-md', 'cursor-pointer', 'text-primary', 'bg-tertiary', 'hover:text-tertiary', 'hover:bg-primary', 'hover:font-bold',
+					'dark:text-primaryDark', 'dark:bg-tertiaryDark', 'dark:hover:text-tertiaryDark', 'dark:hover:bg-primaryDark'
 				);
 
 				const elLabel = document.createElement("span");
@@ -87,7 +87,7 @@ onMounted(() => {
 				const elCode = document.createElement("pre");
 				elCode.appendChild(elLabel);
 				elCode.appendChild(elContent);
-				elCode.classList.add('!pt-8');
+				elCode.classList.add('pt-8!');
 				elCode.id = "markdown-code-content";
 
 				const elContainer = document.createElement("span");

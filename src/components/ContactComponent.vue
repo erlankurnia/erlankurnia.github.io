@@ -75,15 +75,15 @@
 
 	<ModalComponent @close="closeModal" ref="modalComponent">
 		<template #body>
-			<div class="flex items-center justify-center flex-grow text-dark dark:text-light min-w-96 min-h-24">
-				<p class="flex items-center justify-center flex-grow w-full h-full" v-html="modalMessage"></p>
+			<div class="flex items-center justify-center grow text-dark dark:text-light min-w-96 min-h-24">
+				<p class="flex items-center justify-center grow w-full h-full" v-html="modalMessage"></p>
 			</div>
 		</template>
 	</ModalComponent>
 
 	<transition appear>
 		<div v-if="showLoading"
-			class="fixed z-[9998] top-0 bottom-0 left-0 right-0 bg-dark bg-opacity-20 flex justify-center items-center">
+			class="fixed z-9998 top-0 bottom-0 left-0 right-0 bg-dark/20 flex justify-center items-center">
 			<LoadingComponent></LoadingComponent>
 		</div>
 	</transition>
