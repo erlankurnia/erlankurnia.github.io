@@ -1,7 +1,7 @@
 <template>
     <!-- <RouterLink :to="'' + url" -->
     <button @click="preview()"
-        class="grid grid-rows-[auto_auto_auto_auto_52px] grid-cols-1 w-auto h-auto p-3 transition duration-200 scale-100 rounded-lg group hover:shadow-lg hover:lan-glass-effect hover:scale-105"
+        class="grid grid-rows-[auto_auto_auto_auto_52px] grid-cols-1 w-auto h-auto p-3 transition duration-200 scale-100 rounded-lg group hover:shadow-lg hover:scale-105"
         :class="{
             'bg-tertiary dark:bg-tertiaryDark': !(reverseTheme ?? false),
             'bg-quaternary dark:bg-quaternaryDark': (reverseTheme ?? false),
