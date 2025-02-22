@@ -2,13 +2,13 @@
 	<section v-if="data && data.equipment" id="equipment" class="pt-24 pb-16">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
-				<h4 class="mb-3 lan-section-title">EQUIPMENTS</h4>
+				<h2 class="mb-3 lan-section-title">EQUIPMENTS</h2>
 			</div>
 
 			<!-- Hardware -->
 			<!-- <div class="flex flex-wrap" v-if="data.equipment.hardware">
 				<div class="w-full text-center">
-					<h2 class="lan-section-subtitle" v-html="data.equipment.hardware.title"></h2>
+					<h3 class="lan-section-subtitle" v-html="data.equipment.hardware.title"></h3>
 					<p class="lan-section-desc" v-html="data.equipment.hardware.description"></p>
 				</div>
 				<div class="w-full px-4 lg:w-1/3">
@@ -47,7 +47,7 @@
 			<!-- Software -->
 			<div class="flex flex-wrap" v-if="data.equipment.software">
 				<div class="w-full text-center">
-					<h2 class="lan-section-subtitle" v-html="data.equipment.software.title"></h2>
+					<h3 class="lan-section-subtitle" v-html="data.equipment.software.title"></h3>
 					<p class="lan-section-desc" v-html="data.equipment.software.description"></p>
 				</div>
 				<div class="w-full px-4">

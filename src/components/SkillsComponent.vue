@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="w-full">
 				<div class="mx-auto text-center">
-					<h4 class="relative mb-2 lan-section-title">
+					<h2 class="relative mb-2 lan-section-title">
 						Skills
 						<!-- Tooltip -->
 						<!-- <div v-if="data.ability.tooltip"
@@ -21,14 +21,14 @@
 								v-html="data.ability.tooltip"></p>
 						</div> -->
 						<!-- Tooltip -->
-					</h4>
+					</h2>
 				</div>
 			</div>
 			<!-- Current Ability -->
 			<template v-if="data.ability.skill">
 				<div v-if="data.ability.skill.title" class="w-full p-4">
 					<div class="mx-auto mb-4 text-center">
-						<h2 class="lan-section-subtitle" v-html="data.ability.skill.title"></h2>
+						<h3 class="lan-section-subtitle" v-html="data.ability.skill.title"></h3>
 						<p class="lan-section-desc" v-html="data.ability.skill.description">
 						</p>
 					</div>
@@ -68,7 +68,7 @@
 			<template v-if="data.ability.learn">
 				<div v-if="data.ability.learn.title" class="w-full p-4 mt-24">
 					<div class="mx-auto mb-4 text-center">
-						<h2 class="lan-section-subtitle" v-html="data.ability.learn.title"></h2>
+						<h3 class="lan-section-subtitle" v-html="data.ability.learn.title"></h3>
 						<p class="lan-section-desc" v-html="data.ability.learn.description">
 						</p>
 					</div>

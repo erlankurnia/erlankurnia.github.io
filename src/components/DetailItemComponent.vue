@@ -3,7 +3,7 @@
         class="grid grid-rows-[auto_auto_auto_auto_auto_auto] grid-cols-1 gap-x-4 gap-y-2 w-auto h-auto p-3 transition duration-200 group bg-transparent">
         <div
             class="text-4xl font-semibold text-center lg:col-span-2 lg:row-span-1 text-dark dark:text-light pb-2 border-b border-secondary/50 dark:border-secondaryDark/50">
-            <h3 class="mb-3" :class="{ 'mt-5': project.imagesDir }" v-html="project.title"></h3>
+            <h2 class="mb-3" :class="{ 'mt-5': project.imagesDir }" v-html="project.title"></h2>
         </div>
 
         <div class="flex w-full h-auto flex-row gap-4 justify-end">

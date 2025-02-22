@@ -2,13 +2,13 @@
 	<section v-if="data && data.reference" id="credit" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
-				<h4 class="mb-3 lan-section-title">References</h4>
+				<h2 class="mb-3 lan-section-title">References</h2>
 			</div>
 
 			<!-- Attribution -->
 			<div class="flex flex-wrap" v-if="data.reference.title">
 				<div class="w-full mb-8 text-center">
-					<h2 class="lan-section-subtitle" v-html="data.reference.title"></h2>
+					<h3 class="lan-section-subtitle" v-html="data.reference.title"></h3>
 					<p class="font-medium text-md text-secondary dark:text-secondaryDark md:text-lg"
 						v-html="data.reference.description">
 					</p>

@@ -3,13 +3,13 @@
         :class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
         <div class="container">
             <div class="w-full pt-4 text-center">
-                <h4 class="mb-3 lan-section-title">My Projects{{ filter ? ' in ' + filter : '' }}</h4>
+                <h2 class="mb-3 lan-section-title">My Projects{{ filter ? ' in ' + filter : '' }}</h2>
             </div>
 
             <!-- Projects -->
             <div class="flex flex-wrap">
                 <div class="w-full mb-8 text-center" v-if="data.portfolio">
-                    <h2 v-if="data.portfolio.title" class="lan-section-subtitle" v-html="data.portfolio.title"></h2>
+                    <h3 v-if="data.portfolio.title" class="lan-section-subtitle" v-html="data.portfolio.title"></h3>
                     <p v-if="data.portfolio.description"
                         class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
                         v-html="data.portfolio.description"></p>

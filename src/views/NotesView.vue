@@ -3,13 +3,13 @@
 		:class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
-				<h4 class="mb-3 lan-section-title">Notes</h4>
+				<h2 class="mb-3 lan-section-title">Notes</h2>
 			</div>
 
 			<!-- Articles -->
 			<div class="flex flex-wrap">
 				<div class="w-full mb-8 text-center" v-if="data.notebook">
-					<h2 v-if="data.notebook.title" class="lan-section-subtitle" v-html="data.notebook.title"></h2>
+					<h3 v-if="data.notebook.title" class="lan-section-subtitle" v-html="data.notebook.title"></h3>
 					<p v-if="data.notebook.description"
 						class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
 						v-html="data.notebook.description"></p>

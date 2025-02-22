@@ -10,8 +10,8 @@
 							'mt-20': index == 0,
 							'mb-20': index == experiences.length - 1,
 						}">
-						<h3 class="px-2 mb-2 -mx-2 text-lg font-extrabold text-left md:text-right text-primary dark:text-primaryDark"
-							v-html="history.title"></h3>
+						<h4 class="px-2 mb-2 -mx-2 text-lg font-extrabold text-left md:text-right text-primary dark:text-primaryDark"
+							v-html="history.title"></h4>
 						<p v-if="history.status" class="mb-2 text-xs text-left opacity-75 md:text-right lg:text-sm"
 							v-html="history.status"></p>
 						<p class="mb-2 text-sm leading-tight text-left md:text-right" v-html="history.desc">
@@ -89,9 +89,9 @@
 							'mt-20': index == 0,
 							'mb-20': index == experiences.length - 1,
 						}">
-						<h3 class="px-2 mb-2 -mx-2 text-lg font-extrabold text-primary dark:text-primaryDark"
+						<h4 class="px-2 mb-2 -mx-2 text-lg font-extrabold text-primary dark:text-primaryDark"
 							v-html="history.title">
-						</h3>
+						</h4>
 						<p v-if="history.status" class="mb-2 text-xs opacity-75 lg:text-sm" v-html="history.status">
 						</p>
 						<p class="mb-2 text-sm leading-tight" v-html="history.desc"></p>

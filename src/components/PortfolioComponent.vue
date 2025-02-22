@@ -3,10 +3,10 @@
 		<div v-if="data?.portfolio" class="container">
 			<div class="w-full p-4">
 				<div class="max-w-3xl mx-auto mb-8 text-center">
-					<h4 class="mb-2 lan-section-title">Portfolio</h4>
-					<h2 class="mb-4 text-3xl font-bold text-dark dark:text-light sm:text-4xl lg:5xl">
+					<h2 class="mb-2 lan-section-title">Portfolio</h2>
+					<h3 class="mb-4 text-3xl font-bold text-dark dark:text-light sm:text-4xl lg:5xl">
 						Featured <span class="text-primary dark:text-primaryDark">Project</span>s
-					</h2>
+					</h3>
 					<p class="lan-section-desc" v-html="data.portfolio.description"></p>
 				</div>
 			</div>

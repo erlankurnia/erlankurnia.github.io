@@ -3,15 +3,15 @@
 		<div class="container h-full">
 			<div class="flex flex-wrap gap-x-[2%]">
 				<div class="w-full px-4 pt-4 text-center">
-					<h4 class="mb-3 lan-section-title">Intro</h4>
+					<h2 class="mb-3 lan-section-title">Intro</h2>
 				</div>
 				<div v-for="(datum, index) of data.intro" class="w-full px-2 mb-8" :class="{
 					'lg:w-[49%]': data.intro.length >= 2,
 				}" :key="index">
-					<h2 class="lan-section-subtitle" :class="{
+					<h3 class="lan-section-subtitle" :class="{
 						'lg:text-left lg:ml-0': data.intro.length >= 2,
 						'lg:min-w-max': data.intro.length == 1,
-					}" v-html="datum.title"></h2>
+					}" v-html="datum.title"></h3>
 					<p class="mb-5 lan-section-desc" v-html="datum.description"></p>
 				</div>
 			</div>

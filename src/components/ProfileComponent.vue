@@ -1,7 +1,7 @@
 <template>
 	<section id="profile" class="h-screen max-h-[960px] pt-16 pb-0 sm:pt-24 -z-10 overflow-hidden">
 		<div class="container h-full">
-			<h4 class="h-8 mx-auto -mb-8 text-center lan-section-title">PROFILE</h4>
+			<h2 class="h-8 mx-auto -mb-8 text-center lan-section-title">PROFILE</h2>
 			<div class="flex flex-wrap h-full lg:flex-row-reverse">
 				<!-- Right / Top side -->
 				<div

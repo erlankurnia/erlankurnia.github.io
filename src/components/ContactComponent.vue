@@ -3,8 +3,8 @@
 		<div class="container">
 			<div v-if="data.contact.title && data.contact.description" class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
-					<h4 class="mb-2 lan-section-title">Contact_Me</h4>
-					<h2 class="lan-section-subtitle lg:min-w-max" v-html="data.contact.title"></h2>
+					<h2 class="mb-2 lan-section-title">Contact_Me</h2>
+					<h3 class="lan-section-subtitle lg:min-w-max" v-html="data.contact.title"></h3>
 					<p class="lan-section-desc" v-html="data.contact.description"></p>
 				</div>
 			</div>

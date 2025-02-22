@@ -3,8 +3,8 @@
 		<div class="container">
 			<div class="w-full p-4 pb-0">
 				<div class="mx-auto mb-6 text-center">
-					<h4 class="mb-2 lan-section-title">History</h4>
-					<h2 class="lan-section-subtitle" v-html="data.history.title"></h2>
+					<h2 class="mb-2 lan-section-title">History</h2>
+					<h3 class="lan-section-subtitle" v-html="data.history.title"></h3>
 					<p class="lan-section-desc" v-html="data.history.description"></p>
 				</div>
 			</div>
