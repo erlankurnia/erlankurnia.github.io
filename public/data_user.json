@@ -241,11 +241,11 @@
 			"description": "There are many skills that I can't do, so learning has no end.<br>Some interesting technologies that I learned about.",
 			"topics": [
 				{
-					"name": "maxst",
-					"title": "Maxst",
-					"year": 2022,
-					"level": "NOVICE",
-					"urlInfo": "https://maxst.com/"
+					"name": "blazor",
+					"title": "Blazor",
+					"year": 2025,
+					"level": "BASIC",
+					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
 				},
 				{
 					"name": "dotnet",

@@ -14,6 +14,7 @@ const icons = {
 	csharp: ["csharp", "c#"],
 	cpp: ["cpp", "c++"],
 	dotnet: ["dotnet", ".net"],
+	blazor: ["blazor"],
 	xamarin: ["xamarin"],
 	codeigniter: ["codeigniter", "ci"],
 	firebase: ["firebase"],
