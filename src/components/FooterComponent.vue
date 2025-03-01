@@ -43,8 +43,8 @@
 								}">References</RouterLink>
 						</li>
 						<li class="flex items-center group">
-							<a href="https://analytics.eu.umami.is/share/P9vSXDhPCyGTUoB2/LAN" target="_blank"
-								class="mx-2 text-sm lan-nav-link">
+							<a href="https://cloud.umami.is/share/P9vSXDhPCyGTUoB2/erlankurnia.github.com"
+								target="_blank" class="mx-2 text-sm lan-nav-link">
 								Analytics <NewTabIcon class="h-4 ml-[2px] pt-1 w-auto"></NewTabIcon>
 							</a>
 						</li>
