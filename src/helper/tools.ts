@@ -1,7 +1,10 @@
+let cachedDataUser: any | null = null;
 export default {
 	async getDataUser<T>(): Promise<T> {
+		if (cachedDataUser != null) return cachedDataUser as T;
 		const res = await fetch("/data_user.json");
-		return await res.json() as T;
+		cachedDataUser = await res.json();
+		return cachedDataUser as T;
 	},
 	async getContentReadme(source: { type: string, url: string }): Promise<string> {
 		if (source != null && typeof source.type != "undefined" && source.type != null && typeof source.url == "string") {

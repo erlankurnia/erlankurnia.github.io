@@ -104,7 +104,7 @@
 }
 
 @utility lan-nav-link {
-  @apply flex py-2 mx-4 text-base text-dark dark:text-light transition duration-1000 group-hover:duration-300 group-hover:text-primary dark:group-hover:text-primaryDark group-hover:font-extrabold uppercase;
+  @apply flex py-2 mx-4 text-base text-dark dark:text-light transition duration-1000 group-hover:duration-300 group-hover:text-primary dark:group-hover:text-primaryDark group-hover:font-bold uppercase;
 }
 
 @utility lan-hamburger-line {
@@ -182,7 +182,7 @@
 }
 
 @utility lan-navbar-fixed {
-  @apply fixed z-9999 lan-glass-effect;
+  @apply fixed z-9999 sm:lan-glass-effect;
 }
 
 /* ------------ Transition ------------ */
@@ -381,7 +381,7 @@
 	}
 	
 	#markdown h2 {
-		@apply mt-6 mb-4 font-medium text-xl;
+		@apply mt-6 mb-4 font-normal text-xl;
 	}
 	
 	#markdown h3 {

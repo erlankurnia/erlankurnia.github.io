@@ -79,13 +79,15 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { defineAsyncComponent, onMounted, ref } from 'vue';
 import type IPropsDetailItemComponent from '@/helper/interfaces/IPropsDetailItemComponent';
 import tools from '@/helper/tools';
-import MarkdownComponent from './MarkdownComponent.vue';
+// import MarkdownComponent from './MarkdownComponent.vue';
 import Icon from './icons/Icon.vue';
 import NewTabIcon from './icons/NewTabIcon.vue';
 import EventBus, { EventBusEnum } from '@/helper/EventBus';
+
+const MarkdownComponent = defineAsyncComponent(() => import('./MarkdownComponent.vue'));
 
 const props = defineProps<IPropsDetailItemComponent>();
 const validImages = ref<string[]>([]);

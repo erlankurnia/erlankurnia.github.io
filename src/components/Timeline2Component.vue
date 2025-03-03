@@ -124,11 +124,14 @@ import tools from "@/helper/tools";
 import MarkdownComponent from "./MarkdownComponent.vue";
 import GraduateIcon from "./icons/GraduateIcon.vue";
 import WorkIcon from "./icons/WorkIcon.vue";
+import { useLoadingStore } from "@/stores/loadingStore";
 
+const loadingStore = useLoadingStore();
 const { monthsToYears, monthDiff, dateFormat } = useDateTime();
 const { experiences } = defineProps<{ experiences: IWorkExperience[] }>();
 
 async function onMoreInfo(index: number) {
+	loadingStore.pushLoading();
 	console.log('more info: ' + index);
 	const dataSource = experiences[index].source;
 	if (dataSource) {
@@ -139,6 +142,7 @@ async function onMoreInfo(index: number) {
 		};
 		EventBus.$emit(EventBusEnum.ShowModal, componentData);
 	}
+	loadingStore.pullLoading();
 }
 
 // function replaceSpaceWithUnderscore(text: string): string {

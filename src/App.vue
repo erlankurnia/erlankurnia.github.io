@@ -19,27 +19,32 @@
 				<component :is="dynamicComponent.component" v-bind="dynamicComponent.props"></component>
 			</template>
 		</ModalComponent>
+
+		<LoadingFullPageComponent v-if="loadingStore.isLoading"></LoadingFullPageComponent>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, provide, type Ref, useTemplateRef, onUnmounted } from "vue";
+import { ref, onMounted, provide, type Ref, useTemplateRef, onUnmounted, defineAsyncComponent } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from "@unhead/vue";
 import tools from "./helper/tools";
-import NavbarComponent from "./components/NavbarComponent.vue";
-import NavbarMobileComponent from "./components/NavbarMobileComponent.vue";
-import ScrollUpComponent from "./components/ScrollUpComponent.vue";
-import ScrollDownComponent from "./components/ScrollDownComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 import ToggleDarkModeComponent from "./components/ToggleDarkModeComponent.vue";
-import ModalComponent from './components/ModalComponent.vue';
 import type IDataUser from "./helper/interfaces/IDataUser";
 import DataUserSymbol from "./helper/symbols/DataUserSymbol";
 import ThemeModeSymbol from "./helper/symbols/ThemeModeSymbol";
 import NamePartSymbol from "./helper/symbols/NamePartSymbol";
 import EventBus, { EventBusEnum } from "./helper/EventBus";
 import type { TDynamicModalComponent } from "./helper/interfaces/TDynamicModalComponent";
+import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
+import { useLoadingStore } from "@/stores/loadingStore";
+
+const ModalComponent = defineAsyncComponent(() => import('./components/ModalComponent.vue'));
+const NavbarComponent = defineAsyncComponent(() => import('./components/NavbarComponent.vue'));
+const NavbarMobileComponent = defineAsyncComponent(() => import('./components/NavbarMobileComponent.vue'));
+const ScrollUpComponent = defineAsyncComponent(() => import('./components/ScrollUpComponent.vue'));
+const ScrollDownComponent = defineAsyncComponent(() => import('./components/ScrollDownComponent.vue'));
 
 useHead({
 	meta: [
@@ -73,6 +78,7 @@ type ModalType = InstanceType<typeof ModalComponent>;
 const modalComponent = useTemplateRef<ModalType>('modalComponent');
 const dynamicComponent = ref<TDynamicModalComponent | null>(null);
 
+const loadingStore = useLoadingStore();
 const themeMode = ref(false);
 const dataUser: Ref<IDataUser | null> = ref(null);
 const nameParts: Ref<string[]> = ref([]);

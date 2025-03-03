@@ -24,8 +24,8 @@ import hljsShell from 'highlight.js/lib/languages/shell';
 import hljsXml from 'highlight.js/lib/languages/xml';
 import MarkdownIt from "markdown-it";
 import type { Token } from "markdown-it/index.js";
-import type ISourceContent from "@/helper/interfaces/ISourceContent";
 import type IPropsMarkdownComponent from "@/helper/interfaces/IPropsMarkdownComponent";
+// import type { LanguageFn } from "highlight.js";
 
 hljs.registerLanguage('apache', hljsApache);
 hljs.registerLanguage('bash', hljsBash);
@@ -53,16 +53,46 @@ const originalCopyLabel = ' Copy ';
 const copiedLabel = 'Copied';
 const rawCodeList: string[] = [];
 
-onMounted(() => {
-	const parsedContent = mdit.parse(props.contentMarkdown, {});
+const parsedContent = mdit.parse(props.contentMarkdown, {});
 
+// const registeredLanguages: string[] = [];
+// const languageModules = import.meta.glob('highlight.js/lib/languages/*.js');
+// for (let i = 0; i < parsedContent.length; i++) {
+// 	const token = parsedContent[i];
+// 	if (token.type === 'fence' && token.tag === 'code' && token.info.length > 0) {
+// 		// await loadLanguage(token.info);
+// 		if (!registeredLanguages.includes(token.info)) {
+// 			try {
+// 				// const { default: lang } = await import(`highlight.js/lib/languages/${token.info}`);
+// 				// hljs.registerLanguage(token.info, lang);
+// 				// registeredLanguages.push(token.info);
+// 				// console.log(token.info + ": " + JSON.stringify(lang));
+// 				const language = token.info;
+// 				const modulePath = `highlight.js/lib/languages/${language}.js`;
+// 				if (languageModules[modulePath]) {
+// 					const langModule = await languageModules[modulePath]();
+// 					const lang = langModule as LanguageFn;
+// 					hljs.registerLanguage(language, lang);
+// 					registeredLanguages.push(language);
+// 				} else {
+// 					console.error(`Language module not found: ${language}`);
+// 				}
+// 			}
+// 			catch (e) {
+// 				console.warn(e);
+// 			}
+// 		}
+// 	}
+// }
+
+onMounted(async () => {
 	const addCopyBtn = (tokens: Token[]) => {
 		for (let i = 0; i < tokens.length; i++) {
 			const token = tokens[i];
 
 			if (token.type === 'fence' && token.tag === 'code') {
 				const originalContent = hljs.highlight(token.content, { language: token.info }).value;
-				// console.log(token.content);
+				// console.log(token);
 				// console.log(originalContent);
 
 				const elButton = document.createElement("button");
