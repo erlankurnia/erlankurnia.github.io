@@ -1,7 +1,8 @@
 <template>
 	<template v-if="isLoading">
 		<main id="loading-fullpage-component" class="fixed top-0 bottom-0 left-0 right-0 z-1000">
-			<div class="flex items-center justify-center w-full h-full bg-primary/20">
+			<div class="flex items-center justify-center w-full h-full bg-secondary/20 dark:bg-secondaryDark/20">
+				<LoadingComponent></LoadingComponent>
 			</div>
 		</main>
 	</template>
@@ -11,8 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { defineAsyncComponent, onMounted, ref } from 'vue';
 
+const LoadingComponent = defineAsyncComponent(() => import('./LoadingComponent.vue'));
 const isLoading = ref(true);
 
 onMounted(() => {

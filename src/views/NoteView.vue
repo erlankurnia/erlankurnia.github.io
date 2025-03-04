@@ -62,15 +62,19 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, onMounted, onBeforeUnmount } from "vue";
+import { inject, ref, onMounted, onBeforeUnmount, defineAsyncComponent } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import { useHead, type ActiveHeadEntry, type MergeHead, type UseHeadInput } from '@unhead/vue';
 import tools from "../helper/tools";
-import TechnologyIcon from "../components/icons/Icon.vue";
-import LoadingComponent from "../components/LoadingComponent.vue";
-import MarkdownComponent from "../components/MarkdownComponent.vue";
+// import TechnologyIcon from "../components/icons/Icon.vue";
+// import LoadingComponent from "../components/LoadingComponent.vue";
+// import MarkdownComponent from "../components/MarkdownComponent.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import type INote from "@/helper/interfaces/INote";
+
+const TechnologyIcon = defineAsyncComponent(() => import('../components/icons/Icon.vue'));
+const MarkdownComponent = defineAsyncComponent(() => import('../components/MarkdownComponent.vue'));
+const LoadingComponent = defineAsyncComponent(() => import('../components/LoadingComponent.vue'));
 
 const data = inject(DataUserSymbol);
 const selectedNote = ref<INote | null>(null);

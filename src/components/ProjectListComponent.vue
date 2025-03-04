@@ -9,13 +9,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed, defineAsyncComponent } from 'vue';
+// import { useRoute } from 'vue-router';
+// import CardItemComponent from './CardItemComponent.vue';
 import type IProjectInfo from '@/helper/interfaces/IProjectInfo';
-import CardItemComponent from './CardItemComponent.vue';
 import type IPropsProjectListComponent from '@/helper/interfaces/IPropsProjectListComponent';
 
-const route = useRoute();
+const CardItemComponent = defineAsyncComponent(() => import('./CardItemComponent.vue'));
+
+// const route = useRoute();
 let projectList: IProjectInfo[] = [];
 const props = defineProps<IPropsProjectListComponent>();
 

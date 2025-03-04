@@ -35,9 +35,9 @@
 import { computed, inject, onBeforeUnmount, ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import { useHead } from '@unhead/vue';
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import SearchIcon from "@/components/icons/SearchIcon.vue";
 import ProjectListComponent from "@/components/ProjectListComponent.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import type IProjectInfo from "@/helper/interfaces/IProjectInfo";
 import Dictionary from "@/helper/interfaces/Dictionary";
 

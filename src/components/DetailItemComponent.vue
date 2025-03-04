@@ -81,11 +81,11 @@
 <script setup lang="ts">
 import { defineAsyncComponent, onMounted, ref } from 'vue';
 import type IPropsDetailItemComponent from '@/helper/interfaces/IPropsDetailItemComponent';
+import EventBus, { EventBusEnum } from '@/helper/EventBus';
 import tools from '@/helper/tools';
 // import MarkdownComponent from './MarkdownComponent.vue';
 import Icon from './icons/Icon.vue';
 import NewTabIcon from './icons/NewTabIcon.vue';
-import EventBus, { EventBusEnum } from '@/helper/EventBus';
 
 const MarkdownComponent = defineAsyncComponent(() => import('./MarkdownComponent.vue'));
 

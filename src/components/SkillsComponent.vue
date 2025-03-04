@@ -121,11 +121,13 @@
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted, ref, type Ref } from "vue";
+import { defineAsyncComponent, inject, onMounted, ref, type Ref } from "vue";
 import Icon from "./icons/Icon.vue";
+// import ContextMenuComponent from "./ContextMenuComponent.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import ContextMenuComponent from "./ContextMenuComponent.vue";
 import type ISkillInfo from "@/helper/interfaces/ISkillInfo";
+
+const ContextMenuComponent = defineAsyncComponent(() => import('./ContextMenuComponent.vue'));
 
 const data = inject(DataUserSymbol);
 const selectedSkill: Ref<ISkillInfo | null> = ref(null);

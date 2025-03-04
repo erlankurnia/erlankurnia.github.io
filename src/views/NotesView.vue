@@ -53,8 +53,8 @@
 import { computed, inject, onBeforeUnmount, onMounted, ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import { useHead } from '@unhead/vue';
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import SearchIcon from "@/components/icons/SearchIcon.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import type INote from "@/helper/interfaces/INote";
 import Dictionary from "@/helper/interfaces/Dictionary";
 

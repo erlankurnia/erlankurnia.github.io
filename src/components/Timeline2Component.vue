@@ -116,15 +116,20 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 import EventBus, { EventBusEnum } from "@/helper/EventBus";
+import tools from "@/helper/tools";
 import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
 import type { TDynamicModalComponent } from "@/helper/interfaces/TDynamicModalComponent";
 import { useDateTime } from "@/helper/mixins/DateTime";
-import tools from "@/helper/tools";
-import MarkdownComponent from "./MarkdownComponent.vue";
-import GraduateIcon from "./icons/GraduateIcon.vue";
-import WorkIcon from "./icons/WorkIcon.vue";
 import { useLoadingStore } from "@/stores/loadingStore";
+// import MarkdownComponent from "./MarkdownComponent.vue";
+// import GraduateIcon from "./icons/GraduateIcon.vue";
+// import WorkIcon from "./icons/WorkIcon.vue";
+
+const MarkdownComponent = defineAsyncComponent(() => import('./MarkdownComponent.vue'));
+const GraduateIcon = defineAsyncComponent(() => import('./icons/GraduateIcon.vue'));
+const WorkIcon = defineAsyncComponent(() => import('./icons/WorkIcon.vue'));
 
 const loadingStore = useLoadingStore();
 const { monthsToYears, monthDiff, dateFormat } = useDateTime();
