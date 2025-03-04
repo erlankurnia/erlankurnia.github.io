@@ -1,5 +1,5 @@
 <template>
-	<section v-if="data && data.equipment" id="equipment" class="pt-24 pb-16">
+	<section v-if="data && data.equipment" id="equipment" class="pt-24 max-md:px-2 pb-16">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
 				<h2 class="mb-3 lan-section-title">EQUIPMENTS</h2>

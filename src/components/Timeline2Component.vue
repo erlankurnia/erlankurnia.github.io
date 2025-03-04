@@ -1,5 +1,5 @@
 <template>
-	<div id="timeline-2" class="container">
+	<div id="timeline-2" class="container max-md:px-2">
 		<div class="flex flex-col grid-cols-9 px-2 mx-auto font-normal md:grid">
 			<template v-for="(history, index) in experiences" :key="index">
 				<!-- left -->

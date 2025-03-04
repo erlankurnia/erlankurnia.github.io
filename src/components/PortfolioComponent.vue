@@ -1,5 +1,5 @@
 <template>
-	<section id="portfolio" :class="['pt-24 max-lg:min-h-screen', $attrs.class]">
+	<section id="portfolio" :class="['pt-24 max-md:px-2 max-lg:min-h-screen', $attrs.class]">
 		<div v-if="data?.portfolio" class="container">
 			<div class="w-full p-4">
 				<div class="max-w-3xl mx-auto mb-8 text-center">

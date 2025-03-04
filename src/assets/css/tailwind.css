@@ -332,9 +332,11 @@
   .show-up-enter-active {
     transition: all 0.25s ease-out;
     /* transition-delay: 1000ms; */
+    @apply origin-bottom md:origin-center;
   }
   .show-up-leave-active {
     transition: all 0.075s ease-out;
+    @apply origin-bottom md:origin-center;
   }
   .show-up-enter-from {
     @apply opacity-75 scale-x-100 scale-y-90;

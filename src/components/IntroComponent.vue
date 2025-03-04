@@ -1,5 +1,6 @@
 <template>
-	<section v-if="data && data.intro && data.intro.length > 0" id="intro" class="pt-24 pb-16 max-lg:min-h-screen">
+	<section v-if="data && data.intro && data.intro.length > 0" id="intro"
+		class="pt-24 pb-16 max-md:px-2 max-lg:min-h-screen">
 		<div class="container h-full">
 			<div class="flex flex-wrap gap-x-[2%]">
 				<div class="w-full px-4 pt-4 text-center">
