@@ -100,9 +100,9 @@
 </style>
 
 <script setup lang="ts">
-import type IDataUser from "@/helper/interfaces/IDataUser";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import { ref, onMounted, inject } from "vue";
+// import type IDataUser from "@/helper/interfaces/IDataUser";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
 //#region Splash liquid as user image
 const isPageLoaded = ref(false);

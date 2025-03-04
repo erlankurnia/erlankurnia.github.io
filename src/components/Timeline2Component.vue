@@ -123,13 +123,13 @@ import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
 import type { TDynamicModalComponent } from "@/helper/interfaces/TDynamicModalComponent";
 import { useDateTime } from "@/helper/mixins/DateTime";
 import { useLoadingStore } from "@/stores/loadingStore";
-// import MarkdownComponent from "./MarkdownComponent.vue";
-// import GraduateIcon from "./icons/GraduateIcon.vue";
-// import WorkIcon from "./icons/WorkIcon.vue";
+// import MarkdownComponent from "@/components/MarkdownComponent.vue";
+// import GraduateIcon from "@/components/icons/GraduateIcon.vue";
+// import WorkIcon from "@/components/icons/WorkIcon.vue";
 
-const MarkdownComponent = defineAsyncComponent(() => import('./MarkdownComponent.vue'));
-const GraduateIcon = defineAsyncComponent(() => import('./icons/GraduateIcon.vue'));
-const WorkIcon = defineAsyncComponent(() => import('./icons/WorkIcon.vue'));
+const MarkdownComponent = defineAsyncComponent(() => import('@/components/MarkdownComponent.vue'));
+const GraduateIcon = defineAsyncComponent(() => import('@/components/icons/GraduateIcon.vue'));
+const WorkIcon = defineAsyncComponent(() => import('@/components/icons/WorkIcon.vue'));
 
 const loadingStore = useLoadingStore();
 const { monthsToYears, monthDiff, dateFormat } = useDateTime();

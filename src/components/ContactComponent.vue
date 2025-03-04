@@ -90,11 +90,14 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, useTemplateRef } from "vue";
+import { defineAsyncComponent, inject, ref, useTemplateRef } from "vue";
 import { useRouter } from 'vue-router';
-import ModalComponent from './ModalComponent.vue';
-import LoadingComponent from "./LoadingComponent.vue";
+// import ModalComponent from '@/components/ModalComponent.vue';
+// import LoadingComponent from "@/components/LoadingComponent.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+
+const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
+const LoadingComponent = defineAsyncComponent(() => import('@/components/LoadingComponent.vue'));
 
 type ModalType = InstanceType<typeof ModalComponent>
 const modalComponent = useTemplateRef<ModalType>('modalComponent');

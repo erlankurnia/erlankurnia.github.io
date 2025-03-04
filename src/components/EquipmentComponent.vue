@@ -92,7 +92,7 @@
 <script setup lang="ts">
 import { inject } from "vue";
 // import { useDateTime } from "../helper/mixins/dateTime";
-import Icon from "./icons/Icon.vue";
+import Icon from "@/components/icons/Icon.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
 // const {} = useDateTime();

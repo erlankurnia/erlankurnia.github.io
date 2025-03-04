@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import ToggleDarkModeComponent from "./ToggleDarkModeComponent.vue";
+import ToggleDarkModeComponent from "@/components/ToggleDarkModeComponent.vue";
 
 //#region On scrolling event to create sticky navbar
 const onScroll = () => {

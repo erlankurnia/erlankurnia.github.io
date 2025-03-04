@@ -72,9 +72,9 @@ import tools from "../helper/tools";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import type INote from "@/helper/interfaces/INote";
 
-const TechnologyIcon = defineAsyncComponent(() => import('../components/icons/Icon.vue'));
-const MarkdownComponent = defineAsyncComponent(() => import('../components/MarkdownComponent.vue'));
-const LoadingComponent = defineAsyncComponent(() => import('../components/LoadingComponent.vue'));
+const TechnologyIcon = defineAsyncComponent(() => import('@/components/icons/Icon.vue'));
+const MarkdownComponent = defineAsyncComponent(() => import('@/components/MarkdownComponent.vue'));
+const LoadingComponent = defineAsyncComponent(() => import('@/components/LoadingComponent.vue'));
 
 const data = inject(DataUserSymbol);
 const selectedNote = ref<INote | null>(null);

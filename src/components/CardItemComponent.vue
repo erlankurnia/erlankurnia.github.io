@@ -62,12 +62,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import Icon from './icons/Icon.vue';
-import NewTabIcon from './icons/NewTabIcon.vue';
+import Icon from '@/components/icons/Icon.vue';
+import NewTabIcon from '@/components/icons/NewTabIcon.vue';
 import EventBus, { EventBusEnum } from '@/helper/EventBus';
 import type IPropsCardItemComponent from '@/helper/interfaces/IPropsCardItemComponent';
 import type { TDynamicModalComponent } from '@/helper/interfaces/TDynamicModalComponent';
-import DetailItemComponent from "./DetailItemComponent.vue";
+import DetailItemComponent from "@/components/DetailItemComponent.vue";
 
 const props = defineProps<IPropsCardItemComponent>();
 

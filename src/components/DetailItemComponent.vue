@@ -84,10 +84,10 @@ import type IPropsDetailItemComponent from '@/helper/interfaces/IPropsDetailItem
 import EventBus, { EventBusEnum } from '@/helper/EventBus';
 import tools from '@/helper/tools';
 // import MarkdownComponent from './MarkdownComponent.vue';
-import Icon from './icons/Icon.vue';
-import NewTabIcon from './icons/NewTabIcon.vue';
+import Icon from '@/components/icons/Icon.vue';
+import NewTabIcon from '@/components/icons/NewTabIcon.vue';
 
-const MarkdownComponent = defineAsyncComponent(() => import('./MarkdownComponent.vue'));
+const MarkdownComponent = defineAsyncComponent(() => import('@/components/MarkdownComponent.vue'));
 
 const props = defineProps<IPropsDetailItemComponent>();
 const validImages = ref<string[]>([]);

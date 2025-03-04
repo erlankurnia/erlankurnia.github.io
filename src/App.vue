@@ -29,22 +29,22 @@ import { ref, onMounted, provide, type Ref, useTemplateRef, onUnmounted, defineA
 import { RouterView } from "vue-router";
 import { useHead } from "@unhead/vue";
 import tools from "./helper/tools";
-import FooterComponent from "./components/FooterComponent.vue";
-import ToggleDarkModeComponent from "./components/ToggleDarkModeComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import ToggleDarkModeComponent from "@/components/ToggleDarkModeComponent.vue";
 import type IDataUser from "./helper/interfaces/IDataUser";
 import DataUserSymbol from "./helper/symbols/DataUserSymbol";
 import ThemeModeSymbol from "./helper/symbols/ThemeModeSymbol";
 import NamePartSymbol from "./helper/symbols/NamePartSymbol";
 import EventBus, { EventBusEnum } from "./helper/EventBus";
 import type { TDynamicModalComponent } from "./helper/interfaces/TDynamicModalComponent";
-import LoadingFullPageComponent from "./components/LoadingFullPageComponent.vue";
+import LoadingFullPageComponent from "@/components/LoadingFullPageComponent.vue";
 import { useLoadingStore } from "@/stores/loadingStore";
 
-const ModalComponent = defineAsyncComponent(() => import('./components/ModalComponent.vue'));
-const NavbarComponent = defineAsyncComponent(() => import('./components/NavbarComponent.vue'));
-const NavbarMobileComponent = defineAsyncComponent(() => import('./components/NavbarMobileComponent.vue'));
-const ScrollUpComponent = defineAsyncComponent(() => import('./components/ScrollUpComponent.vue'));
-const ScrollDownComponent = defineAsyncComponent(() => import('./components/ScrollDownComponent.vue'));
+const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
+const NavbarComponent = defineAsyncComponent(() => import('@/components/NavbarComponent.vue'));
+const NavbarMobileComponent = defineAsyncComponent(() => import('@/components/NavbarMobileComponent.vue'));
+const ScrollUpComponent = defineAsyncComponent(() => import('@/components/ScrollUpComponent.vue'));
+const ScrollDownComponent = defineAsyncComponent(() => import('@/components/ScrollDownComponent.vue'));
 
 useHead({
 	meta: [

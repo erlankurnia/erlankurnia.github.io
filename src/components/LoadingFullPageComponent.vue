@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import { defineAsyncComponent, onMounted, ref } from 'vue';
 
-const LoadingComponent = defineAsyncComponent(() => import('./LoadingComponent.vue'));
+const LoadingComponent = defineAsyncComponent(() => import('@/components/LoadingComponent.vue'));
 const isLoading = ref(true);
 
 onMounted(() => {

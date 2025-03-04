@@ -12,10 +12,10 @@
 <script setup lang="ts">
 import { onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
-import HeroComponent from "../components/HeroComponent.vue";
-import IntroComponent from "../components/IntroComponent.vue";
-import NextPageComponent from '../components/NextPageComponent.vue';
-import ContactComponent from '../components/ContactComponent.vue';
+import HeroComponent from "@/components/HeroComponent.vue";
+import IntroComponent from "@/components/IntroComponent.vue";
+import NextPageComponent from '@/components/NextPageComponent.vue';
+import ContactComponent from '@/components/ContactComponent.vue';
 import PortfolioComponent from '@/components/PortfolioComponent.vue';
 
 const metaTitle = "Erlan Kurnia | LAN";

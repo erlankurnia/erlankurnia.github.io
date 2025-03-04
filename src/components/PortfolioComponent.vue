@@ -25,8 +25,8 @@
 import { inject, } from "vue";
 import { useRoute } from "vue-router";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import NextPageComponent from "./NextPageComponent.vue";
-import ProjectListComponent from "./ProjectListComponent.vue";
+import NextPageComponent from "@/components/NextPageComponent.vue";
+import ProjectListComponent from "@/components/ProjectListComponent.vue";
 
 const route = useRoute();
 const data = inject(DataUserSymbol);

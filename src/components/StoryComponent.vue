@@ -19,10 +19,10 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent, inject } from "vue";
-// import Timeline2Component from "./Timeline2Component.vue";
+// import Timeline2Component from "@/components/Timeline2Component.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
-const Timeline2Component = defineAsyncComponent(() => import('./Timeline2Component.vue'));
+const Timeline2Component = defineAsyncComponent(() => import('@/components/Timeline2Component.vue'));
 
 const data = inject(DataUserSymbol);
 </script>

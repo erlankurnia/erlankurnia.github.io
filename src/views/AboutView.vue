@@ -13,12 +13,12 @@
 <script setup lang="ts">
 import { onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
-import ProfileComponent from "../components/ProfileComponent.vue";
-import StoryComponent from "../components/StoryComponent.vue";
-// import PortfolioComponent from "../components/PortfolioComponent.vue";
-import SkillsComponent from "../components/SkillsComponent.vue";
-import EquipmentComponent from "../components/EquipmentComponent.vue";
-import NextPageComponent from '../components/NextPageComponent.vue';
+import ProfileComponent from "@/components/ProfileComponent.vue";
+import StoryComponent from "@/components/StoryComponent.vue";
+// import PortfolioComponent from "@/components/PortfolioComponent.vue";
+import SkillsComponent from "@/components/SkillsComponent.vue";
+import EquipmentComponent from "@/components/EquipmentComponent.vue";
+import NextPageComponent from '@/components/NextPageComponent.vue';
 
 const aboutHead = useHead({
 	title: "About Erlan Kurnia",

@@ -93,10 +93,10 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 // import { useDateTime } from "../helper/mixins/dateTime";
-import SocialMediaComponent from "./SocialMediaComponent.vue";
+import SocialMediaComponent from "@/components/SocialMediaComponent.vue";
 import DataUserSymbol from '@/helper/symbols/DataUserSymbol';
 import NamePartSymbol from '@/helper/symbols/NamePartSymbol';
-import NewTabIcon from './icons/NewTabIcon.vue';
+import NewTabIcon from '@/components/icons/NewTabIcon.vue';
 
 const data = inject(DataUserSymbol);
 const namePart = inject(NamePartSymbol);

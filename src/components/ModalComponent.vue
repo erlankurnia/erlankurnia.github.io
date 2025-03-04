@@ -45,7 +45,7 @@
 
 <script setup lang="ts">
 import { ref, useTemplateRef } from "vue";
-import CloseIcon from "./icons/CloseIcon.vue";
+import CloseIcon from "@/components/icons/CloseIcon.vue";
 
 const isVisible = ref(false);
 const modalBody = useTemplateRef<HTMLElement>('modalBody');

@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { inject } from "vue";
-import CardProfileComponent from "./CardProfileComponent.vue";
+import CardProfileComponent from "@/components/CardProfileComponent.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
 const data = inject(DataUserSymbol);

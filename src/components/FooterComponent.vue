@@ -88,5 +88,5 @@
 </template>
 
 <script setup lang="ts">
-import NewTabIcon from "./icons/NewTabIcon.vue";
+import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 </script>

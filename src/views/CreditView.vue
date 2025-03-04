@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { inject, onBeforeUnmount } from "vue";
 import { useHead } from '@unhead/vue';
-import NewTabIcon from "../components/icons/NewTabIcon.vue";
+import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 
 const data = inject(DataUserSymbol);

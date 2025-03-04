@@ -11,11 +11,11 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from 'vue';
 // import { useRoute } from 'vue-router';
-// import CardItemComponent from './CardItemComponent.vue';
+// import CardItemComponent from '@/components/CardItemComponent.vue';
 import type IProjectInfo from '@/helper/interfaces/IProjectInfo';
 import type IPropsProjectListComponent from '@/helper/interfaces/IPropsProjectListComponent';
 
-const CardItemComponent = defineAsyncComponent(() => import('./CardItemComponent.vue'));
+const CardItemComponent = defineAsyncComponent(() => import('@/components/CardItemComponent.vue'));
 
 // const route = useRoute();
 let projectList: IProjectInfo[] = [];
