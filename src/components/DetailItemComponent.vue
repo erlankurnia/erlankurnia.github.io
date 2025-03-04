@@ -41,7 +41,7 @@
                         class="w-auto h-full" />
                 </template>
                 <template v-else-if="project.imagesDir">
-                    <img :src="project.imagesDir + 'sample@0,5x.webp'" :alt="project.title"
+                    <img :src="project.imagesDir + 'sample@' + screenSize + '.webp'" :alt="project.title"
                         class="w-auto h-full md:pb-2" />
                 </template>
             </div>
@@ -86,11 +86,15 @@ import tools from '@/helper/tools';
 // import MarkdownComponent from './MarkdownComponent.vue';
 import Icon from '@/components/icons/Icon.vue';
 import NewTabIcon from '@/components/icons/NewTabIcon.vue';
+import { useScreenSizeStore } from '@/stores/screenSizeStore';
 
 const MarkdownComponent = defineAsyncComponent(() => import('@/components/MarkdownComponent.vue'));
 
 const props = defineProps<IPropsDetailItemComponent>();
 const validImages = ref<string[]>([]);
+
+const screenSizeStore = useScreenSizeStore();
+const screenSize = screenSizeStore.getScreen();
 
 function getImageUrl(filename: string) {
     return `${props.project.imagesDir}${filename}`;
@@ -100,7 +104,7 @@ async function validateImages(): Promise<void> {
     // const imageUrls = [];
     let imageIndex = 1;
 
-    let imageUrl = getImageUrl('sample@2x.webp');
+    let imageUrl = getImageUrl('sample@full.webp');
     if (await tools.verifyImageUrl(imageUrl)) {
         validImages.value.push(imageUrl);
         imageIndex++;

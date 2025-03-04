@@ -8,7 +8,7 @@
         }">
         <div class="overflow-hidden rounded-md aspect-16/9" :class="{ 'shadow-inner': project.imagesDir, }">
             <template v-if="project.imagesDir">
-                <img :src="project.imagesDir + 'sample@0,5x.webp'" :alt="project.title"
+                <img :src="project.imagesDir + 'sample@' + screenSize + '.webp'" :alt="project.title"
                     class="transition-transform duration-500 scale-100 group-hover:scale-110"
                     :class="{ 'w-full': project.imagesDir != null && project.imagesDir.length > 5 }" />
             </template>
@@ -68,8 +68,11 @@ import EventBus, { EventBusEnum } from '@/helper/EventBus';
 import type IPropsCardItemComponent from '@/helper/interfaces/IPropsCardItemComponent';
 import type { TDynamicModalComponent } from '@/helper/interfaces/TDynamicModalComponent';
 import DetailItemComponent from "@/components/DetailItemComponent.vue";
+import { useScreenSizeStore } from '@/stores/screenSizeStore';
 
 const props = defineProps<IPropsCardItemComponent>();
+const screenSizeStore = useScreenSizeStore();
+const screenSize = screenSizeStore.getScreen();
 
 async function preview() {
     const componentData: TDynamicModalComponent = {

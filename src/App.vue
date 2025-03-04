@@ -39,6 +39,8 @@ import EventBus, { EventBusEnum } from "./helper/EventBus";
 import type { TDynamicModalComponent } from "./helper/interfaces/TDynamicModalComponent";
 import LoadingFullPageComponent from "@/components/LoadingFullPageComponent.vue";
 import { useLoadingStore } from "@/stores/loadingStore";
+import { useScreenSizeStore } from "./stores/screenSizeStore";
+import { ScreenSizeEnum } from "./helper/interfaces/ScreenSizeEnum";
 
 const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
 const NavbarComponent = defineAsyncComponent(() => import('@/components/NavbarComponent.vue'));
@@ -78,10 +80,21 @@ type ModalType = InstanceType<typeof ModalComponent>;
 const modalComponent = useTemplateRef<ModalType>('modalComponent');
 const dynamicComponent = ref<TDynamicModalComponent | null>(null);
 
+const screenSizeStore = useScreenSizeStore();
 const loadingStore = useLoadingStore();
 const themeMode = ref(false);
 const dataUser: Ref<IDataUser | null> = ref(null);
 const nameParts: Ref<string[]> = ref([]);
+
+const screenWidth = window.innerWidth;
+// if (screenWidth <= 480) {
+// 	screenSizeStore.setScreen(ScreenSizeEnum.SMALL);
+// } else
+if (screenWidth <= 768) {
+	screenSizeStore.setScreen(ScreenSizeEnum.MEDIUM);
+} else {
+	screenSizeStore.setScreen(ScreenSizeEnum.LARGE);
+}
 
 async function getDataUser() {
 	dataUser.value = await tools.getDataUser<IDataUser>();
