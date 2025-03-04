@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:tailwind": "npx @tailwindcss/cli -i ./src/assets/css/tailwind.css -o ./dist/output.css --watch",
+    "dev:tailwind": "npx @tailwindcss/cli -i ./src/assets/css/tailwind.css -o ./public/output.css --watch",
     "build": "run-p type-check \"build-only {@}\" --",
     "rollup": "rollup --config",
     "preview": "vite preview",
