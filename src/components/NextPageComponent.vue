@@ -1,3 +1,7 @@
+<script setup lang="ts">
+defineProps<{ path: string, label?: string, }>();
+</script>
+
 <template>
     <div v-if="path" :class="['w-full h-auto flex justify-center pb-16 items-center', $attrs.class]">
         <RouterLink :to="path" class="flex flex-col w-auto h-auto lan-router-link">
@@ -9,7 +13,3 @@
         </RouterLink>
     </div>
 </template>
-
-<script setup lang="ts">
-defineProps<{ path: string, label?: string, }>();
-</script>

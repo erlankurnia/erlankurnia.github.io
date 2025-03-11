@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { inject } from "vue";
+import Icon from "@/components/icons/Icon.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+
+const data = inject(DataUserSymbol);
+</script>
+
 <template>
 	<section v-if="data && data.equipment" id="equipment" class="pt-24 max-md:px-2 pb-16">
 		<div class="container">
@@ -88,13 +96,3 @@
 		</div>
 	</section>
 </template>
-
-<script setup lang="ts">
-import { inject } from "vue";
-// import { useDateTime } from "../helper/mixins/dateTime";
-import Icon from "@/components/icons/Icon.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-
-// const {} = useDateTime();
-const data = inject(DataUserSymbol);
-</script>

@@ -1,3 +1,50 @@
+<script setup lang="ts">
+import { computed, inject, onBeforeUnmount, ref, watchEffect } from "vue";
+import { useRoute } from "vue-router";
+import { useHead } from '@unhead/vue';
+import SearchIcon from "@/components/icons/SearchIcon.vue";
+import ProjectListComponent from "@/components/ProjectListComponent.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import type IProjectInfo from "@/helper/interfaces/IProjectInfo";
+import Dictionary from "@/helper/interfaces/Dictionary";
+
+const projectsList = new Dictionary<IProjectInfo>();
+
+const route = useRoute()
+const data = inject(DataUserSymbol);
+const filter = ref('');
+const searchKeyword = ref('');
+
+if (route.params.filter instanceof Array) {
+    filter.value = route.params.filter[0].toLowerCase();
+} else {
+    filter.value = route.params.filter.toLowerCase();
+}
+
+watchEffect(() => {
+    if (data?.value?.portfolio?.projects != null && Array.isArray(data.value.portfolio.projects)) {
+        projectsList.clear();
+        for (let proj of data.value.portfolio.projects) {
+            if (!proj.tags.join(',').toLowerCase().includes(filter.value)) continue;
+            const key = `${proj.title}_${proj.description}_${proj.tags.join(' ')}_${proj.technologies?.join(' ')}_${proj.date}`.toLowerCase();
+            projectsList.set(key, proj);
+        }
+    }
+});
+
+const computedProjectsList = computed(() => {
+    return projectsList.filter((key: string, value: IProjectInfo) => key.includes(searchKeyword.value.toLowerCase()));
+})
+
+const notesHead = useHead({
+    title: "Erlan Kurnia's Projects",
+});
+
+onBeforeUnmount(() => {
+    if (notesHead !== undefined) notesHead.dispose();
+});
+</script>
+
 <template>
     <section v-if="data != null && data.portfolio" id="credit"
         :class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
@@ -30,57 +77,3 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-import { computed, inject, onBeforeUnmount, ref, watchEffect } from "vue";
-import { useRoute } from "vue-router";
-import { useHead } from '@unhead/vue';
-import SearchIcon from "@/components/icons/SearchIcon.vue";
-import ProjectListComponent from "@/components/ProjectListComponent.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import type IProjectInfo from "@/helper/interfaces/IProjectInfo";
-import Dictionary from "@/helper/interfaces/Dictionary";
-
-const projectsList = new Dictionary<IProjectInfo>();
-
-const route = useRoute()
-const data = inject(DataUserSymbol);
-const filter = ref('');
-const searchKeyword = ref('');
-
-if (route.params.filter instanceof Array) {
-    filter.value = route.params.filter[0].toLowerCase();
-} else {
-    filter.value = route.params.filter.toLowerCase();
-}
-
-watchEffect(() => {
-    if (data?.value?.portfolio?.projects != null && Array.isArray(data.value.portfolio.projects)) {
-        // data.value.portfolio.projects.sort((a, b) => {
-        //     const dateA = new Date(a.date);
-        //     const dateB = new Date(b.date);
-        //     return dateA.getTime() - dateB.getTime();
-        // });
-        // data.value.portfolio.projects.reverse();
-
-        projectsList.clear();
-        for (let proj of data.value.portfolio.projects) {
-            if (!proj.tags.join(',').toLowerCase().includes(filter.value)) continue;
-            const key = `${proj.title}_${proj.description}_${proj.tags.join(' ')}_${proj.technologies?.join(' ')}_${proj.date}`.toLowerCase();
-            projectsList.set(key, proj);
-        }
-    }
-});
-
-const computedProjectsList = computed(() => {
-    return projectsList.filter((key: string, value: IProjectInfo) => key.includes(searchKeyword.value.toLowerCase()));
-})
-
-const notesHead = useHead({
-    title: "Erlan Kurnia's Projects",
-});
-
-onBeforeUnmount(() => {
-    if (notesHead !== undefined) notesHead.dispose();
-});
-</script>

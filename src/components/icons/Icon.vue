@@ -1,7 +1,3 @@
-<template>
-	<component :is="currentComponent"></component>
-</template>
-
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 
@@ -64,13 +60,15 @@ const currentComponentName = (techName: string, icons: Record<string, string[]>)
 			if (tag.toLowerCase() == techName.toLowerCase()) {
 				name = key.charAt(0).toUpperCase() + key.substring(1);
 			}
-
 			if (name) break;
 		}
 		if (name) break;
 	}
-
 	return name;
 };
 const currentComponent = defineAsyncComponent(() => import(`./svg/${currentComponentName(props.techName, icons)}.svg.vue`));
 </script>
+
+<template>
+	<component :is="currentComponent"></component>
+</template>

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import type IGreetings from '@/helper/interfaces/IGreetings';
+
+const props = defineProps<{
+	collection: IGreetings[]
+}>();
+</script>
+
 <template>
 	<div id="accordion" class="p-4 space-y-2 xl:max-w-2xl xl:mx-auto">
 		<!-- Collection items -->
@@ -15,11 +23,3 @@
 		<!-- Collection items -->
 	</div>
 </template>
-
-<script setup lang="ts">
-import type IGreetings from '@/helper/interfaces/IGreetings';
-
-const props = defineProps<{
-	collection: IGreetings[]
-}>();
-</script>

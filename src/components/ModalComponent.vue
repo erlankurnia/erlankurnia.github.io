@@ -1,3 +1,33 @@
+<script setup lang="ts">
+import { ref, useTemplateRef } from "vue";
+import CloseIcon from "@/components/icons/CloseIcon.vue";
+
+const isVisible = ref(false);
+const modalBody = useTemplateRef<HTMLElement>('modalBody');
+const emit = defineEmits<{
+    (e: 'close'): void
+}>();
+
+const onVisibleChange = (status: boolean) => {
+    isVisible.value = status;
+    document.body.style.overflow = isVisible.value ? 'hidden' : 'auto';
+    document.body.style.padding = isVisible.value ? '0 8px 0 0' : '0';
+    if (modalBody.value) modalBody.value.scrollTop = 0;
+}
+
+function onCloseModal(event: Event | null = null) {
+    const target = event?.target as HTMLElement;
+    if (event == null || event.target == null || target.id == "block-modal") {
+        emit('close');
+        onVisibleChange(false);
+    }
+}
+
+defineExpose({
+    onVisibleChange
+});
+</script>
+
 <template>
     <transition name="show-up">
         <div v-show="isVisible" id="block-modal"
@@ -42,34 +72,3 @@
         </div>
     </transition>
 </template>
-
-<script setup lang="ts">
-import { ref, useTemplateRef } from "vue";
-import CloseIcon from "@/components/icons/CloseIcon.vue";
-
-const isVisible = ref(false);
-const modalBody = useTemplateRef<HTMLElement>('modalBody');
-const emit = defineEmits<{
-    (e: 'close'): void
-}>();
-
-const onVisibleChange = (status: boolean) => {
-    isVisible.value = status;
-    // console.log(`onVisibleChange: ${status}`);
-    document.body.style.overflow = isVisible.value ? 'hidden' : 'auto';
-    document.body.style.padding = isVisible.value ? '0 8px 0 0' : '0';
-    if (modalBody.value) modalBody.value.scrollTop = 0;
-}
-
-function onCloseModal(event: Event | null = null) {
-    const target = event?.target as HTMLElement;
-    if (event == null || event.target == null || target.id == "block-modal") {
-        emit('close');
-        onVisibleChange(false);
-    }
-}
-
-defineExpose({
-    onVisibleChange
-});
-</script>

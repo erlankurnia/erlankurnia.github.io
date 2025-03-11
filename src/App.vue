@@ -1,29 +1,3 @@
-<template>
-	<div :class="{ 'dark': themeMode }">
-		<NavbarComponent class="hidden sm:block"></NavbarComponent>
-		<div v-if="dataUser" class="select-none lan-container-body">
-			<router-view v-slot="{ Component }">
-				<transition name="page-up" mode="out-in">
-					<component :is="Component" />
-				</transition>
-			</router-view>
-		</div>
-		<FooterComponent></FooterComponent>
-		<ScrollUpComponent></ScrollUpComponent>
-		<ScrollDownComponent></ScrollDownComponent>
-		<ToggleDarkModeComponent class="lan-floating size-12 sm:hidden"></ToggleDarkModeComponent>
-		<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
-
-		<ModalComponent @close="hideModal" ref="modalComponent">
-			<template #body v-if="dynamicComponent">
-				<component :is="dynamicComponent.component" v-bind="dynamicComponent.props"></component>
-			</template>
-		</ModalComponent>
-
-		<LoadingFullPageComponent v-if="loadingStore.isLoading"></LoadingFullPageComponent>
-	</div>
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted, provide, type Ref, useTemplateRef, onUnmounted, defineAsyncComponent } from "vue";
 import { RouterView } from "vue-router";
@@ -79,7 +53,6 @@ useHead({
 type ModalType = InstanceType<typeof ModalComponent>;
 const modalComponent = useTemplateRef<ModalType>('modalComponent');
 const dynamicComponent = ref<TDynamicModalComponent | null>(null);
-
 const screenSizeStore = useScreenSizeStore();
 const loadingStore = useLoadingStore();
 const themeMode = ref(false);
@@ -124,3 +97,29 @@ provide(DataUserSymbol, dataUser);
 provide(NamePartSymbol, nameParts);
 provide(ThemeModeSymbol, themeMode);
 </script>
+
+<template>
+	<div :class="{ 'dark': themeMode }">
+		<NavbarComponent class="hidden sm:block"></NavbarComponent>
+		<div v-if="dataUser" class="select-none lan-container-body">
+			<router-view v-slot="{ Component }">
+				<transition name="page-up" mode="out-in">
+					<component :is="Component" />
+				</transition>
+			</router-view>
+		</div>
+		<FooterComponent></FooterComponent>
+		<ScrollUpComponent></ScrollUpComponent>
+		<ScrollDownComponent></ScrollDownComponent>
+		<ToggleDarkModeComponent class="lan-floating size-12 sm:hidden"></ToggleDarkModeComponent>
+		<NavbarMobileComponent class="block sm:hidden"></NavbarMobileComponent>
+
+		<ModalComponent @close="hideModal" ref="modalComponent">
+			<template #body v-if="dynamicComponent">
+				<component :is="dynamicComponent.component" v-bind="dynamicComponent.props"></component>
+			</template>
+		</ModalComponent>
+
+		<LoadingFullPageComponent v-if="loadingStore.isLoading"></LoadingFullPageComponent>
+	</div>
+</template>

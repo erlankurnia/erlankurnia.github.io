@@ -1,23 +1,10 @@
-<template>
-    <section v-if="computedProjectList && computedProjectList.length > 0"
-        class="grid justify-center w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 2xl:grid-cols-3 2xl:gap-6 2xl:mx-auto">
-        <transition-group name="slide-up" appear>
-            <CardItemComponent v-for="proj in computedProjectList" :key="proj.slug ?? proj.id"
-                :id="'project-' + proj.id" :project="proj" :reverseTheme="reverseTheme"></CardItemComponent>
-        </transition-group>
-    </section>
-</template>
-
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from 'vue';
-// import { useRoute } from 'vue-router';
-// import CardItemComponent from '@/components/CardItemComponent.vue';
 import type IProjectInfo from '@/helper/interfaces/IProjectInfo';
 import type IPropsProjectListComponent from '@/helper/interfaces/IPropsProjectListComponent';
 
 const CardItemComponent = defineAsyncComponent(() => import('@/components/CardItemComponent.vue'));
 
-// const route = useRoute();
 let projectList: IProjectInfo[] = [];
 const props = defineProps<IPropsProjectListComponent>();
 
@@ -36,3 +23,11 @@ const computedProjectList = computed(() => {
     return projectList;
 });
 </script>
+
+<template>
+    <section v-if="computedProjectList && computedProjectList.length > 0"
+        class="grid justify-center w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 2xl:grid-cols-3 2xl:gap-6 2xl:mx-auto">
+        <CardItemComponent v-for="proj in computedProjectList" :key="proj.slug ?? proj.id" :project="proj"
+            :reverseTheme="reverseTheme"></CardItemComponent>
+    </section>
+</template>

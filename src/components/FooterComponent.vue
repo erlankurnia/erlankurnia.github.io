@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import NewTabIcon from "@/components/icons/NewTabIcon.vue";
+</script>
+
 <template>
 	<div class="container w-full h-[2px] px-8">
 		<div class="w-full h-full bg-quaternary dark:bg-quaternaryDark"></div>
@@ -86,7 +90,3 @@
 	</footer>
 	<section></section>
 </template>
-
-<script setup lang="ts">
-import NewTabIcon from "@/components/icons/NewTabIcon.vue";
-</script>

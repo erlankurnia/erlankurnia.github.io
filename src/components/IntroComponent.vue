@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import { inject } from "vue";
+
+const data = inject(DataUserSymbol);
+</script>
+
 <template>
 	<section v-if="data && data.intro && data.intro.length > 0" id="intro"
 		class="pt-24 pb-16 max-md:px-2 max-lg:min-h-screen">
@@ -19,10 +26,3 @@
 		</div>
 	</section>
 </template>
-
-<script setup lang="ts">
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import { inject } from "vue";
-
-const data = inject(DataUserSymbol);
-</script>

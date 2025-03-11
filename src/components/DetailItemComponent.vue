@@ -1,3 +1,49 @@
+<script setup lang="ts">
+import { defineAsyncComponent, onMounted, ref } from 'vue';
+import type IPropsDetailItemComponent from '@/helper/interfaces/IPropsDetailItemComponent';
+import EventBus, { EventBusEnum } from '@/helper/EventBus';
+import tools from '@/helper/tools';
+import Icon from '@/components/icons/Icon.vue';
+import NewTabIcon from '@/components/icons/NewTabIcon.vue';
+import { useScreenSizeStore } from '@/stores/screenSizeStore';
+
+const MarkdownComponent = defineAsyncComponent(() => import('@/components/MarkdownComponent.vue'));
+
+const props = defineProps<IPropsDetailItemComponent>();
+const validImages = ref<string[]>([]);
+const screenSizeStore = useScreenSizeStore();
+const screenSize = screenSizeStore.getScreen();
+
+function getImageUrl(filename: string) {
+    return `${props.project.imagesDir}${filename}`;
+}
+
+async function validateImages(): Promise<void> {
+    let imageIndex = 1;
+
+    let imageUrl = getImageUrl('sample@full.webp');
+    if (await tools.verifyImageUrl(imageUrl)) {
+        validImages.value.push(imageUrl);
+        imageIndex++;
+    }
+
+    imageUrl = getImageUrl(`${imageIndex}.png`);
+    while (await tools.verifyImageUrl(imageUrl)) {
+        validImages.value.push(imageUrl);
+        imageIndex++;
+        imageUrl = getImageUrl(`${imageIndex}.png`);
+    }
+}
+
+function hideModal(): void {
+    EventBus.$emit(EventBusEnum.HideModal);
+}
+
+onMounted(() => {
+    validateImages();
+});
+</script>
+
 <template>
     <div
         class="grid grid-rows-[auto_auto_auto_auto_auto_auto] grid-cols-1 gap-x-4 gap-y-2 w-auto h-auto p-3 transition duration-200 group bg-transparent">
@@ -77,54 +123,3 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-import { defineAsyncComponent, onMounted, ref } from 'vue';
-import type IPropsDetailItemComponent from '@/helper/interfaces/IPropsDetailItemComponent';
-import EventBus, { EventBusEnum } from '@/helper/EventBus';
-import tools from '@/helper/tools';
-// import MarkdownComponent from './MarkdownComponent.vue';
-import Icon from '@/components/icons/Icon.vue';
-import NewTabIcon from '@/components/icons/NewTabIcon.vue';
-import { useScreenSizeStore } from '@/stores/screenSizeStore';
-
-const MarkdownComponent = defineAsyncComponent(() => import('@/components/MarkdownComponent.vue'));
-
-const props = defineProps<IPropsDetailItemComponent>();
-const validImages = ref<string[]>([]);
-
-const screenSizeStore = useScreenSizeStore();
-const screenSize = screenSizeStore.getScreen();
-
-function getImageUrl(filename: string) {
-    return `${props.project.imagesDir}${filename}`;
-}
-
-async function validateImages(): Promise<void> {
-    // const imageUrls = [];
-    let imageIndex = 1;
-
-    let imageUrl = getImageUrl('sample@full.webp');
-    if (await tools.verifyImageUrl(imageUrl)) {
-        validImages.value.push(imageUrl);
-        imageIndex++;
-    }
-
-    imageUrl = getImageUrl(`${imageIndex}.png`);
-    while (await tools.verifyImageUrl(imageUrl)) {
-        validImages.value.push(imageUrl);
-        imageIndex++;
-        imageUrl = getImageUrl(`${imageIndex}.png`);
-    }
-
-    // validImages.value = imageUrls;
-}
-
-function hideModal(): void {
-    EventBus.$emit(EventBusEnum.HideModal);
-}
-
-onMounted(() => {
-    validateImages();
-});
-</script>

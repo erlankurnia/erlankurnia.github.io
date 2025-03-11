@@ -1,3 +1,55 @@
+<script setup lang="ts">
+import { computed, inject, onBeforeUnmount, onMounted, ref, watchEffect } from "vue";
+import { useRoute } from "vue-router";
+import { useHead } from '@unhead/vue';
+import SearchIcon from "@/components/icons/SearchIcon.vue";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import type INote from "@/helper/interfaces/INote";
+import Dictionary from "@/helper/interfaces/Dictionary";
+
+const notesList = new Dictionary<INote>();
+const route = useRoute()
+const data = inject(DataUserSymbol);
+const filter = ref('');
+const searchKeyword = ref('');
+
+if (route.params.filter instanceof Array) {
+	filter.value = route.params.filter[0];
+} else {
+	filter.value = route.params.filter;
+}
+
+watchEffect(() => {
+	if (data?.value?.notebook?.notes != null && Array.isArray(data.value.notebook.notes)) {
+		data.value.notebook.notes.sort((a, b) => {
+			const dateA = new Date(a.date);
+			const dateB = new Date(b.date);
+			return dateA.getTime() - dateB.getTime();
+		});
+		data.value.notebook.notes.reverse();
+
+		notesList.clear();
+		for (let note of data.value.notebook.notes) {
+			const key = `${note.title}_${note.description}_${note.topics.join(' ')}_${note.date}`.toLowerCase();
+			notesList.set(key, note);
+		}
+	}
+});
+
+const computedNotesList = computed(() => {
+	return notesList.filter((key: string, value: INote) => key.includes(searchKeyword.value.toLowerCase()));
+})
+
+const notesHead = useHead({
+	title: "Erlan Kurnia's Notes",
+});
+
+onBeforeUnmount(() => {
+	if (notesHead !== undefined) notesHead.dispose();
+});
+onMounted
+</script>
+
 <template>
 	<section v-if="data != null && data.notebook.notes" id="credit"
 		:class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
@@ -48,56 +100,3 @@
 		</div>
 	</section>
 </template>
-
-<script setup lang="ts">
-import { computed, inject, onBeforeUnmount, onMounted, ref, watchEffect } from "vue";
-import { useRoute } from "vue-router";
-import { useHead } from '@unhead/vue';
-import SearchIcon from "@/components/icons/SearchIcon.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import type INote from "@/helper/interfaces/INote";
-import Dictionary from "@/helper/interfaces/Dictionary";
-
-const notesList = new Dictionary<INote>();
-
-const route = useRoute()
-const data = inject(DataUserSymbol);
-const filter = ref('');
-const searchKeyword = ref('');
-
-if (route.params.filter instanceof Array) {
-	filter.value = route.params.filter[0];
-} else {
-	filter.value = route.params.filter;
-}
-
-watchEffect(() => {
-	if (data?.value?.notebook?.notes != null && Array.isArray(data.value.notebook.notes)) {
-		data.value.notebook.notes.sort((a, b) => {
-			const dateA = new Date(a.date);
-			const dateB = new Date(b.date);
-			return dateA.getTime() - dateB.getTime();
-		});
-		data.value.notebook.notes.reverse();
-
-		notesList.clear();
-		for (let note of data.value.notebook.notes) {
-			const key = `${note.title}_${note.description}_${note.topics.join(' ')}_${note.date}`.toLowerCase();
-			notesList.set(key, note);
-		}
-	}
-});
-
-const computedNotesList = computed(() => {
-	return notesList.filter((key: string, value: INote) => key.includes(searchKeyword.value.toLowerCase()));
-})
-
-const notesHead = useHead({
-	title: "Erlan Kurnia's Notes",
-});
-
-onBeforeUnmount(() => {
-	if (notesHead !== undefined) notesHead.dispose();
-});
-onMounted
-</script>

@@ -1,14 +1,3 @@
-<template>
-    <div v-if="isVisible" class="fixed z-9999 bg-transparent top-0 right-0 bottom-0 left-0" @click="hide">
-        <transition name="show-up" appear>
-            <div ref="options" :style="menuStyles.styles"
-                class="fixed flex w-auto h-auto rounded-lg origin-top shadow-md min-w-32 max-w-[75vw] shadow-dark/25 bg-tertiary dark:bg-light">
-                <slot></slot>
-            </div>
-        </transition>
-    </div>
-</template>
-
 <script setup lang="ts">
 import type ICoordinate from '@/helper/interfaces/ICoordinate';
 import { computed, ref, type Ref } from 'vue';
@@ -70,18 +59,11 @@ const enableScroll = () => {
     window.removeEventListener('touchmove', preventScroll);
 };
 
-// const isTouchDevice = () => {
-//     return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-// };
-
 const applyPadding = () => {
     let paddingShow = '0';
     if (window.matchMedia('(min-width: 560px)').matches) {
         paddingShow = '0 8px 0 0';
     }
-    // if (isTouchDevice()) {
-    //     paddingShow = '0';
-    // }
     document.body.style.overflow = isVisible.value ? 'hidden' : 'auto';
     document.body.style.padding = isVisible.value ? paddingShow : '0';
     if (navbarMenu != null) navbarMenu.style.padding = document.body.style.padding;
@@ -107,3 +89,14 @@ defineExpose({
 });
 window.addEventListener('resize', applyPadding);
 </script>
+
+<template>
+    <div v-if="isVisible" class="fixed z-9999 bg-transparent top-0 right-0 bottom-0 left-0" @click="hide">
+        <transition name="show-up" appear>
+            <div ref="options" :style="menuStyles.styles"
+                class="fixed flex w-auto h-auto rounded-lg origin-top shadow-md min-w-32 max-w-[75vw] shadow-dark/25 bg-tertiary dark:bg-light">
+                <slot></slot>
+            </div>
+        </transition>
+    </div>
+</template>

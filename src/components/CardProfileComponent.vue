@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { inject } from 'vue';
+// import { useDateTime } from "../helper/mixins/dateTime";
+import SocialMediaComponent from "@/components/SocialMediaComponent.vue";
+import DataUserSymbol from '@/helper/symbols/DataUserSymbol';
+import NamePartSymbol from '@/helper/symbols/NamePartSymbol';
+import NewTabIcon from '@/components/icons/NewTabIcon.vue';
+
+const data = inject(DataUserSymbol);
+const namePart = inject(NamePartSymbol);
+// const { monthsToYears, monthDiff } = useDateTime();
+</script>
+
 <template>
     <transition name="slide-right" appear>
         <h3 v-if="namePart != null && namePart.length > 0" style="transition-delay: 0ms"
@@ -89,16 +102,3 @@
         <SocialMediaComponent style="transition-delay: 250ms"></SocialMediaComponent>
     </transition>
 </template>
-
-<script setup lang="ts">
-import { inject } from 'vue';
-// import { useDateTime } from "../helper/mixins/dateTime";
-import SocialMediaComponent from "@/components/SocialMediaComponent.vue";
-import DataUserSymbol from '@/helper/symbols/DataUserSymbol';
-import NamePartSymbol from '@/helper/symbols/NamePartSymbol';
-import NewTabIcon from '@/components/icons/NewTabIcon.vue';
-
-const data = inject(DataUserSymbol);
-const namePart = inject(NamePartSymbol);
-// const { monthsToYears, monthDiff } = useDateTime();
-</script>

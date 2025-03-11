@@ -1,3 +1,57 @@
+<script setup lang="ts">
+import { defineAsyncComponent, inject, ref, useTemplateRef } from "vue";
+import { useRouter } from 'vue-router';
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+
+const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
+const LoadingComponent = defineAsyncComponent(() => import('@/components/LoadingComponent.vue'));
+
+type ModalType = InstanceType<typeof ModalComponent>
+const modalComponent = useTemplateRef<ModalType>('modalComponent');
+
+const router = useRouter();
+const showLoading = ref(false);
+const data = inject(DataUserSymbol);
+const formName = ref('');
+const formEmail = ref('');
+const formMessage = ref('');
+const modalMessage = ref('');
+
+function closeModal() {
+	document.body.style.overflow = '';
+	modalComponent.value?.onVisibleChange(false);
+	router.replace({ path: '/' });
+}
+
+async function submitForm() {
+	showLoading.value = true;
+	document.body.style.overflow = 'hidden';
+	const response = await fetch('https://formspree.io/f/myzywvog', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			name: formName.value,
+			email: formEmail.value,
+			message: formMessage.value,
+		})
+	});
+
+	if (response.ok) {
+		formName.value = '';
+		formEmail.value = '';
+		formMessage.value = '';
+		modalMessage.value = 'Thank you for your message! We will get back to you soon.';
+	} else {
+		modalMessage.value = 'There was an error submitting the form. Please try again.';
+	}
+
+	modalComponent.value?.onVisibleChange(true);
+	showLoading.value = false;
+}
+</script>
+
 <template>
 	<section v-if="data && data.contact" id="contact" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
@@ -88,59 +142,3 @@
 		</div>
 	</transition>
 </template>
-
-<script setup lang="ts">
-import { defineAsyncComponent, inject, ref, useTemplateRef } from "vue";
-import { useRouter } from 'vue-router';
-// import ModalComponent from '@/components/ModalComponent.vue';
-// import LoadingComponent from "@/components/LoadingComponent.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-
-const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
-const LoadingComponent = defineAsyncComponent(() => import('@/components/LoadingComponent.vue'));
-
-type ModalType = InstanceType<typeof ModalComponent>
-const modalComponent = useTemplateRef<ModalType>('modalComponent');
-
-const router = useRouter();
-const showLoading = ref(false);
-const data = inject(DataUserSymbol);
-const formName = ref('');
-const formEmail = ref('');
-const formMessage = ref('');
-const modalMessage = ref('');
-
-function closeModal() {
-	document.body.style.overflow = '';
-	modalComponent.value?.onVisibleChange(false);
-	router.replace({ path: '/' });
-}
-
-async function submitForm() {
-	showLoading.value = true;
-	document.body.style.overflow = 'hidden';
-	const response = await fetch('https://formspree.io/f/myzywvog', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			name: formName.value,
-			email: formEmail.value,
-			message: formMessage.value,
-		})
-	});
-
-	if (response.ok) {
-		formName.value = '';
-		formEmail.value = '';
-		formMessage.value = '';
-		modalMessage.value = 'Thank you for your message! We will get back to you soon.';
-	} else {
-		modalMessage.value = 'There was an error submitting the form. Please try again.';
-	}
-
-	modalComponent.value?.onVisibleChange(true);
-	showLoading.value = false;
-}
-</script>

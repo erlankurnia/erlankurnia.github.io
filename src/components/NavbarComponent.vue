@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import ToggleDarkModeComponent from "@/components/ToggleDarkModeComponent.vue";
+
+//#region On scrolling event to create sticky navbar
+const onScroll = () => {
+	const header = document.querySelector("#navbar-menu") as HTMLElement;
+	const fixedNav = header?.offsetTop ?? 0;
+	const backToTop = document.querySelector("#scroll-up") as HTMLElement;
+	if (window.scrollY > fixedNav) {
+		header.classList.add("lan-navbar-fixed");
+		// header.classList.remove("absolute");
+		if (backToTop) {
+			backToTop.classList.remove("hidden");
+			backToTop.classList.add("flex");
+		}
+	} else {
+		header.classList.remove("lan-navbar-fixed");
+		// header.classList.add("absolute");
+		if (backToTop) {
+			backToTop.classList.remove("flex");
+			backToTop.classList.add("hidden");
+		}
+	}
+};
+window.addEventListener("scroll", onScroll);
+//#endregion On scrolling event to create sticky navbar
+</script>
+
 <template>
 	<header id="navbar-menu" class="fixed top-0 left-0 z-100 flex items-center w-full bg-transparent select-none">
 		<div class="container px-4">
@@ -63,31 +91,3 @@
 		</div>
 	</header>
 </template>
-
-<script setup lang="ts">
-import ToggleDarkModeComponent from "@/components/ToggleDarkModeComponent.vue";
-
-//#region On scrolling event to create sticky navbar
-const onScroll = () => {
-	const header = document.querySelector("#navbar-menu") as HTMLElement;
-	const fixedNav = header?.offsetTop ?? 0;
-	const backToTop = document.querySelector("#scroll-up") as HTMLElement;
-	if (window.scrollY > fixedNav) {
-		header.classList.add("lan-navbar-fixed");
-		// header.classList.remove("absolute");
-		if (backToTop) {
-			backToTop.classList.remove("hidden");
-			backToTop.classList.add("flex");
-		}
-	} else {
-		header.classList.remove("lan-navbar-fixed");
-		// header.classList.add("absolute");
-		if (backToTop) {
-			backToTop.classList.remove("flex");
-			backToTop.classList.add("hidden");
-		}
-	}
-};
-window.addEventListener("scroll", onScroll);
-//#endregion On scrolling event to create sticky navbar
-</script>

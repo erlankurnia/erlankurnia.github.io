@@ -1,3 +1,26 @@
+<script setup lang="ts">
+function setAllPagesBack() {
+	var pages = document.getElementsByClassName("page");
+	for (var i = 0; i < pages.length; i++) {
+		pages[i].classList.remove("z-50");
+	}
+}
+
+function setClickedPageForward(event: Event) {
+	const target = event?.target as HTMLElement;
+
+	target.classList.add("z-50");
+}
+
+function togglePageFlip(event: Event) {
+	const target = event?.target as HTMLElement;
+
+	setAllPagesBack();
+	setClickedPageForward(event);
+	target.classList.toggle("turn");
+}
+</script>
+
 <template>
 	<div class="flex justify-end w-screen h-screen text-tertiary bg-dark perspective">
 		<div class="absolute flex items-end w-1/2 h-screen transition duration-1000 origin-left transform page"
@@ -26,30 +49,6 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-
-function setAllPagesBack() {
-	var pages = document.getElementsByClassName("page");
-	for (var i = 0; i < pages.length; i++) {
-		pages[i].classList.remove("z-50");
-	}
-}
-
-function setClickedPageForward(event: Event) {
-	const target = event?.target as HTMLElement;
-
-	target.classList.add("z-50");
-}
-
-function togglePageFlip(event: Event) {
-	const target = event?.target as HTMLElement;
-
-	setAllPagesBack();
-	setClickedPageForward(event);
-	target.classList.toggle("turn");
-}
-</script>
 
 <style scoped>
 .perspective {

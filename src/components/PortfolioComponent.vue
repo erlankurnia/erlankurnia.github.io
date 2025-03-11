@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { inject, } from "vue";
+import { useRoute } from "vue-router";
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import NextPageComponent from "@/components/NextPageComponent.vue";
+import ProjectListComponent from "@/components/ProjectListComponent.vue";
+
+const route = useRoute();
+const data = inject(DataUserSymbol);
+</script>
+
 <template>
 	<section id="portfolio" :class="['pt-24 max-md:px-2 max-lg:min-h-screen', $attrs.class]">
 		<div v-if="data?.portfolio" class="container">
@@ -20,14 +31,3 @@
 		<NextPageComponent label="See All Projects" :path="route.meta.url.projects" class="mt-16"></NextPageComponent>
 	</section>
 </template>
-
-<script setup lang="ts">
-import { inject, } from "vue";
-import { useRoute } from "vue-router";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import NextPageComponent from "@/components/NextPageComponent.vue";
-import ProjectListComponent from "@/components/ProjectListComponent.vue";
-
-const route = useRoute();
-const data = inject(DataUserSymbol);
-</script>

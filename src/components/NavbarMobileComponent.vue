@@ -1,3 +1,29 @@
+<script setup lang="ts">
+//#region On scrolling event to create sticky navbar
+const onScroll = () => {
+    const header = document.querySelector("#navbar-menu-mobile") as HTMLElement;
+    const fixedNav = header?.offsetTop ?? 0;
+    const backToTop = document.querySelector("#back-to-top") as HTMLElement;
+    if (window.scrollY > fixedNav) {
+        header.classList.add("lan-navbar-fixed");
+        // header.classList.remove("absolute");
+        if (backToTop) {
+            backToTop.classList.remove("hidden");
+            backToTop.classList.add("flex");
+        }
+    } else {
+        header.classList.remove("lan-navbar-fixed");
+        // header.classList.add("absolute");
+        if (backToTop) {
+            backToTop.classList.remove("flex");
+            backToTop.classList.add("hidden");
+        }
+    }
+};
+window.addEventListener("scroll", onScroll);
+//#endregion On scrolling event to create sticky navbar
+</script>
+
 <template>
     <header id="navbar-menu-mobile"
         class="fixed bottom-0 left-0 right-0 z-8888 flex items-center w-full h-auto bg-transparent select-none">
@@ -56,30 +82,3 @@
         </div>
     </header>
 </template>
-
-<script setup lang="ts">
-
-//#region On scrolling event to create sticky navbar
-const onScroll = () => {
-    const header = document.querySelector("#navbar-menu-mobile") as HTMLElement;
-    const fixedNav = header?.offsetTop ?? 0;
-    const backToTop = document.querySelector("#back-to-top") as HTMLElement;
-    if (window.scrollY > fixedNav) {
-        header.classList.add("lan-navbar-fixed");
-        // header.classList.remove("absolute");
-        if (backToTop) {
-            backToTop.classList.remove("hidden");
-            backToTop.classList.add("flex");
-        }
-    } else {
-        header.classList.remove("lan-navbar-fixed");
-        // header.classList.add("absolute");
-        if (backToTop) {
-            backToTop.classList.remove("flex");
-            backToTop.classList.add("hidden");
-        }
-    }
-};
-window.addEventListener("scroll", onScroll);
-//#endregion On scrolling event to create sticky navbar
-</script>

@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import ThemeModeSymbol from '@/helper/symbols/ThemeModeSymbol';
+import { inject, onBeforeMount } from 'vue';
+
+const themeMode = inject(ThemeModeSymbol);
+
+function toggleDarkMode(forceDark = false) {
+    if (themeMode) themeMode.value = !themeMode.value;
+
+    if (themeMode?.value || forceDark) {
+        localStorage.setItem('themeMode', 'dark');
+        document.documentElement.classList.add('dark');
+    } else {
+        localStorage.setItem('themeMode', 'light');
+        document.documentElement.classList.remove('dark');
+    }
+}
+
+onBeforeMount(() => {
+    if (localStorage.getItem('themeMode') == 'dark') {
+        toggleDarkMode(true);
+        if (themeMode) themeMode.value = true;
+    }
+});
+</script>
+
 <template>
     <button id="toggle-dark-mode" @click="toggleDarkMode(false)" title="Theme Mode Toggle" type="button"
         :class="['justify-center items-center', $attrs.class]">
@@ -33,29 +59,3 @@
         </transition>
     </button>
 </template>
-
-<script setup lang="ts">
-import ThemeModeSymbol from '@/helper/symbols/ThemeModeSymbol';
-import { inject, onBeforeMount } from 'vue';
-
-const themeMode = inject(ThemeModeSymbol);
-
-function toggleDarkMode(forceDark = false) {
-    if (themeMode) themeMode.value = !themeMode.value;
-
-    if (themeMode?.value || forceDark) {
-        localStorage.setItem('themeMode', 'dark');
-        document.documentElement.classList.add('dark');
-    } else {
-        localStorage.setItem('themeMode', 'light');
-        document.documentElement.classList.remove('dark');
-    }
-}
-
-onBeforeMount(() => {
-    if (localStorage.getItem('themeMode') == 'dark') {
-        toggleDarkMode(true);
-        if (themeMode) themeMode.value = true;
-    }
-});
-</script>

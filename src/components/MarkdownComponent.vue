@@ -1,13 +1,5 @@
-<template>
-	<section v-if="generatedContent" id="markdown" class="w-full py-0 select-text max-xs:min-h-screen">
-		<div id="markdown-content" class="flex-row w-full overflow-x-auto text-dark dark:text-light"
-			v-html="generatedContent"></div>
-	</section>
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted, onUpdated, type Ref } from "vue";
-// import { copyText } from 'vue3-clipboard';
 import useClipboard from 'vue-clipboard3';
 import 'highlight.js/styles/stackoverflow-dark.min.css';
 import hljs from 'highlight.js/lib/core';
@@ -25,7 +17,6 @@ import hljsXml from 'highlight.js/lib/languages/xml';
 import MarkdownIt from "markdown-it";
 import type { Token } from "markdown-it/index.js";
 import type IPropsMarkdownComponent from "@/helper/interfaces/IPropsMarkdownComponent";
-// import type { LanguageFn } from "highlight.js";
 
 hljs.registerLanguage('apache', hljsApache);
 hljs.registerLanguage('bash', hljsBash);
@@ -55,36 +46,6 @@ const rawCodeList: string[] = [];
 
 const parsedContent = mdit.parse(props.contentMarkdown, {});
 
-// const registeredLanguages: string[] = [];
-// const languageModules = import.meta.glob('highlight.js/lib/languages/*.js');
-// for (let i = 0; i < parsedContent.length; i++) {
-// 	const token = parsedContent[i];
-// 	if (token.type === 'fence' && token.tag === 'code' && token.info.length > 0) {
-// 		// await loadLanguage(token.info);
-// 		if (!registeredLanguages.includes(token.info)) {
-// 			try {
-// 				// const { default: lang } = await import(`highlight.js/lib/languages/${token.info}`);
-// 				// hljs.registerLanguage(token.info, lang);
-// 				// registeredLanguages.push(token.info);
-// 				// console.log(token.info + ": " + JSON.stringify(lang));
-// 				const language = token.info;
-// 				const modulePath = `highlight.js/lib/languages/${language}.js`;
-// 				if (languageModules[modulePath]) {
-// 					const langModule = await languageModules[modulePath]();
-// 					const lang = langModule as LanguageFn;
-// 					hljs.registerLanguage(language, lang);
-// 					registeredLanguages.push(language);
-// 				} else {
-// 					console.error(`Language module not found: ${language}`);
-// 				}
-// 			}
-// 			catch (e) {
-// 				console.warn(e);
-// 			}
-// 		}
-// 	}
-// }
-
 onMounted(async () => {
 	const addCopyBtn = (tokens: Token[]) => {
 		for (let i = 0; i < tokens.length; i++) {
@@ -92,9 +53,6 @@ onMounted(async () => {
 
 			if (token.type === 'fence' && token.tag === 'code') {
 				const originalContent = hljs.highlight(token.content, { language: token.info }).value;
-				// console.log(token);
-				// console.log(originalContent);
-
 				const elButton = document.createElement("button");
 				elButton.type = 'button';
 				elButton.id = 'btn-copy-code-' + rawCodeList.length;
@@ -171,7 +129,6 @@ onMounted(async () => {
 
 			const preContainer = document.querySelectorAll('#markdown-content span.relative.hljs');
 			for (let pre of preContainer) {
-				// const content = pre.querySelector('#markdown-code-container');
 				const btn = pre.querySelector('button.copy-btn') as HTMLButtonElement;
 				if (btn != null) {
 					const idx = Number.parseInt(btn.id.replace('btn-copy-code-', ''));
@@ -181,5 +138,11 @@ onMounted(async () => {
 		}
 	});
 });
-
 </script>
+
+<template>
+	<section v-if="generatedContent" id="markdown" class="w-full py-0 select-text max-xs:min-h-screen">
+		<div id="markdown-content" class="flex-row w-full overflow-x-auto text-dark dark:text-light"
+			v-html="generatedContent"></div>
+	</section>
+</template>

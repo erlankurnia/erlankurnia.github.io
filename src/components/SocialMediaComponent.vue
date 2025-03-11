@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import { inject } from "vue";
+
+const data = inject(DataUserSymbol);
+</script>
+
 <template>
 	<div v-if="data?.socialMedia" class="flex items-center">
 		<!-- Facebook -->
@@ -66,10 +73,3 @@
 		<!-- GitHub -->
 	</div>
 </template>
-
-<script setup lang="ts">
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import { inject } from "vue";
-
-const data = inject(DataUserSymbol);
-</script>

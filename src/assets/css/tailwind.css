@@ -42,9 +42,7 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
-
-@layer base {
+  
 	body {
 		@apply bg-tertiary dark:bg-tertiaryDark;
 		font-family: "Roboto Mono", monospace;
@@ -78,6 +76,14 @@
     background-color: var(--color-primaryDark);
   }
   
+  ::selection {
+    @apply bg-primary text-tertiary;
+  }
+
+  .dark ::selection {
+    @apply bg-secondaryDark text-tertiaryDark;
+  }
+
 	button {
 		@apply outline-hidden cursor-pointer;
 	}

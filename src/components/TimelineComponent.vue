@@ -1,3 +1,9 @@
+<script lang="ts">
+import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
+
+defineProps<{ experiences: IWorkExperience[] }>();
+</script>
+
 <template>
 	<div class="w-auto px-4 mx-auto">
 		<ol class="w-auto max-w-md mx-auto xl:max-w-2xl">
@@ -55,11 +61,3 @@
 		</ol>
 	</div>
 </template>
-
-<script lang="ts">
-import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
-// import { useDateTime } from "../helper/mixins/dateTime";
-
-// const { monthsToYears, monthDiff, dateFormat } = useDateTime();
-defineProps<{ experiences: IWorkExperience[] }>();
-</script>
