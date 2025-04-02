@@ -73,7 +73,7 @@ const data = inject(DataUserSymbol);
 					<transition name="slide-left" appear>
 						<h style="transition-delay: 150ms"
 							class="py-6 text-sm font-extrabold sm:text-lg max-w-max lg:ml-auto text-dark dark:text-light lg:text-2xl">
-							Unity<span class="font-bold text-primary dark:text-primaryDark">_</span>Developer
+							Software<span class="font-bold text-primary dark:text-primaryDark">_</span>Engineer
 							<div class="border-b-[2px] mt-1 border-b-quaternary dark:border-b-quaternaryDark"></div>
 						</h>
 					</transition>
