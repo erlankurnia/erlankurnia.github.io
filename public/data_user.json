@@ -37,7 +37,7 @@
 		},
 		"profession": {
 			"label": "Profession",
-			"value": "Unity Developer",
+			"value": "Software Engineer",
 			"type": "text"
 		},
 		"birthday": {
@@ -62,7 +62,7 @@
 		"timeline": [
 			{
 				"id": 5,
-				"title": "Unity Developer",
+				"title": "Software Engineer",
 				"status": "Full-time (Hybrid)",
 				"dateFrom": "2021-02-08",
 				"dateTo": "NOW",
