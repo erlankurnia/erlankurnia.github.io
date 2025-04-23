@@ -425,27 +425,29 @@
 			},
 			{
 				"id": 0,
-				"title": "Land Estate - Properties Platform API",
+				"title": "Land Estate - Property Ads Platform API",
 				"slug": "land-property-api",
 				"imagesDir": "/img/portfolio/projects/landestate.api/",
 				"summary": "A project built using ASP.NET Core and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The REST API allows users to browse and manage property listings.",
 				"description": "",
-				"url": "https://land-estate.apidocumentation.com/reference",
+				"url": "https://land-property.azurewebsites.net/api/docs/v1",
 				"repo": "https://github.com/krlan2789/Land-Property-Server",
 				"features": [],
 				"technologies": [
 					"ASP.NET Core",
 					"C#",
 					"Entity Framework Core",
-					"Microsoft SQL Server",
+					"SQLite",
+					"Azure App Service",
 					"REST API"
 				],
 				"tags": [
 					"dotnet",
 					"asp-net",
 					"csharp",
-					"sql-server",
+					"sqlite",
 					"entity-framework-core",
+					"azure-app-service",
 					"rest-api"
 				]
 			},
