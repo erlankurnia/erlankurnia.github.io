@@ -458,23 +458,25 @@
 				"imagesDir": "/img/portfolio/projects/langeng.socialmedia.api/",
 				"summary": "A REST API project designed to manage social media functionalities. It allows users to perform actions such as registering accounts, logging in, posting messages, and viewing messages from other users.",
 				"description": "- Designed and implemented API endpoints for user registration, authentication, posting messages, and viewing messages.\n- Handled data retrieval and storage using appropriate database solutions.\n- Ensured API security and performance through best practices and optimization techniques.",
-				"url": "https://langeng.apidocumentation.com/reference",
+				"url": "https://langeng.azurewebsites.net/api/docs/v1",
 				"repo": "https://github.com/krlan2789/Lan-SocialMedia-API",
 				"features": [],
 				"technologies": [
 					"ASP.NET Core",
 					"C#",
 					"Entity Framework Core",
-					"Microsoft SQL Server",
-					"REST API"
+					"SQLite",
+					"REST API",
+					"Azure App Service"
 				],
 				"tags": [
 					"dotnet",
 					"asp-net",
 					"csharp",
-					"sql-server",
+					"sqlite",
 					"entity-framework-core",
-					"rest-api"
+					"rest-api",
+					"azure-app-service"
 				]
 			},
 			{
