@@ -407,7 +407,7 @@
 			},
 			{
 				"id": 0,
-				"title": "Land Estate - Properties Platform Mobile App",
+				"title": "Land Estate - Property Ads Platform Mobile App",
 				"slug": "land-property",
 				"imagesDir": "/img/portfolio/projects/com.lan.destate/",
 				"summary": "A project built using .NET MAUI and C#.<br>It's designed to function similarly to real estate apps like Rumah123, Lamudi, or Brighton.<br>The app allows users to browse and manage property listings.",
