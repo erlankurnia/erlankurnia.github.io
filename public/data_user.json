@@ -385,7 +385,7 @@
 				"imagesDir": "/img/portfolio/projects/lanvender.eboutique/",
 				"summary": "An e-commerce platform built using Laravel, TailwindCSS, and AlpineJS. This platform allows users to browse, shop, and manage products seamlessly with a modern and responsive design.",
 				"description": "- Developed the e-commerce platform using Laravel for backend logic, ensuring robust and scalable application performance.\n- Designed and implemented responsive and visually appealing user interfaces using TailwindCSS.\n- Integrated dynamic functionality with AlpineJS to enhance user interactivity and experience.\n- Continuously improved the platform to enhance features and overall performance.",
-				"url": "",
+				"url": "https://lanvender.azurewebsites.net",
 				"repo": "https://github.com/krlan2789/lan-boutique",
 				"features": [],
 				"technologies": [
@@ -393,14 +393,16 @@
 					"PHP",
 					"AlpineJS",
 					"Tailwind CSS",
-					"SQLite"
+					"SQLite",
+					"Azure App Service"
 				],
 				"tags": [
 					"laravel",
 					"php",
 					"alpinejs",
 					"tailwind",
-					"sqlite"
+					"sqlite",
+					"azure-app-service"
 				]
 			},
 			{
