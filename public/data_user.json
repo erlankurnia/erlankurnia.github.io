@@ -161,6 +161,13 @@
 					"level": "INTERMEDIATE"
 				},
 				{
+					"name": "laravel",
+					"title": "Laravel",
+					"year": 2022,
+					"level": "NOVICE",
+					"urlInfo": "https://laravel.com/"
+				},
+				{
 					"name": "postgresql",
 					"title": "PostgreSQL",
 					"year": 2021,
@@ -233,6 +240,13 @@
 					"year": 2021,
 					"level": "NOVICE",
 					"urlInfo": "https://firebase.google.com/"
+				},
+				{
+					"name": "github",
+					"title": "GitHub",
+					"year": 2019,
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://github.com/about"
 				}
 			]
 		},
@@ -262,11 +276,11 @@
 					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/maui"
 				},
 				{
-					"name": "laravel",
-					"title": "Laravel",
-					"year": 2022,
-					"level": "NOVICE",
-					"urlInfo": "https://laravel.com/"
+					"name": "azure",
+					"title": "Microsoft Azure",
+					"year": 2024,
+					"level": "BASIC",
+					"urlInfo": "https://azure.microsoft.com/en-us/"
 				}
 			]
 		}
