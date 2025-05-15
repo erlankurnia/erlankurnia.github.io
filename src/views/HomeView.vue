@@ -8,7 +8,7 @@ import ContactComponent from '@/components/ContactComponent.vue';
 import PortfolioComponent from '@/components/PortfolioComponent.vue';
 
 const metaTitle = "Erlan Kurnia | LAN";
-const metaDesc = "Hello, I'm Erlan Kurnia, Unity Developer, 'to entertain a group, you don't have to join that group'.";
+const metaDesc = "Hello, I'm Erlan Kurnia, Unity Software Engineer, 'to entertain a group, you don't have to join that group'.";
 const homepageHead = useHead({
 	title: "Erlan Kurnia",
 	meta: [
