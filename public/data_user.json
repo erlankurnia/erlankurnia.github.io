@@ -1004,8 +1004,8 @@
 			},
 			{
 				"id": "2",
-				"title": "WebSocket Service on VPS",
-				"description": "Setup Websocket Service (Node.js) and Subdomain on VPS",
+				"title": "A Secure WebSocket Service on a VPS with a Subdomain",
+				"description": "A step-by-step guide to deploying a Node.js WebSocket service on a VPS with a subdomain, ensuring secure communication and efficient management.",
 				"date": "2024-06-11",
 				"topics": [
 					"node",
@@ -1014,7 +1014,7 @@
 					"vps"
 				],
 				"source": {
-					"url": "/notes/Setup Websocket Service (Node.js) and Subdomain on VPS.md",
+					"url": "/notes/a-secure-websocket-service-on-a-vps-with-a-subdomain.md",
 					"type": "local",
 					"images": []
 				}
