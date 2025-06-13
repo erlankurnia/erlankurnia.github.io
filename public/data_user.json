@@ -1021,7 +1021,7 @@
 			},
 			{
 				"id": "1",
-				"title": "WebSocket Example Project",
+				"title": "Building a Real-Time Application with Express and WebSocket",
 				"description": "WebSocket Service project using Express.js, WebSocket (Node Library), and PostgresQL.",
 				"date": "2024-02-17",
 				"topics": [
@@ -1034,21 +1034,6 @@
 				],
 				"source": {
 					"url": "https://github.com/krlan2789/express-ws-app",
-					"type": "github",
-					"images": []
-				}
-			},
-			{
-				"id": "0",
-				"title": "Portfolio",
-				"description": "Projects / applications I'm working on.",
-				"date": "2024-02-17",
-				"topics": [
-					"portfolio",
-					"list"
-				],
-				"source": {
-					"url": "https://github.com/krlan2789/apps-link",
 					"type": "github",
 					"images": []
 				}
