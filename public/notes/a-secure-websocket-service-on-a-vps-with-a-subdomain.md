@@ -2,13 +2,9 @@
 
 Real-time features are essential for modern web applications, and WebSockets provide a robust solution for two-way communication between clients and servers. If you want full control and security, hosting your own WebSocket service on a VPS is a great choice. In this article, you'll learn how to deploy a secure Node.js WebSocket server, protect it with SSL, and make it accessible via a custom subdomain using Apache as a reverse proxy.
 
-<br>
-
 ## **Scenario Overview**
 
 Suppose you want to serve your WebSocket application at `websocket.krlan2789.com`, hosted on a VPS with the IP address `10.0.27.89`. Your Node.js project resides at `/root/repositories/WebSocket-Service`.
-
-<br>
 
 ## **Step 1: Point Your Subdomain to the VPS**
 
@@ -20,8 +16,6 @@ Start by configuring DNS so your subdomain directs traffic to your VPS. In your 
 
 This ensures that requests to `websocket.krlan2789.com` reach your server.
 
-<br>
-
 ## **Step 2: Secure the Service with SSL**
 
 Security is crucial for WebSocket connections. Use Certbot to obtain a free SSL certificate from Let's Encrypt. The `--webroot` method verifies your domain by placing a file in your web directory:
@@ -29,8 +23,6 @@ Security is crucial for WebSocket connections. Use Certbot to obtain a free SSL 
 ```bash
 sudo certbot certonly --webroot -w /root/repositories/WebSocket-Service -d websocket.krlan2789.com
 ```
-
-<br>
 
 ## **Step 3: Prepare Apache for Proxying**
 
@@ -41,8 +33,6 @@ sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo a2enmod proxy_wstunnel
 ```
-
-<br>
 
 ## **Step 4: Configure Apache Virtual Hosts**
 
@@ -84,8 +74,6 @@ Create a virtual host configuration to handle SSL, redirect HTTP to HTTPS, and p
 </IfModule>
 ```
 
-<br>
-
 ## **Step 5: Test and Enable Your Apache Configuration**
 
 Before applying changes, check for syntax errors:
@@ -94,15 +82,11 @@ Before applying changes, check for syntax errors:
 sudo apache2ctl configtest
 ```
 
-<br>
-
 If all is well, enable your new site:
 
 ```bash
 sudo a2ensite websocket.krlan2789.com.conf
 ```
-
-<br>
 
 Then restart or reload Apache to apply the changes:
 
@@ -112,15 +96,11 @@ sudo service apache2 restart
 sudo systemctl reload apache2
 ```
 
-<br>
-
 Check Apache's status to confirm it's running:
 
 ```bash
 systemctl status apache2.service
 ```
-
-<br>
 
 ## **Step 6: Run Your Node.js WebSocket App with PM2**
 
@@ -141,8 +121,6 @@ pm2 stop 0
 pm2 save -f
 pm2 startup systemd
 ```
-
-<br>
 
 ## **Conclusion**
 
