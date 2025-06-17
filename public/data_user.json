@@ -138,7 +138,7 @@
 	"ability": {
 		"tooltip": "Proficiency scale based on <a href=\"https://hr.nih.gov/working-nih/competencies/competencies-proficiency-scale\" class=\"lan-link-secondary underline\" target=\"_blank\">NIH Proficiency Scale</a>",
 		"skill": {
-			"title": "There Are Many Things That not My <span class=\"text-primary dark:text-primaryDark\">Skills</span>",
+			"title": "There Are Many Things That not My <span class=\"text-primary dark:text-primaryDark\">Skill</span>s",
 			"description": "Some of the skills that I can do,<br> also use it quite often in work and personal projects.",
 			"topics": [
 				{
@@ -155,6 +155,13 @@
 					"urlInfo": "https://unity.com/"
 				},
 				{
+					"name": "dotnet",
+					"title": "ASP.NET",
+					"year": 2023,
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet"
+				},
+				{
 					"name": "php",
 					"title": "PHP",
 					"year": 2018,
@@ -164,7 +171,7 @@
 					"name": "laravel",
 					"title": "Laravel",
 					"year": 2022,
-					"level": "NOVICE",
+					"level": "INTERMEDIATE",
 					"urlInfo": "https://laravel.com/"
 				},
 				{
@@ -185,7 +192,7 @@
 					"name": "tailwind",
 					"title": "Tailwind CSS",
 					"year": 2023,
-					"level": "INTERMEDIATE",
+					"level": "ADVANCED",
 					"urlInfo": "https://tailwindcss.com/"
 				},
 				{
@@ -199,19 +206,19 @@
 					"name": "javascript",
 					"title": "JavaScript",
 					"year": 2020,
-					"level": "INTERMEDIATE"
+					"level": "ADVANCED"
 				},
 				{
 					"name": "typescript",
 					"title": "TypeScript",
 					"year": 2023,
-					"level": "INTERMEDIATE"
+					"level": "ADVANCED"
 				},
 				{
 					"name": "expressjs",
 					"title": "Express.js",
 					"year": 2021,
-					"level": "NOVICE",
+					"level": "INTERMEDIATE",
 					"urlInfo": "https://expressjs.com/"
 				},
 				{
@@ -231,22 +238,15 @@
 					"name": "arduino",
 					"title": "Arduino",
 					"year": 2021,
-					"level": "NOVICE",
+					"level": "INTERMEDIATE",
 					"urlInfo": "https://www.arduino.cc/"
 				},
 				{
 					"name": "firebase",
 					"title": "Firebase",
 					"year": 2021,
-					"level": "NOVICE",
-					"urlInfo": "https://firebase.google.com/"
-				},
-				{
-					"name": "github",
-					"title": "GitHub",
-					"year": 2019,
 					"level": "INTERMEDIATE",
-					"urlInfo": "https://github.com/about"
+					"urlInfo": "https://firebase.google.com/"
 				}
 			]
 		},
@@ -255,18 +255,11 @@
 			"description": "There are many skills that I can't do, so learning has no end.<br>Some interesting technologies that I learned about.",
 			"topics": [
 				{
-					"name": "blazor",
-					"title": "Blazor",
+					"name": "docker",
+					"title": "Docker",
 					"year": 2025,
 					"level": "BASIC",
-					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor"
-				},
-				{
-					"name": "dotnet",
-					"title": "ASP.NET",
-					"year": 2023,
-					"level": "NOVICE",
-					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet"
+					"urlInfo": "https://www.docker.com/why-docker"
 				},
 				{
 					"name": "dotnet",
@@ -983,6 +976,24 @@
 		"description": "",
 		"notes": [
 			{
+				"id": "4",
+				"title": "Secure WebSocket Service on a VPS using Nginx",
+				"description": "A step-by-step guide to deploying a Node.js WebSocket service on a VPS with a subdomain, and using Nginx as a reverse proxy.",
+				"date": "2025-06-17",
+				"topics": [
+					"node",
+					"node.js",
+					"websocket",
+					"vps",
+					"nginx"
+				],
+				"source": {
+					"url": "/notes/secure-websocket-service-on-vps-using-nginx.md",
+					"type": "local",
+					"images": []
+				}
+			},
+			{
 				"id": "3",
 				"title": "Android Background Location for Unity",
 				"description": "Live Location plugin example for Unity and Android target platform",
@@ -1004,17 +1015,18 @@
 			},
 			{
 				"id": "2",
-				"title": "A Secure WebSocket Service on a VPS with a Subdomain",
-				"description": "A step-by-step guide to deploying a Node.js WebSocket service on a VPS with a subdomain, ensuring secure communication and efficient management.",
+				"title": "Secure WebSocket Service on a VPS using Apache",
+				"description": "A step-by-step guide to deploying a Node.js WebSocket service on a VPS with a subdomain, and using Apache as a reverse proxy.",
 				"date": "2024-06-11",
 				"topics": [
 					"node",
 					"node.js",
 					"websocket",
-					"vps"
+					"vps",
+					"apache"
 				],
 				"source": {
-					"url": "/notes/a-secure-websocket-service-on-a-vps-with-a-subdomain.md",
+					"url": "/notes/secure-websocket-service-on-vps-using-apache.md",
 					"type": "local",
 					"images": []
 				}

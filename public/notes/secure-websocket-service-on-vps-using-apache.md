@@ -1,4 +1,4 @@
-# Deploying a Secure Node.js WebSocket Service on a VPS with a Subdomain
+# Deploying a Secure Node.js WebSocket Service on a VPS using Apache
 
 Real-time features are essential for modern web applications, and WebSockets provide a robust solution for two-way communication between clients and servers. If you want full control and security, hosting your own WebSocket service on a VPS is a great choice. In this article, you'll learn how to deploy a secure Node.js WebSocket server, protect it with SSL, and make it accessible via a custom subdomain using Apache as a reverse proxy.
 
@@ -36,7 +36,19 @@ sudo a2enmod proxy_wstunnel
 
 ## **Step 4: Configure Apache Virtual Hosts**
 
-Create a virtual host configuration to handle SSL, redirect HTTP to HTTPS, and proxy WebSocket connections. Place the following in your Apache site configuration:
+To ensure your WebSocket service is accessible securely via HTTPS and properly proxied, you need to create a virtual host configuration for Apache. Follow these steps:
+
+### **Create the Apache Configuration File**
+
+Navigate to the Apache configuration directory and create a new file for your subdomain:
+
+```bash
+sudo nano /etc/apache2/sites-available/websocket.krlan2789.com.conf
+```
+
+### **Add Virtual Host Configuration**
+
+In the newly created file, define the virtual host settings to handle SSL, redirect HTTP to HTTPS, and proxy WebSocket connections. Use the following configuration:
 
 ```apache
 <VirtualHost *:80>
@@ -73,6 +85,26 @@ Create a virtual host configuration to handle SSL, redirect HTTP to HTTPS, and p
     </VirtualHost>
 </IfModule>
 ```
+
+### **Enable the Site Configuration**
+
+Once the configuration file is ready, enable it using the following command:
+
+```bash
+sudo a2ensite websocket.krlan2789.com.conf
+```
+
+### **Restart Apache**
+
+Finally, restart Apache to apply the changes:
+
+```bash
+sudo service apache2 restart
+# or
+sudo systemctl reload apache2
+```
+
+Your virtual host is now configured to handle secure WebSocket connections and redirect HTTP traffic to HTTPS.
 
 ## **Step 5: Test and Enable Your Apache Configuration**
 
@@ -125,3 +157,5 @@ pm2 startup systemd
 ## **Conclusion**
 
 By following these steps, you've set up a secure, production-ready WebSocket service on your own VPS, accessible via a custom subdomain and protected with SSL. With Apache handling SSL termination and proxying, and PM2 managing your Node.js process, your real-time application is ready for reliable, secure operation.
+
+See [this note](/note/2/Secure%20WebSocket%20Service%20on%20a%20VPS%20using%20Nginx) if you prefer using Nginx instead of Apache.
