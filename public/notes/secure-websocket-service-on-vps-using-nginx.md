@@ -1,4 +1,4 @@
-# Deploying a Secure Node.js WebSocket Service on a VPS using Nginx
+# Deploying a Secure Node.js WebSocket Service on VPS using Nginx
 
 Real-time features are essential for modern web applications, and WebSockets provide a robust solution for two-way communication between clients and servers. If you want full control and security, hosting your own WebSocket service on a VPS is a great choice. In this article, you'll learn how to deploy a secure Node.js WebSocket server, protect it with SSL, and make it accessible via a custom subdomain using Nginx as a reverse proxy.
 
