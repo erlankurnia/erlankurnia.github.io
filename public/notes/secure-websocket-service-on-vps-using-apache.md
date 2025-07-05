@@ -10,9 +10,13 @@ Suppose you want to serve your WebSocket application at `websocket.krlan2789.com
 
 Start by configuring DNS so your subdomain directs traffic to your VPS. In your DNS provider's dashboard, create an A record:
 
+<br/>
+
 | Type | Name      | Points to  | TTL   |
 | ---- | --------- | ---------- | ----- |
 | A    | websocket | 10.0.27.89 | 14400 |
+
+<br/>
 
 This ensures that requests to `websocket.krlan2789.com` reach your server.
 
@@ -20,19 +24,27 @@ This ensures that requests to `websocket.krlan2789.com` reach your server.
 
 Security is crucial for WebSocket connections. Use Certbot to obtain a free SSL certificate from Let's Encrypt. The `--webroot` method verifies your domain by placing a file in your web directory:
 
+<br/>
+
 ```bash
 sudo certbot certonly --webroot -w /root/repositories/WebSocket-Service -d websocket.krlan2789.com
 ```
 
+<br/>
+
 ## **Step 3: Prepare Apache for Proxying**
 
 Apache needs to proxy both HTTP and WebSocket traffic to your Node.js app. Enable the necessary modules:
+
+<br/>
 
 ```bash
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo a2enmod proxy_wstunnel
 ```
+
+<br/>
 
 ## **Step 4: Configure Apache Virtual Hosts**
 
@@ -42,13 +54,19 @@ To ensure your WebSocket service is accessible securely via HTTPS and properly p
 
 Navigate to the Apache configuration directory and create a new file for your subdomain:
 
+<br/>
+
 ```bash
 sudo nano /etc/apache2/sites-available/websocket.krlan2789.com.conf
 ```
 
+<br/>
+
 ### **Add Virtual Host Configuration**
 
 In the newly created file, define the virtual host settings to handle SSL, redirect HTTP to HTTPS, and proxy WebSocket connections. Use the following configuration:
+
+<br/>
 
 ```apache
 <VirtualHost *:80>
@@ -86,23 +104,33 @@ In the newly created file, define the virtual host settings to handle SSL, redir
 </IfModule>
 ```
 
+<br/>
+
 ### **Enable the Site Configuration**
 
 Once the configuration file is ready, enable it using the following command:
+
+<br/>
 
 ```bash
 sudo a2ensite websocket.krlan2789.com.conf
 ```
 
+<br/>
+
 ### **Restart Apache**
 
 Finally, restart Apache to apply the changes:
+
+<br/>
 
 ```bash
 sudo service apache2 restart
 # or
 sudo systemctl reload apache2
 ```
+
+<br/>
 
 Your virtual host is now configured to handle secure WebSocket connections and redirect HTTP traffic to HTTPS.
 
@@ -110,17 +138,27 @@ Your virtual host is now configured to handle secure WebSocket connections and r
 
 Before applying changes, check for syntax errors:
 
+<br/>
+
 ```bash
 sudo apache2ctl configtest
 ```
 
+<br/>
+
 If all is well, enable your new site:
+
+<br/>
 
 ```bash
 sudo a2ensite websocket.krlan2789.com.conf
 ```
 
+<br/>
+
 Then restart or reload Apache to apply the changes:
+
+<br/>
 
 ```bash
 sudo service apache2 restart
@@ -128,15 +166,23 @@ sudo service apache2 restart
 sudo systemctl reload apache2
 ```
 
+<br/>
+
 Check Apache's status to confirm it's running:
+
+<br/>
 
 ```bash
 systemctl status apache2.service
 ```
 
+<br/>
+
 ## **Step 6: Run Your Node.js WebSocket App with PM2**
 
 To keep your WebSocket server running reliably, use PM2:
+
+<br/>
 
 ```bash
 npm i -g pm2
@@ -153,6 +199,8 @@ pm2 stop 0
 pm2 save -f
 pm2 startup systemd
 ```
+
+<br/>
 
 ## **Conclusion**
 

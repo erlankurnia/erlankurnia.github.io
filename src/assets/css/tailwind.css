@@ -439,9 +439,9 @@
 		@apply w-full block overflow-x-auto bg-quaternaryDark rounded-lg p-4 pr-8;
 	}
 
-	#markdown #markdown-code-container:has(> #markdown-code-content) {
+	/* #markdown #markdown-code-container:has(> #markdown-code-content) {
 		@apply mb-5 mt-4;
-	}
+	} */
 
 	#markdown #markdown-content > p:has(> strong) {
 		@apply mt-4 mb-2;

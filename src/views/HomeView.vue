@@ -48,9 +48,9 @@ onBeforeUnmount(() => {
 	<div :class="['page-up', $attrs.class]">
 		<HeroComponent id="home" class="bg-quaternary dark:bg-quaternaryDark"></HeroComponent>
 		<IntroComponent class="bg-tertiary dark:bg-tertiaryDark"></IntroComponent>
-		<PortfolioComponent class="bg-quaternary dark:bg-quaternaryDark"></PortfolioComponent>
-		<ContactComponent class="bg-tertiary dark:bg-tertiaryDark"></ContactComponent>
 		<NextPageComponent class="bg-tertiary dark:bg-tertiaryDark" path="/who_iam" label="More About Me">
 		</NextPageComponent>
+		<PortfolioComponent class="bg-quaternary dark:bg-quaternaryDark"></PortfolioComponent>
+		<ContactComponent class="bg-tertiary dark:bg-tertiaryDark"></ContactComponent>
 	</div>
 </template>

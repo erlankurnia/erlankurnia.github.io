@@ -10,9 +10,13 @@ Suppose you want to serve your WebSocket application at `websocket.krlan2789.com
 
 Start by configuring DNS so your subdomain directs traffic to your VPS. In your DNS provider's dashboard, create an A record:
 
+<br/>
+
 | Type | Name      | Points to  | TTL   |
 | ---- | --------- | ---------- | ----- |
 | A    | websocket | 10.0.27.89 | 14400 |
+
+<br/>
 
 This ensures that requests to `websocket.krlan2789.com` reach your server.
 
@@ -20,9 +24,13 @@ This ensures that requests to `websocket.krlan2789.com` reach your server.
 
 Security is crucial for WebSocket connections. Use Certbot to obtain a free SSL certificate from Let's Encrypt. The `--webroot` method verifies your domain by placing a file in your web directory:
 
+<br/>
+
 ```bash
 sudo certbot certonly --webroot -w /root/repositories/WebSocket-Service -d websocket.krlan2789.com
 ```
+
+<br/>
 
 ## **Step 3: Prepare Nginx for Proxying**
 
@@ -36,13 +44,19 @@ To ensure your WebSocket service is accessible securely via HTTPS and properly p
 
 Navigate to the Nginx configuration directory and create a new file for your subdomain:
 
+<br/>
+
 ```bash
 sudo nano /etc/nginx/sites-available/websocket.krlan2789.com
 ```
 
+<br/>
+
 ### **Add Server Block Configuration**
 
 In the newly created file, define the server block settings to handle SSL, redirect HTTP to HTTPS, and proxy WebSocket connections. Use the following configuration:
+
+<br/>
 
 ```nginx
 server {
@@ -74,23 +88,33 @@ server {
 }
 ```
 
+<br/>
+
 ### **Enable the Site Configuration**
 
 Once the configuration file is ready, create a symbolic link to enable it:
+
+<br/>
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/websocket.krlan2789.com /etc/nginx/sites-enabled/
 ```
 
+<br/>
+
 ### **Restart Nginx**
 
 Finally, restart Nginx to apply the changes:
+
+<br/>
 
 ```bash
 sudo service nginx restart
 # or
 sudo systemctl reload nginx
 ```
+
+<br/>
 
 Your server block is now configured to handle secure WebSocket connections and redirect HTTP traffic to HTTPS.
 
@@ -98,11 +122,17 @@ Your server block is now configured to handle secure WebSocket connections and r
 
 Before applying changes, check for syntax errors:
 
+<br/>
+
 ```bash
 sudo nginx -t
 ```
 
+<br/>
+
 If all is well, restart or reload Nginx to apply the changes:
+
+<br/>
 
 ```bash
 sudo service nginx restart
@@ -110,15 +140,23 @@ sudo service nginx restart
 sudo systemctl reload nginx
 ```
 
+<br/>
+
 Check Nginx's status to confirm it's running:
+
+<br/>
 
 ```bash
 systemctl status nginx.service
 ```
 
+<br/>
+
 ## **Step 6: Run Your Node.js WebSocket App with PM2**
 
 To keep your WebSocket server running reliably, use PM2:
+
+<br/>
 
 ```bash
 npm i -g pm2
@@ -135,6 +173,8 @@ pm2 stop 0
 pm2 save -f
 pm2 startup systemd
 ```
+
+<br/>
 
 ## **Conclusion**
 

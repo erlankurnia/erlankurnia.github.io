@@ -236,10 +236,10 @@
 				},
 				{
 					"name": "arduino",
-					"title": "Arduino",
+					"title": "Arduino IDE",
 					"year": 2021,
 					"level": "INTERMEDIATE",
-					"urlInfo": "https://www.arduino.cc/"
+					"urlInfo": "https://docs.arduino.cc/software/ide/"
 				},
 				{
 					"name": "firebase",
@@ -977,7 +977,7 @@
 		"notes": [
 			{
 				"id": "4",
-				"title": "Secure WebSocket Service on a VPS using Nginx",
+				"title": "Secure WebSocket Service on VPS using Nginx",
 				"description": "A step-by-step guide to deploying a Node.js WebSocket service on a VPS with a subdomain, and using Nginx as a reverse proxy.",
 				"date": "2025-06-17",
 				"topics": [
@@ -1015,7 +1015,7 @@
 			},
 			{
 				"id": "2",
-				"title": "Secure WebSocket Service on a VPS using Apache",
+				"title": "Secure WebSocket Service on VPS using Apache",
 				"description": "A step-by-step guide to deploying a Node.js WebSocket service on a VPS with a subdomain, and using Apache as a reverse proxy.",
 				"date": "2024-06-11",
 				"topics": [
