@@ -1,6 +1,7 @@
 import type IAttribution from "./IAttribution";
-import type IGreetings from "./IGreetings";
+import type IBuiltUsing from "./IBuiltUsing";
 
-export default interface IReference extends IGreetings {
-    attributions: IAttribution[];
+export default interface IReference {
+    builtUsing: IBuiltUsing;
+    attribution: IAttribution;
 }

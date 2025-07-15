@@ -931,45 +931,83 @@
 		}
 	},
 	"reference": {
-		"title": "<span class=\"text-primary dark:text-primaryDark\">Attribution</span> for Who Inspired Me",
-		"description": "Thanks for your creation which helped me in creating this website.",
-		"attributions": [
-			{
-				"title": "Web Programming UNPAS",
-				"description": "By watching tutorials from <span class=\"text-primary dark:text-primaryDark font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
-				"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
-			},
-			{
-				"title": "DITLAB",
-				"description": "Thanks to my cousin <span class=\"text-primary dark:text-primaryDark font-bold\">Adit</span>, as inspiration in determining some of the content shown.",
-				"url": "https://aditiafa.dev"
-			},
-			{
-				"title": "Simple Icons",
-				"description": "Source for the majority of icons used.",
-				"url": "https://simpleicons.org"
-			},
-			{
-				"title": "Heroicons",
-				"description": "Source for some of the icons used.",
-				"url": "https://heroicons.com"
-			},
-			{
-				"title": "TailwindComponents",
-				"description": "As a reference for several components used.",
-				"url": "https://tailwindcomponents.com"
-			},
-			{
-				"title": "Fotor",
-				"description": "An AI that makes a photo look like an illustration.",
-				"url": "https://www.fotor.com"
-			},
-			{
-				"title": "Blobmaker",
-				"description": "An AI that generates random shape.",
-				"url": "https://www.blobmaker.app"
-			}
-		]
+		"builtUsing": {
+			"title": "<span class=\"text-primary dark:text-primaryDark\">Tech Stack</span> to Build This Website",
+			"description": "This website is built using various technologies and tools that make it easier for me to build its functionality and design.",
+			"techStack": [
+				{
+					"title": "Vue.js",
+					"description": "After trying several popular frontend frameworks like <span class=\"text-primary dark:text-primaryDark font-bold\">React</span>, <span class=\"text-primary dark:text-primaryDark font-bold\">Angular</span>, and I felt most comfortable using <span class=\"text-primary dark:text-primaryDark font-bold\">Vue</span>. Its simplicity fits well with my way of thinking—and also with my skill issue.",
+					"url": "https://vuejs.org/"
+				},
+				{
+					"title": "Pinia",
+					"description": "Possibly overkill for this site, since it's mainly used to manage the <span class=\"text-primary dark:text-primaryDark font-bold\">loading state</span> and <span class=\"text-primary dark:text-primaryDark font-bold\">calculate</span> screen size. But hey, it works smoothly.",
+					"url": "https://pinia.vuejs.org/"
+				},
+				{
+					"title": "TypeScript",
+					"description": "TypeScript adds <span class=\"text-primary dark:text-primaryDark font-bold\">type safety</span> to the project, helping catch issues early and making the code <span class=\"text-primary dark:text-primaryDark font-bold\">easier to understand</span>. Honestly though, I just really like static types—and once the code is written, only God knows.",
+					"url": "https://www.typescriptlang.org/"
+				},
+				{
+					"title": "Tailwind CSS",
+					"description": "Tailwind CSS is used to style the site with a utility-first approach. It's great for building <span class=\"text-primary dark:text-primaryDark font-bold\">responsive designs</span> quickly without writing long custom stylesheets. Perfectionist vibes, but lazy execution.",
+					"url": "https://tailwindcss.com/"
+				},
+				{
+					"title": "Markdown",
+					"description": "Articles and documentation are written in Markdown. It's mostly used for my <span class=\"text-primary dark:text-primaryDark font-bold\">notes</span> and <span class=\"text-primary dark:text-primaryDark font-bold\">careers</span>—simple and clean.",
+					"url": "https://markdown-it.github.io/"
+				},
+				{
+					"title": "Highlight.js",
+					"description": "Highlight.js adds syntax highlighting for code blocks, making technical content <span class=\"text-primary dark:text-primaryDark font-bold\">easier to read</span>. It supports many of programming languages without much setup.",
+					"url": "https://highlightjs.org/"
+				}
+			]
+		},
+		"attribution": {
+			"title": "<span class=\"text-primary dark:text-primaryDark\">Attribution</span> for Who Inspired Me",
+			"description": "Thanks for your creation which helped me in creating this website.",
+			"to": [
+				{
+					"title": "Web Programming UNPAS",
+					"description": "By watching tutorials from <span class=\"text-primary dark:text-primaryDark font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
+					"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
+				},
+				{
+					"title": "DITLAB",
+					"description": "Thanks to my cousin <span class=\"text-primary dark:text-primaryDark font-bold\">Adit</span>, as inspiration in determining some of the content shown.",
+					"url": "https://aditiafa.dev"
+				},
+				{
+					"title": "Simple Icons",
+					"description": "Source for the majority of icons used.",
+					"url": "https://simpleicons.org"
+				},
+				{
+					"title": "Heroicons",
+					"description": "Source for some of the icons used.",
+					"url": "https://heroicons.com"
+				},
+				{
+					"title": "TailwindComponents",
+					"description": "As a reference for several components used.",
+					"url": "https://tailwindcomponents.com"
+				},
+				{
+					"title": "Fotor",
+					"description": "An AI that makes a photo look like an illustration.",
+					"url": "https://www.fotor.com"
+				},
+				{
+					"title": "Blobmaker",
+					"description": "An AI that generates random shape.",
+					"url": "https://www.blobmaker.app"
+				}
+			]
+		}
 	},
 	"notebook": {
 		"title": "",
