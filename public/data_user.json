@@ -590,6 +590,33 @@
 			},
 			{
 				"id": 0,
+				"title": "Unofficial Chelsea Fans Club",
+				"slug": "unofficial-chelsea-fc",
+				"imagesDir": "/img/portfolio/projects/personal.web/",
+				"summary": "A website that give some information about Chelsea FC, built on Nuxt, DaisyUI, Tailwind, also use News API and data from API Football.",
+				"description": "",
+				"url": "https://ktbffh.pages.dev",
+				"repo": "https://github.com/krlan2789/chelsea-unofficial-web",
+				"features": [],
+				"technologies": [
+					"TypeScript",
+					"Nuxt",
+					"Vue.js",
+					"Tailwind CSS",
+					"DaisyUI"
+				],
+				"tags": [
+					"javascript",
+					"typescript",
+					"nuxt",
+					"vue",
+					"css",
+					"tailwind",
+					"daisyui"
+				]
+			},
+			{
+				"id": 0,
 				"title": "Event Invitation",
 				"slug": "event-invitation",
 				"imagesDir": "",
