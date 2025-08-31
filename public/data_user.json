@@ -162,35 +162,8 @@
 					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet"
 				},
 				{
-					"name": "php",
-					"title": "PHP",
-					"year": 2018,
-					"level": "INTERMEDIATE"
-				},
-				{
-					"name": "laravel",
-					"title": "Laravel",
-					"year": 2022,
-					"level": "INTERMEDIATE",
-					"urlInfo": "https://laravel.com/"
-				},
-				{
-					"name": "postgresql",
-					"title": "PostgreSQL",
-					"year": 2021,
-					"level": "INTERMEDIATE",
-					"urlInfo": "https://www.postgresql.org/"
-				},
-				{
-					"name": "mariadb",
-					"title": "MariaDB",
-					"year": 2018,
-					"level": "INTERMEDIATE",
-					"urlInfo": "https://mariadb.org/"
-				},
-				{
 					"name": "tailwind",
-					"title": "Tailwind CSS",
+					"title": "Tailwind",
 					"year": 2023,
 					"level": "ADVANCED",
 					"urlInfo": "https://tailwindcss.com/"
@@ -203,16 +176,24 @@
 					"urlInfo": "https://nodejs.org/en"
 				},
 				{
-					"name": "javascript",
-					"title": "JavaScript",
-					"year": 2020,
-					"level": "ADVANCED"
-				},
-				{
 					"name": "typescript",
 					"title": "TypeScript",
 					"year": 2023,
 					"level": "ADVANCED"
+				},
+				{
+					"name": "vue",
+					"title": "Vue.js",
+					"year": 2023,
+					"level": "INTERMEDIATE",
+					"urlInfo": "https://vuejs.org/"
+				},
+				{
+					"name": "nuxt",
+					"title": "Nuxt.js",
+					"year": 2025,
+					"level": "NOVICE",
+					"urlInfo": "https://nuxt.com/"
 				},
 				{
 					"name": "expressjs",
@@ -222,11 +203,11 @@
 					"urlInfo": "https://expressjs.com/"
 				},
 				{
-					"name": "vue",
-					"title": "Vue.js",
-					"year": 2023,
+					"name": "postgresql",
+					"title": "PostgreSQL",
+					"year": 2021,
 					"level": "INTERMEDIATE",
-					"urlInfo": "https://vuejs.org/"
+					"urlInfo": "https://www.postgresql.org/"
 				},
 				{
 					"name": "cpp",
@@ -240,13 +221,6 @@
 					"year": 2021,
 					"level": "INTERMEDIATE",
 					"urlInfo": "https://docs.arduino.cc/software/ide/"
-				},
-				{
-					"name": "firebase",
-					"title": "Firebase",
-					"year": 2021,
-					"level": "INTERMEDIATE",
-					"urlInfo": "https://firebase.google.com/"
 				}
 			]
 		},
@@ -260,13 +234,6 @@
 					"year": 2025,
 					"level": "BASIC",
 					"urlInfo": "https://www.docker.com/why-docker"
-				},
-				{
-					"name": "dotnet",
-					"title": ".NET MAUI",
-					"year": 2024,
-					"level": "BASIC",
-					"urlInfo": "https://dotnet.microsoft.com/en-us/apps/maui"
 				},
 				{
 					"name": "azure",
@@ -910,7 +877,7 @@
 						"icon": "vscode"
 					},
 					{
-						"name": "Android Studio Hedgehog 2023.1.1",
+						"name": "Android Studio Jellyfish 2023.3.1",
 						"icon": "androidstudio"
 					},
 					{
@@ -934,8 +901,8 @@
 						"icon": "postman"
 					},
 					{
-						"name": "Laravel Herd",
-						"icon": "herd"
+						"name": "Docker desktop",
+						"icon": "docker"
 					},
 					{
 						"name": "PostgreSQL",

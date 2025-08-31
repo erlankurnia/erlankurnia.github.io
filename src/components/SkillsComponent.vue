@@ -51,7 +51,7 @@ onMounted(() => {
 					<h2 class="relative mb-2 lan-section-title">
 						Skills
 						<!-- Tooltip -->
-						<!-- <div v-if="data.ability.tooltip"
+						<div v-if="data.ability.tooltip"
 							class="absolute translate-x-[52px] sm:translate-x-[64px] top-[4px] right-1/2 group cursor-help">
 							<span
 								class="flex size-4 sm:size-5 group-hover:text-primary dark:group-hover:text-primaryDark group-focus:text-primary dark:group-focus:text-primaryDark">
@@ -64,7 +64,7 @@ onMounted(() => {
 							</span>
 							<p class="absolute hidden top-6 -left-[23vw] md:-top-4 md:left-6 [text-transform:_math-auto] p-2 text-xs shadow-md rounded-lg font-normal group-hover:block group-focus:block bg-tertiary text-dark dark:bg-tertiaryDark dark:text-light break-words w-60"
 								v-html="data.ability.tooltip"></p>
-						</div> -->
+						</div>
 						<!-- Tooltip -->
 					</h2>
 				</div>
@@ -79,7 +79,7 @@ onMounted(() => {
 					</div>
 				</div>
 				<div v-if="data.ability.skill.topics && data.ability.skill.topics.length > 0"
-					class="w-full max-w-[1080px] mx-auto sm:px-4">
+					class="w-full max-w-[1080px] px-2 mx-auto sm:px-4">
 					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
 						<!-- Skill Icon -->
 						<button v-for="skill in data.ability.skill.topics" type="button"
@@ -92,10 +92,10 @@ onMounted(() => {
 							<!-- Icon -->
 
 							<div
-								class="flex flex-col mx-auto gap-0 text-xs text-center justify-evenly font-light md:font-normal text-[9px] md:text-[12px]">
+								class="flex flex-col mx-auto gap-1 text-xs text-center justify-evenly font-light md:font-normal text-[11px] md:text-[13px]">
 								<h3 class="w-full" translate="no" v-html="skill.title"></h3>
-								<!-- <h4 class="w-full" v-html="skill.level.toString().charAt(0).toUpperCase() +
-									skill.level.toString().slice(1).toLowerCase()"></h4> -->
+								<h4 v-if="skill.level" class="w-full font-thin" v-html="skill.level.toString().charAt(0).toUpperCase() +
+									skill.level.toString().slice(1).toLowerCase()"></h4>
 								<!-- <h4 class="w-full">
 									{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ?
 										getYearDiff(skill.year) : 1 }}
@@ -119,7 +119,7 @@ onMounted(() => {
 					</div>
 				</div>
 				<div v-if="data.ability.learn.topics && data.ability.learn.topics.length > 0"
-					class="w-full max-w-[1080px] mx-auto sm:px-4">
+					class="w-full max-w-[1080px] px-2 mx-auto sm:px-4">
 					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
 						<!-- Skill Icon -->
 						<button v-for="skill in data.ability.learn.topics" type="button"
@@ -132,10 +132,10 @@ onMounted(() => {
 							<!-- Icon -->
 
 							<div
-								class="flex flex-col mx-auto gap-0 text-xs text-center justify-evenly font-light md:font-normal text-[9px] md:text-[12px]">
+								class="flex flex-col mx-auto gap-1 text-xs text-center justify-evenly font-light md:font-normal text-[11px] md:text-[13px]">
 								<h3 class="w-full" translate="no" v-html="skill.title"></h3>
-								<!-- <h4 class="w-full" v-html="skill.level.toString().charAt(0).toUpperCase() +
-									skill.level.toString().slice(1).toLowerCase()"></h4> -->
+								<h4 v-if="skill.level" class="w-full font-thin" v-html="skill.level.toString().charAt(0).toUpperCase() +
+									skill.level.toString().slice(1).toLowerCase()"></h4>
 								<!-- <h4 class="w-full">
 									{{ getYearDiff(skill.year) < 1 ? "<" : "" }}{{ getYearDiff(skill.year) > 0 ?
 										getYearDiff(skill.year) : 1 }}

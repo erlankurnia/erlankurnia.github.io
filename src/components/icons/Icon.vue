@@ -34,6 +34,7 @@ const icons = {
 	postgresql: ["postgresql", "pqsql", "postgres"],
 	tailwindcss: ["tailwindcss", "tailwind"],
 	vuejs: ["vuejs", "vue"],
+	nuxtjs: ["nuxtjs", "nuxt"],
 	vuforia: ["vuforia", "vuforiaengine"],
 	sony: ["sony"],
 	github: ["github"],
