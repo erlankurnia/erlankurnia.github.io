@@ -11,8 +11,8 @@ import { useScreenSizeStore } from '@/stores/screenSizeStore';
 const props = defineProps<IPropsCardItemComponent>();
 const screenSizeStore = useScreenSizeStore();
 const screenSize = screenSizeStore.getScreen();
-const distanceFromCenter = ref(0);
-const opacityValue = ref(0);
+// const distanceFromCenter = ref(0);
+const opacityValue = ref(1);
 
 async function preview() {
     const componentData: TDynamicModalComponent = {
@@ -27,24 +27,23 @@ const shortDesc = computed(() => {
     return props.project.description.length > 144 ? props.project.summary.substring(0, 120) + '..' : props.project.summary;
 });
 
-const updateDistance = () => {
-    const cardElement = document.getElementById(cardId.value);
-    if (cardElement) {
-        const cardRect = cardElement.getBoundingClientRect();
-        const visibleStartPos = window.innerHeight * 9 / 10;
-        distanceFromCenter.value = cardRect.top - visibleStartPos;
-        opacityValue.value = distanceFromCenter.value < 0 ? 1.3 - cardRect.top / window.innerHeight : 0;
-        // console.log(`#${cardId.value} -> ${distanceFromCenter.value} : ${opacityValue.value}`);
-    }
-};
+// const updateDistance = () => {
+//     const cardElement = document.getElementById(cardId.value);
+//     if (cardElement) {
+//         const cardRect = cardElement.getBoundingClientRect();
+//         const visibleStartPos = window.innerHeight * 9 / 10;
+//         distanceFromCenter.value = cardRect.top - visibleStartPos;
+//         opacityValue.value = distanceFromCenter.value < 0 ? 1.4 - cardRect.top / window.innerHeight : 0;
+//     }
+// };
 
 onMounted(() => {
-    window.addEventListener('scroll', updateDistance);
-    updateDistance();
+    // window.addEventListener('scroll', updateDistance);
+    // updateDistance();
 });
 
 onBeforeUnmount(() => {
-    window.removeEventListener('scroll', updateDistance);
+    // window.removeEventListener('scroll', updateDistance);
 });
 </script>
 
