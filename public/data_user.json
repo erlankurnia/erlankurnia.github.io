@@ -1,6 +1,6 @@
 {
 	"navbarBrand": "LAN",
-	"quote": "To <span class=\"font-bold text-dark dark:text-light\">entertain</span> a group, you don't have <span class=\"font-bold text-dark dark:text-light\">to join</span> that group!",
+	"quote": "/quotes",
 	"image": "/img/fotor.comimagescreate_3.webp",
 	"logo": [
 		"/img/logo/Logo Fusion@2x.webp"
@@ -241,6 +241,13 @@
 					"year": 2024,
 					"level": "BASIC",
 					"urlInfo": "https://azure.microsoft.com/en-us/"
+				},
+				{
+					"name": "daisyui",
+					"title": "DaisyUI",
+					"year": 2025,
+					"level": "Novice",
+					"urlInfo": "https://daisyui.com/"
 				}
 			]
 		}
@@ -913,6 +920,10 @@
 						"icon": "github"
 					},
 					{
+						"name": "GitHub Copilot",
+						"icon": "copilot"
+					},
+					{
 						"name": "Lunacy",
 						"icon": "lunacy"
 					},
@@ -1022,7 +1033,10 @@
 				"source": {
 					"url": "/notes/secure-websocket-service-on-vps-using-nginx.md",
 					"type": "local",
-					"images": []
+					"images": [
+						"/img/notes/secure-websocket-service-on-vps-using-nginx_50(0.5).png",
+						"/img/notes/secure-websocket-service-on-vps-using-nginx.png"
+					]
 				}
 			},
 			{
@@ -1042,7 +1056,10 @@
 				"source": {
 					"url": "https://github.com/krlan2789/Unity-Background-Location",
 					"type": "github",
-					"images": []
+					"images": [
+						"/img/notes/krlan2789_Unity-Background-Location_50(0.5).png",
+						"/img/notes/krlan2789_Unity-Background-Location.png"
+					]
 				}
 			},
 			{
@@ -1060,7 +1077,10 @@
 				"source": {
 					"url": "/notes/secure-websocket-service-on-vps-using-apache.md",
 					"type": "local",
-					"images": []
+					"images": [
+						"/img/notes/secure-websocket-service-on-vps-using-apache_50(0.5).png",
+						"/img/notes/secure-websocket-service-on-vps-using-apache.png"
+					]
 				}
 			},
 			{
@@ -1079,7 +1099,10 @@
 				"source": {
 					"url": "https://github.com/krlan2789/express-ws-app",
 					"type": "github",
-					"images": []
+					"images": [
+						"/img/notes/krlan2789_express-ws-app_50(0.5).png",
+						"/img/notes/krlan2789_express-ws-app.png"
+					]
 				}
 			}
 		]

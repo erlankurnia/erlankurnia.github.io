@@ -1,15 +1,31 @@
 <script setup lang="ts">
-import { ref, onMounted, inject, computed } from "vue";
+import { ref, onMounted, inject, computed, onUnmounted } from "vue";
 import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import { useScroll } from "@vueuse/core";
+import { rand, useScroll } from "@vueuse/core";
+import tools from "@/helper/tools";
+
+//#region Load quotes
+const dataQuotes = ref<string[]>([]);
+const randomQuote = computed(() => {
+	const idx = rand(1, dataQuotes.value.length - 1);
+	return dataQuotes.value[idx];
+});
+const getQuotes = async () => {
+	dataQuotes.value = await tools.getQuotes('' + data?.value?.quote);
+}
+onMounted(getQuotes);
+onUnmounted(getQuotes);
+//#endregion Load quotes
 
 //#region Splash liquid as user image
 const isPageLoaded = ref(false);
-onMounted(() => {
+const pageLoaded = async () => {
 	setTimeout(() => {
 		isPageLoaded.value = true;
 	}, 500);
-});
+};
+onMounted(pageLoaded);
+onUnmounted(pageLoaded);
 //#endregion Splash liquid as user image
 
 //#region Swapping animation
@@ -30,6 +46,7 @@ const animate = () => {
 	}
 };
 onMounted(animate);
+onUnmounted(animate);
 //#endregion Swapping animation
 
 const { y: scrollY } = useScroll(window);
@@ -80,9 +97,9 @@ const data = inject(DataUserSymbol);
 					</transition>
 
 					<transition name="slide-left" appear>
-						<p v-if="data && data.quote" style="transition-delay: 200ms"
+						<p v-if="data && data.quote && dataQuotes" style="transition-delay: 200ms"
 							class="mb-10 text-sm font-medium leading-relaxed sm:text-base text-secondary dark:text-secondaryDark"
-							v-html="data.quote"></p>
+							v-html="randomQuote"></p>
 					</transition>
 				</div>
 				<!-- Right / Top side -->
