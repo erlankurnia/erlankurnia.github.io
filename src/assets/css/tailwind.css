@@ -26,7 +26,8 @@
 	--color-tertiary: #f9f9f9; /* Ghost White */
 	--color-quaternary: #f0f3ff; /* Alice Blue */
 	--color-dark: #020617; /* Rich Black */
-	--color-primaryDark: #ffdd00; /* Golden Yellow */
+	--color-primaryDark: #ceb200; /* Mustard Yellow */
+	/* --color-primaryDark: #ffdd00; Golden Yellow */
 	--color-secondaryDark: #fffce6; /* Cosmic Latte */
 	--color-tertiaryDark: #252525; /* Raisin Black */
 	--color-quaternaryDark: #404040; /* Black Olive */
@@ -458,6 +459,11 @@
 	#markdown table th,
 	#markdown table td {
 		@apply border-primary/50 dark:border-primaryDark/50 border-2;
+	}
+
+	#markdown li > code,
+	#markdown p > code {
+		@apply rounded-md px-1 -mx-1 border-primary/50 dark:border-primaryDark/50 border-2;
 	}
 
 	#markdown table th {
