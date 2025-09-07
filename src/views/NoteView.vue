@@ -87,11 +87,8 @@ onMounted(init);
 					<h1 class="mb-3 text-2xl lan-section-title" v-html="selectedNote.title"></h1>
 				</div>
 
-				<div class="w-full px-4 py-0 mb-0 lg:w-1/2"
-					v-if="selectedNote.source && selectedNote.source.images.length > 0">
-					<div class="relative mt-10 lg:mt-9 lg:right-0">
-						<img :src="selectedNote.source.images[0]" class="w-full mx-auto" :alt="selectedNote.title" />
-					</div>
+				<div class="w-full h-auto p-4" v-if="selectedNote.source && selectedNote.source.images.length > 0">
+					<img :src="selectedNote.source.images[0]" class="w-full mx-auto" :alt="selectedNote.title" />
 				</div>
 
 				<div class="w-full px-4 pt-6 mb-0 select-text" v-if="selectedNote.description">

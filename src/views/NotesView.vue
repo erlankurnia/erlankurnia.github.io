@@ -74,21 +74,27 @@ onMounted
 						</SearchIcon>
 					</div>
 				</div>
-				<div class="w-full max-w-4xl px-3 mx-auto sm:px-6" v-if="data.notebook.notes.length > 0">
-					<transition-group name="show-up" tag="ul" class="flex flex-col gap-8">
+				<div class="w-full max-w-7xl px-3 mx-auto sm:px-6" v-if="data.notebook.notes.length > 0">
+					<transition-group name="show-up" tag="ul"
+						class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
 						<li v-for="[index, note] of computedNotesList.items()" :key="index"
-							class="flex flex-col w-full h-auto px-4 py-3 transition duration-500 rounded-lg hover:bg-quaternary dark:hover:bg-quaternaryDark">
+							class="flex flex-col gap-4 px-4 py-3 transition duration-500 rounded-lg hover:bg-quaternary dark:hover:bg-quaternaryDark hover:shadow-lg hover:scale-105">
 							<RouterLink
 								v-if="(('' + filter) == '' || note.topics.includes(filter)) && route.meta.url?.note"
-								:to="route.meta.url.note + '/' + note.id + '/' + note.title">
-								<div class="mb-2 text-xl font-bold text-primary dark:text-primaryDark">
+								:to="route.meta.url.note + '/' + note.id + '/' + note.title"
+								class="grid grid-rows-[auto_auto_1fr_32px] grid-cols-1 h-full">
+								<img v-if="note.source.images && note.source.images.length > 0"
+									:src="note.source.images[0]" class="w-full aspect-auto rounded-lg"
+									:alt="note.title">
+								<div class="mb-2 text-lg lg:text-xl font-bold text-primary dark:text-primaryDark">
 									<h4 v-html="note.title"></h4>
 								</div>
 								<p class="text-sm text-secondary dark:text-secondaryDark" v-if="note.description"
 									v-html="('' + note.description).substring(0, note.description.length > 128 ? 128 : note.description.length)">
 								</p>
 								<p v-if="note.date"
-									class="mt-2 text-xs font-light text-right text-secondary dark:text-secondaryDark">{{
+									class="mt-2 text-xs font-light text-right text-secondary dark:text-secondaryDark">
+									{{
 										note.date }}
 								</p>
 							</RouterLink>

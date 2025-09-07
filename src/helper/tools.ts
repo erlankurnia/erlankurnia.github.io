@@ -1,10 +1,17 @@
 let cachedDataUser: any | null = null;
+let cachedQuotes: string[] | null = null;
 export default {
 	async getDataUser<T>(): Promise<T> {
 		if (cachedDataUser != null) return cachedDataUser as T;
 		const res = await fetch("/data_user.json");
 		cachedDataUser = await res.json();
 		return cachedDataUser as T;
+	},
+	async getQuotes(url: string): Promise<string[]> {
+		if (cachedQuotes != null) return cachedQuotes;
+		const res = await fetch(url);
+		cachedQuotes = (await res.text()).split("\n");
+		return cachedQuotes;
 	},
 	async getContentReadme(source: { type: string, url: string }): Promise<string> {
 		if (source != null && typeof source.type != "undefined" && source.type != null && typeof source.url == "string") {
