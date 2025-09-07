@@ -115,7 +115,7 @@ async function submitForm() {
 					<div class="w-full px-4 mb-8">
 						<label for="message"
 							class="text-base font-bold text-primary dark:text-primaryDark">Message</label>
-						<textarea type="text" id="message" class="w-full h-24 lan-textfield-primary"
+						<textarea type="text" id="message" class="w-full h-24 max-h-80 lan-textfield-primary"
 							v-model="formMessage"></textarea>
 					</div>
 					<div class="w-full px-4">
