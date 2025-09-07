@@ -1,10 +1,10 @@
 # Deploying a Secure Node.js WebSocket Service on VPS using Nginx
 
-Real-time features are essential for modern web applications, and WebSockets provide a robust solution for two-way communication between clients and servers. If you want full control and security, hosting your own WebSocket service on a VPS is a great choice. In this article, you'll learn how to deploy a secure Node.js WebSocket server, protect it with SSL, and make it accessible via a custom subdomain using Nginx as a reverse proxy.
+Real-time features are essential for modern web applications, and WebSockets provide a solution for two-way communication between clients and servers. If you want full control and security, hosting your own WebSocket service on a VPS. This note is a guidance, how to deploy a secure Node.js WebSocket server, protect it with SSL, and make it accessible via a custom subdomain using Nginx as a reverse proxy.
 
 ## **Scenario Overview**
 
-Suppose you want to serve your WebSocket application at `websocket.krlan2789.com`, hosted on a VPS with the IP address `10.0.27.89`. Your Node.js project resides at `/root/repositories/WebSocket-Service`.
+Suppose you want to serve your WebSocket application at `websocket.krlan2789.com`, hosted on a VPS with the IP address `10.0.27.89`. Your Node.js project location at `/root/repositories/WebSocket-Service`.
 
 ## **Step 1: Point Your Subdomain to the VPS**
 
@@ -178,6 +178,6 @@ pm2 startup systemd
 
 ## **Conclusion**
 
-By following these steps, you've set up a secure, production-ready WebSocket service on your own VPS, accessible via a custom subdomain and protected with SSL. With Nginx handling SSL termination and proxying, and PM2 managing your Node.js process, your real-time application is ready for reliable, secure operation.
+By following these steps, you've set up a secure, WebSocket service on your own VPS, accessible via a custom subdomain and protected with SSL. With Nginx handling SSL termination and proxying, and PM2 managing your Node.js process, your real-time application is ready for reliable, secure operation.
 
 See [this note](/note/2/Secure%20WebSocket%20Service%20on%20a%20VPS%20using%20Apache) if you prefer using Apache instead of Nginx.
