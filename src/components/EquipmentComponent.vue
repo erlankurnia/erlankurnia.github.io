@@ -60,7 +60,7 @@ const data = inject(DataUserSymbol);
 				</div>
 				<div class="w-full px-4">
 					<table v-if="data.equipment.software && data.equipment.software.equipments"
-						class="w-full mb-6 text-sm font-medium border-separate table-auto lg:ml-4 2xl:ml-8 4xl:ml-12 text-secondary dark:text-secondaryDark sm:text-base">
+						class="w-full mb-6 mx-4 text-sm font-medium border-separate table-auto text-secondary dark:text-secondaryDark sm:text-base">
 						<thead>
 							<tr>
 								<th></th>
@@ -69,11 +69,11 @@ const data = inject(DataUserSymbol);
 						</thead>
 						<tbody>
 							<template v-for="(item, key) in data.equipment.software.equipments" :key="key">
-								<tr class="">
+								<tr class="w-auto grid grid-cols-[128px_auto_1fr] max-lg:p-4">
 									<td class="py-6 align-top lg:py-7 text-primary dark:text-primaryDark">
 										<h3 class="" v-html="key"></h3>
 									</td>
-									<td class="w-4 md:w-10 xl:w-16 2xl:w-24"></td>
+									<td class="w-3 md:w-4 xl:w-7 2xl:w-10"></td>
 									<td class="flex flex-wrap py-4 align-text-top">
 										<template v-for="data in item">
 											<div
