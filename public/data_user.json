@@ -138,7 +138,7 @@
 	"ability": {
 		"tooltip": "Proficiency scale based on <a href=\"https://hr.nih.gov/working-nih/competencies/competencies-proficiency-scale\" class=\"lan-link-secondary underline\" target=\"_blank\">NIH Proficiency Scale</a>",
 		"skill": {
-			"title": "There Are Many Things That not My <span class=\"text-primary dark:text-primaryDark\">Skill</span>s",
+			"title": "Tech <span class=\"text-primary dark:text-primaryDark\">Stack</span>s",
 			"description": "Some of the skills that I can do,<br> also use it quite often in work and personal projects.",
 			"topics": [
 				{
@@ -222,6 +222,212 @@
 					"level": "INTERMEDIATE",
 					"urlInfo": "https://docs.arduino.cc/software/ide/"
 				}
+			],
+			"categorized": [
+				{
+					"title": "Programming Languages",
+					"topics": [
+						{
+							"name": "csharp",
+							"title": "C#",
+							"level": "ADVANCED"
+						},
+						{
+							"name": "javascript",
+							"title": "JavaScript",
+							"level": "ADVANCED"
+						},
+						{
+							"name": "typescript",
+							"title": "TypeScript",
+							"level": "ADVANCED"
+						},
+						{
+							"name": "cpp",
+							"title": "C++",
+							"level": "NOVICE"
+						}
+					]
+				},
+				{
+					"title": "Back-End",
+					"topics": [
+						{
+							"name": "dotnet",
+							"title": "ASP.NET",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet"
+						},
+						{
+							"name": "efcore",
+							"title": "Entity Framework Core",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://learn.microsoft.com/en-us/ef/"
+						},
+						{
+							"name": "node",
+							"title": "Node.js",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://nodejs.org/en"
+						},
+						{
+							"name": "expressjs",
+							"title": "Express.js",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://expressjs.com/"
+						},
+						{
+							"name": "websocket",
+							"title": "WebSocket",
+							"level": "NOVICE",
+							"urlInfo": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
+						}
+					]
+				},
+				{
+					"title": "Front-End",
+					"topics": [
+						{
+							"name": "unity",
+							"title": "Unity3D",
+							"level": "ADVANCED",
+							"urlInfo": "https://unity.com/"
+						},
+						{
+							"name": "vue",
+							"title": "Vue.js",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://vuejs.org/"
+						},
+						{
+							"name": "nuxt",
+							"title": "Nuxt.js",
+							"level": "NOVICE",
+							"urlInfo": "https://nuxt.com/"
+						},
+						{
+							"name": "tailwind",
+							"title": "Tailwind",
+							"level": "ADVANCED",
+							"urlInfo": "https://tailwindcss.com/"
+						},
+						{
+							"name": "daisyui",
+							"title": "DaisyUI",
+							"level": "Novice",
+							"urlInfo": "https://daisyui.com/"
+						}
+					]
+				},
+				{
+					"title": "Databases",
+					"topics": [
+						{
+							"name": "postgresql",
+							"title": "PostgreSQL",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://www.postgresql.org/"
+						},
+						{
+							"name": "mariadb",
+							"title": "MariaDB",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://mariadb.org/"
+						}
+					]
+				},
+				{
+					"title": "Cloud & DevOps",
+					"topics": [
+						{
+							"name": "github",
+							"title": "GitHub Actions (CI/CD)",
+							"level": "NOVICE",
+							"urlInfo": "https://github.com/features/actions"
+						},
+						{
+							"name": "docker",
+							"title": "Docker",
+							"level": "BASIC",
+							"urlInfo": "https://www.docker.com/why-docker"
+						},
+						{
+							"name": "azure",
+							"title": "Azure App Service",
+							"level": "BASIC",
+							"urlInfo": "https://azure.microsoft.com/en-us/products/app-service"
+						}
+					]
+				},
+				{
+					"title": "Other Tools",
+					"topics": [
+						{
+							"name": "microcontroller",
+							"title": "Microcontroller Programming",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://www.wevolver.com/article/microcontroller-programming-mastering-the-foundation-of-embedded-systems"
+						},
+						{
+							"name": "arduino",
+							"title": "Arduino IDE",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://docs.arduino.cc/software/ide/"
+						},
+						{
+							"name": "copilot",
+							"title": "GitHub Copilot",
+							"level": "BASIC",
+							"urlInfo": "https://github.com/features/copilot"
+						},
+						{
+							"name": "scalar",
+							"title": "Scalar (API Docs)",
+							"level": "INTERMEDIATE",
+							"urlInfo": "https://scalar.com/"
+						}
+					]
+				},
+				{
+					"title": "Architecture & Design",
+					"topics": [
+						{
+							"name": "architecture",
+							"title": "Clean Architecture",
+							"level": "INTERMEDIATE"
+						},
+						{
+							"name": "architecture",
+							"title": "Model View Controller",
+							"level": "INTERMEDIATE"
+						},
+						{
+							"name": "pattern",
+							"title": "Design Patterns",
+							"level": "NOVICE"
+						},
+						{
+							"name": "pattern",
+							"title": "SOLID Principles",
+							"level": "INTERMEDIATE"
+						},
+						{
+							"name": "restapi",
+							"title": "REST API Design",
+							"level": "ADVANCED"
+						},
+						{
+							"name": "design",
+							"title": "Domain-Driven Design",
+							"level": "INTERMEDIATE"
+						},
+						{
+							"name": "database",
+							"title": "Database Design",
+							"level": "NOVICE"
+						}
+					]
+				}
 			]
 		},
 		"learn": {
@@ -231,21 +437,18 @@
 				{
 					"name": "docker",
 					"title": "Docker",
-					"year": 2025,
 					"level": "BASIC",
 					"urlInfo": "https://www.docker.com/why-docker"
 				},
 				{
 					"name": "azure",
-					"title": "Microsoft Azure",
-					"year": 2024,
+					"title": "Azure App Service",
 					"level": "BASIC",
-					"urlInfo": "https://azure.microsoft.com/en-us/"
+					"urlInfo": "https://azure.microsoft.com/en-us/products/app-service"
 				},
 				{
 					"name": "daisyui",
 					"title": "DaisyUI",
-					"year": 2025,
 					"level": "Novice",
 					"urlInfo": "https://daisyui.com/"
 				}
@@ -918,10 +1121,6 @@
 					{
 						"name": "GitHub Desktop",
 						"icon": "github"
-					},
-					{
-						"name": "GitHub Copilot",
-						"icon": "copilot"
 					},
 					{
 						"name": "Lunacy",
