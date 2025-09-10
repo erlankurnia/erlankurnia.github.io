@@ -71,6 +71,7 @@ const icons = {
 	simplepattern: ["pattern"],
 	simpleruler: ["ruler", "design"],
 	simpletesting: ["testing", "test"],
+	simpleweb: ["website", "internet"],
 };
 const currentComponentName = (techName: string, icons: Record<string, string[]>) => {
 	let name: string | null = null;
@@ -83,9 +84,9 @@ const currentComponentName = (techName: string, icons: Record<string, string[]>)
 		}
 		if (name) break;
 	}
-	return name ? `./svg/${name}.svg.vue` : `./${(props.default ?? 'WebIcon')}.vue`;
+	return name ?? props.default ?? 'Simpleweb';
 };
-const currentComponent = defineAsyncComponent(() => import(currentComponentName(props.techName, icons)));
+const currentComponent = defineAsyncComponent(() => import(`./svg/${currentComponentName(props.techName, icons)}.svg.vue`));
 </script>
 
 <template>
