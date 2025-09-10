@@ -1,7 +1,22 @@
 {
 	"navbarBrand": "LAN",
-	"quote": "/quotes",
 	"image": "/img/fotor.comimagescreate_3.webp",
+	"hero": {
+		"name": {
+			"changable": [
+				"Erlan",
+				"earl!",
+				"!land"
+			],
+			"static": "_Kurnia"
+		},
+		"title": {
+			"static": "Software<span class=\"font-bold text-primary dark:text-primaryDark\">_</span>Engineer"
+		},
+		"quote": {
+			"changable": "/quotes"
+		}
+	},
 	"logo": [
 		"/img/logo/Logo Fusion@2x.webp"
 	],
@@ -37,7 +52,7 @@
 		},
 		"profession": {
 			"label": "Profession",
-			"value": "Unity Software Engineer",
+			"value": "Software Engineer (C#/Unity)",
 			"type": "text"
 		},
 		"birthday": {

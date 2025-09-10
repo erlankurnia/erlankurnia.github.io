@@ -4,6 +4,11 @@ import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import { rand, useScroll } from "@vueuse/core";
 import tools from "@/helper/tools";
 
+const { y: scrollY } = useScroll(window);
+const windowHeight = computed(() => window.innerHeight);
+const data = inject(DataUserSymbol);
+const heroData = ref(data?.value?.hero);
+
 //#region Load quotes
 const dataQuotes = ref<string[]>([]);
 const randomQuote = computed(() => {
@@ -11,7 +16,13 @@ const randomQuote = computed(() => {
 	return dataQuotes.value[idx];
 });
 const getQuotes = async () => {
-	dataQuotes.value = await tools.getQuotes('' + data?.value?.quote);
+	const quotes = heroData.value?.quote.changable;
+	if (typeof quotes == 'string') {
+		const rawQuote = (await tools.fetchData('' + quotes));
+		dataQuotes.value = rawQuote.split('\n');
+	}
+	else if (Array.isArray(quotes)) dataQuotes.value = heroData.value?.quote.changable as string[];
+	else if (heroData.value?.quote.static) dataQuotes.value = [heroData.value?.quote.static];
 }
 onMounted(getQuotes);
 onUnmounted(getQuotes);
@@ -29,17 +40,26 @@ onUnmounted(pageLoaded);
 //#endregion Splash liquid as user image
 
 //#region Swapping animation
-const texts = ref(["earl!", "Erlan"]);
-const letters = ref(texts.value[0].split(''));
-const text = ref(texts.value[0]);
-let index = 0;
-let textIndex = 0;
+const rawNames = heroData.value?.name.changable ?? heroData.value?.name.static ?? '';
+const usedNames = ref(Array.isArray(rawNames) ? rawNames : []);
+const changableLetters = ref(usedNames.value.length > 0 ? usedNames.value[0].split('') : null);
+const changableLettersOld = ref(changableLetters.value);
+
+let wordIndex = 0;
+let letterIndex = 0;
+let currentWorkingText = usedNames.value.length > wordIndex ? usedNames.value[wordIndex] : null;
+
+console.log(usedNames.value);
 const animate = () => {
-	text.value = texts.value[textIndex].slice(0, index + 1) + texts.value[1 - textIndex].slice(index + 1);
-	letters.value = text.value.split('');
-	index = (index + 1) % texts.value[0].length;
-	if (index === 0) {
-		textIndex = 1 - textIndex;
+	if (usedNames.value.length < 2 || currentWorkingText == null) return;
+
+	changableLettersOld.value = changableLetters.value;
+	currentWorkingText = usedNames.value[wordIndex].slice(0, letterIndex + 1) + currentWorkingText.slice(letterIndex + 1);
+	changableLetters.value = currentWorkingText.split('');
+
+	letterIndex = (letterIndex + 1) % usedNames.value[0].length;
+	if (letterIndex === 0) {
+		wordIndex = (wordIndex + 1) % usedNames.value.length;
 		setTimeout(animate, 2000);
 	} else {
 		setTimeout(animate, 700);
@@ -48,10 +68,6 @@ const animate = () => {
 onMounted(animate);
 onUnmounted(animate);
 //#endregion Swapping animation
-
-const { y: scrollY } = useScroll(window);
-const windowHeight = computed(() => window.innerHeight);
-const data = inject(DataUserSymbol);
 </script>
 
 <template>
@@ -71,33 +87,36 @@ const data = inject(DataUserSymbol);
 					</transition>
 
 					<transition name="slide-left" appear>
-						<span style="transition-delay: 50ms"
+						<span v-if="heroData?.name && changableLetters && changableLettersOld"
+							style="transition-delay: 50ms"
 							class="flex justify-start mt-1 text-3xl font-bold lg:justify-end sm:text-4xl lg:5xl text-secondary dark:text-secondaryDark">
 							<a v-if="$route.meta.url.about" :href="$route.meta.url.about"
 								class="flex flex-row sm:mr-5 text-primary dark:text-primaryDark">
-								<span v-for="(letter, index) in letters" :key="index" class="relative w-5 md:w-6">
+								<span v-for="(letter, index) in changableLetters" :key="index"
+									class="relative w-5 md:w-6">
 									<transition name="slide-up">
-										<span v-if="texts[0][index] == letter" v-html="texts[0][index]"
-											class="absolute"></span>
-										<span v-else-if="texts[1][index] == letter" v-html="texts[1][index]"
-											class="absolute"></span>
+										<span v-if="changableLettersOld[index] == letter"
+											v-html="changableLettersOld[index]" class="absolute"></span>
+										<span v-else-if="changableLetters[index] == letter"
+											v-html="changableLetters[index]" class="absolute"></span>
 									</transition>
 								</span>
-							</a>_Kurnia
+							</a>{{ heroData.name.static }}
 						</span>
 					</transition>
 
 					<transition name="slide-left" appear>
-						<h style="transition-delay: 150ms"
+						<h v-if="heroData?.title.static" style="transition-delay: 150ms"
 							class="py-6 text-sm font-extrabold sm:text-lg max-w-max lg:ml-auto text-dark dark:text-light lg:text-2xl">
-							Unity<span class="font-bold text-primary dark:text-primaryDark">_</span>Software<span
-								class="font-bold text-primary dark:text-primaryDark">_</span>Engineer
+							<span v-html="heroData.title.static"></span>
+							<!-- Unity<span class="font-bold text-primary dark:text-primaryDark">_</span>Software<span
+								class="font-bold text-primary dark:text-primaryDark">_</span>Engineer -->
 							<div class="border-b-[2px] mt-1 border-b-quaternary dark:border-b-quaternaryDark"></div>
 						</h>
 					</transition>
 
 					<transition name="slide-left" appear>
-						<p v-if="data && data.quote && dataQuotes" style="transition-delay: 200ms"
+						<p v-if="dataQuotes.length > 0" style="transition-delay: 200ms"
 							class="mb-10 text-sm font-medium leading-relaxed sm:text-base text-secondary dark:text-secondaryDark"
 							v-html="randomQuote"></p>
 					</transition>

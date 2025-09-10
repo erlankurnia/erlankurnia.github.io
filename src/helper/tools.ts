@@ -1,5 +1,8 @@
+import Dictionary from "./interfaces/Dictionary";
+import type DictionaryType from "./interfaces/Dictionary";
+
 let cachedDataUser: any | null = null;
-let cachedQuotes: string[] | null = null;
+let cachedQuotes: DictionaryType<string> = new Dictionary<string>();
 export default {
 	async getDataUser<T>(): Promise<T> {
 		if (cachedDataUser != null) return cachedDataUser as T;
@@ -7,11 +10,13 @@ export default {
 		cachedDataUser = await res.json();
 		return cachedDataUser as T;
 	},
-	async getQuotes(url: string): Promise<string[]> {
-		if (cachedQuotes != null) return cachedQuotes;
+	async fetchData(url: string): Promise<string> {
+		const cachedData = cachedQuotes.get(url);
+		if (cachedData) return cachedData;
 		const res = await fetch(url);
-		cachedQuotes = (await res.text()).split("\n");
-		return cachedQuotes;
+		var list = (await res.text());
+		cachedQuotes.set(url, list);
+		return list;
 	},
 	async getContentReadme(source: { type: string, url: string }): Promise<string> {
 		if (source != null && typeof source.type != "undefined" && source.type != null && typeof source.url == "string") {

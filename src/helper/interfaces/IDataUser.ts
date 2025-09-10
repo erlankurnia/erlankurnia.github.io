@@ -7,12 +7,13 @@ import type INotebook from "./INotebook";
 import type IReference from "./IReference";
 import type IAbility from "./IAbility";
 import type { IPortfolio } from "./IPortfolio";
+import type IHero from "./IHero";
 
 export default interface IDataUser {
     navbarBrand: string;
-    quote: string;
     image: string;
     logo: string[];
+    hero: IHero;
     intro: IGreetings[];
     contact: IGreetings;
     socialMedia: ISocialMedia;
