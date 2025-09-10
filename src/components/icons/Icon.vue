@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 
-const props = defineProps<{ techName: string }>()
+const props = defineProps<{ techName: string, default?: string }>()
 const icons = {
 	unity: ["unity", "unity3d", "unityengine"],
 	android: ["android", "androidos"],
@@ -16,6 +16,7 @@ const icons = {
 	csharp: ["csharp", "c#"],
 	daisyui: ["daisyui"],
 	dotnet: ["dotnet", ".net"],
+	efcore: ["efcore", "entityframeworkcore"],
 	firebase: ["firebase"],
 	java: ["java"],
 	javascript: ["javascript", "js"],
@@ -30,10 +31,12 @@ const icons = {
 	midtrans: ["midtrans"],
 	mysql: ["mysql"],
 	mongodb: ["mongodb", "mongo"],
+	nginx: ["nginx"],
 	nodejs: ["nodejs", "node"],
 	onesignal: ["onesignal"],
 	php: ["php"],
 	postgresql: ["postgresql", "pqsql", "postgres"],
+	scalar: ["scalar", "scalardocs"],
 	supabase: ["supabase"],
 	typescript: ["typescript", "ts"],
 	xamarin: ["xamarin"],
@@ -60,9 +63,17 @@ const icons = {
 	docker: ["docker"],
 	expressjs: ["expressjs", "express.js", "express"],
 	lunacy: ["lunacy"],
+	iot: ["iot", "internetofthing", "internetofthings"],
+	microchip: ["microchip", "chipset", "microcontroller"],
+	simpleapi: ["restapi", "restful", "cloudapi"],
+	simpledatabase: ["database", "db", "datastore"],
+	simplelayout: ["architecture", "layout"],
+	simplepattern: ["pattern"],
+	simpleruler: ["ruler", "design"],
+	simpletesting: ["testing", "test"],
 };
 const currentComponentName = (techName: string, icons: Record<string, string[]>) => {
-	let name = "";
+	let name: string | null = null;
 	for (const [key, value] of Object.entries(icons)) {
 		for (let tag of value) {
 			if (tag.toLowerCase() == techName.toLowerCase()) {
@@ -72,9 +83,9 @@ const currentComponentName = (techName: string, icons: Record<string, string[]>)
 		}
 		if (name) break;
 	}
-	return name;
+	return name ? `./svg/${name}.svg.vue` : `./${(props.default ?? 'WebIcon')}.vue`;
 };
-const currentComponent = defineAsyncComponent(() => import(`./svg/${currentComponentName(props.techName, icons)}.svg.vue`));
+const currentComponent = defineAsyncComponent(() => import(currentComponentName(props.techName, icons)));
 </script>
 
 <template>
