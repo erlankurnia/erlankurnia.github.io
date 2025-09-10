@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, inject, onBeforeUnmount, ref, watchEffect } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useHead } from '@unhead/vue';
 import SearchIcon from "@/components/icons/SearchIcon.vue";
 import ProjectListComponent from "@/components/ProjectListComponent.vue";
@@ -10,30 +10,53 @@ import Dictionary from "@/helper/interfaces/Dictionary";
 
 const projectsList = new Dictionary<IProjectInfo>();
 
-const route = useRoute()
+const route = useRoute();
+const router = useRouter();
+
 const data = inject(DataUserSymbol);
-const filter = ref('');
+const availableTags = ref(new Set<string>());
+const selectedTags = ref(new Set<string>());
 const searchKeyword = ref('');
 
 if (route.params.filter instanceof Array) {
-    filter.value = route.params.filter[0].toLowerCase();
+    selectedTags.value = new Set<string>(route.params.filter.map(val => val.toLowerCase()));
+} else if (typeof route.params.filter == 'string') {
+    selectedTags.value = new Set<string>(route.params.filter.toLowerCase().split(','));
 } else {
-    filter.value = route.params.filter.toLowerCase();
+    selectedTags.value?.clear();
+}
+selectedTags.value?.delete('');
+
+if (Array.isArray(data?.value?.portfolio?.projects)) {
+    availableTags.value.clear();
+    for (let proj of data.value.portfolio.projects) {
+        for (let tag of proj.tags) {
+            availableTags.value.add(tag);
+        }
+    }
 }
 
 watchEffect(() => {
-    if (data?.value?.portfolio?.projects != null && Array.isArray(data.value.portfolio.projects)) {
+    if (Array.isArray(data?.value?.portfolio?.projects)) {
         projectsList.clear();
         for (let proj of data.value.portfolio.projects) {
-            if (!proj.tags.join(',').toLowerCase().includes(filter.value)) continue;
-            const key = `${proj.title}_${proj.description}_${proj.tags.join(' ')}_${proj.technologies?.join(' ')}_${proj.date}`.toLowerCase();
+            const key = `${proj.title}_${proj.description}_${proj.technologies?.join(' ')}_${proj.date}`.toLowerCase();
             projectsList.set(key, proj);
         }
     }
 });
 
-const computedProjectsList = computed(() => {
-    return projectsList.filter((key: string, value: IProjectInfo) => key.includes(searchKeyword.value.toLowerCase()));
+const toggleFilter = (tag: string) => {
+    selectedTags.value?.delete('');
+    if (selectedTags.value?.has(tag)) selectedTags.value?.delete(tag);
+    else selectedTags.value?.add(tag);
+};
+
+const filteredProjectsList = computed(() => {
+    return projectsList.filter((key: string, value: IProjectInfo) => {
+        const isMatch = value.tags.find(t => key.includes(searchKeyword.value.toLowerCase()) && (selectedTags.value.size == 0 || selectedTags.value.has(t)))
+        return isMatch !== undefined;
+    });
 })
 
 const notesHead = useHead({
@@ -50,17 +73,19 @@ onBeforeUnmount(() => {
         :class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
         <div class="container">
             <div class="w-full pt-4 text-center">
-                <h2 class="mb-3 lan-section-title">My Projects{{ filter ? ' in ' + filter : '' }}</h2>
+                <h2 class="mb-3 lan-section-title">My Projects ({{ filteredProjectsList.count() }})</h2>
             </div>
 
-            <!-- Projects -->
             <div class="flex flex-wrap">
                 <div class="w-full mb-8 text-center" v-if="data.portfolio">
                     <h3 v-if="data.portfolio.title" class="lan-section-subtitle" v-html="data.portfolio.title"></h3>
                     <p v-if="data.portfolio.description"
                         class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
-                        v-html="data.portfolio.description"></p>
+                        v-html="data.portfolio.description">
+                    </p>
                 </div>
+
+                <!-- Searchbar -->
                 <div class="w-full px-0 mb-8 text-center 2xl:px-6">
                     <div class="relative w-full max-w-[848px] mx-auto">
                         <input type="search" class="w-full px-8 text-center lan-textfield-primary"
@@ -69,11 +94,25 @@ onBeforeUnmount(() => {
                         </SearchIcon>
                     </div>
                 </div>
-                <ProjectListComponent v-if="computedProjectsList.count()" :projects="computedProjectsList.values()"
+                <!-- Searchbar -->
+
+                <!-- Tags filters -->
+                <div class="flex flex-wrap gap-2 justify-center w-full px-0 mb-8 text-center 2xl:px-6">
+                    <span v-for="(tag, index) of availableTags" :key="tag">
+                        <input type="checkbox" :id="'tag-' + tag + '-' + index" class="hidden peer" :value="tag"
+                            :checked="selectedTags?.has(tag)" @change="toggleFilter(tag)" />
+                        <label :for="'tag-' + tag + '-' + index"
+                            class="flex items-center justify-center text-xs py-1 px-2 font-normal select-none cursor-pointer rounded-lg border-2 border-primary dark:border-primaryDark text-secondary dark:text-secondaryDark transition-colors duration-200 ease-in-out peer-checked:bg-primary dark:peer-checked:bg-primaryDark peer-checked:text-tertiary dark:peer-checked:text-tertiaryDark">
+                            #{{ tag }}
+                        </label>
+                    </span>
+                </div>
+                <!-- Tags filters -->
+
+                <ProjectListComponent v-if="filteredProjectsList.count()" :projects="filteredProjectsList.values()"
                     reverseTheme>
                 </ProjectListComponent>
             </div>
-            <!-- Projects -->
         </div>
     </section>
 </template>
