@@ -16,7 +16,7 @@ const icons = {
 	csharp: ["csharp", "c#"],
 	daisyui: ["daisyui"],
 	dotnet: ["dotnet", ".net"],
-	efcore: ["efcore", "entityframeworkcore", "entityframework-core"],
+	efcore: ["efcore", "entityframeworkcore", "entity-framework-core"],
 	firebase: ["firebase"],
 	java: ["java"],
 	javascript: ["javascript", "js"],
