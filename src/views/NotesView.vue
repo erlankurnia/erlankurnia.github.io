@@ -66,7 +66,7 @@ onMounted
 						class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
 						v-html="data.notebook.description"></p>
 				</div>
-				<div class="w-full px-3 mb-8 text-center sm:px-6">
+				<div class="w-full px-4 mb-8 text-center 2xl:px-6">
 					<div class="relative w-full max-w-[848px] mx-auto">
 						<input type="search" class="w-full px-8 text-center lan-textfield-primary"
 							v-model="searchKeyword">
@@ -74,11 +74,11 @@ onMounted
 						</SearchIcon>
 					</div>
 				</div>
-				<div class="w-full max-w-7xl px-3 mx-auto sm:px-6" v-if="data.notebook.notes.length > 0">
+				<div class="w-full max-w-7xl mx-auto px-4 2xl:px-6" v-if="data.notebook.notes.length > 0">
 					<transition-group name="show-up" tag="ul"
 						class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4">
 						<li v-for="[index, note] of computedNotesList.items()" :key="index"
-							class="flex flex-col gap-4 px-4 py-3 transition duration-500 rounded-lg hover:bg-quaternary dark:hover:bg-quaternaryDark hover:shadow-lg hover:scale-105">
+							class="flex flex-col gap-4 py-3 transition duration-500 rounded-lg hover:bg-quaternary dark:hover:bg-quaternaryDark hover:shadow-lg hover:scale-105">
 							<RouterLink
 								v-if="(('' + filter) == '' || note.topics.includes(filter)) && route.meta.url?.note"
 								:to="route.meta.url.note + '/' + note.id + '/' + note.title"

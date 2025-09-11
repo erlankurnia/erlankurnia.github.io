@@ -26,7 +26,7 @@ const computedProjectList = computed(() => {
 
 <template>
     <section v-if="computedProjectList && computedProjectList.length > 0"
-        class="grid justify-center w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 2xl:grid-cols-3 2xl:gap-6 2xl:mx-auto">
+        class="grid justify-center w-full max-md:px-4 grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 2xl:grid-cols-3 2xl:gap-6 2xl:mx-auto">
         <CardItemComponent v-for="proj in computedProjectList" :key="proj.slug ?? proj.id" :project="proj"
             :reverseTheme="reverseTheme"></CardItemComponent>
     </section>

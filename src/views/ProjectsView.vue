@@ -93,7 +93,7 @@ onBeforeUnmount(() => {
                 </div>
 
                 <!-- Searchbar -->
-                <div class="w-full px-0 mb-8 text-center 2xl:px-6">
+                <div class="w-full px-4 mb-8 text-center 2xl:px-6">
                     <div class="relative w-full max-w-[848px] mx-auto">
                         <input type="search" class="w-full px-8 text-center lan-textfield-primary"
                             v-model="searchKeyword">
