@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject, onBeforeUnmount, ref, watchEffect } from "vue";
+import { computed, inject, nextTick, onBeforeUnmount, ref, watch, watchEffect } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useHead } from '@unhead/vue';
 import SearchIcon from "@/components/icons/SearchIcon.vue";
@@ -50,6 +50,13 @@ const toggleFilter = (tag: string) => {
     selectedTags.value?.delete('');
     if (selectedTags.value?.has(tag)) selectedTags.value?.delete(tag);
     else selectedTags.value?.add(tag);
+
+    router.replace({
+        name: route.name,
+        params: {
+            filter: Array.from(selectedTags.value).join(','),
+        },
+    });
 };
 
 const filteredProjectsList = computed(() => {

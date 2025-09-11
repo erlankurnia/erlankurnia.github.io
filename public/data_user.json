@@ -274,7 +274,7 @@
 							"urlInfo": "https://dotnet.microsoft.com/en-us/apps/aspnet"
 						},
 						{
-							"name": "efcore",
+							"name": "entity-framework-core",
 							"title": "Entity Framework Core",
 							"level": "INTERMEDIATE",
 							"urlInfo": "https://learn.microsoft.com/en-us/ef/"
