@@ -52,7 +52,7 @@
 		},
 		"profession": {
 			"label": "Profession",
-			"value": "Software Engineer (C#/Unity)",
+			"value": "Software Engineer",
 			"type": "text"
 		},
 		"birthday": {
