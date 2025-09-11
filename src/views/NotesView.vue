@@ -82,7 +82,7 @@ onMounted
 							<RouterLink
 								v-if="(('' + filter) == '' || note.topics.includes(filter)) && route.meta.url?.note"
 								:to="route.meta.url.note + '/' + note.id + '/' + note.title"
-								class="grid grid-rows-[auto_auto_1fr_32px] grid-cols-1 h-full">
+								class="grid grid-rows-[auto_auto_1fr_32px] grid-cols-1 h-full px-2">
 								<img v-if="note.source.images && note.source.images.length > 0"
 									:src="note.source.images[0]" class="w-full aspect-auto rounded-lg"
 									:alt="note.title">
