@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 import Icon from '@/components/icons/Icon.vue';
 import NewTabIcon from '@/components/icons/NewTabIcon.vue';
 import EventBus, { EventBusEnum } from '@/helper/EventBus';
@@ -11,7 +11,6 @@ import { useScreenSizeStore } from '@/stores/screenSizeStore';
 const props = defineProps<IPropsCardItemComponent>();
 const screenSizeStore = useScreenSizeStore();
 const screenSize = screenSizeStore.getScreen();
-// const distanceFromCenter = ref(0);
 const opacityValue = ref(1);
 
 async function preview() {
@@ -25,25 +24,6 @@ async function preview() {
 const cardId = computed(() => `card-${props.project.id}-${props.project.slug}`);
 const shortDesc = computed(() => {
     return props.project.description.length > 144 ? props.project.summary.substring(0, 120) + '..' : props.project.summary;
-});
-
-// const updateDistance = () => {
-//     const cardElement = document.getElementById(cardId.value);
-//     if (cardElement) {
-//         const cardRect = cardElement.getBoundingClientRect();
-//         const visibleStartPos = window.innerHeight * 9 / 10;
-//         distanceFromCenter.value = cardRect.top - visibleStartPos;
-//         opacityValue.value = distanceFromCenter.value < 0 ? 1.4 - cardRect.top / window.innerHeight : 0;
-//     }
-// };
-
-onMounted(() => {
-    // window.addEventListener('scroll', updateDistance);
-    // updateDistance();
-});
-
-onBeforeUnmount(() => {
-    // window.removeEventListener('scroll', updateDistance);
 });
 </script>
 
@@ -61,7 +41,7 @@ onBeforeUnmount(() => {
             <template v-if="project.imagesDir">
                 <img :src="project.imagesDir + 'sample@' + screenSize + '.webp'" :alt="project.title"
                     class="transition-transform duration-500 scale-100 group-hover:scale-110"
-                    :class="{ 'w-full': project.imagesDir != null && project.imagesDir.length > 5 }" />
+                    :class="{ 'w-full': project.imagesDir != null && project.imagesDir.length > 5 }" loading="lazy" />
             </template>
         </div>
 

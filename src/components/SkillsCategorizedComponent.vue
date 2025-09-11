@@ -81,29 +81,6 @@ onMounted(() => {
                         </p>
                     </div>
                 </div>
-                <!-- <div v-if="skillsCategorized && skillsCategorized.length > 0"
-                    class="grid grid-cols-[repeat(auto-fit,_minmax(192px,_1fr))] gap-12 justify-center max-w-[1080px] px-4 w-full 2xl:mx-auto mb-6 xl:mb-10">
-                    <section v-for="cat in skillsCategorized" class="flex flex-col gap-4 xl:gap-6">
-                        <h3 class="lan-section-title font-semibold text-center text-lg xl:text-xl underline mx-auto"
-                            v-html="cat.title"></h3>
-                        <div v-if="cat.topics && cat.topics.length > 0"
-                            class="justify-center flex flex-col gap-1 lg:gap-3 mx-auto">
-                            <button v-for="skill in cat.topics" type="button" @click="showOptions($event, skill)"
-                                class="grid grid-cols-[24px_1fr] lg:grid-cols-[32px_1fr] justify-start w-auto h-auto gap-4 p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
-                                <div class="flex items-center justify-center mx-auto size-8">
-                                    <Icon :techName="skill.name"></Icon>
-                                </div>
-
-                                <div class="flex flex-col gap-1 text-xs text-left justify-evenly md:text-[14px]">
-                                    <h3 class="w-full font-light md:font-normal" translate="no" v-html="skill.title">
-                                    </h3>
-                                    <h4 v-if="skill.level" class="w-full font-thin" v-html="skill.level.toString().charAt(0).toUpperCase() +
-                                        skill.level.toString().slice(1).toLowerCase()"></h4>
-                                </div>
-                            </button>
-                        </div>
-                    </section>
-                </div> -->
 
                 <table v-if="skillsCategorized && skillsCategorized.length > 0"
                     class="w-full mb-6 mx-4 text-sm font-medium border-separate table-auto text-secondary dark:text-secondaryDark sm:text-base">
@@ -121,15 +98,25 @@ onMounted(() => {
                                 </td>
                                 <td class="w-3 md:w-4 xl:w-7 2xl:w-10"></td>
                                 <td class="flex flex-wrap py-4 align-text-top">
-                                    <template v-for="data in cat.topics">
+                                    <template v-for="skill in cat.topics">
                                         <!-- Skill Item -->
-                                        <button type="button" @click="showOptions($event, data)"
-                                            class="max-h-[36px] lg:max-h-[44px] w-fit max-w-[192px] xl:max-w-3xs py-2 lan-50-to-100 flex flex-row">
+                                        <button type="button" @click="showOptions($event, skill)"
+                                            class="max-h-[36px] lg:max-h-[44px] w-fit max-w-[192px] xl:max-w-3xs py-2 my-2 lan-50-to-100 flex flex-row">
                                             <div class="h-full mr-2 aspect-square lg:mr-4">
-                                                <Icon :techName="data.name"></Icon>
+                                                <Icon :techName="skill.name"></Icon>
                                             </div>
-                                            <h4 class="h-auto my-auto text-xs font-bold min-w-min text-left text-secondary dark:text-secondaryDark"
-                                                v-html="data.title"></h4>
+                                            <!-- <h4 class="h-auto my-auto text-xs font-bold min-w-min text-left text-secondary dark:text-secondaryDark"
+                                                v-html="skill.title"></h4> -->
+                                            <div
+                                                class="flex flex-col gap-1 text-xs text-left justify-evenly md:text-[14px]">
+                                                <h3 class="w-full font-light md:font-normal" translate="no"
+                                                    v-html="skill.title">
+                                                </h3>
+                                                <h4 v-if="skill.level" class="w-full text-[10.5px] opacity-80 font-thin"
+                                                    v-html="skill.level.toString().charAt(0).toUpperCase() +
+                                                        skill.level.toString().slice(1).toLowerCase()">
+                                                </h4>
+                                            </div>
                                         </button>
                                         <!-- Skill Item -->
                                     </template>

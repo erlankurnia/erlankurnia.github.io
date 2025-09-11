@@ -84,11 +84,11 @@ onMounted(() => {
                 :class="{ 'shadow-inner': project.imagesDir, }">
                 <template v-if="validImages && validImages.length > 0">
                     <img v-for="(validImage, index) in validImages" :key="index" :src="validImage" :alt="project.title"
-                        class="w-auto h-full" />
+                        class="w-auto h-full" loading="lazy" />
                 </template>
                 <template v-else-if="project.imagesDir">
                     <img :src="project.imagesDir + 'sample@' + screenSize + '.webp'" :alt="project.title"
-                        class="w-auto h-full md:pb-2" />
+                        class="w-auto h-full md:pb-2" loading="lazy" />
                 </template>
             </div>
 
