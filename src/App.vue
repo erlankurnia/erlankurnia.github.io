@@ -15,6 +15,7 @@ import LoadingFullPageComponent from "@/components/LoadingFullPageComponent.vue"
 import { useLoadingStore } from "@/stores/loadingStore";
 import { useScreenSizeStore } from "./stores/screenSizeStore";
 import { ScreenSizeEnum } from "./helper/interfaces/ScreenSizeEnum";
+import RetroTvCollapseComponent from "./components/RetroTvCollapseComponent.vue";
 
 const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
 const NavbarComponent = defineAsyncComponent(() => import('@/components/NavbarComponent.vue'));
@@ -121,5 +122,6 @@ provide(ThemeModeSymbol, themeMode);
 		</ModalComponent>
 
 		<LoadingFullPageComponent v-if="loadingStore.isLoading"></LoadingFullPageComponent>
+		<RetroTvCollapseComponent></RetroTvCollapseComponent>
 	</div>
 </template>

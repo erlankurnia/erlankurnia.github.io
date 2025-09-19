@@ -13,12 +13,12 @@ const namePart = inject(NamePartSymbol);
 
 <template>
     <transition name="slide-right" appear>
-        <h3 v-if="namePart != null && namePart.length > 0" style="transition-delay: 0ms"
+        <h2 v-if="namePart != null && namePart.length > 0" style="transition-delay: 0ms"
             class="ml-0 text-3xl text-left lan-section-subtitle sm:text-4xl">
             <span v-for="(name, index) in namePart" :key="index">
                 {{ name }}<span v-if="index < namePart.length - 1" class="text-primary dark:text-primaryDark">_</span>
             </span>
-        </h3>
+        </h2>
     </transition>
 
     <div v-if="data?.profile"

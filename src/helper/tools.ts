@@ -45,5 +45,18 @@ export default {
 			img.onerror = () => resolve(false);
 			img.src = url;
 		});
-	}
+	},
+	getRandomIndexes(arrayLength: number, count: number = 3): number[] {
+		if (count > arrayLength) {
+			throw new Error("Requested more indexes than array length");
+		}
+
+		const indexes = Array.from({ length: arrayLength }, (_, i) => i);
+		for (let i = indexes.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[indexes[i], indexes[j]] = [indexes[j], indexes[i]];
+		}
+
+		return indexes.slice(0, count);
+	},
 };

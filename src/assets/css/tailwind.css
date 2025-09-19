@@ -97,6 +97,9 @@
 	a {
 		@apply cursor-pointer;
 	}
+	div > h3.lan-section-subtitle {
+		@apply px-4;
+	}
 }
 
 @utility limit-max-w {

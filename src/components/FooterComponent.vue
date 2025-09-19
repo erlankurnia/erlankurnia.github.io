@@ -14,47 +14,43 @@ import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 				}">
 					<ul class="flex flex-wrap justify-center md:justify-end">
 						<li class="flex items-center group">
-							<RouterLink to="/" class="mx-2 text-sm lan-nav-link" :class="{
+							<RouterLink to="/" class="mx-2 text-xs lan-nav-link" :class="{
 								'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'home',
 							}">Home</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
-								class="mx-2 text-sm lan-nav-link" :class="{
+								class="mx-2 text-xs lan-nav-link" :class="{
 									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'who_iam',
 								}">WHO_I'M</RouterLink>
 						</li>
-						<!-- <li class="flex items-center group">
-							<RouterLink
-								to="/activity"
-								class="mx-2 text-sm lan-nav-link"
-								:class="{
-									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'activity',
-								}"
-								>Activity</RouterLink
-							>
-						</li> -->
+						<li class="flex items-center group">
+							<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.projects"
+								class="mx-2 text-xs lan-nav-link" :class="{
+									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'projects',
+								}">Projects</RouterLink>
+						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
-								class="mx-2 text-sm lan-nav-link" :class="{
+								class="mx-2 text-xs lan-nav-link" :class="{
 									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
 								}">Notes</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"
-								class="mx-2 text-sm lan-nav-link" :class="{
+								class="mx-2 text-xs lan-nav-link" :class="{
 									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'references',
 								}">References</RouterLink>
 						</li>
 						<li class="flex items-center group">
 							<a href="https://cloud.umami.is/share/P9vSXDhPCyGTUoB2/erlankurnia.github.com"
-								target="_blank" class="mx-2 text-sm lan-nav-link">
+								target="_blank" class="mx-2 text-xs lan-nav-link">
 								Analytics <NewTabIcon class="h-4 ml-[2px] pt-1 w-auto"></NewTabIcon>
 							</a>
 						</li>
 						<li class="flex items-center group">
 							<a href="https://github.com/erlankurnia/erlankurnia.github.io" target="_blank"
-								class="mx-2 text-sm lan-nav-link">
+								class="mx-2 text-xs lan-nav-link">
 								Repository <NewTabIcon class="h-4 ml-[2px] pt-1 w-auto"></NewTabIcon>
 							</a>
 						</li>

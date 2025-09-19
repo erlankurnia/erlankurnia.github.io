@@ -4,9 +4,7 @@
 	"hero": {
 		"name": {
 			"changable": [
-				"Erlan",
-				"earl!",
-				"!land"
+				"Erlan"
 			],
 			"static": "_Kurnia"
 		},
@@ -245,22 +243,26 @@
 						{
 							"name": "csharp",
 							"title": "C#",
-							"level": "ADVANCED"
+							"level": "ADVANCED",
+							"urlInfo": "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/overview"
 						},
 						{
 							"name": "javascript",
 							"title": "JavaScript",
-							"level": "ADVANCED"
+							"level": "ADVANCED",
+							"urlInfo": "https://www.w3schools.com/js/js_intro.asp"
 						},
 						{
 							"name": "typescript",
 							"title": "TypeScript",
-							"level": "ADVANCED"
+							"level": "ADVANCED",
+							"urlInfo": "https://www.typescriptlang.org/"
 						},
 						{
 							"name": "cpp",
 							"title": "C++",
-							"level": "NOVICE"
+							"level": "NOVICE",
+							"urlInfo": "https://www.w3schools.com/cpp/cpp_intro.asp"
 						}
 					]
 				},
@@ -294,8 +296,7 @@
 						{
 							"name": "websocket",
 							"title": "WebSocket",
-							"level": "NOVICE",
-							"urlInfo": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
+							"level": "NOVICE"
 						}
 					]
 				},
@@ -378,10 +379,15 @@
 					"title": "Other Tools",
 					"topics": [
 						{
+							"name": "androidstudio",
+							"title": "Android Studio",
+							"level": "NOVICE",
+							"urlInfo": "https://developer.android.com/studio"
+						},
+						{
 							"name": "microcontroller",
 							"title": "Microcontroller Programming",
-							"level": "INTERMEDIATE",
-							"urlInfo": "https://www.wevolver.com/article/microcontroller-programming-mastering-the-foundation-of-embedded-systems"
+							"level": "INTERMEDIATE"
 						},
 						{
 							"name": "arduino",
@@ -448,26 +454,7 @@
 		"learn": {
 			"title": "Can't Learn All The <span class=\"text-primary dark:text-primaryDark\">Technologi</span>es",
 			"description": "There are many skills that I can't do, so learning has no end.<br>Some interesting technologies that I learned about.",
-			"topics": [
-				{
-					"name": "docker",
-					"title": "Docker",
-					"level": "BASIC",
-					"urlInfo": "https://www.docker.com/why-docker"
-				},
-				{
-					"name": "azure",
-					"title": "Azure App Service",
-					"level": "BASIC",
-					"urlInfo": "https://azure.microsoft.com/en-us/products/app-service"
-				},
-				{
-					"name": "daisyui",
-					"title": "DaisyUI",
-					"level": "Novice",
-					"urlInfo": "https://daisyui.com/"
-				}
-			]
+			"topics": []
 		}
 	},
 	"portfolio": {
@@ -1191,8 +1178,8 @@
 			"description": "Thanks for your creation which helped me in creating this website.",
 			"to": [
 				{
-					"title": "Web Programming UNPAS",
-					"description": "By watching tutorials from <span class=\"text-primary dark:text-primaryDark font-bold\">Web Programming UNPAS</span> YouTube channel, I was interested in following it as the main source for creating this website.",
+					"title": "WPU",
+					"description": "By watching tutorials from <span class=\"text-primary dark:text-primaryDark font-bold\">WPU</span> YouTube channel (formerly, Web Programming UNPAS), I was interested in following it as the main source for creating this website.",
 					"url": "https://www.youtube.com/watch?v=8Ea4oq8qFtM"
 				},
 				{

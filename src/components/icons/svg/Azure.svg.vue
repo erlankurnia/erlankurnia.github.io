@@ -1,5 +1,5 @@
 <template>
-    <svg role="img" width="100%" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+    <svg role="img" width="100%" viewBox="0 0 96 96" class="fill-current" xmlns="http://www.w3.org/2000/svg">
         <title>Microsoft Azure</title>
         <defs>
             <linearGradient id="e399c19f-b68f-429d-b176-18c2117ff73c" x1="-1032.172" x2="-1059.213" y1="145.312"
