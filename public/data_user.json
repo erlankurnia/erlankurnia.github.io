@@ -886,6 +886,30 @@
 			},
 			{
 				"id": 0,
+				"title": "Micro WebSocket Server",
+				"slug": "micro-websocket-server",
+				"imagesDir": "",
+				"summary": "Built using Node, TypeScript, µWebSockets.js, and PostgreSQL. Featuring real-time updates via a WebSocket server, but much faster.",
+				"description": "",
+				"url": "",
+				"repo": "https://github.com/krlan2789/micro-ws-app",
+				"features": [],
+				"technologies": [
+					"TypeScript",
+					"Node.js",
+					"µWebSockets.js",
+					"PostgreSQL"
+				],
+				"tags": [
+					"typescript",
+					"node",
+					"uwebsockets.js",
+					"uws.js",
+					"postgresql"
+				]
+			},
+			{
+				"id": 0,
 				"title": "Xendit Payment API for Perumahan RT",
 				"slug": "perumahan-rt-xendit-api",
 				"imagesDir": "",
@@ -1219,6 +1243,27 @@
 		"title": "",
 		"description": "",
 		"notes": [
+			{
+				"id": "5",
+				"title": "Building a Real-Time Application with µWebSockets.js",
+				"description": "WebSocket Service project using Node.js, TypeScript, µWebSockets.js, and PostgresQL.",
+				"date": "2025-09-23",
+				"topics": [
+					"node",
+					"node.js",
+					"uwebsockets.js",
+					"websocket",
+					"postgresql"
+				],
+				"source": {
+					"url": "https://github.com/krlan2789/micro-ws-app",
+					"type": "github",
+					"images": [
+						"/img/notes/krlan2789_micro-ws-app_50(0.5).png",
+						"/img/notes/krlan2789_micro-ws-app.png"
+					]
+				}
+			},
 			{
 				"id": "4",
 				"title": "Secure WebSocket Service on VPS using Nginx",
