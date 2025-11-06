@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import CreditView from "../views/CreditView.vue";
-import NotesView from "../views/NotesView.vue";
-import NoteView from "../views/NoteView.vue";
+// import NotesView from "../views/NotesView.vue";
+// import NoteView from "../views/NoteView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
-import CMSView from "../views/CMSView.vue";
+// import CMSView from "../views/CMSView.vue";
 import urls from "./urls";
 import ProjectsView from "@/views/ProjectsView.vue";
 
@@ -30,18 +30,18 @@ const router = createRouter({
       component: CreditView,
       meta: { url: urls, hideNavbar: false },
     },
-    {
-      path: urls.notes + "/:filter?",
-      name: "notes",
-      component: NotesView,
-      meta: { url: urls, hideNavbar: false },
-    },
-    {
-      path: urls.note + "/:id/:title",
-      name: "note",
-      component: NoteView,
-      meta: { url: urls, hideNavbar: false },
-    },
+    // {
+    //   path: urls.notes + "/:filter?",
+    //   name: "notes",
+    //   component: NotesView,
+    //   meta: { url: urls, hideNavbar: false },
+    // },
+    // {
+    //   path: urls.note + "/:id/:title",
+    //   name: "note",
+    //   component: NoteView,
+    //   meta: { url: urls, hideNavbar: false },
+    // },
     {
       path: urls.projects + "/:filter?",
       name: "projects",
@@ -54,12 +54,12 @@ const router = createRouter({
       component: NotFoundView,
       meta: { url: urls, hideNavbar: false },
     },
-    {
-      path: "/cms",
-      name: "cms",
-      component: CMSView,
-      meta: { url: urls, hideNavbar: false },
-    },
+    // {
+    //   path: "/cms",
+    //   name: "cms",
+    //   component: CMSView,
+    //   meta: { url: urls, hideNavbar: false },
+    // },
     {
       path: "/404",
       name: "404",

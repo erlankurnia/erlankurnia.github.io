@@ -75,10 +75,14 @@ window.addEventListener("scroll", onScroll);
 									}" translate="no">WHO_I'M</RouterLink>
 							</li>
 							<li class="group">
-								<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
+								<a v-if="$route.meta.url?.notes" :href="$route.meta.url.notes"
 									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
 										'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
-									}" translate="no">Notes</RouterLink>
+									}" translate="no">Notes</a>
+								<!-- <RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
+									class="lan-nav-link max-w-max max-xs:mx-2 sm:mx-3" :class="{
+										'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
+									}" translate="no">Notes</RouterLink> -->
 							</li>
 							<li>
 								<ToggleDarkModeComponent class="block my-1 size-8"></ToggleDarkModeComponent>

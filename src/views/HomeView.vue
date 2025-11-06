@@ -7,7 +7,7 @@ import NextPageComponent from '@/components/NextPageComponent.vue';
 import ContactComponent from '@/components/ContactComponent.vue';
 import PortfolioComponent from '@/components/PortfolioComponent.vue';
 
-const metaTitle = "Erlan Kurnia | LAN";
+const metaTitle = "LAN | Erlan Kurnia";
 const metaDesc = "Hello, I'm Erlan Kurnia, Unity Software Engineer, 'to entertain a group, you don't have to join that group'.";
 const homepageHead = useHead({
 	title: "Erlan Kurnia",

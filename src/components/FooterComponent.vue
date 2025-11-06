@@ -31,10 +31,14 @@ import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 								}">Projects</RouterLink>
 						</li>
 						<li class="flex items-center group">
-							<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
+							<a v-if="$route.meta.url?.notes" :href="$route.meta.url.notes"
 								class="mx-2 text-xs lan-nav-link" :class="{
 									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
-								}">Notes</RouterLink>
+								}">Notes</a>
+							<!-- <RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
+								class="mx-2 text-xs lan-nav-link" :class="{
+									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
+								}">Notes</RouterLink> -->
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"
@@ -77,7 +81,7 @@ import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 						<!-- <span class="w-[1px] mx-1 h-full max-h-8 bg-dark"></span> -->
 						<span class="px-[2px] rounded-full text-dark dark:text-light">
 							Developed and built by <a class="font-bold text-primary dark:text-primaryDark"
-								target="_blank" href="https://erlankurnia.github.io">Me</a>
+								target="_blank" href="https://erlankurnia.laness.id">Me</a>
 						</span>
 					</div>
 				</div>
