@@ -259,6 +259,12 @@
 							"urlInfo": "https://www.typescriptlang.org/"
 						},
 						{
+							"name": "dart",
+							"title": "Dart",
+							"level": "NOVICE",
+							"urlInfo": "https://dart.dev/"
+						},
+						{
 							"name": "cpp",
 							"title": "C++",
 							"level": "NOVICE",
@@ -310,6 +316,12 @@
 							"urlInfo": "https://unity.com/"
 						},
 						{
+							"name": "flutter",
+							"title": "Flutter",
+							"level": "NOVICE",
+							"urlInfo": "https://flutter.dev/"
+						},
+						{
 							"name": "vue",
 							"title": "Vue.js",
 							"level": "INTERMEDIATE",
@@ -318,20 +330,20 @@
 						{
 							"name": "nuxt",
 							"title": "Nuxt.js",
-							"level": "NOVICE",
+							"level": "INTERMEDIATE",
 							"urlInfo": "https://nuxt.com/"
+						},
+						{
+							"name": "primevue",
+							"title": "PrimeVue",
+							"level": "NOVICE",
+							"urlInfo": "https://primevue.org/"
 						},
 						{
 							"name": "tailwind",
 							"title": "Tailwind",
 							"level": "ADVANCED",
 							"urlInfo": "https://tailwindcss.com/"
-						},
-						{
-							"name": "daisyui",
-							"title": "DaisyUI",
-							"level": "Novice",
-							"urlInfo": "https://daisyui.com/"
 						}
 					]
 				},
@@ -469,7 +481,7 @@
 				"imagesDir": "/img/portfolio/projects/personal.web/",
 				"summary": "A personal website that built using Vue.js and Tailwind CSS.",
 				"description": "",
-				"url": "https://erlankurnia.github.io",
+				"url": "https://erlankurnia.laness.id",
 				"repo": "https://github.com/erlankurnia/erlankurnia.github.io",
 				"features": [],
 				"technologies": [
@@ -484,6 +496,36 @@
 					"javascript",
 					"typescript",
 					"vue",
+					"css",
+					"tailwind"
+				]
+			},
+			{
+				"id": 0,
+				"title": "Kiroku (New Version Personal Notes)",
+				"slug": "kiroku-96-personal-notes",
+				"imagesDir": "/img/portfolio/projects/kiroku.notes.personal.web/",
+				"summary": "A personal notes website that built using Nuxt.js, @Nuxt/content, PrimeVue, and Tailwind CSS.",
+				"description": "",
+				"url": "https://kiroku.erlankurnia.laness.id",
+				"repo": "https://github.com/krlan2789/lan-notes-web",
+				"features": [],
+				"technologies": [
+					"TypeScript",
+					"Vue.js",
+					"Nuxt",
+					"Nuxt Content",
+					"PrimeVue",
+					"CSS3",
+					"Tailwind CSS"
+				],
+				"tags": [
+					"javascript",
+					"typescript",
+					"vue",
+					"nuxt",
+					"nuxt-content",
+					"primevue",
 					"css",
 					"tailwind"
 				]
@@ -1099,7 +1141,7 @@
 				],
 				"Engine": [
 					{
-						"name": "Unity 6 (6000.0.23f1)",
+						"name": "Unity 6 (6000.0.58f2)",
 						"icon": "unity"
 					}
 				],
