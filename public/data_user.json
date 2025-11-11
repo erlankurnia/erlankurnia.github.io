@@ -490,14 +490,17 @@
 					"CSS3",
 					"Tailwind CSS",
 					"Markdown-It",
-					"Highlight.js"
+					"Highlight.js",
+					"GitHub Actions"
 				],
 				"tags": [
 					"javascript",
 					"typescript",
 					"vue",
 					"css",
-					"tailwind"
+					"tailwind",
+					"ci-cd",
+					"github-actions"
 				]
 			},
 			{
@@ -517,7 +520,8 @@
 					"Nuxt Content",
 					"PrimeVue",
 					"CSS3",
-					"Tailwind CSS"
+					"Tailwind CSS",
+					"GitHub Actions"
 				],
 				"tags": [
 					"javascript",
@@ -527,7 +531,9 @@
 					"nuxt-content",
 					"primevue",
 					"css",
-					"tailwind"
+					"tailwind",
+					"ci-cd",
+					"github-actions"
 				]
 			},
 			{
@@ -622,7 +628,8 @@
 					"AlpineJS",
 					"Tailwind CSS",
 					"SQLite",
-					"Azure App Service"
+					"Azure App Service",
+					"GitHub Actions"
 				],
 				"tags": [
 					"laravel",
@@ -630,7 +637,9 @@
 					"alpinejs",
 					"tailwind",
 					"sqlite",
-					"azure-app-service"
+					"azure-app-service",
+					"ci-cd",
+					"github-actions"
 				]
 			},
 			{
@@ -669,7 +678,8 @@
 					"Entity Framework Core",
 					"SQLite",
 					"Azure App Service",
-					"REST API"
+					"REST API",
+					"GitHub Actions"
 				],
 				"tags": [
 					"dotnet",
@@ -678,7 +688,9 @@
 					"sqlite",
 					"entity-framework-core",
 					"azure-app-service",
-					"rest-api"
+					"rest-api",
+					"ci-cd",
+					"github-actions"
 				]
 			},
 			{
@@ -697,7 +709,8 @@
 					"Entity Framework Core",
 					"SQLite",
 					"REST API",
-					"Azure App Service"
+					"Azure App Service",
+					"GitHub Actions"
 				],
 				"tags": [
 					"dotnet",
@@ -706,7 +719,9 @@
 					"sqlite",
 					"entity-framework-core",
 					"rest-api",
-					"azure-app-service"
+					"azure-app-service",
+					"ci-cd",
+					"github-actions"
 				]
 			},
 			{
@@ -824,7 +839,8 @@
 					"Nuxt",
 					"Vue.js",
 					"Tailwind CSS",
-					"DaisyUI"
+					"DaisyUI",
+					"GitHub Actions"
 				],
 				"tags": [
 					"javascript",
@@ -833,7 +849,9 @@
 					"vue",
 					"css",
 					"tailwind",
-					"daisyui"
+					"daisyui",
+					"ci-cd",
+					"github-actions"
 				]
 			},
 			{
