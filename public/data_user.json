@@ -348,7 +348,7 @@
 					]
 				},
 				{
-					"title": "Databases",
+					"title": "Persistence",
 					"topics": [
 						{
 							"name": "postgresql",
@@ -361,6 +361,12 @@
 							"title": "MariaDB",
 							"level": "INTERMEDIATE",
 							"urlInfo": "https://mariadb.org/"
+						},
+						{
+							"name": "prometheus",
+							"title": "Prometheus",
+							"level": "BASIC",
+							"urlInfo": "https://prometheus.io"
 						}
 					]
 				},
@@ -376,8 +382,14 @@
 						{
 							"name": "docker",
 							"title": "Docker",
-							"level": "BASIC",
+							"level": "NOVICE",
 							"urlInfo": "https://www.docker.com/why-docker"
+						},
+						{
+							"name": "podman",
+							"title": "Podman",
+							"level": "NOVICE",
+							"urlInfo": "https://podman.io"
 						},
 						{
 							"name": "azure",
@@ -406,6 +418,12 @@
 							"title": "Arduino IDE",
 							"level": "INTERMEDIATE",
 							"urlInfo": "https://docs.arduino.cc/software/ide/"
+						},
+						{
+							"name": "grafana",
+							"title": "Grafana",
+							"level": "BASIC",
+							"urlInfo": "https://grafana.com"
 						},
 						{
 							"name": "copilot",
@@ -1197,8 +1215,8 @@
 						"icon": "postman"
 					},
 					{
-						"name": "Docker desktop",
-						"icon": "docker"
+						"name": "Podman desktop",
+						"icon": "podman"
 					},
 					{
 						"name": "PostgreSQL",
