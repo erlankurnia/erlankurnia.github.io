@@ -363,6 +363,12 @@
 							"urlInfo": "https://mariadb.org/"
 						},
 						{
+							"name": "firebase",
+							"title": "Firestore",
+							"level": "BASIC",
+							"urlInfo": "https://firebase.google.com/products/firestore"
+						},
+						{
 							"name": "prometheus",
 							"title": "Prometheus",
 							"level": "BASIC",
@@ -539,6 +545,7 @@
 					"PrimeVue",
 					"CSS3",
 					"Tailwind CSS",
+					"Prometheus Client",
 					"GitHub Actions"
 				],
 				"tags": [
@@ -550,6 +557,7 @@
 					"primevue",
 					"css",
 					"tailwind",
+					"prometheus-client",
 					"ci-cd",
 					"github-actions"
 				]
