@@ -672,6 +672,51 @@
 			},
 			{
 				"id": 0,
+				"title": "Rising Bubble - GGJ 2025 by GADAS",
+				"slug": "ggj2025-rising-bubble",
+				"imagesDir": "/img/portfolio/projects/com.ggj2025.risingbubble/",
+				"summary": "Team 19's Project of Global Game Jam 2025 event held by GADAS (Game Developer Arek Suroboyo) with the theme Bubble. Protects the bubble from various obstacles.",
+				"description": "Members:\n\n- <strong>Abel Sutha Pangestu</strong> as Game Designer\n- <strong>Erlan Kurnia</strong> as Programmer\n- <strong>Kent William</strong> as Programmer\n- <strong>Muhammad Nadhif Abiyyu Wardana</strong> as Programmer",
+				"url": "https://krlan2789.itch.io/rising-bubble",
+				"repo": "",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#"
+				],
+				"tags": [
+					"games",
+					"unity",
+					"csharp",
+					"android",
+					"ios",
+					"windows"
+				]
+			},
+			{
+				"id": 0,
+				"title": "Reclaim - GGJ 2026 by GADAS",
+				"slug": "ggj2026-reclaim",
+				"imagesDir": "/img/portfolio/projects/com.ggj2026.reclaim/",
+				"summary": "Team 5's Project of Global Game Jam 2026 event held by GADAS (Game Developer Arek Suroboyo) with the theme Mask. Reclaim where it belongs.",
+				"description": "Members:\n\n- <strong>Chelsea Oktaviano</strong> as UI/UX Designer\n- <strong>Erlan Kurnia</strong> as Programmer\n- <strong>Liana Atmaja</strong> as 2D Artist\n- <strong>Niko Bagus</strong> as Game Designer\n- <strong>Surayya Aliya</strong> as 2D Artist",
+				"url": "https://krlan2789.itch.io/ggj2026-mask-5-reclaim",
+				"repo": "https://github.com/krlan2789/GGJ2026-Mask-5",
+				"features": [],
+				"technologies": [
+					"Unity",
+					"C#",
+					"Clip Studio Paint"
+				],
+				"tags": [
+					"games",
+					"unity",
+					"csharp",
+					"windows"
+				]
+			},
+			{
+				"id": 0,
 				"title": "Land Estate - Property Ads Platform Mobile App",
 				"slug": "land-property",
 				"imagesDir": "/img/portfolio/projects/com.lan.destate/",
@@ -828,28 +873,6 @@
 					"kotlin",
 					"compose",
 					"rest-client"
-				]
-			},
-			{
-				"id": 0,
-				"title": "Rising Bubble - GGJ 2025 by GADAS",
-				"slug": "ggj2025-rising-bubble",
-				"imagesDir": "/img/portfolio/projects/com.ggj2025.risingbubble/",
-				"summary": "Team 19's Project of Global Game Jam 2025 event held by GADAS (Game Developer Arek Suroboyo) with the theme Bubble. Protects the bubble from various obstacles.",
-				"description": "",
-				"url": "https://krlan2789.itch.io/rising-bubble",
-				"repo": "",
-				"features": [],
-				"technologies": [
-					"Unity",
-					"C#"
-				],
-				"tags": [
-					"unity",
-					"csharp",
-					"android",
-					"ios",
-					"windows"
 				]
 			},
 			{
