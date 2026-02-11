@@ -76,7 +76,7 @@ import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 									</path>
 								</svg>
 							</span>
-							2023 <span class="w-1 h-1 rounded-full bg-dark dark:bg-light"></span>
+							2026 <span class="w-1 h-1 rounded-full bg-dark dark:bg-light"></span>
 						</span>
 						<!-- <span class="w-[1px] mx-1 h-full max-h-8 bg-dark"></span> -->
 						<span class="px-[2px] rounded-full text-dark dark:text-light">
