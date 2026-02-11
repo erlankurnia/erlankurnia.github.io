@@ -10,6 +10,7 @@ const icons = {
 	arduino: ["arduino", "arduinoide"],
 	azure: ["azure", "microsoftazure", "azureappservice"],
 	blazor: ["blazor"],
+	cloudflare: ["cloudflare"],
 	codeigniter: ["codeigniter", "ci"],
 	copilot: ["copilot"],
 	cpp: ["cpp", "c++"],
