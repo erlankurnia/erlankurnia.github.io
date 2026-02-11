@@ -1,22 +1,28 @@
 <script setup lang="ts">
-import { computed, inject, nextTick, onBeforeUnmount, ref, watch, watchEffect } from "vue";
+import { inject, onBeforeUnmount, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useHead } from '@unhead/vue';
 import SearchIcon from "@/components/icons/SearchIcon.vue";
 import ProjectListComponent from "@/components/ProjectListComponent.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import type IProjectInfo from "@/helper/interfaces/IProjectInfo";
 import Dictionary from "@/helper/interfaces/Dictionary";
-
-const projectsList = new Dictionary<IProjectInfo>();
+import type IDictionary from "@/helper/interfaces/IDictionary";
+import type IProjectInfo from "@/helper/interfaces/IProjectInfo";
+import DataAppSymbol from "@/helper/symbols/DataAppSymbol";
+import EndpointSymbol from "@/helper/symbols/EndpointSymbol";
+import tools from "@/helper/tools";
+import type { IPortfolio } from "@/helper/interfaces/IPortfolio";
 
 const route = useRoute();
 const router = useRouter();
 
-const data = inject(DataUserSymbol);
+const dataApp = inject(DataAppSymbol);
+const dataEndpoint = inject(EndpointSymbol);
+const dataPortfolio = ref<IPortfolio>({ title: "", description: "", });
 const availableTags = ref(new Set<string>());
 const selectedTags = ref(new Set<string>());
 const searchKeyword = ref('');
+const projectsList = ref<IDictionary<IProjectInfo>>(new Dictionary<IProjectInfo>());
+const filteredProjectsList = ref<IDictionary<IProjectInfo>>(new Dictionary<IProjectInfo>());
 
 if (route.params.filter instanceof Array) {
     selectedTags.value = new Set<string>(route.params.filter.map(val => val.toLowerCase()));
@@ -26,25 +32,6 @@ if (route.params.filter instanceof Array) {
     selectedTags.value?.clear();
 }
 selectedTags.value?.delete('');
-
-if (Array.isArray(data?.value?.portfolio?.projects)) {
-    availableTags.value.clear();
-    for (let proj of data.value.portfolio.projects) {
-        for (let tag of proj.tags) {
-            availableTags.value.add(tag);
-        }
-    }
-}
-
-watchEffect(() => {
-    if (Array.isArray(data?.value?.portfolio?.projects)) {
-        projectsList.clear();
-        for (let proj of data.value.portfolio.projects) {
-            const key = `${proj.title}_${proj.description}_${proj.technologies?.join(' ')}_${proj.date}`.toLowerCase();
-            projectsList.set(key, proj);
-        }
-    }
-});
 
 const toggleFilter = (tag: string) => {
     selectedTags.value?.delete('');
@@ -59,15 +46,36 @@ const toggleFilter = (tag: string) => {
     });
 };
 
-const filteredProjectsList = computed(() => {
-    return projectsList.filter((key: string, value: IProjectInfo) => {
-        const isMatch = value.tags.find(t => key.includes(searchKeyword.value.toLowerCase()) && (selectedTags.value.size == 0 || selectedTags.value.has(t)))
+const filterProjects = (keyword: string, tags: Set<string>) => {
+    const filtered = projectsList.value.filter((key: string, value: IProjectInfo) => {
+        const isMatch = value.tags.find(t => key.includes(keyword.toLowerCase()) && (tags.size == 0 || tags.has(t)))
         return isMatch !== undefined;
     });
-})
+    filteredProjectsList.value = filtered;
+};
+
+watch(() => dataEndpoint?.value, async (newVal) => {
+    if (newVal) {
+        dataPortfolio.value = (await tools.fetch<IPortfolio>(newVal.portfolio)).data ?? dataPortfolio.value;
+        dataPortfolio.value.projects = (await tools.fetch<IProjectInfo[]>(newVal.project)).data ?? [];
+        projectsList.value.clear();
+        availableTags.value.clear();
+        for (let proj of dataPortfolio.value.projects) {
+            const key = `${proj.title}_${proj.description}_${proj.technologies?.join(' ')}_${proj.date}`.toLowerCase();
+            projectsList.value.set(key, proj);
+            for (let tag of proj.tags) {
+                availableTags.value.add(tag);
+            }
+        }
+        filterProjects(searchKeyword.value, selectedTags.value);
+    }
+}, { immediate: true });
+watch([searchKeyword, selectedTags], ([newKeyword, newTags]) => {
+    filterProjects(newKeyword, newTags);
+}, { immediate: true, deep: true });
 
 const notesHead = useHead({
-    title: "Erlan Kurnia's Projects",
+    title: dataApp?.value?.fullname + "'s Projects",
 });
 
 onBeforeUnmount(() => {
@@ -76,7 +84,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <section v-if="data != null && data.portfolio" id="credit"
+    <section v-if="dataApp != null && dataPortfolio" id="credit"
         :class="['min-h-screen pt-16 pb-16 sm:pt-24', $attrs.class]">
         <div class="container">
             <div class="w-full pt-4 text-center">
@@ -84,11 +92,12 @@ onBeforeUnmount(() => {
             </div>
 
             <div class="flex flex-wrap">
-                <div class="w-full mb-8 text-center" v-if="data.portfolio">
-                    <h3 v-if="data.portfolio.title" class="lan-section-subtitle" v-html="data.portfolio.title"></h3>
-                    <p v-if="data.portfolio.description"
+                <div class="w-full mb-8 text-center" v-if="dataPortfolio">
+                    <h3 v-if="dataPortfolio.title" class="lan-section-subtitle" v-html="dataPortfolio.title">
+                    </h3>
+                    <p v-if="dataPortfolio.description"
                         class="text-sm font-light text-secondary dark:text-secondaryDark md:text-base"
-                        v-html="data.portfolio.description">
+                        v-html="dataPortfolio.description">
                     </p>
                 </div>
 

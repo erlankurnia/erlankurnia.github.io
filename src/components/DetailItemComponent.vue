@@ -15,7 +15,7 @@ const screenSizeStore = useScreenSizeStore();
 const screenSize = screenSizeStore.getScreen();
 
 function getImageUrl(filename: string) {
-    return `${props.project.imagesDir}${filename}`;
+    return tools.getCdnUrl(tools.combinePath('' + props.project.imagesDir, filename));
 }
 
 async function validateImages(): Promise<void> {
@@ -87,8 +87,8 @@ onMounted(() => {
                         class="w-auto h-full" loading="lazy" />
                 </template>
                 <template v-else-if="project.imagesDir">
-                    <img :src="project.imagesDir + 'sample@' + screenSize + '.webp'" :alt="project.title"
-                        class="w-auto h-full md:pb-2" loading="lazy" />
+                    <img :src="tools.getCdnUrl(tools.combinePath(project.imagesDir, 'sample@' + screenSize + '.webp'))"
+                        :alt="project.title" class="w-auto h-full md:pb-2" loading="lazy" />
                 </template>
             </div>
 

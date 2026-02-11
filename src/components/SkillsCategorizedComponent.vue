@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, inject, onMounted, ref } from "vue";
+import { defineAsyncComponent, inject, onMounted, ref, watch } from "vue";
 import Icon from "@/components/icons/Icon.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import type ISkillInfo from "@/helper/interfaces/ISkillInfo";
+import EndpointSymbol from "@/helper/symbols/EndpointSymbol";
+import type IAbility from "@/helper/interfaces/IAbility";
+import tools from "@/helper/tools";
+import type IUserSkill from "@/helper/interfaces/IUserSkill";
 
 const ContextMenuComponent = defineAsyncComponent(() => import('@/components/ContextMenuComponent.vue'));
 
-const data = inject(DataUserSymbol);
+const dataEndpoint = inject(EndpointSymbol);
+const dataAbility = ref<IAbility | null>(null);
 const selectedSkill = ref<ISkillInfo | null>(null);
 type ContextMenuType = InstanceType<typeof ContextMenuComponent>;
 const optionComponent = ref<ContextMenuType | null>(null);
@@ -20,10 +24,18 @@ const showOptions = (event: MouseEvent | null, skill: ISkillInfo | null) => {
     }
 };
 
-const skillsCategorized = computed(() => data?.value?.ability.skill.categorized);
-
+watch(() => dataEndpoint?.value, async (newVal) => {
+    if (newVal) {
+        const resAbility = await tools.fetch<IAbility>(newVal.ability);
+        dataAbility.value = resAbility.data ?? null;
+        const resCategorizedSKills = await tools.fetch<IUserSkill>(newVal.skills);
+        if (dataAbility.value && resCategorizedSKills.data?.categorized) {
+            dataAbility.value.skill.categorized = resCategorizedSKills.data.categorized;
+        }
+    }
+}, { immediate: true });
 onMounted(() => {
-    if (data?.value?.ability.skill.topics) {
+    if (dataAbility.value?.skill.topics) {
         const simulatedEvent = new MouseEvent('click', {
             bubbles: true,
             cancelable: true,
@@ -41,20 +53,20 @@ onMounted(() => {
             buttons: 0,
             relatedTarget: null,
         });
-        showOptions(simulatedEvent, data.value.ability.skill.topics[0]);
+        showOptions(simulatedEvent, dataAbility.value.skill.topics[0]);
     }
 });
 </script>
 
 <template>
-    <section v-if="data" id="skills" class="pt-24 max-md:px-2 pb-16">
+    <section v-if="dataAbility" id="skills" class="pt-24 max-md:px-2 pb-16">
         <div class="container">
             <div class="w-full">
                 <div class="mx-auto text-center">
                     <h2 class="relative mb-2 lan-section-title">
                         Skills
                         <!-- Tooltip -->
-                        <div v-if="data.ability.tooltip"
+                        <div v-if="dataAbility.tooltip"
                             class="absolute translate-x-[52px] sm:translate-x-[64px] top-[4px] right-1/2 group cursor-help">
                             <span
                                 class="flex size-4 sm:size-5 group-hover:text-primary dark:group-hover:text-primaryDark group-focus:text-primary dark:group-focus:text-primaryDark">
@@ -66,23 +78,23 @@ onMounted(() => {
                                 </svg>
                             </span>
                             <p class="absolute hidden top-6 -left-[23vw] md:-top-4 md:left-6 [text-transform:_math-auto] p-2 text-xs shadow-md rounded-lg font-normal group-hover:block group-focus:block bg-tertiary text-dark dark:bg-tertiaryDark dark:text-light break-words w-60"
-                                v-html="data.ability.tooltip"></p>
+                                v-html="dataAbility.tooltip"></p>
                         </div>
                         <!-- Tooltip -->
                     </h2>
                 </div>
             </div>
             <!-- Current Ability -->
-            <template v-if="data.ability.skill">
-                <div v-if="data.ability.skill.title" class="w-full p-4">
+            <template v-if="dataAbility.skill">
+                <div v-if="dataAbility.skill.title" class="w-full p-4">
                     <div class="mx-auto mb-4 text-center">
-                        <h3 class="lan-section-subtitle" v-html="data.ability.skill.title"></h3>
-                        <p class="lan-section-desc" v-html="data.ability.skill.description">
+                        <h3 class="lan-section-subtitle" v-html="dataAbility.skill.title"></h3>
+                        <p class="lan-section-desc" v-html="dataAbility.skill.description">
                         </p>
                     </div>
                 </div>
 
-                <table v-if="skillsCategorized && skillsCategorized.length > 0"
+                <table v-if="dataAbility.skill.categorized"
                     class="w-full mb-6 mx-4 text-sm font-medium border-separate table-auto text-secondary dark:text-secondaryDark sm:text-base">
                     <thead>
                         <tr>
@@ -90,7 +102,7 @@ onMounted(() => {
                         </tr>
                     </thead>
                     <tbody>
-                        <template v-for="cat in skillsCategorized">
+                        <template v-for="cat in dataAbility.skill.categorized">
                             <!-- Skills Category -->
                             <tr class="w-auto grid grid-cols-[128px_auto_1fr] max-lg:p-4">
                                 <td class="py-6 align-top lg:py-7 text-primary dark:text-primaryDark">

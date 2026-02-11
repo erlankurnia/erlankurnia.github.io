@@ -1,6 +1,6 @@
 import type { InjectionKey, Ref } from "vue";
 import type IDataApp from "../interfaces/IDataApp";
 
-const NamePartSymbol = Symbol() as InjectionKey<Ref<string[]>>;
+const DataAppSymbol = Symbol() as InjectionKey<Ref<IDataApp | null>>;
 
-export default NamePartSymbol;
+export default DataAppSymbol;

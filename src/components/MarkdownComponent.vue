@@ -99,7 +99,7 @@ onMounted(async () => {
 				let originalContent = token.content;
 
 				if (originalContent.includes('src="./') && originalContent.includes('use-github-assets') && props.sourceMarkdown) {
-					const rawContentUrl = props.sourceMarkdown.url.replace('github.com', 'raw.githubusercontent.com');
+					const rawContentUrl = props.sourceMarkdown.url?.replace('github.com', 'raw.githubusercontent.com');
 					originalContent = originalContent.replace('src="./', `src="${rawContentUrl}/main/`);
 					token.type = 'html_inline';
 					token.content = originalContent;

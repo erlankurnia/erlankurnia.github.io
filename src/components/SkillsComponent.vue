@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { defineAsyncComponent, inject, onMounted, ref, type Ref } from "vue";
+import { defineAsyncComponent, inject, onMounted, ref, watch } from "vue";
 import Icon from "@/components/icons/Icon.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
 import type ISkillInfo from "@/helper/interfaces/ISkillInfo";
+import EndpointSymbol from "@/helper/symbols/EndpointSymbol";
+import type IAbility from "@/helper/interfaces/IAbility";
+import tools from "@/helper/tools";
 
 const ContextMenuComponent = defineAsyncComponent(() => import('@/components/ContextMenuComponent.vue'));
 
-const data = inject(DataUserSymbol);
-const selectedSkill: Ref<ISkillInfo | null> = ref(null);
+const dataEndpoint = inject(EndpointSymbol);
+const dataAbility = ref<IAbility | null>(null);
+const selectedSkill = ref<ISkillInfo | null>(null);
 type ContextMenuType = InstanceType<typeof ContextMenuComponent>;
 const optionComponent = ref<ContextMenuType | null>(null);
 const showOptions = (event: MouseEvent | null, skill: ISkillInfo | null) => {
@@ -19,8 +22,13 @@ const showOptions = (event: MouseEvent | null, skill: ISkillInfo | null) => {
 		});
 	}
 };
+watch(() => dataEndpoint?.value, async (newVal) => {
+	if (newVal) {
+		dataAbility.value = (await tools.fetch<IAbility>(newVal.ability)).data ?? null;
+	}
+}, { immediate: true });
 onMounted(() => {
-	if (data?.value?.ability.skill.topics) {
+	if (dataAbility.value?.skill.topics) {
 		const simulatedEvent = new MouseEvent('click', {
 			bubbles: true,
 			cancelable: true,
@@ -38,20 +46,20 @@ onMounted(() => {
 			buttons: 0,
 			relatedTarget: null,
 		});
-		showOptions(simulatedEvent, data?.value?.ability.skill.topics[0]);
+		showOptions(simulatedEvent, dataAbility.value.skill.topics[0]);
 	}
 });
 </script>
 
 <template>
-	<section v-if="data" id="skills" class="pt-24 pb-16">
+	<section v-if="dataAbility" id="skills" class="pt-24 pb-16">
 		<div class="container">
 			<div class="w-full">
 				<div class="mx-auto text-center">
 					<h2 class="relative mb-2 lan-section-title">
 						Skills
 						<!-- Tooltip -->
-						<div v-if="data.ability.tooltip"
+						<div v-if="dataAbility.tooltip"
 							class="absolute translate-x-[52px] sm:translate-x-[64px] top-[4px] right-1/2 group cursor-help">
 							<span
 								class="flex size-4 sm:size-5 group-hover:text-primary dark:group-hover:text-primaryDark group-focus:text-primary dark:group-focus:text-primaryDark">
@@ -63,26 +71,26 @@ onMounted(() => {
 								</svg>
 							</span>
 							<p class="absolute hidden top-6 -left-[23vw] md:-top-4 md:left-6 [text-transform:_math-auto] p-2 text-xs shadow-md rounded-lg font-normal group-hover:block group-focus:block bg-tertiary text-dark dark:bg-tertiaryDark dark:text-light break-words w-60"
-								v-html="data.ability.tooltip"></p>
+								v-html="dataAbility.tooltip"></p>
 						</div>
 						<!-- Tooltip -->
 					</h2>
 				</div>
 			</div>
 			<!-- Current Ability -->
-			<template v-if="data.ability.skill">
-				<div v-if="data.ability.skill.title" class="w-full p-4">
+			<template v-if="dataAbility.skill">
+				<div v-if="dataAbility.skill.title" class="w-full p-4">
 					<div class="mx-auto mb-4 text-center">
-						<h3 class="lan-section-subtitle" v-html="data.ability.skill.title"></h3>
-						<p class="lan-section-desc" v-html="data.ability.skill.description">
+						<h3 class="lan-section-subtitle" v-html="dataAbility.skill.title"></h3>
+						<p class="lan-section-desc" v-html="dataAbility.skill.description">
 						</p>
 					</div>
 				</div>
-				<div v-if="data.ability.skill.topics && data.ability.skill.topics.length > 0"
+				<div v-if="dataAbility.skill.topics && dataAbility.skill.topics.length > 0"
 					class="w-full max-w-[1080px] px-2 mx-auto sm:px-4">
 					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
 						<!-- Skill Icon -->
-						<button v-for="skill in data.ability.skill.topics" type="button"
+						<button v-for="skill in dataAbility.skill.topics" type="button"
 							@click="showOptions($event, skill)"
 							class="flex flex-col justify-start w-[84px] h-auto gap-2 md:w-24 md:p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
 							<!-- Icon -->
@@ -110,19 +118,19 @@ onMounted(() => {
 			<!-- Current Ability -->
 
 			<!-- New Ability -->
-			<template v-if="data.ability.learn">
-				<div v-if="data.ability.learn.title" class="w-full p-4 mt-24">
+			<template v-if="dataAbility.learn">
+				<div v-if="dataAbility.learn.title" class="w-full p-4 mt-24">
 					<div class="mx-auto mb-4 text-center">
-						<h3 class="lan-section-subtitle" v-html="data.ability.learn.title"></h3>
-						<p class="lan-section-desc" v-html="data.ability.learn.description">
+						<h3 class="lan-section-subtitle" v-html="dataAbility.learn.title"></h3>
+						<p class="lan-section-desc" v-html="dataAbility.learn.description">
 						</p>
 					</div>
 				</div>
-				<div v-if="data.ability.learn.topics && data.ability.learn.topics.length > 0"
+				<div v-if="dataAbility.learn.topics && dataAbility.learn.topics.length > 0"
 					class="w-full max-w-[1080px] px-2 mx-auto sm:px-4">
 					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
 						<!-- Skill Icon -->
-						<button v-for="skill in data.ability.learn.topics" type="button"
+						<button v-for="skill in dataAbility.learn.topics" type="button"
 							@click="showOptions($event, skill)"
 							class="flex flex-col justify-start w-[84px] h-auto gap-2 md:w-24 md:p-2 text-secondary dark:text-secondaryDark lan-50-to-100">
 							<!-- Icon -->

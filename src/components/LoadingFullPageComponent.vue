@@ -7,9 +7,9 @@ const isLoading = ref(true);
 onMounted(() => {
 	setTimeout(() => {
 		isLoading.value = false;
-		console.log('isLoading: false');
+		// console.log('isLoading: false');
 	}, 2000);
-	console.log('on mounted done!');
+	// console.log('on mounted done!');
 });
 </script>
 

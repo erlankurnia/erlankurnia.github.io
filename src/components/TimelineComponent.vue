@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import type IWorkExperience from "@/helper/interfaces/IWorkExperience";
 
 defineProps<{ experiences: IWorkExperience[] }>();
@@ -8,7 +8,7 @@ defineProps<{ experiences: IWorkExperience[] }>();
 	<div class="w-auto px-4 mx-auto">
 		<ol class="w-auto max-w-md mx-auto xl:max-w-2xl">
 			<!-- Item list timeline -->
-			<li v-for="(tl, index) in histories" class="flex flex-row mt-6" :key="index">
+			<li v-for="(exp, index) in experiences" class="flex flex-row mt-6" :key="index">
 				<div class="hidden h-1 w-[480px] xl:block"></div>
 				<div class="w-6 h-[260px] xl:h-[300px]">
 					<div class="flex items-center justify-center w-6 h-6 rounded-full" :class="{
@@ -35,15 +35,15 @@ defineProps<{ experiences: IWorkExperience[] }>();
 							<div class="flex justify-between mb-4">
 								<a href="#!"
 									class="px-2 text-base font-medium -translate-x-2 rounded-full lan-text-primary">{{
-										tl.title }}</a>
+										exp.title }}</a>
 								<p class="px-2 text-sm font-medium translate-x-2 text-primary dark:text-primaryDark">
-									{{ tl.date }}
+									{{ exp.dateFrom }}
 								</p>
 							</div>
 							<p class="mb-6 text-sm text-secondary dark:text-secondaryDark">
-								{{ tl.desc }}
+								{{ exp.desc }}
 							</p>
-							<button v-if="tl.url.length > 10" type="button"
+							<button v-if="exp.source?.url && exp.source.url.length > 10" type="button"
 								class="inline-block px-4 mr-1 py-1.5 font-medium text-xs leading-tight uppercase lan-button-primary"
 								data-mdb-ripple="true">
 								Preview

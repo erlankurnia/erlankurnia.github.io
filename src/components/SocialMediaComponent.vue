@@ -1,15 +1,23 @@
 <script setup lang="ts">
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
-import { inject } from "vue";
+import type ISocialMedia from "@/helper/interfaces/ISocialMedia";
+import EndpointSymbol from "@/helper/symbols/EndpointSymbol";
+import tools from "@/helper/tools";
+import { inject, ref, watch } from "vue";
 
-const data = inject(DataUserSymbol);
+const dataEndpoint = inject(EndpointSymbol);
+const dataSocialMedia = ref<ISocialMedia | null>(null);
+watch(() => dataEndpoint?.value, async (newVal) => {
+	if (newVal) {
+		dataSocialMedia.value = (await tools.fetch<ISocialMedia>(newVal.social_media)).data ?? null;
+	}
+}, { immediate: true });
 </script>
 
 <template>
-	<div v-if="data?.socialMedia" class="flex items-center">
+	<div v-if="dataSocialMedia" class="flex items-center">
 		<!-- Facebook -->
 		<transition name="slide-right-d150" appear>
-			<a v-if="data.socialMedia.facebook" :href="data.socialMedia.facebook" target="_blank"
+			<a v-if="dataSocialMedia.facebook" :href="dataSocialMedia.facebook" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>Facebook</title>
@@ -22,7 +30,7 @@ const data = inject(DataUserSymbol);
 
 		<!-- Instagram -->
 		<transition name="slide-right-d100" appear>
-			<a v-if="data.socialMedia.instagram" :href="data.socialMedia.instagram" target="_blank"
+			<a v-if="dataSocialMedia.instagram" :href="dataSocialMedia.instagram" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>Instagram</title>
@@ -35,7 +43,7 @@ const data = inject(DataUserSymbol);
 
 		<!-- Twitter -->
 		<!-- <transition name="slide-right-d100" appear>
-			<a v-if="data.socialMedia.twitter" :href="data.socialMedia.twitter" target="_blank"
+			<a v-if="dataSocialMedia.twitter" :href="dataSocialMedia.twitter" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>X</title>
@@ -48,7 +56,7 @@ const data = inject(DataUserSymbol);
 
 		<!-- LinkedIn -->
 		<transition name="slide-right-d50" appear>
-			<a v-if="data.socialMedia.linkedin" :href="data.socialMedia.linkedin" target="_blank"
+			<a v-if="dataSocialMedia.linkedin" :href="dataSocialMedia.linkedin" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>LinkedIn</title>
@@ -61,7 +69,7 @@ const data = inject(DataUserSymbol);
 
 		<!-- GitHub -->
 		<transition name="slide-right" appear>
-			<a v-if="data.socialMedia.github" :href="data.socialMedia.github" target="_blank"
+			<a v-if="dataSocialMedia.github" :href="dataSocialMedia.github" target="_blank"
 				class="flex items-center justify-center p-2 mr-3 border-2 rounded-full w-9 h-9 lan-text-primary">
 				<svg role="img" class="w-full fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<title>GitHub</title>

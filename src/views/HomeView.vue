@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import { onBeforeUnmount } from 'vue';
+import { inject, onBeforeUnmount } from 'vue';
 import { useHead } from '@unhead/vue';
 import HeroComponent from "@/components/HeroComponent.vue";
 import IntroComponent from "@/components/IntroComponent.vue";
 import NextPageComponent from '@/components/NextPageComponent.vue';
 import ContactComponent from '@/components/ContactComponent.vue';
 import PortfolioComponent from '@/components/PortfolioComponent.vue';
+import DataAppSymbol from '@/helper/symbols/DataAppSymbol';
 
-const metaTitle = "LAN | Erlan Kurnia";
-const metaDesc = "Hello, I'm Erlan Kurnia, Unity Software Engineer, 'to entertain a group, you don't have to join that group'.";
+const dataApp = inject(DataAppSymbol);
+const metaTitle = dataApp?.value?.appName + " | " + dataApp?.value?.fullname;
+const metaDesc = '' + dataApp?.value?.description;
 const homepageHead = useHead({
-	title: "Erlan Kurnia",
+	title: '' + dataApp?.value?.fullname,
 	meta: [
 		{
 			name: "title",

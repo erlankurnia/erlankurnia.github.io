@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { defineAsyncComponent, inject, ref, useTemplateRef } from "vue";
+import { defineAsyncComponent, inject, ref, useTemplateRef, watch } from "vue";
 import { useRouter } from 'vue-router';
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import EndpointSymbol from "@/helper/symbols/EndpointSymbol";
+import tools from "@/helper/tools";
+import type ISocialMedia from "@/helper/interfaces/ISocialMedia";
+import type IContact from "@/helper/interfaces/IContact";
 
 const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
 const LoadingComponent = defineAsyncComponent(() => import('@/components/LoadingComponent.vue'));
@@ -10,8 +13,10 @@ type ModalType = InstanceType<typeof ModalComponent>
 const modalComponent = useTemplateRef<ModalType>('modalComponent');
 
 const router = useRouter();
+const dataEndpoint = inject(EndpointSymbol);
+const dataContact = ref<IContact | null>(null);
+const dataSocialMedia = ref<ISocialMedia | null>(null);
 const showLoading = ref(false);
-const data = inject(DataUserSymbol);
 const formName = ref('');
 const formEmail = ref('');
 const formMessage = ref('');
@@ -26,7 +31,7 @@ function closeModal() {
 async function submitForm() {
 	showLoading.value = true;
 	document.body.style.overflow = 'hidden';
-	const response = await fetch('https://formspree.io/f/myzywvog', {
+	const response = await fetch(dataContact.value?.formUrl + '', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -42,24 +47,31 @@ async function submitForm() {
 		formName.value = '';
 		formEmail.value = '';
 		formMessage.value = '';
-		modalMessage.value = 'Thank you for your message! We will get back to you soon.';
+		modalMessage.value = dataContact.value?.message.succeed + '';
 	} else {
-		modalMessage.value = 'There was an error submitting the form. Please try again.';
+		modalMessage.value = dataContact.value?.message.failed + '';
 	}
 
 	modalComponent.value?.onVisibleChange(true);
 	showLoading.value = false;
 }
+
+watch(() => dataEndpoint?.value, async (newVal) => {
+	if (newVal) {
+		dataContact.value = (await tools.fetch<IContact>(newVal.contact)).data ?? null;
+		dataSocialMedia.value = (await tools.fetch<ISocialMedia>(newVal.social_media)).data ?? null;
+	}
+}, { immediate: true });
 </script>
 
 <template>
-	<section v-if="data && data.contact" id="contact" :class="['pt-24 pb-16', $attrs.class]">
+	<section v-if="dataContact" id="contact" :class="['pt-24 pb-16', $attrs.class]">
 		<div class="container">
-			<div v-if="data.contact.title && data.contact.description" class="w-full p-4">
+			<div v-if="dataContact.title && dataContact.description" class="w-full p-4">
 				<div class="mx-auto mb-6 text-center">
 					<h2 class="mb-2 lan-section-title">Contact_Me</h2>
-					<h3 class="lan-section-subtitle lg:min-w-max" v-html="data.contact.title"></h3>
-					<p class="lan-section-desc" v-html="data.contact.description"></p>
+					<h3 class="lan-section-subtitle lg:min-w-max" v-html="dataContact.title"></h3>
+					<p class="lan-section-desc" v-html="dataContact.description"></p>
 				</div>
 			</div>
 
@@ -67,7 +79,7 @@ async function submitForm() {
 			<div class="w-full px-4">
 				<div class="flex flex-wrap items-center justify-center">
 					<!-- Telegram -->
-					<a v-if="data.socialMedia?.telegram" :href="data.socialMedia.telegram" target="_blank"
+					<a v-if="dataSocialMedia?.telegram" :href="dataSocialMedia.telegram" target="_blank"
 						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary"><svg
 							role="img" width="100%" class="fill-current" viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +91,7 @@ async function submitForm() {
 					<!-- Telegram -->
 
 					<!-- Email -->
-					<a v-if="data.socialMedia?.email" :href="'mailto:' + data.socialMedia.email" target="_blank"
+					<a v-if="dataSocialMedia?.email" :href="'mailto:' + dataSocialMedia.email" target="_blank"
 						class="flex items-center justify-center p-2 mx-1 border-2 rounded-full w-9 h-9 lan-text-primary">
 						<svg role="img" width="100%" class="fill-current" viewBox="0 0 24 24"
 							xmlns="http://www.w3.org/2000/svg">
@@ -125,20 +137,20 @@ async function submitForm() {
 			</div>
 			<!-- Message form -->
 		</div>
-	</section>
 
-	<ModalComponent @close="closeModal" ref="modalComponent">
-		<template #body>
-			<div class="flex items-center justify-center grow text-dark dark:text-light min-w-96 min-h-24">
-				<p class="flex items-center justify-center grow w-full h-full" v-html="modalMessage"></p>
+		<ModalComponent @close="closeModal" ref="modalComponent">
+			<template #body>
+				<div class="flex items-center justify-center grow text-dark dark:text-light min-w-96 min-h-24">
+					<p class="flex items-center justify-center grow w-full h-full" v-html="modalMessage"></p>
+				</div>
+			</template>
+		</ModalComponent>
+
+		<transition appear>
+			<div v-if="showLoading"
+				class="fixed z-9998 top-0 bottom-0 left-0 right-0 bg-dark/20 flex justify-center items-center">
+				<LoadingComponent></LoadingComponent>
 			</div>
-		</template>
-	</ModalComponent>
-
-	<transition appear>
-		<div v-if="showLoading"
-			class="fixed z-9998 top-0 bottom-0 left-0 right-0 bg-dark/20 flex justify-center items-center">
-			<LoadingComponent></LoadingComponent>
-		</div>
-	</transition>
+		</transition>
+	</section>
 </template>

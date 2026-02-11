@@ -49,7 +49,7 @@ function showAge(dateFrom: string, dateTo: string) {
 async function onMoreInfo(index: number) {
     if (data == null) return;
     loadingStore.pushLoading();
-    console.log('more info: ' + index);
+    // console.log('more info: ' + index);
     const dataSource = data.source;
     if (dataSource) {
         const dataMarkdown = await tools.getContentReadme(dataSource);

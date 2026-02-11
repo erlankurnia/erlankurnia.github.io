@@ -1,5 +1,6 @@
+import type IUserEquipment from "./IUserEquipment";
+
 export default interface IEquipment {
-    name: string;
-    type?: string;
-    icon?: string;
+    hardware?: IUserEquipment;
+    software?: IUserEquipment;
 }

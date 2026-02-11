@@ -1,32 +1,47 @@
 <script setup lang="ts">
-import { inject } from "vue";
+import { inject, ref, watch } from "vue";
 import Icon from "@/components/icons/Icon.vue";
-import DataUserSymbol from "@/helper/symbols/DataUserSymbol";
+import EndpointSymbol from "@/helper/symbols/EndpointSymbol";
+import type IEquipment from "@/helper/interfaces/IEquipment";
+import tools from "@/helper/tools";
+import type IEquipmentItem from "@/helper/interfaces/IEquipmentItem";
 
-const data = inject(DataUserSymbol);
+const dataEndpoint = inject(EndpointSymbol);
+const dataEquipment = ref<IEquipment>({});
+
+watch(() => dataEndpoint?.value, async (newVal) => {
+	if (newVal) {
+		const resEquipment = (await tools.fetch<IEquipment>(newVal.equipment));
+		dataEquipment.value = resEquipment.data ?? dataEquipment.value;
+		const resSoftware = (await tools.fetch<Record<string, IEquipmentItem[]>>(newVal.software));
+		if (dataEquipment.value.software && resSoftware.data) {
+			dataEquipment.value.software.equipments = resSoftware.data;
+		}
+	}
+}, { immediate: true });
 </script>
 
 <template>
-	<section v-if="data && data.equipment" id="equipment" class="pt-24 max-md:px-2 pb-16">
+	<section v-if="dataEquipment" id="equipment" class="pt-24 max-md:px-2 pb-16">
 		<div class="container">
 			<div class="w-full pt-4 text-center">
 				<h2 class="mb-3 lan-section-title">EQUIPMENTS</h2>
 			</div>
 
 			<!-- Hardware -->
-			<!-- <div class="flex flex-wrap" v-if="data.equipment.hardware">
+			<!-- <div class="flex flex-wrap" v-if="dataEquipment.hardware">
 				<div class="w-full text-center">
-					<h3 class="lan-section-subtitle" v-html="data.equipment.hardware.title"></h3>
-					<p class="lan-section-desc" v-html="data.equipment.hardware.description"></p>
+					<h3 class="lan-section-subtitle" v-html="dataEquipment.hardware.title"></h3>
+					<p class="lan-section-desc" v-html="dataEquipment.hardware.description"></p>
 				</div>
 				<div class="w-full px-4 lg:w-1/3">
 					<div class="relative my-10 lg:my-9 lg:right-0">
-						<img :src="data.equipment.hardware.image"
+						<img :src="dataEquipment.hardware.image"
 							class="w-full mx-auto max-md:rounded-xl lg:rounded-tr-xl lg:rounded-bl-xl" />
 					</div>
 				</div>
 				<div class="w-full px-4 mt-6 lg:w-2/3">
-					<table v-if="data.equipment.hardware && data.equipment.hardware.equipments"
+					<table v-if="dataEquipment.hardware && dataEquipment.hardware.equipments"
 						class="w-full mb-6 text-sm font-medium border-separate table-auto lg:ml-4 2xl:ml-8 4xl:ml-12 text-secondary dark:text-secondaryDark sm:text-base">
 						<thead>
 							<tr>
@@ -35,7 +50,7 @@ const data = inject(DataUserSymbol);
 							</tr>
 						</thead>
 						<tbody>
-							<template v-for="(item, key) in data.equipment.hardware.equipments" :key="key">
+							<template v-for="(item, key) in dataEquipment.hardware.equipments" :key="key">
 								<tr v-for="(data, index) in item" :key="index" class="">
 									<td class="pb-2 align-text-top text-primary dark:text-primaryDark"
 										v-html="index == 0 ? key : ''">
@@ -53,13 +68,13 @@ const data = inject(DataUserSymbol);
 			<!-- <br /> -->
 
 			<!-- Software -->
-			<div class="flex flex-wrap" v-if="data.equipment.software">
+			<div class="flex flex-wrap" v-if="dataEquipment.software">
 				<div class="w-full text-center">
-					<h3 class="lan-section-subtitle" v-html="data.equipment.software.title"></h3>
-					<p class="lan-section-desc" v-html="data.equipment.software.description"></p>
+					<h3 class="lan-section-subtitle" v-html="dataEquipment.software.title"></h3>
+					<p class="lan-section-desc" v-html="dataEquipment.software.description"></p>
 				</div>
 				<div class="w-full px-4">
-					<table v-if="data.equipment.software && data.equipment.software.equipments"
+					<table v-if="dataEquipment.software && dataEquipment.software.equipments"
 						class="w-full mb-6 mx-4 text-sm font-medium border-separate table-auto text-secondary dark:text-secondaryDark sm:text-base">
 						<thead>
 							<tr>
@@ -68,7 +83,7 @@ const data = inject(DataUserSymbol);
 							</tr>
 						</thead>
 						<tbody>
-							<template v-for="(item, key) in data.equipment.software.equipments" :key="key">
+							<template v-for="(item, key) in dataEquipment.software.equipments" :key="key">
 								<tr class="w-auto grid grid-cols-[128px_auto_1fr] max-lg:p-4">
 									<td class="py-6 align-top lg:py-7 text-primary dark:text-primaryDark">
 										<h3 class="" v-html="key"></h3>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted, provide, type Ref, useTemplateRef, onUnmounted, defineAsyncComponent } from "vue";
+import { ref, onMounted, provide, useTemplateRef, onUnmounted, defineAsyncComponent, shallowRef } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from "@unhead/vue";
 import tools from "./helper/tools";
 import FooterComponent from "@/components/FooterComponent.vue";
 import ToggleDarkModeComponent from "@/components/ToggleDarkModeComponent.vue";
-import type IDataUser from "./helper/interfaces/IDataUser";
-import DataUserSymbol from "./helper/symbols/DataUserSymbol";
+import type IDataApp from "./helper/interfaces/IDataApp";
+import DataAppSymbol from "./helper/symbols/DataAppSymbol";
 import ThemeModeSymbol from "./helper/symbols/ThemeModeSymbol";
 import NamePartSymbol from "./helper/symbols/NamePartSymbol";
 import EventBus, { EventBusEnum } from "./helper/EventBus";
@@ -16,6 +16,8 @@ import { useLoadingStore } from "@/stores/loadingStore";
 import { useScreenSizeStore } from "./stores/screenSizeStore";
 import { ScreenSizeEnum } from "./helper/interfaces/ScreenSizeEnum";
 import RetroTvCollapseComponent from "./components/RetroTvCollapseComponent.vue";
+import type IEndpoint from "./helper/interfaces/IEndpoint";
+import EndpointSymbol from "./helper/symbols/EndpointSymbol";
 
 const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
 const NavbarComponent = defineAsyncComponent(() => import('@/components/NavbarComponent.vue'));
@@ -53,12 +55,13 @@ useHead({
 
 type ModalType = InstanceType<typeof ModalComponent>;
 const modalComponent = useTemplateRef<ModalType>('modalComponent');
-const dynamicComponent = ref<TDynamicModalComponent | null>(null);
+const dynamicComponent = shallowRef<TDynamicModalComponent | null>(null);
 const screenSizeStore = useScreenSizeStore();
 const loadingStore = useLoadingStore();
 const themeMode = ref(false);
-const dataUser: Ref<IDataUser | null> = ref(null);
-const nameParts: Ref<string[]> = ref([]);
+const dataEndpoints = ref<IEndpoint | null>(null);
+const dataUser = ref<IDataApp | null>(null);
+const nameParts = ref<string[]>([]);
 
 const screenWidth = window.innerWidth;
 // if (screenWidth <= 480) {
@@ -70,9 +73,13 @@ if (screenWidth <= 768) {
 	screenSizeStore.setScreen(ScreenSizeEnum.LARGE);
 }
 
-async function getDataUser() {
-	dataUser.value = await tools.getDataUser<IDataUser>();
-	nameParts.value = ("" + dataUser.value.profile.name.value).split(" ");
+async function getData() {
+	const res = await tools.getEndpoints();
+	dataEndpoints.value = res.data ?? null;
+	if (dataEndpoints.value?.data) {
+		dataUser.value = (await tools.fetch<IDataApp>(dataEndpoints.value.data)).data ?? null;
+		nameParts.value = ("" + dataUser.value?.fullname).split(" ");
+	}
 }
 
 function showModal(component: TDynamicModalComponent | null = null) {
@@ -88,13 +95,14 @@ function hideModal(): void {
 onMounted(async () => {
 	EventBus.$on(EventBusEnum.ShowModal, showModal);
 	EventBus.$on(EventBusEnum.HideModal, hideModal);
-	await getDataUser();
+	await getData();
 });
 onUnmounted(() => {
 	EventBus.$off(EventBusEnum.ShowModal, showModal);
 	EventBus.$off(EventBusEnum.HideModal, hideModal);
 });
-provide(DataUserSymbol, dataUser);
+provide(DataAppSymbol, dataUser);
+provide(EndpointSymbol, dataEndpoints);
 provide(NamePartSymbol, nameParts);
 provide(ThemeModeSymbol, themeMode);
 </script>

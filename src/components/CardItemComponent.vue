@@ -7,6 +7,7 @@ import type IPropsCardItemComponent from '@/helper/interfaces/IPropsCardItemComp
 import type { TDynamicModalComponent } from '@/helper/interfaces/TDynamicModalComponent';
 import DetailItemComponent from "@/components/DetailItemComponent.vue";
 import { useScreenSizeStore } from '@/stores/screenSizeStore';
+import tools from '@/helper/tools';
 
 const props = defineProps<IPropsCardItemComponent>();
 const screenSizeStore = useScreenSizeStore();
@@ -20,7 +21,6 @@ async function preview() {
     };
     EventBus.$emit(EventBusEnum.ShowModal, componentData);
 }
-
 const cardId = computed(() => `card-${props.project.id}-${props.project.slug}`);
 const shortDesc = computed(() => {
     return props.project.description.length > 144 ? props.project.summary.substring(0, 120) + '..' : props.project.summary;
@@ -39,8 +39,8 @@ const shortDesc = computed(() => {
         }">
         <div class="overflow-hidden rounded-md aspect-16/9" :class="{ 'shadow-inner': project.imagesDir, }">
             <template v-if="project.imagesDir">
-                <img :src="project.imagesDir + 'sample@' + screenSize + '.webp'" :alt="project.title"
-                    class="transition-transform duration-500 scale-100 group-hover:scale-110"
+                <img :src="tools.getCdnUrl(tools.combinePath(project.imagesDir, 'sample@' + screenSize + '.webp'))"
+                    :alt="project.title" class="transition-transform duration-500 scale-100 group-hover:scale-110"
                     :class="{ 'w-full': project.imagesDir != null && project.imagesDir.length > 5 }" loading="lazy" />
             </template>
         </div>
