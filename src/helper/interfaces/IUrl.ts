@@ -6,4 +6,6 @@ export default interface IUrl {
     note: string;
     project: string;
     projects: string;
+    uses: string;
+    equipment: string;
 }

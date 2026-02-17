@@ -7,5 +7,6 @@ declare module 'vue-router' {
     interface RouteMeta {
         url: IUrl;
         hideNavbar: boolean;
+        hideOnFooter?: boolean;
     }
 }

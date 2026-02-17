@@ -9,6 +9,8 @@ const urls: IUrl = {
     // note: '/note',
     project: '/project',
     projects: '/projects',
+    uses: '/uses',
+    equipment: '/equipment',
 };
 
 export default urls;
