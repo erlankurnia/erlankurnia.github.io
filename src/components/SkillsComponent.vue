@@ -128,7 +128,7 @@ onMounted(() => {
 				</div>
 				<div v-if="dataAbility.learn.topics && dataAbility.learn.topics.length > 0"
 					class="w-full max-w-[1080px] px-2 mx-auto sm:px-4">
-					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9">
+					<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-8 md:gap-8 xl:gap-9 group">
 						<!-- Skill Icon -->
 						<button v-for="skill in dataAbility.learn.topics" type="button"
 							@click="showOptions($event, skill)"

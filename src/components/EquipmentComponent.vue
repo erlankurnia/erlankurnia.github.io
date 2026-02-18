@@ -72,11 +72,11 @@ watch(() => dataEndpoint?.value, async (newVal) => {
 									<th></th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody class="group">
 								<template v-for="(item, key) in equipment.equipments" :key="key">
 									<tr
 										class="w-auto grid grid-cols-[150px_auto_1fr] md:grid-cols-[168px_auto_1fr] max-lg:py-2">
-										<td class="flex flex-row pt-6 lg:pt-7 align-top text-primary dark:text-primaryDark">
+										<td class="flex flex-row pt-6 lg:pt-7 align-top">
 											<div class="max-h-[24px] lg:max-h-[28px] -mt-0.5 mr-1.5 aspect-square lg:mr-3">
 												<Icon :techName="key"></Icon>
 											</div>
@@ -85,14 +85,14 @@ watch(() => dataEndpoint?.value, async (newVal) => {
 										<td class="w-1 md:w-2 xl:w-4 2xl:w-6"></td>
 										<td class="grid grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3 pt-4 align-text-top">
 											<template v-for="data in item">
-												<button type="button" @click="showOptions($event, data)"
+												<div
 													class="max-h-[36px] lg:max-h-[44px] w-fit max-w-xs py-2 lan-50-to-100 flex flex-row">
 													<div class="h-full mr-2 aspect-square lg:mr-4">
 														<Icon :techName="'' + data.icon"></Icon>
 													</div>
 													<h4 class="h-auto my-auto text-xs text-left font-bold min-w-min line-clamp-2 text-secondary dark:text-secondaryDark"
 														v-html="data.name"></h4>
-												</button>
+												</div>
 											</template>
 										</td>
 									</tr>

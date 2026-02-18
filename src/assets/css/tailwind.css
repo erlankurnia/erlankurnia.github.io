@@ -170,10 +170,6 @@
 	@apply transition duration-1000 text-primary hover:duration-300 hover:text-secondary dark:text-primaryDark dark:hover:text-secondaryDark;
 }
 
-@utility lan-50-to-100 {
-	@apply opacity-100 sm:opacity-50 transition duration-1000 hover:duration-300 hover:opacity-100;
-}
-
 @utility lan-button-primary {
 	@apply px-6 py-2 text-base font-semibold border-2 border-primary dark:border-primaryDark rounded-full text-tertiary dark:text-tertiaryDark bg-primary dark:bg-primaryDark transition duration-1000 hover:duration-300 hover:border-primary dark:hover:border-primaryDark hover:bg-tertiary dark:hover:bg-tertiaryDark hover:text-primary dark:hover:text-primaryDark;
 }
@@ -200,6 +196,19 @@
 	@apply fixed z-9999 sm:lan-glass-effect;
 }
 
+@layer components {
+	.group .lan-50-to-100 {
+		@apply transition duration-300 hover:opacity-100;
+	}
+
+	.group:hover .lan-50-to-100 {
+		@apply opacity-50;
+	}
+
+	.group .lan-50-to-100:hover {
+		@apply opacity-100;
+	}
+}
 /* ------------ Transition ------------ */
 @layer components {
 	/* Page Up */
