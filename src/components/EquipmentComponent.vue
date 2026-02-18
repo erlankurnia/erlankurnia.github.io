@@ -53,7 +53,7 @@ watch(() => dataEndpoint?.value, async (newVal) => {
 			<!-- Equipments -->
 			<template v-for="(equipment, index) in dataEquipment" :key="index">
 				<div class="flex flex-wrap my-8" v-if="equipment && ((index == 'software' && props.showSoftware) || (index == 'hardware' && props.showHardware))">
-					<div class="w-full text-center">
+					<div class="w-full mx-auto mb-4 text-center">
 						<h3 class="lan-section-subtitle" v-html="equipment.title"></h3>
 						<p class="lan-section-desc" v-html="equipment.description"></p>
 					</div>
