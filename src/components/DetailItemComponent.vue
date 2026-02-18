@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineAsyncComponent, onMounted, ref } from 'vue';
-import type IPropsDetailItemComponent from '@/helper/interfaces/IPropsDetailItemComponent';
+import type IPropsDetailItemComponent from '@/helper/contracts/props/IPropsDetailItemComponent';
 import EventBus, { EventBusEnum } from '@/helper/EventBus';
 import tools from '@/helper/tools';
 import Icon from '@/components/icons/Icon.vue';

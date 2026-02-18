@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from 'vue';
 import type IProjectInfo from '@/helper/interfaces/IProjectInfo';
-import type IPropsProjectListComponent from '@/helper/interfaces/IPropsProjectListComponent';
+import type IPropsProjectListComponent from '@/helper/contracts/props/IPropsProjectListComponent';
 
 const CardItemComponent = defineAsyncComponent(() => import('@/components/CardItemComponent.vue'));
 

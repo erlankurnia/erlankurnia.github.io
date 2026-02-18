@@ -17,7 +17,7 @@ import hljsShell from 'highlight.js/lib/languages/shell';
 import hljsXml from 'highlight.js/lib/languages/xml';
 import MarkdownIt from "markdown-it";
 import type { Token } from "markdown-it/index.js";
-import type IPropsMarkdownComponent from "@/helper/interfaces/IPropsMarkdownComponent";
+import type IPropsMarkdownComponent from "@/helper/contracts/props/IPropsMarkdownComponent";
 
 hljs.registerLanguage('apache', hljsApache);
 hljs.registerLanguage('bash', hljsBash);

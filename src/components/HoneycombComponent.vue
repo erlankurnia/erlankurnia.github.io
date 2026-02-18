@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type IPropsHoneycombComponent from '@/helper/interfaces/IPropsHoneycombComponent';
+import type IPropsHoneycombComponent from '@/helper/contracts/props/IPropsHoneycombComponent';
 import HexagonItemComponent from './HexagonItemComponent.vue';
 import Icon from './icons/Icon.vue';
 import { computed, onMounted, ref, watch } from 'vue';

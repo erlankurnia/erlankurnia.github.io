@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 import Icon from '@/components/icons/Icon.vue';
 import NewTabIcon from '@/components/icons/NewTabIcon.vue';
 import EventBus, { EventBusEnum } from '@/helper/EventBus';
-import type IPropsCardItemComponent from '@/helper/interfaces/IPropsCardItemComponent';
+import type IPropsCardItemComponent from '@/helper/contracts/props/IPropsCardItemComponent';
 import type { TDynamicModalComponent } from '@/helper/interfaces/TDynamicModalComponent';
 import DetailItemComponent from "@/components/DetailItemComponent.vue";
 import { useScreenSizeStore } from '@/stores/screenSizeStore';

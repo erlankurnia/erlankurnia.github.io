@@ -1,4 +1,4 @@
-import type ISourceContent from "./ISourceContent";
+import type ISourceContent from "../../interfaces/ISourceContent";
 
 export default interface IPropsMarkdownComponent {
     contentMarkdown: string,

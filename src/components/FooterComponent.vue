@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import NewTabIcon from "@/components/icons/NewTabIcon.vue";
+import { routes } from "@/router";
 </script>
 
 <template>
@@ -13,7 +14,7 @@ import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 					hidden: $route.meta.hideNavbar,
 				}">
 					<ul class="flex flex-wrap justify-center md:justify-end">
-						<li class="flex items-center group">
+						<!-- <li class="flex items-center group">
 							<RouterLink to="/" class="mx-2 text-xs lan-nav-link" :class="{
 								'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'home',
 							}">Home</RouterLink>
@@ -35,17 +36,21 @@ import NewTabIcon from "@/components/icons/NewTabIcon.vue";
 								class="mx-2 text-xs lan-nav-link" :class="{
 									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
 								}">Notes</a>
-							<!-- <RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.notes"
-								class="mx-2 text-xs lan-nav-link" :class="{
-									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
-								}">Notes</RouterLink> -->
 						</li>
 						<li class="flex items-center group">
 							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"
 								class="mx-2 text-xs lan-nav-link" :class="{
 									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'references',
 								}">References</RouterLink>
-						</li>
+						</li> -->
+						<template v-for="(route, index) in routes" :key="index">
+							<li v-if="!route.meta?.hideOnFooter" class="flex items-center group">
+								<RouterLink v-if="route.path" :to="route.path"
+									class="mx-2 text-xs lan-nav-link" :class="{
+										'text-primary dark:text-primaryDark font-bold scale-110': $route.name == route.name,
+									}">{{ route.name }}</RouterLink>
+							</li>
+						</template>
 						<li class="flex items-center group">
 							<a href="https://cloud.umami.is/share/P9vSXDhPCyGTUoB2/erlankurnia.github.com"
 								target="_blank" class="mx-2 text-xs lan-nav-link">
