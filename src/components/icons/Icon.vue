@@ -20,6 +20,7 @@ const icons = {
 	csharp: ["csharp", "c#"],
 	daisyui: ["daisyui"],
 	dart: ["dart", 'dart-lang'],
+	domainesia: ["domainesia"],
 	dotnet: ["dotnet", ".net"],
 	efcore: ["efcore", "entityframeworkcore", "entity-framework-core"],
 	espressif: ["esp32", "espressif"],
@@ -95,6 +96,7 @@ const icons = {
 	simpleaudio: ["audio", "sound"],
 	simplebrowser: ["browser", "web-browser"],
 	simplecodeeditor: ["code-editor", "editor", "file-code"],
+	simplecloudcomputing: ["cloud-computing", "service", "services", "cloud-service"],
 	simpledatabase: ["database", "db", "datastore"],
 	simpledebugging: ["debugging", "debug", "dev-tool", "devtool"],
 	simpledockrow: ["dock-row"],
@@ -116,6 +118,7 @@ const icons = {
 };
 const currentComponentName = (techName: string, icons: Record<string, string[]>) => {
 	let name: string | null = null;
+	techName = techName.replace(' ', '-');
 	for (const [key, value] of Object.entries(icons)) {
 		for (let tag of value) {
 			if (tag.toLowerCase() == techName.toLowerCase()) {
