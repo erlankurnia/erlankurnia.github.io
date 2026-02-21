@@ -104,7 +104,7 @@ onMounted(() => {
                     <tbody class="group">
                         <template v-for="cat in dataAbility.skill.categorized">
                             <!-- Skills Category -->
-                            <tr class="w-auto grid grid-cols-[128px_auto_1fr] max-lg:p-4">
+                            <tr :id="cat.title.toLocaleLowerCase().replace(/ /g, '-')" class="w-auto grid grid-cols-[128px_auto_1fr] max-lg:p-4">
                                 <td class="py-6 align-top lg:py-7 text-primary dark:text-primaryDark">
                                     <h3 class="" v-html="cat.title"></h3>
                                 </td>

@@ -118,10 +118,10 @@ const icons = {
 };
 const currentComponentName = (techName: string, icons: Record<string, string[]>) => {
 	let name: string | null = null;
-	techName = techName.replace(' ', '-');
+	techName = techName.toLowerCase().replace(/[ &-]/g, '-');
 	for (const [key, value] of Object.entries(icons)) {
 		for (let tag of value) {
-			if (tag.toLowerCase() == techName.toLowerCase()) {
+			if (tag.toLowerCase() == techName) {
 				name = key.charAt(0).toUpperCase() + key.substring(1);
 			}
 			if (name) break;
