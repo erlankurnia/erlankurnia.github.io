@@ -5,7 +5,6 @@ import CreditView from "../views/CreditView.vue";
 // import NotesView from "../views/NotesView.vue";
 // import NoteView from "../views/NoteView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
-// import CMSView from "../views/CMSView.vue";
 import urls from "./urls";
 import ProjectsView from "@/views/ProjectsView.vue";
 import EquipmentView from "@/views/EquipmentView.vue";
@@ -36,15 +35,13 @@ export const routes: RouteRecordRaw[] = [
 	//   meta: { url: urls, hideNavbar: false },
 	// },
 	{
-		path: urls.projects,
-		alias:  urls.projects + "/:filter?",
+		path: urls.projects + "/:filter?",
 		name: "projects",
 		component: ProjectsView,
 		meta: { url: urls, hideNavbar: false },
 	},
 	{
-		path: urls.project,
-		alias: urls.project + "/:slug",
+		path: urls.project + "/:slug",
 		name: "project",
 		component: NotFoundView,
 		meta: { url: urls, hideNavbar: false, hideOnFooter: true },
@@ -62,12 +59,6 @@ export const routes: RouteRecordRaw[] = [
 		component: CreditView,
 		meta: { url: urls, hideNavbar: false },
 	},
-	// {
-	//   path: "/cms",
-	//   name: "cms",
-	//   component: CMSView,
-	//   meta: { url: urls, hideNavbar: false },
-	// },
 ];
 
 const router = createRouter({

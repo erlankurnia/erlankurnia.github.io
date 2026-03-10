@@ -14,38 +14,9 @@ import { routes } from "@/router";
 					hidden: $route.meta.hideNavbar,
 				}">
 					<ul class="flex flex-wrap justify-center md:justify-end">
-						<!-- <li class="flex items-center group">
-							<RouterLink to="/" class="mx-2 text-xs lan-nav-link" :class="{
-								'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'home',
-							}">Home</RouterLink>
-						</li>
-						<li class="flex items-center group">
-							<RouterLink v-if="$route.meta.url?.about" :to="$route.meta.url.about"
-								class="mx-2 text-xs lan-nav-link" :class="{
-									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'who_iam',
-								}">WHO_I'M</RouterLink>
-						</li>
-						<li class="flex items-center group">
-							<RouterLink v-if="$route.meta.url?.notes" :to="$route.meta.url.projects"
-								class="mx-2 text-xs lan-nav-link" :class="{
-									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'projects',
-								}">Projects</RouterLink>
-						</li>
-						<li class="flex items-center group">
-							<a v-if="$route.meta.url?.notes" :href="$route.meta.url.notes"
-								class="mx-2 text-xs lan-nav-link" :class="{
-									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'notes',
-								}">Notes</a>
-						</li>
-						<li class="flex items-center group">
-							<RouterLink v-if="$route.meta.url?.credit" :to="$route.meta.url.credit"
-								class="mx-2 text-xs lan-nav-link" :class="{
-									'text-primary dark:text-primaryDark font-bold scale-110': $route.name == 'references',
-								}">References</RouterLink>
-						</li> -->
 						<template v-for="(route, index) in routes" :key="index">
 							<li v-if="!route.meta?.hideOnFooter" class="flex items-center group">
-								<RouterLink v-if="route.path" :to="route.path"
+								<RouterLink v-if="route.path" :to="route.path.includes(':') ? route.path.substring(0, route.path.indexOf('/:')) : route.path"
 									class="mx-2 text-xs lan-nav-link" :class="{
 										'text-primary dark:text-primaryDark font-bold scale-110': $route.name == route.name,
 									}">{{ route.name }}</RouterLink>
@@ -83,7 +54,6 @@ import { routes } from "@/router";
 							</span>
 							2026 <span class="w-1 h-1 rounded-full bg-dark dark:bg-light"></span>
 						</span>
-						<!-- <span class="w-[1px] mx-1 h-full max-h-8 bg-dark"></span> -->
 						<span class="px-[2px] rounded-full text-dark dark:text-light">
 							Developed and built by <a class="font-bold text-primary dark:text-primaryDark"
 								target="_blank" href="https://erlankurnia.laness.id">Me</a>
