@@ -64,10 +64,9 @@ const dataUser = ref<IDataApp | null>(null);
 const nameParts = ref<string[]>([]);
 
 const screenWidth = window.innerWidth;
-// if (screenWidth <= 480) {
-// 	screenSizeStore.setScreen(ScreenSizeEnum.SMALL);
-// } else
 if (screenWidth <= 768) {
+	screenSizeStore.setScreen(ScreenSizeEnum.SMALL);
+} else if (screenWidth <= 1280) {
 	screenSizeStore.setScreen(ScreenSizeEnum.MEDIUM);
 } else {
 	screenSizeStore.setScreen(ScreenSizeEnum.LARGE);

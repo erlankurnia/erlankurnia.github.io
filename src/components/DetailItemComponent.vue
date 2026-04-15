@@ -21,7 +21,7 @@ function getImageUrl(filename: string) {
 async function validateImages(): Promise<void> {
     let imageIndex = 1;
 
-    let imageUrl = getImageUrl('sample@full.webp');
+    let imageUrl = getImageUrl('sample@xl.webp');
     if (await tools.verifyImageUrl(imageUrl)) {
         validImages.value.push(imageUrl);
         imageIndex++;
