@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, provide, useTemplateRef, onUnmounted, defineAsyncComponent, shallowRef } from "vue";
+import { ref, onMounted, provide, useTemplateRef, onUnmounted, defineAsyncComponent, shallowRef, computed } from "vue";
 import { RouterView } from "vue-router";
 import { useHead } from "@unhead/vue";
 import tools from "./helper/tools";
@@ -18,6 +18,7 @@ import { ScreenSizeEnum } from "./helper/interfaces/ScreenSizeEnum";
 import RetroTvCollapseComponent from "./components/RetroTvCollapseComponent.vue";
 import type IEndpoint from "./helper/interfaces/IEndpoint";
 import EndpointSymbol from "./helper/symbols/EndpointSymbol";
+import { useFavicon } from "@vueuse/core";
 
 const ModalComponent = defineAsyncComponent(() => import('@/components/ModalComponent.vue'));
 const NavbarComponent = defineAsyncComponent(() => import('@/components/NavbarComponent.vue'));
@@ -104,6 +105,7 @@ provide(DataAppSymbol, dataUser);
 provide(EndpointSymbol, dataEndpoints);
 provide(NamePartSymbol, nameParts);
 provide(ThemeModeSymbol, themeMode);
+useFavicon(computed(() => (themeMode.value ? 'https://cdn.erlankurnia.laness.id/img/logo/dark/favicon.ico' : 'https://cdn.erlankurnia.laness.id/img/logo/light/favicon.ico')));
 </script>
 
 <template>
